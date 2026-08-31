@@ -3,169 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luciano Castañón Estrada — Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Luciano Castañón Estrada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 40px 50px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Encabezado superior en 4 columnas idéntico a la referencia */
+        .header-grid {
+            display: grid;
+            grid-template-columns: 280px 240px 1fr 40px;
+            gap: 20px;
+            margin-bottom: 80px;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .txt-main {
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .txt-sub {
+            color: #888888;
+            font-weight: 400;
+        }
+
+        .link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .link:hover {
+            opacity: 0.6;
+        }
+
+        .white-dot {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin-left: auto;
+        }
+
+        /* Layout de contenido principal */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 520px 1fr;
+            gap: 20px;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .project-card a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card img:hover {
+            opacity: 0.85;
+        }
+
+        /* Texto Bio inferior estilo Hugo Ferradas */
+        .hero-bio {
+            margin-top: 100px;
+            font-size: 36px;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            font-weight: 400;
+            color: #ffffff;
+            max-width: 800px;
+        }
+
+        /* Modales de cada proyecto individual */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            z-index: 999;
+            display: none;
+            overflow-y: auto;
+            padding: 60px 50px;
+        }
+
+        .project-modal:target {
+            display: block;
+        }
+
+        .close-modal {
+            position: fixed;
+            top: 40px;
+            right: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            background: #1a1a1a;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .modal-inner {
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .modal-inner h1 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .modal-category {
+            color: #888888;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .modal-images img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .behance-btn {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        .behance-btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Responsive Móvil */
+        @media (max-width: 900px) {
+            body {
+                padding: 20px;
+            }
+
+            .header-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-bottom: 40px;
+            }
+
+            .col-4 {
+                display: none;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-bio {
+                font-size: 22px;
+                margin-top: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="top-bar">
-        <div class="col-1">
-            <h1>Luciano Castañón Estrada</h1>
-            <p class="subtitle">Brand Design & Art Direction</p>
+    <header class="header-grid">
+        <div class="col col-1">
+            <p class="txt-main">Luciano Castañón Estrada</p>
+            <p class="txt-sub">Brand Design & Art Direction</p>
         </div>
 
-        <div class="col-2">
-            <p class="section-label">Selected work<br><span class="year">2020 — 2026</span></p>
+        <div class="col col-2">
+            <p class="txt-sub">Selected work</p>
+            <p class="txt-sub">2020 — 2026</p>
         </div>
 
-        <div class="col-3">
-            <a href="mailto:elecene@gmail.com" class="link-item">→ elecene@gmail.com</a>
-            <a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" rel="noopener" class="link-item">→ linkedin</a>
+        <div class="col col-3">
+            <p><a href="mailto:elecene@gmail.com" class="link">→ elecene@gmail.com</a></p>
+            <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link">→ linkedin</a></p>
         </div>
 
-        <div class="col-4">
-            <span class="dot-indicator"></span>
+        <div class="col col-4">
+            <span class="white-dot"></span>
         </div>
     </header>
 
-    <main class="main-layout">
+    <main class="content-grid">
         <div class="spacer-col"></div>
 
-        <section class="work-section">
+        <div class="main-column">
             
-            <article class="project-item">
-                <a href="#project-1" class="project-link">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" alt="Branding & Identidad Visual">
-                    </div>
-                </a>
-            </article>
+            <section class="projects-list">
+                <!-- Proyecto 1 -->
+                <article class="project-card">
+                    <a href="#project-1">
+                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" alt="Branding">
+                    </a>
+                </article>
 
-            <article class="project-item">
-                <a href="#project-2" class="project-link">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Afiche Portada de Disco">
-                    </div>
-                </a>
-            </article>
+                <!-- Proyecto 2 -->
+                <article class="project-card">
+                    <a href="#project-2">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Afiche">
+                    </a>
+                </article>
 
-            <article class="project-item">
-                <a href="#project-3" class="project-link">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200&auto=format&fit=crop" alt="Contenido Redes Sociales">
-                    </div>
-                </a>
-            </article>
+                <!-- Proyecto 3 -->
+                <article class="project-card">
+                    <a href="#project-3">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200&auto=format&fit=crop" alt="Redes Sociales">
+                    </a>
+                </article>
 
-            <article class="project-item">
-                <a href="#project-4" class="project-link">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" alt="Motion Graphics">
-                    </div>
-                </a>
-            </article>
+                <!-- Proyecto 4 -->
+                <article class="project-card">
+                    <a href="#project-4">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop" alt="Motion">
+                    </a>
+                </article>
 
-            <article class="project-item">
-                <a href="#project-5" class="project-link">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="Diseño Editorial">
-                    </div>
-                </a>
-            </article>
+                <!-- Proyecto 5 -->
+                <article class="project-card">
+                    <a href="#project-5">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="Editorial">
+                    </a>
+                </article>
 
-            <article class="project-item">
-                <a href="#project-6" class="project-link">
-                    <div class="media-container">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1200&auto=format&fit=crop" alt="Arte Digital & Ilustración">
-                    </div>
-                </a>
-            </article>
+                <!-- Proyecto 6 -->
+                <article class="project-card">
+                    <a href="#project-6">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1200&auto=format&fit=crop" alt="Arte Digital">
+                    </a>
+                </article>
+            </section>
 
-            <div class="bio-block">
-                <p><strong>Luciano Castañón Estrada</strong> es un diseñador de marca y director de arte enfocado en construir identidades visuales, diseño editorial, motion graphics y contenido digital impactante. Colaborando con proyectos globales para transformar ideas en experiencias visuales memorables.</p>
-            </div>
+            <section class="hero-bio">
+                <p>Luciano Castañón Estrada is a Brand Designer & Art Director specializing in visual identity, editorial design, motion graphics, and digital content. Collaborating with brands to build strong visual experiences.</p>
+            </section>
 
-        </section>
+        </div>
     </main>
 
-    <div id="project-1" class="modal-view">
-        <a href="#" class="close-btn">✕ Cerrar</a>
-        <div class="modal-content">
-            <span class="project-num">01 / 06</span>
-            <h2>Branding & Identidad Visual</h2>
-            <p class="project-desc">Sistema de identidad gráfica integral, tipografía modular y guías de marca.</p>
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1600&auto=format&fit=crop" alt="Branding">
+    <!-- VISTAS INTERNAS DE PROYECTO -->
+    <div id="project-1" class="project-modal">
+        <a href="#" class="close-modal">✕ Close</a>
+        <div class="modal-inner">
+            <h1>Branding & Identidad Visual</h1>
+            <p class="modal-category">Brand Identity / Design System</p>
+            <div class="modal-images">
+                <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1600&auto=format&fit=crop">
             </div>
-            <a href="https://www.behance.net/castanonluciano" target="_blank" rel="noopener" class="external-behance">Ver en Behance ↗</a>
+            <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
     </div>
 
-    <div id="project-2" class="modal-view">
-        <a href="#" class="close-btn">✕ Cerrar</a>
-        <div class="modal-content">
-            <span class="project-num">02 / 06</span>
-            <h2>Afiche Portada de Disco</h2>
-            <p class="project-desc">Diseño de arte de cubierta, tipografía experimental y pósteres promocionales.</p>
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop" alt="Portada de Disco">
+    <div id="project-2" class="project-modal">
+        <a href="#" class="close-modal">✕ Close</a>
+        <div class="modal-inner">
+            <h1>Afiche Portada de Disco</h1>
+            <p class="modal-category">Cover Art / Graphic Design</p>
+            <div class="modal-images">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop">
             </div>
-            <a href="https://www.behance.net/castanonluciano" target="_blank" rel="noopener" class="external-behance">Ver en Behance ↗</a>
+            <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
     </div>
 
-    <div id="project-3" class="modal-view">
-        <a href="#" class="close-btn">✕ Cerrar</a>
-        <div class="modal-content">
-            <span class="project-num">03 / 06</span>
-            <h2>Contenido Redes Sociales</h2>
-            <p class="project-desc">Estrategia visual y diseño de piezas digitales para campañas en redes.</p>
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop" alt="Redes Sociales">
+    <div id="project-3" class="project-modal">
+        <a href="#" class="close-modal">✕ Close</a>
+        <div class="modal-inner">
+            <h1>Contenido Redes Sociales</h1>
+            <p class="modal-category">Social Media / Digital Content</p>
+            <div class="modal-images">
+                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop">
             </div>
-            <a href="https://www.behance.net/castanonluciano" target="_blank" rel="noopener" class="external-behance">Ver en Behance ↗</a>
+            <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
     </div>
 
-    <div id="project-4" class="modal-view">
-        <a href="#" class="close-btn">✕ Cerrar</a>
-        <div class="modal-content">
-            <span class="project-num">04 / 06</span>
-            <h2>Motion Graphics</h2>
-            <p class="project-desc">Animación publicitaria, bumpers e identidades en movimiento.</p>
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop" alt="Motion Graphics">
+    <div id="project-4" class="project-modal">
+        <a href="#" class="close-modal">✕ Close</a>
+        <div class="modal-inner">
+            <h1>Motion Graphics</h1>
+            <p class="modal-category">Animation / Visual Effects</p>
+            <div class="modal-images">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop">
             </div>
-            <a href="https://www.behance.net/castanonluciano" target="_blank" rel="noopener" class="external-behance">Ver en Behance ↗</a>
+            <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
     </div>
 
-    <div id="project-5" class="modal-view">
-        <a href="#" class="close-btn">✕ Cerrar</a>
-        <div class="modal-content">
-            <span class="project-num">05 / 06</span>
-            <h2>Diseño Editorial</h2>
-            <p class="project-desc">Maquetación de catálogos, revistas y publicaciones de arte.</p>
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop" alt="Diseño Editorial">
+    <div id="project-5" class="project-modal">
+        <a href="#" class="close-modal">✕ Close</a>
+        <div class="modal-inner">
+            <h1>Diseño Editorial</h1>
+            <p class="modal-category">Editorial / Print Design</p>
+            <div class="modal-images">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop">
             </div>
-            <a href="https://www.behance.net/castanonluciano" target="_blank" rel="noopener" class="external-behance">Ver en Behance ↗</a>
+            <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
     </div>
 
-    <div id="project-6" class="modal-view">
-        <a href="#" class="close-btn">✕ Cerrar</a>
-        <div class="modal-content">
-            <span class="project-num">06 / 06</span>
-            <h2>Arte Digital & Ilustración</h2>
-            <p class="project-desc">Composiciones conceptuales e ilustración aplicada a marca.</p>
-            <div class="modal-gallery">
-                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop" alt="Arte Digital">
+    <div id="project-6" class="project-modal">
+        <a href="#" class="close-modal">✕ Close</a>
+        <div class="modal-inner">
+            <h1>Arte Digital & Ilustración</h1>
+            <p class="modal-category">Digital Art / Illustration</p>
+            <div class="modal-images">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop">
             </div>
-            <a href="https://www.behance.net/castanonluciano" target="_blank" rel="noopener" class="external-behance">Ver en Behance ↗</a>
+            <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
     </div>
 
