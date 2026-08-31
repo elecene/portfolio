@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -10,21 +8,18 @@ body {
     background-color: #000000;
     color: #ffffff;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    padding: 40px 50px;
+    padding: 30px 40px;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Encabezado sin franja ni fondo fijo: fluye de manera transparente */
+/* Encabezado superior idéntico */
 .header-grid {
     display: grid;
-    grid-template-columns: 280px 240px 1fr 40px;
+    grid-template-columns: 280px 220px 1fr 40px;
     gap: 20px;
     margin-bottom: 60px;
     font-size: 13px;
-    line-height: 1.4;
-    position: relative;
-    z-index: 10;
-    background: transparent; /* Transparente para no dejar bloque negro */
+    line-height: 1.45;
 }
 
 .txt-main {
@@ -40,7 +35,6 @@ body {
 .link {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 400;
 }
 
 .link:hover {
@@ -49,50 +43,78 @@ body {
 
 .white-dot {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     background-color: #ffffff;
     border-radius: 50%;
     margin-left: auto;
 }
 
-/* Layout en retícula */
-.content-grid {
+/* Sección Hero (Bio izquierda + Foto grande derecha) */
+.hero-section {
     display: grid;
-    grid-template-columns: 520px 1fr;
-    gap: 20px;
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+    align-items: start;
 }
 
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
+.hero-bio p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #cccccc;
+    font-weight: 300;
 }
 
-.project-card img {
+.hero-bio strong {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.hero-project img {
     width: 100%;
     height: auto;
-    border-radius: 6px;
+    border-radius: 8px;
     display: block;
     transition: opacity 0.3s ease;
 }
 
-.project-card img:hover {
+.hero-project img:hover {
+    opacity: 0.88;
+}
+
+/* Mosaico de Proyectos Inferior (2 Columnas) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.project-link img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-link img:hover {
     opacity: 0.85;
 }
 
-/* Bio inferior en la columna derecha */
-.hero-bio {
-    margin-top: 100px;
-    font-size: 38px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    font-weight: 400;
-    color: #ffffff;
-    max-width: 850px;
-}
-
-/* Modales para cada proyecto */
+/* Modales para las páginas de proyecto */
 .project-modal {
     position: fixed;
     top: 0;
@@ -116,7 +138,7 @@ body {
     right: 50px;
     color: #ffffff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     background: #1a1a1a;
     padding: 8px 16px;
     border-radius: 20px;
@@ -141,7 +163,7 @@ body {
 
 .modal-images img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 6px;
     margin-bottom: 20px;
 }
 
@@ -161,15 +183,15 @@ body {
     color: #000000;
 }
 
-/* Adaptación para pantallas pequeñas / móviles */
-@media (max-width: 900px) {
+/* Versión Móvil Responsive */
+@media (max-width: 850px) {
     body {
         padding: 20px;
     }
 
     .header-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
         margin-bottom: 40px;
     }
 
@@ -177,12 +199,13 @@ body {
         display: none;
     }
 
-    .content-grid {
+    .hero-section {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
-    .hero-bio {
-        font-size: 22px;
-        margin-top: 60px;
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 }
