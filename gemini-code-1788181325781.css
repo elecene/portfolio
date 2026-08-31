@@ -1,0 +1,165 @@
+/* Reset básico y variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0d0d0d;
+    --text-color: #f1f1f1;
+    --text-secondary: #888888;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --gap: 2rem;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    padding: 2rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Encabezado */
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #222;
+    margin-bottom: 3rem;
+}
+
+.name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.role {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.header-bio p {
+    font-size: 0.95rem;
+    color: #ccc;
+    max-width: 500px;
+}
+
+.header-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.header-contact a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.2s ease;
+}
+
+.header-contact a:hover {
+    opacity: 0.6;
+}
+
+/* Grilla de Proyectos (Desktop) */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem var(--gap);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Efecto Hover estilo Hugo Ferradas */
+.project-card:hover .image-wrapper img {
+    transform: scale(1.03);
+    filter: grayscale(0%);
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.project-category {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+.footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Versión Móvil (Responsive) */
+@media (max-width: 850px) {
+    body {
+        padding: 1.25rem;
+    }
+
+    .header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .header-contact {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna en pantallas pequeñas */
+        gap: 2.5rem;
+    }
+
+    .project-info {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
