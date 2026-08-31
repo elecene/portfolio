@@ -12,33 +12,48 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Encabezado superior idéntico */
-.header-grid {
+/* Header totalmente FIJO, TRANSPARENTE y 100% BLANCO */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: grid;
-    grid-template-columns: 280px 220px 1fr 40px;
+    grid-template-columns: 240px 220px 1fr 40px;
     gap: 20px;
-    margin-bottom: 60px;
+    padding: 30px 40px;
     font-size: 13px;
-    line-height: 1.45;
+    line-height: 1.4;
+    z-index: 100;
+    background: transparent; /* Transparente sin parches negros */
+    pointer-events: none; /* Permite scroll interactivo debajo */
 }
 
-.txt-main {
-    color: #ffffff;
+.header-fixed .col {
+    pointer-events: auto;
+}
+
+.txt-bold {
+    color: #ffffff !important;
+    font-weight: 500;
+    opacity: 1 !important;
+}
+
+.txt-white {
+    color: #ffffff !important;
     font-weight: 400;
+    opacity: 1 !important;
 }
 
-.txt-sub {
-    color: #888888;
-    font-weight: 400;
-}
-
-.link {
-    color: #ffffff;
+.link-white {
+    color: #ffffff !important;
     text-decoration: none;
+    font-weight: 400;
+    opacity: 1 !important;
 }
 
-.link:hover {
-    opacity: 0.6;
+.link-white:hover {
+    opacity: 0.6 !important;
 }
 
 .white-dot {
@@ -50,28 +65,34 @@ body {
     margin-left: auto;
 }
 
-/* Sección Hero (Bio izquierda + Foto grande derecha) */
-.hero-section {
+/* Margen superior para no solapar la cabecera fija */
+.portfolio-layout {
+    margin-top: 100px;
+}
+
+/* Disposición de Bloque Hero: Columna vacía, Bio central e Imagen derecha */
+.hero-block {
     display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 40px;
-    margin-bottom: 80px;
+    grid-template-columns: 240px 320px 1fr;
+    gap: 30px;
+    margin-bottom: 90px;
     align-items: start;
 }
 
-.hero-bio p {
-    font-size: 15px;
+.bio-container p {
+    font-size: 13px;
     line-height: 1.5;
-    color: #cccccc;
-    font-weight: 300;
+    color: #ffffff !important;
+    font-weight: 400;
+    opacity: 1 !important;
 }
 
-.hero-bio strong {
-    color: #ffffff;
-    font-weight: 500;
+.bio-container strong {
+    color: #ffffff !important;
+    font-weight: 600;
 }
 
-.hero-project img {
+.hero-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
@@ -79,30 +100,31 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.hero-project img:hover {
+.hero-image img:hover {
     opacity: 0.88;
 }
 
-/* Mosaico de Proyectos Inferior (2 Columnas) */
+/* Mosaico Inferior de Proyectos (2 Columnas) */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px 30px;
+    gap: 60px 40px;
 }
 
-.project-card {
+.project-item {
     display: flex;
     flex-direction: column;
 }
 
-.project-header {
+.project-title {
     font-size: 14px;
-    color: #ffffff;
-    margin-bottom: 12px;
+    color: #ffffff !important;
+    margin-bottom: 14px;
     font-weight: 400;
+    opacity: 1 !important;
 }
 
-.project-link img {
+.project-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
@@ -110,11 +132,11 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.project-link img:hover {
+.project-item img:hover {
     opacity: 0.85;
 }
 
-/* Modales para las páginas de proyecto */
+/* Vistas / Modales Internos */
 .project-modal {
     position: fixed;
     top: 0;
@@ -153,10 +175,11 @@ body {
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 8px;
+    color: #ffffff;
 }
 
 .modal-category {
-    color: #888888;
+    color: #ffffff;
     font-size: 14px;
     margin-bottom: 40px;
 }
@@ -171,7 +194,7 @@ body {
     display: inline-block;
     color: #ffffff;
     text-decoration: none;
-    border: 1px solid #333;
+    border: 1px solid #ffffff;
     padding: 12px 24px;
     border-radius: 4px;
     font-size: 13px;
@@ -183,13 +206,15 @@ body {
     color: #000000;
 }
 
-/* Versión Móvil Responsive */
-@media (max-width: 850px) {
+/* Adaptación para pantallas móviles */
+@media (max-width: 900px) {
     body {
         padding: 20px;
     }
 
-    .header-grid {
+    .header-fixed {
+        position: relative;
+        padding: 0;
         grid-template-columns: 1fr;
         gap: 12px;
         margin-bottom: 40px;
@@ -199,9 +224,18 @@ body {
         display: none;
     }
 
-    .hero-section {
+    .portfolio-layout {
+        margin-top: 0;
+    }
+
+    .hero-block {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 24px;
+        margin-bottom: 50px;
+    }
+
+    .empty-col {
+        display: none;
     }
 
     .projects-grid {
