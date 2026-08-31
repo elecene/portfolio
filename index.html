@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
-    <!-- Vinculación directa con versión para evitar problemas de caché -->
-    <link rel="stylesheet" href="styles.css?v=1.0">
+    <link rel="stylesheet" href="styles.css?v=2.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Encabezado superior -->
-    <header class="header-grid">
+    <!-- Encabezado fijo y 100% transparente -->
+    <header class="header-fixed">
         <div class="col col-1">
-            <p class="txt-main">Luciano Castañón Estrada</p>
-            <p class="txt-sub">Brand Design & Art Direction</p>
+            <p class="txt-bold">Luciano Castañón Estrada</p>
+            <p class="txt-white">Brand Design & Art Direction</p>
         </div>
 
         <div class="col col-2">
-            <p class="txt-sub">Selected work</p>
-            <p class="txt-sub">2020 — 2026</p>
+            <p class="txt-white">Selected work</p>
+            <p class="txt-white">2020 — 2026</p>
         </div>
 
         <div class="col col-3">
-            <p><a href="mailto:elecene@gmail.com" class="link">→ elecene@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link">→ linkedin</a></p>
+            <p><a href="mailto:elecene@gmail.com" class="link-white">→ elecene@gmail.com</a></p>
+            <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link-white">→ linkedin</a></p>
         </div>
 
         <div class="col col-4">
@@ -34,61 +33,59 @@
         </div>
     </header>
 
-    <main class="portfolio-container">
+    <!-- Estructura alineada con sample_02 -->
+    <main class="portfolio-layout">
         
-        <!-- Sección Superior: Bio a la izquierda y Primer Proyecto a la derecha -->
-        <section class="hero-section">
-            <div class="hero-bio">
+        <!-- Bloque Hero: Bio al centro-izquierda + Proyecto destacado a la derecha -->
+        <section class="hero-block">
+            <div class="empty-col"></div>
+            
+            <div class="bio-container">
                 <p><strong>Luciano Castañón Estrada</strong> es un diseñador de marca y director de arte enfocado en construir identidades visuales, diseño editorial, motion graphics y contenido digital impactante. Colaborando con proyectos globales para transformar ideas en experiencias visuales memorables.</p>
             </div>
-            
-            <div class="hero-project">
-                <a href="#project-1" class="project-link">
+
+            <div class="hero-image">
+                <a href="#project-1">
                     <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" alt="Branding">
                 </a>
             </div>
         </section>
 
-        <!-- Mosaico Inferior de Proyectos (2 Columnas) -->
+        <!-- Mosaico Inferior de Proyectos -->
         <section class="projects-grid">
 
-            <!-- Proyecto 2 -->
-            <article class="project-card">
-                <p class="project-header">• Branding — Logo and Design System +</p>
-                <a href="#project-2" class="project-link">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop" alt="Branding">
+            <article class="project-item">
+                <p class="project-title">• Harry Potter — Logo and Design System +</p>
+                <a href="#project-2">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop" alt="Harry Potter">
                 </a>
             </article>
 
-            <!-- Proyecto 3 -->
-            <article class="project-card">
-                <p class="project-header">• Cover Art — Cover Design +</p>
-                <a href="#project-3" class="project-link">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" alt="Cover Art">
+            <article class="project-item">
+                <p class="project-title">• Android — Global Rebrand +</p>
+                <a href="#project-3">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" alt="Android">
                 </a>
             </article>
 
-            <!-- Proyecto 4 -->
-            <article class="project-card">
-                <p class="project-header">• Social Media — Digital Content +</p>
-                <a href="#project-4" class="project-link">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Social Media">
+            <article class="project-item">
+                <p class="project-title">• Adidas — Alpha Edge Design System +</p>
+                <a href="#project-4">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Adidas">
                 </a>
             </article>
 
-            <!-- Proyecto 5 -->
-            <article class="project-card">
-                <p class="project-header">• Motion — Visual Effects +</p>
-                <a href="#project-5" class="project-link">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" alt="Motion">
+            <article class="project-item">
+                <p class="project-title">• Editorial — Book & Print Design +</p>
+                <a href="#project-5">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" alt="Editorial">
                 </a>
             </article>
 
-            <!-- Proyecto 6 -->
-            <article class="project-card">
-                <p class="project-header">• Editorial — Print Design System +</p>
-                <a href="#project-6" class="project-link">
-                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop" alt="Editorial">
+            <article class="project-item">
+                <p class="project-title">• Social Media — Digital Content +</p>
+                <a href="#project-6">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop" alt="Social Media">
                 </a>
             </article>
 
@@ -96,7 +93,7 @@
 
     </main>
 
-    <!-- PÁGINAS INTERNAS DE CADA PROYECTO -->
+    <!-- MODALES / SECCIONES DE PROYECTO INDIVIDUAL -->
     <div id="project-1" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
@@ -112,8 +109,8 @@
     <div id="project-2" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Logo and Design System</h1>
-            <p class="modal-category">Branding / Identity</p>
+            <h1>Harry Potter — Logo and Design System</h1>
+            <p class="modal-category">Brand Identity</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop">
             </div>
@@ -124,8 +121,8 @@
     <div id="project-3" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Cover Design</h1>
-            <p class="modal-category">Cover Art / Graphic Design</p>
+            <h1>Android — Global Rebrand</h1>
+            <p class="modal-category">Global Identity</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop">
             </div>
@@ -136,8 +133,8 @@
     <div id="project-4" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Digital Content</h1>
-            <p class="modal-category">Social Media / Campaign</p>
+            <h1>Adidas — Alpha Edge Design System</h1>
+            <p class="modal-category">Design System</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop">
             </div>
@@ -148,8 +145,8 @@
     <div id="project-5" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Visual Effects</h1>
-            <p class="modal-category">Motion Graphics / 3D</p>
+            <h1>Editorial — Book & Print Design</h1>
+            <p class="modal-category">Editorial</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop">
             </div>
@@ -160,8 +157,8 @@
     <div id="project-6" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Print Design System</h1>
-            <p class="modal-category">Editorial / Art Direction</p>
+            <h1>Social Media — Digital Content</h1>
+            <p class="modal-category">Social Content</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop">
             </div>
