@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
-    <!-- Incrementamos la versión de la caché a v=3.0 -->
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <!-- Actualizado a la versión 4.0 para refrescar la caché -->
+    <link rel="stylesheet" href="styles.css?v=4.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
 
     <main class="portfolio-layout">
         
-        <!-- Bloque Hero: Columna vacía, Bio reducida + agrandada 3pt, Imagen derecha -->
+        <!-- Bloque Hero: Bio al doble de tamaño -->
         <section class="hero-block">
             <div class="empty-col"></div>
             
@@ -44,56 +44,75 @@
                 <p><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
             </div>
 
-            <div class="hero-image">
-                <a href="#project-1">
-                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" alt="Branding">
-                </a>
+            <div class="hero-image project-card">
+                <p class="project-title">• Branding — Logo and Design System +</p>
+                <div class="media-hover-wrapper">
+                    <div class="hover-description">
+                        <p>Visual identity and brand strategy focusing on modular design systems, custom typography, and multi-channel applications.</p>
+                    </div>
+                    <a href="#project-1" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" alt="Branding">
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Mosaico Inferior de Proyectos -->
+        <!-- Mosaico Asimétrico de Proyectos -->
         <section class="projects-grid">
 
-            <article class="project-item">
+            <article class="project-card card-wide">
                 <p class="project-title">• Harry Potter — Logo and Design System +</p>
-                <a href="#project-2">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop" alt="Harry Potter">
-                </a>
+                <div class="media-hover-wrapper">
+                    <div class="hover-description">
+                        <p>New logo and visual identity for Harry Potter. HBO is bringing the iconic story to a new generation, and we collaborated with them to reimagine one of the most recognizable logos in pop culture and create a fresh brand world for its magical universe.</p>
+                    </div>
+                    <a href="#project-2" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop" alt="Harry Potter">
+                    </a>
+                </div>
             </article>
 
-            <article class="project-item">
+            <article class="project-card card-narrow">
                 <p class="project-title">• Android — Global Rebrand +</p>
-                <a href="#project-3">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" alt="Android">
-                </a>
+                <div class="media-hover-wrapper">
+                    <div class="hover-description">
+                        <p>Global brand system redesign for Android, introducing updated 3D character assets and a dynamic color palette tailored for multi-device environments.</p>
+                    </div>
+                    <a href="#project-3" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" alt="Android">
+                    </a>
+                </div>
             </article>
 
-            <article class="project-item">
+            <article class="project-card card-narrow">
                 <p class="project-title">• Adidas — Alpha Edge Design System +</p>
-                <a href="#project-4">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Adidas">
-                </a>
+                <div class="media-hover-wrapper">
+                    <div class="hover-description">
+                        <p>Digital experience and identity system for Adidas Alpha Edge, blending futuristic sportswear aesthetics with high-performance typography.</p>
+                    </div>
+                    <a href="#project-4" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Adidas">
+                    </a>
+                </div>
             </article>
 
-            <article class="project-item">
+            <article class="project-card card-wide">
                 <p class="project-title">• Editorial — Book & Print Design +</p>
-                <a href="#project-5">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" alt="Editorial">
-                </a>
-            </article>
-
-            <article class="project-item">
-                <p class="project-title">• Social Media — Digital Content +</p>
-                <a href="#project-6">
-                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop" alt="Social Media">
-                </a>
+                <div class="media-hover-wrapper">
+                    <div class="hover-description">
+                        <p>Limited edition art publication and editorial layout design exploring grid balance, typography hierarchy, and tactile material finishes.</p>
+                    </div>
+                    <a href="#project-5" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" alt="Editorial">
+                    </a>
+                </div>
             </article>
 
         </section>
 
     </main>
 
-    <!-- MODALES / SECCIONES DE PROYECTO INDIVIDUAL -->
+    <!-- MODALES / VISTAS INDIVIDUALES -->
     <div id="project-1" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
@@ -149,18 +168,6 @@
             <p class="modal-category">Editorial</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop">
-            </div>
-            <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
-        </div>
-    </div>
-
-    <div id="project-6" class="project-modal">
-        <a href="#" class="close-modal">✕ Close</a>
-        <div class="modal-inner">
-            <h1>Social Media — Digital Content</h1>
-            <p class="modal-category">Social Content</p>
-            <div class="modal-images">
-                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop">
             </div>
             <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
