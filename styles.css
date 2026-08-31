@@ -12,14 +12,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Alineación exacta de 4 columnas */
+/* Header transparente y fijo */
 .header-fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: grid;
-    /* Ajuste de anchos para que la Columna 2 encaje al 100% con la bio */
     grid-template-columns: 280px 320px 1fr 40px;
     gap: 30px;
     padding: 30px 40px;
@@ -70,7 +69,7 @@ body {
     margin-top: 100px;
 }
 
-/* Hero alineado punto por punto con la cuadrícula del header */
+/* Bloque Hero: Texto al doble de tamaño (32px) */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr;
@@ -79,13 +78,12 @@ body {
     align-items: start;
 }
 
-/* Texto de la bio: tamaño incrementado en 3pt (de 13px a 16px) */
 .bio-container p {
-    font-size: 16px;
-    line-height: 1.45;
+    font-size: 32px; /* Tamaño duplicado */
+    line-height: 1.2;
     color: #ffffff !important;
     font-weight: 400;
-    opacity: 1 !important;
+    letter-spacing: -0.02em;
 }
 
 .bio-container strong {
@@ -93,28 +91,24 @@ body {
     font-weight: 500;
 }
 
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    transition: opacity 0.3s ease;
-}
-
-.hero-image img:hover {
-    opacity: 0.88;
-}
-
-/* Mosaico de Proyectos Inferior */
+/* Mosaico Asimétrico de Proyectos (111.jpg) */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 60px 40px;
 }
 
-.project-item {
+.project-card {
     display: flex;
     flex-direction: column;
+}
+
+.card-wide {
+    grid-column: span 2; /* Ocupa el doble de ancho */
+}
+
+.card-narrow {
+    grid-column: span 1;
 }
 
 .project-title {
@@ -122,10 +116,41 @@ body {
     color: #ffffff !important;
     margin-bottom: 14px;
     font-weight: 400;
-    opacity: 1 !important;
+    cursor: pointer;
 }
 
-.project-item img {
+/* Efecto de Texto Explicativo al pasar el cursor (222.jpg) */
+.media-hover-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.hover-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px 10px 0;
+    background-color: #000000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2;
+}
+
+.hover-description p {
+    font-size: 26px;
+    line-height: 1.25;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.project-link img {
     width: 100%;
     height: auto;
     border-radius: 8px;
@@ -133,8 +158,14 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.project-item img:hover {
-    opacity: 0.85;
+/* Al poner el cursor sobre la tarjeta o título, muestra el texto explicativo estilo 222.jpg */
+.project-card:hover .hover-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-card:hover .project-link img {
+    opacity: 0;
 }
 
 /* Modales */
@@ -207,7 +238,7 @@ body {
     color: #000000;
 }
 
-/* Versión Móvil */
+/* Versión Móvil Responsive */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -235,6 +266,10 @@ body {
         margin-bottom: 50px;
     }
 
+    .bio-container p {
+        font-size: 22px;
+    }
+
     .empty-col {
         display: none;
     }
@@ -242,5 +277,13 @@ body {
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .card-wide, .card-narrow {
+        grid-column: span 1;
+    }
+
+    .hover-description p {
+        font-size: 18px;
     }
 }
