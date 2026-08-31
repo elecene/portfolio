@@ -1,208 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --bg-color: #000000;
-    --text-primary: #ffffff;
-    --text-muted: #888888;
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-size-meta: 13px;
-}
-
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: var(--font-family);
-    padding: 24px;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 40px 50px;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Header superior exacto a la referencia */
-.top-bar {
+/* Encabezado en 4 columnas alineadas horizontalmente (Clón de la referencia) */
+.header-grid {
     display: grid;
-    grid-template-columns: 240px 180px 1fr 40px;
+    grid-template-columns: 280px 240px 1fr 40px;
     gap: 20px;
-    font-size: var(--font-size-meta);
-    line-height: 1.35;
-    margin-bottom: 80px;
-    position: sticky;
-    top: 24px;
-    z-index: 10;
-    background-color: var(--bg-color);
-    padding-bottom: 12px;
+    margin-bottom: 120px;
+    font-size: 13px;
+    line-height: 1.4;
 }
 
-.top-bar h1 {
-    font-size: var(--font-size-meta);
-    font-weight: 400;
-    color: var(--text-primary);
-}
-
-.subtitle, .year, .section-label {
-    color: var(--text-muted);
-}
-
-.col-3 {
-    display: flex;
-    flex-direction: column;
-}
-
-.link-item {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.link-item:hover {
-    opacity: 0.5;
-}
-
-.dot-indicator {
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin-left: auto;
-}
-
-/* Layout Principal */
-.main-layout {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 20px;
-}
-
-.work-section {
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
-}
-
-/* Tarjetas de Proyectos */
-.project-item {
-    width: 100%;
-}
-
-.media-container {
-    width: 100%;
-    background-color: #111;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.media-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.media-container:hover img {
-    transform: scale(1.015);
-}
-
-/* Bloque Bio inferior al estilo de referencia_2 */
-.bio-block {
-    margin-top: 60px;
-    max-width: 780px;
-    font-size: 32px;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
+.txt-main {
     color: #ffffff;
     font-weight: 400;
 }
 
-.bio-block strong {
-    font-weight: 500;
+.txt-sub {
+    color: #888888;
+    font-weight: 400;
 }
 
-/* Vistas de Proyecto Individual (Modales por CSS sin JavaScript) */
-.modal-view {
+.link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.link:hover {
+    opacity: 0.6;
+}
+
+.white-dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+/* Grilla principal con margen a la izquierda */
+.content-grid {
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 20px;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-card img:hover {
+    opacity: 0.85;
+}
+
+/* Texto inferior Bio */
+.hero-bio {
+    margin-top: 100px;
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    color: #ffffff;
+    max-width: 850px;
+}
+
+/* Modales de vista de proyecto individual */
+.project-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #000;
-    z-index: 100;
+    background-color: #000000;
+    z-index: 999;
     display: none;
     overflow-y: auto;
-    padding: 40px;
+    padding: 60px 50px;
 }
 
-.modal-view:target {
+.project-modal:target {
     display: block;
 }
 
-.close-btn {
+.close-modal {
     position: fixed;
-    top: 30px;
-    right: 40px;
-    color: #fff;
+    top: 40px;
+    right: 50px;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
-    background: rgba(255,255,255,0.1);
+    background: #1a1a1a;
     padding: 8px 16px;
     border-radius: 20px;
 }
 
-.modal-content {
+.modal-inner {
     max-width: 1000px;
-    margin: 60px auto 0;
+    margin: 40px auto;
 }
 
-.project-num {
-    color: var(--text-muted);
-    font-size: 13px;
-}
-
-.modal-content h2 {
-    font-size: 36px;
-    margin: 10px 0;
+.modal-inner h1 {
+    font-size: 32px;
     font-weight: 400;
+    margin-bottom: 8px;
 }
 
-.project-desc {
-    color: var(--text-muted);
-    font-size: 16px;
+.modal-category {
+    color: #888888;
+    font-size: 14px;
     margin-bottom: 40px;
 }
 
-.modal-gallery img {
+.modal-images img {
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
-.external-behance {
+.behance-btn {
     display: inline-block;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     border: 1px solid #333;
     padding: 12px 24px;
     border-radius: 4px;
+    font-size: 13px;
     margin-top: 20px;
-    font-size: 14px;
 }
 
-.external-behance:hover {
-    background: #fff;
-    color: #000;
+.behance-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
 }
 
-/* Responsive Móvil */
-@media (max-width: 800px) {
+/* Ajustes para Pantalla Móvil */
+@media (max-width: 900px) {
     body {
-        padding: 16px;
+        padding: 20px;
     }
 
-    .top-bar {
+    .header-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 16px;
         margin-bottom: 40px;
     }
 
@@ -210,15 +174,12 @@ body {
         display: none;
     }
 
-    .main-layout {
+    .content-grid {
         grid-template-columns: 1fr;
     }
 
-    .work-section {
-        gap: 60px;
-    }
-
-    .bio-block {
-        font-size: 20px;
+    .hero-bio {
+        font-size: 22px;
+        margin-top: 60px;
     }
 }
