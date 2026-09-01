@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Header transparente y fijo */
+/* Header Fijo y Transparente */
 .header-fixed {
     position: fixed;
     top: 0;
@@ -69,7 +69,7 @@ body {
     margin-top: 100px;
 }
 
-/* Hero Block */
+/* Bloque Hero: Bio a 32px */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr;
@@ -91,31 +91,33 @@ body {
     font-weight: 500;
 }
 
-/* Grilla de 3 Columnas de Mosaico (estilo ex1.jpg) */
-.projects-grid-3col {
+/* ESTRUCTURA MOSAICO 3 PROYECTOS POR BLOQUE (estilo ex1_2.jpg) */
+.mosaic-block {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px 40px;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 90px;
+    align-items: start;
+}
+
+.right-column-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 100%;
 }
 
-.card-span-2 {
-    grid-column: span 2;
-}
-
-.card-span-1 {
-    grid-column: span 1;
-}
-
-/* Título e interacción con texto descriptivo (estilo 222.jpg) */
+/* Títulos y Hover descriptivo sobre el texto */
 .title-container {
     margin-bottom: 14px;
     position: relative;
+    z-index: 5;
 }
 
 .project-title {
@@ -123,12 +125,12 @@ body {
     color: #ffffff !important;
     font-weight: 400;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    display: inline-block;
 }
 
 .title-description {
     position: absolute;
-    top: 35px;
+    top: 32px;
     left: 0;
     width: 100%;
     z-index: 10;
@@ -146,7 +148,7 @@ body {
     letter-spacing: -0.01em;
 }
 
-/* REGLA 1: Hover sobre el TÍTULO revela el texto descriptivo (222.jpg) y oculta la imagen */
+/* Hover en Título: Muestra descripción y oculta imagen */
 .title-container:hover .title-description {
     opacity: 1;
     visibility: visible;
@@ -157,14 +159,27 @@ body {
     visibility: hidden;
 }
 
-/* Contenedor de la Imagen e intercambio por foto alternativa */
+/* CONTENEDOR DE IMAGEN RIGIDO Y ESTABLE (Solución al cambio de tamaño) */
 .media-container {
     position: relative;
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #111111;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Proporciones rígidas según el tipo de ventana */
+.ratio-hero {
+    aspect-ratio: 16 / 10;
+}
+
+.ratio-landscape {
+    aspect-ratio: 16 / 9;
+}
+
+.ratio-standard {
+    aspect-ratio: 4 / 3;
 }
 
 .project-link {
@@ -175,20 +190,28 @@ body {
 
 .project-link img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 100%;
+    object-fit: cover; /* Mantiene la imagen ajustada perfectamente sin deformar ni cambiar alto */
     display: block;
+    border-radius: 8px;
     transition: opacity 0.4s ease;
+}
+
+.img-primary {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
 }
 
 .img-secondary {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
     opacity: 0;
 }
 
-/* REGLA 2: Hover sobre la IMAGEN cambia la foto por la secundaria alternativa */
+/* Hover sobre IMAGEN: Muestra la imagen alternativa manteniendo el tamaño rígido */
 .media-container:hover .img-primary {
     opacity: 0;
 }
@@ -267,7 +290,7 @@ body {
     color: #000000;
 }
 
-/* Versión Móvil */
+/* Adaptación Móvil */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -303,13 +326,9 @@ body {
         display: none;
     }
 
-    .projects-grid-3col {
+    .mosaic-block {
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-
-    .card-span-2, .card-span-1 {
-        grid-column: span 1;
     }
 
     .title-description p {
