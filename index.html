@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
-    <link rel="stylesheet" href="styles.css?v=7.0">
+    <link rel="stylesheet" href="styles.css?v=8.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Encabezado fijo sobre fondo transparente -->
     <header class="header-fixed">
         <div class="col col-1">
             <p class="txt-bold">Luciano Castañón Estrada</p>
@@ -35,7 +34,6 @@
 
     <main class="portfolio-layout">
         
-        <!-- Sección Hero -->
         <section class="hero-block">
             <div class="empty-col"></div>
             
@@ -43,28 +41,16 @@
                 <p><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
             </div>
 
-            <div class="hero-image project-card">
-                <div class="title-container">
-                    <p class="project-title">• Branding — Logo and Design System +</p>
-                    <div class="title-description">
-                        <p>Visual identity and brand strategy focusing on modular design systems, custom typography, and multi-channel applications.</p>
-                    </div>
-                </div>
-
-                <div class="media-container ratio-landscape">
-                    <a href="#project-1" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Branding Principal">
-                        <img src="https://images.unsplash.com/photo-1542744094-3a3172720177?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Branding Alternativa">
-                    </a>
+            <div class="reel-wrapper">
+                <div class="media-container ratio-16-9">
+                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" class="reel-media" alt="Showreel de trabajos">
                 </div>
             </div>
         </section>
 
-        <!-- Mosaico 1: 1 Proyecto Alto (Izquierda) vs 2 Apilados (Derecha) -->
         <section class="mosaic-grid">
             
-            <!-- Proyecto Izquierda (Ocupa el 100% de la altura alineado con la derecha) -->
-            <article class="project-card card-tall">
+            <article class="project-card">
                 <div class="title-container">
                     <p class="project-title">• Harry Potter — Logo and Design System +</p>
                     <div class="title-description">
@@ -72,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="media-container fill-height">
+                <div class="media-container ratio-16-9">
                     <a href="#project-2" class="project-link">
                         <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Harry Potter Principal">
                         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Harry Potter Alternativa">
@@ -80,7 +66,6 @@
                 </div>
             </article>
 
-            <!-- Columna Derecha: 2 Proyectos apilados -->
             <div class="stack-column">
                 
                 <article class="project-card">
@@ -91,7 +76,7 @@
                         </div>
                     </div>
 
-                    <div class="media-container ratio-standard">
+                    <div class="media-container ratio-16-9">
                         <a href="#project-3" class="project-link">
                             <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Android Principal">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Android Alternativa">
@@ -107,7 +92,7 @@
                         </div>
                     </div>
 
-                    <div class="media-container ratio-standard">
+                    <div class="media-container ratio-16-9">
                         <a href="#project-4" class="project-link">
                             <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Adidas Principal">
                             <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Adidas Alternativa">
@@ -119,11 +104,9 @@
 
         </section>
 
-        <!-- Mosaico 2: Invertido (2 Apilados a la Izquierda vs 1 Alto a la Derecha) -->
         <section class="mosaic-grid mosaic-reversed">
             
             <div class="stack-column">
-                
                 <article class="project-card">
                     <div class="title-container">
                         <p class="project-title">• Editorial — Book & Print Design +</p>
@@ -132,7 +115,7 @@
                         </div>
                     </div>
 
-                    <div class="media-container ratio-standard">
+                    <div class="media-container ratio-16-9">
                         <a href="#project-5" class="project-link">
                             <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Editorial Principal">
                             <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Editorial Alternativa">
@@ -148,17 +131,16 @@
                         </div>
                     </div>
 
-                    <div class="media-container ratio-standard">
+                    <div class="media-container ratio-16-9">
                         <a href="#project-6" class="project-link">
                             <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Motion Principal">
                             <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Motion Alternativa">
                         </a>
                     </div>
                 </article>
-
             </div>
 
-            <article class="project-card card-tall">
+            <article class="project-card">
                 <div class="title-container">
                     <p class="project-title">• Digital Art — Conceptual Series +</p>
                     <div class="title-description">
@@ -166,7 +148,7 @@
                     </div>
                 </div>
 
-                <div class="media-container fill-height">
+                <div class="media-container ratio-16-9">
                     <a href="#project-1" class="project-link">
                         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Digital Art Principal">
                         <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Digital Art Alternativa">
@@ -178,7 +160,6 @@
 
     </main>
 
-    <!-- MODALES / VISTAS INDIVIDUALES -->
     <div id="project-1" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
