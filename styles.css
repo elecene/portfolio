@@ -71,15 +71,15 @@ body {
 }
 
 .portfolio-layout {
-    margin-top: 85px;
+    margin-top: 105px; /* Bajado un poco más para descender el bloque Bio y Reel */
 }
 
-/* Hero Block */
+/* Hero Block: Bio + Reel perfectamente alineados */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr;
     gap: 30px;
-    margin-bottom: 20px; /* Reducido para pegarlo al mosaico */
+    margin-bottom: 50px; /* Mayor espacio de separación con el mosaico de abajo */
     align-items: start;
 }
 
@@ -108,16 +108,15 @@ body {
     border-radius: 6px;
 }
 
-/* MOSAICOS CON FLUJO CONTINUO EXACTO A 'REFFF.JPG' (16px constantes) */
+/* MOSAICOS Y RETÍCULA ASIMÉTRICA */
 .mosaic-tight-grid {
     display: grid;
     grid-template-columns: 1fr 1.85fr;
-    gap: 16px; /* Separación horizontal y vertical idéntica entre tarjetas */
-    margin-bottom: 16px; /* Espaciado ajustado para unir el bloque superior e inferior */
+    gap: 16px;
+    margin-bottom: 16px;
     align-items: stretch;
 }
 
-/* Inversión de columnas para Venu */
 .mosaic-reversed {
     grid-template-columns: 1.85fr 1fr;
     margin-bottom: 60px;
@@ -141,9 +140,9 @@ body {
     height: 100%;
 }
 
-/* Título pegado a la foto (6px a 8px) */
+/* Título e interacción hover sobre el texto (espacio aumentado a 12px) */
 .title-container {
-    margin-bottom: 6px;
+    margin-bottom: 12px; /* Mayor espacio entre el título y la imagen */
     position: relative;
     z-index: 5;
 }
@@ -159,7 +158,7 @@ body {
 
 .title-description {
     position: absolute;
-    top: 22px;
+    top: 28px;
     left: 0;
     width: 100%;
     z-index: 10;
@@ -198,7 +197,7 @@ body {
 }
 
 .fill-height {
-    height: calc(100% - 22px);
+    height: calc(100% - 28px);
     min-height: 380px;
 }
 
@@ -366,7 +365,7 @@ body {
     .hero-block {
         grid-template-columns: 1fr;
         gap: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .bio-container p {
