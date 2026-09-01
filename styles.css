@@ -61,7 +61,7 @@ body {
     opacity: 0.6 !important;
 }
 
-/* LÓGICA DE BOTÓN + / - DINÁMICO SEGÚN LA VISTA */
+/* BOTÓN DINÁMICO + / - */
 .toggle-about-btn {
     display: block;
     margin-left: auto;
@@ -78,7 +78,6 @@ body {
     opacity: 0.6;
 }
 
-/* Por defecto se muestra el símbolo + */
 .btn-plus {
     display: block;
 }
@@ -87,7 +86,7 @@ body {
     display: none;
 }
 
-/* Cuando la URL activa es #about, oculta el + y muestra el - */
+/* Conmuta a - únicamente en la vista #about */
 body:has(#about:target) .btn-plus {
     display: none;
 }
@@ -307,18 +306,18 @@ body:has(#about:target) .btn-minus {
     color: #000000;
 }
 
-/* MAQUETACIÓN ALINEADA DE LA SECCIÓN ABOUT (ejemplo_2.jpg) */
+/* MAQUETACIÓN ALINEADA DE LA SECCIÓN ABOUT (4 COLUMNAS SINCRONIZADAS) */
 .about-layout-grid {
     display: grid;
-    /* Alineación de columnas sincronizada con la cabecera */
-    grid-template-columns: 600px 240px 1fr;
+    grid-template-columns: 280px 320px 1fr 40px; /* Misma retícula que header-fixed */
     gap: 30px;
     align-items: start;
     width: 100%;
 }
 
 .about-col-left {
-    padding-right: 20px;
+    grid-column: span 2; /* Ocupa las dos primeras columnas */
+    padding-right: 40px;
 }
 
 .about-hero-text {
@@ -327,6 +326,10 @@ body:has(#about:target) .btn-minus {
     letter-spacing: -0.02em;
     color: #ffffff;
     font-weight: 400;
+}
+
+.about-col-mid {
+    grid-column: span 1; /* Alineado exactamente con la tercera columna (email/linkedin) */
 }
 
 .about-section-label {
@@ -354,10 +357,14 @@ body:has(#about:target) .btn-minus {
     font-weight: 400;
 }
 
+.about-col-right {
+    grid-column: span 1;
+}
+
 .clients-list {
     list-style: none;
     padding: 0;
-    margin-top: 0; /* Alineado superior con la lista de experiencia */
+    margin-top: 0;
 }
 
 .clients-list li {
@@ -476,6 +483,11 @@ body:has(#about:target) .btn-minus {
     .about-layout-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .about-col-left {
+        grid-column: span 1;
+        padding-right: 0;
     }
 
     .about-hero-text {
