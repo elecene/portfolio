@@ -8,7 +8,7 @@ body {
     background-color: #000000;
     color: #ffffff;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    padding: 30px 40px;
+    padding: 24px 30px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -21,7 +21,7 @@ body {
     display: grid;
     grid-template-columns: 280px 320px 1fr 40px;
     gap: 30px;
-    padding: 30px 40px;
+    padding: 24px 30px;
     font-size: 13px;
     line-height: 1.4;
     z-index: 100;
@@ -66,15 +66,15 @@ body {
 }
 
 .portfolio-layout {
-    margin-top: 100px;
+    margin-top: 85px;
 }
 
-/* Hero Block: Alineado superior perfecto entre Bio y el Reel */
+/* Hero Block */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr;
     gap: 30px;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     align-items: start;
 }
 
@@ -91,7 +91,6 @@ body {
     font-weight: 500;
 }
 
-/* Wrapper del Reel (sin título ni hover de texto) */
 .reel-wrapper {
     width: 100%;
 }
@@ -101,26 +100,30 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
-/* Mosaico de Proyectos */
-.mosaic-grid {
+/* MARGENES Y GAPS ESTRECHOS EXACTOS COMO LA REFERENCIA (12px de separación) */
+.mosaic-tight-grid {
     display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    gap: 40px;
-    margin-bottom: 90px;
-    align-items: start;
+    grid-template-columns: 1fr 1.85fr;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: stretch;
 }
 
-.mosaic-reversed {
-    grid-template-columns: 1fr 1.8fr;
+.mosaic-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 50px;
 }
 
 .stack-column {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 12px;
+    justify-content: space-between;
 }
 
 .project-card {
@@ -130,24 +133,29 @@ body {
     width: 100%;
 }
 
-/* Títulos e Interacción de Texto (222.jpg) */
+.card-large {
+    height: 100%;
+}
+
+/* Título ajustado al borde de la foto (6px de separación) */
 .title-container {
-    margin-bottom: 14px;
+    margin-bottom: 6px;
     position: relative;
     z-index: 5;
 }
 
 .project-title {
-    font-size: 14px;
+    font-size: 13px;
     color: #ffffff !important;
     font-weight: 400;
     cursor: pointer;
     display: inline-block;
+    letter-spacing: -0.01em;
 }
 
 .title-description {
     position: absolute;
-    top: 32px;
+    top: 24px;
     left: 0;
     width: 100%;
     z-index: 10;
@@ -158,14 +166,14 @@ body {
 }
 
 .title-description p {
-    font-size: 24px;
-    line-height: 1.25;
+    font-size: 22px;
+    line-height: 1.2;
     color: #ffffff;
     font-weight: 400;
     letter-spacing: -0.01em;
 }
 
-/* Hover sobre Título: Muestra descripción y oculta imagen */
+/* Hover en Título: Muestra descripción y oculta foto */
 .title-container:hover .title-description {
     opacity: 1;
     visibility: visible;
@@ -176,14 +184,19 @@ body {
     visibility: hidden;
 }
 
-/* PROPORCIÓN FIX 16:9 ESTABLE */
+/* CONTENEDOR DE IMAGEN RIGIDO */
 .media-container {
     position: relative;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     background-color: #111111;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.fill-height {
+    height: calc(100% - 22px); /* Se ajusta exactamente al alto de los 2 apilados restando la altura del título */
+    min-height: 380px;
 }
 
 .ratio-16-9 {
@@ -201,7 +214,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: opacity 0.4s ease;
 }
 
@@ -219,7 +232,7 @@ body {
     opacity: 0;
 }
 
-/* Hover sobre Imagen: Muestra imagen alternativa */
+/* Hover en Imagen: Muestra la secundaria */
 .media-container:hover .img-primary {
     opacity: 0;
 }
@@ -298,7 +311,7 @@ body {
     color: #000000;
 }
 
-/* Responsive */
+/* Adaptación Móvil */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -309,7 +322,7 @@ body {
         padding: 0;
         grid-template-columns: 1fr;
         gap: 12px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .col-4 {
@@ -322,8 +335,8 @@ body {
 
     .hero-block {
         grid-template-columns: 1fr;
-        gap: 24px;
-        margin-bottom: 50px;
+        gap: 20px;
+        margin-bottom: 30px;
     }
 
     .bio-container p {
@@ -334,9 +347,15 @@ body {
         display: none;
     }
 
-    .mosaic-grid, .mosaic-reversed {
+    .mosaic-tight-grid, .mosaic-row-3 {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
+    }
+
+    .fill-height {
+        aspect-ratio: 16 / 9;
+        height: auto;
+        min-height: auto;
     }
 
     .title-description p {
