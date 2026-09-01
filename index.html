@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
-    <!-- Incrementamos versión a v=6.0 para romper la caché del navegador -->
-    <link rel="stylesheet" href="styles.css?v=6.0">
+    <link rel="stylesheet" href="styles.css?v=7.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -36,7 +35,7 @@
 
     <main class="portfolio-layout">
         
-        <!-- Sección Superior: Bio a 32px + Proyecto destacado -->
+        <!-- Sección Hero -->
         <section class="hero-block">
             <div class="empty-col"></div>
             
@@ -61,11 +60,11 @@
             </div>
         </section>
 
-        <!-- Bloque Mosaico 1 (3 Proyectos: 1 Grande a la izquierda + 2 Apilados a la derecha - estilo ex1_2.jpg) -->
-        <section class="mosaic-block">
+        <!-- Mosaico 1: 1 Proyecto Alto (Izquierda) vs 2 Apilados (Derecha) -->
+        <section class="mosaic-grid">
             
-            <!-- Proyecto 1 (Ocupa la columna grande izquierda) -->
-            <article class="project-card project-large">
+            <!-- Proyecto Izquierda (Ocupa el 100% de la altura alineado con la derecha) -->
+            <article class="project-card card-tall">
                 <div class="title-container">
                     <p class="project-title">• Harry Potter — Logo and Design System +</p>
                     <div class="title-description">
@@ -73,7 +72,7 @@
                     </div>
                 </div>
 
-                <div class="media-container ratio-hero">
+                <div class="media-container fill-height">
                     <a href="#project-2" class="project-link">
                         <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Harry Potter Principal">
                         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Harry Potter Alternativa">
@@ -81,10 +80,9 @@
                 </div>
             </article>
 
-            <!-- Columna Derecha con 2 Proyectos apilados -->
-            <div class="right-column-stack">
+            <!-- Columna Derecha: 2 Proyectos apilados -->
+            <div class="stack-column">
                 
-                <!-- Proyecto 2 (Arriba derecha) -->
                 <article class="project-card">
                     <div class="title-container">
                         <p class="project-title">• Android — Global Rebrand +</p>
@@ -101,7 +99,6 @@
                     </div>
                 </article>
 
-                <!-- Proyecto 3 (Abajo derecha) -->
                 <article class="project-card">
                     <div class="title-container">
                         <p class="project-title">• Adidas — Alpha Edge Design System +</p>
@@ -122,10 +119,11 @@
 
         </section>
 
-        <!-- Bloque Mosaico 2 (Siguientes 3 proyectos invertidos) -->
-        <section class="mosaic-block">
+        <!-- Mosaico 2: Invertido (2 Apilados a la Izquierda vs 1 Alto a la Derecha) -->
+        <section class="mosaic-grid mosaic-reversed">
             
-            <div class="right-column-stack">
+            <div class="stack-column">
+                
                 <article class="project-card">
                     <div class="title-container">
                         <p class="project-title">• Editorial — Book & Print Design +</p>
@@ -157,9 +155,10 @@
                         </a>
                     </div>
                 </article>
+
             </div>
 
-            <article class="project-card project-large">
+            <article class="project-card card-tall">
                 <div class="title-container">
                     <p class="project-title">• Digital Art — Conceptual Series +</p>
                     <div class="title-description">
@@ -167,7 +166,7 @@
                     </div>
                 </div>
 
-                <div class="media-container ratio-hero">
+                <div class="media-container fill-height">
                     <a href="#project-1" class="project-link">
                         <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Digital Art Principal">
                         <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Digital Art Alternativa">
@@ -179,7 +178,7 @@
 
     </main>
 
-    <!-- MODALES / SECCIONES DE PROYECTO INDIVIDUAL -->
+    <!-- MODALES / VISTAS INDIVIDUALES -->
     <div id="project-1" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
