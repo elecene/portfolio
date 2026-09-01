@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
-    <link rel="stylesheet" href="styles.css?v=8.0">
+    <!-- Versión v=9.0 para refrescar la caché -->
+    <link rel="stylesheet" href="styles.css?v=9.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Encabezado fijo sobre fondo transparente -->
     <header class="header-fixed">
         <div class="col col-1">
             <p class="txt-bold">Luciano Castañón Estrada</p>
@@ -34,6 +36,7 @@
 
     <main class="portfolio-layout">
         
+        <!-- Bloque Hero: Bio + Reel -->
         <section class="hero-block">
             <div class="empty-col"></div>
             
@@ -41,6 +44,7 @@
                 <p><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
             </div>
 
+            <!-- Reel de muestra sin título ni enlace -->
             <div class="reel-wrapper">
                 <div class="media-container ratio-16-9">
                     <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" class="reel-media" alt="Showreel de trabajos">
@@ -48,110 +52,110 @@
             </div>
         </section>
 
-        <section class="mosaic-grid">
+        <!-- Mosaico 1: Espaciado estrecho estilo Hugo Ferradas -->
+        <section class="mosaic-tight-grid">
             
-            <article class="project-card">
+            <!-- Columna Izquierda Apilada (2 Proyectos) -->
+            <div class="stack-column">
+                <article class="project-card">
+                    <div class="title-container">
+                        <p class="project-title">• BSF — Brand Identity +</p>
+                        <div class="title-description">
+                            <p>Visual identity and brand system for BSF, creating flexible digital brand guidelines and visual touchpoints.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container ratio-16-9">
+                        <a href="#project-1" class="project-link">
+                            <img src="https://images.unsplash.com/photo-1542744094-3a3172720177?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="BSF Principal">
+                            <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="BSF Alternativa">
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="title-container">
+                        <p class="project-title">• Enterprise Mobility — Brand Identity +</p>
+                        <div class="title-description">
+                            <p>Comprehensive design architecture and brand evolution for global mobility solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="media-container ratio-16-9">
+                        <a href="#project-2" class="project-link">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Enterprise Principal">
+                            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Enterprise Alternativa">
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Proyecto Grande Derecha (FOX ONE) -->
+            <article class="project-card card-large">
                 <div class="title-container">
-                    <p class="project-title">• Harry Potter — Logo and Design System +</p>
+                    <p class="project-title">• FOX ONE — Brand Identity +</p>
                     <div class="title-description">
-                        <p>New logo and visual identity for Harry Potter. HBO is bringing the iconic story to a new generation, and we collaborated with them to reimagine one of the most recognizable logos in pop culture and create a fresh brand world for its magical universe.</p>
+                        <p>Complete rebrand and global motion identity for FOX ONE streaming platform, crafting bespoke typographic systems and dynamic broadcast graphics.</p>
                     </div>
                 </div>
 
-                <div class="media-container ratio-16-9">
-                    <a href="#project-2" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Harry Potter Principal">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Harry Potter Alternativa">
+                <div class="media-container fill-height">
+                    <a href="#project-3" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="FOX ONE Principal">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="FOX ONE Alternativa">
                     </a>
                 </div>
             </article>
 
-            <div class="stack-column">
-                
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title">• Android — Global Rebrand +</p>
-                        <div class="title-description">
-                            <p>Global brand system redesign for Android, introducing updated 3D character assets and a dynamic color palette tailored for multi-device environments.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#project-3" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Android Principal">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Android Alternativa">
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title">• Adidas — Alpha Edge Design System +</p>
-                        <div class="title-description">
-                            <p>Digital experience and identity system for Adidas Alpha Edge, blending futuristic sportswear aesthetics with high-performance typography.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#project-4" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Adidas Principal">
-                            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Adidas Alternativa">
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-
         </section>
 
-        <section class="mosaic-grid mosaic-reversed">
+        <!-- Mosaico 2: Fila de 3 elementos ajustados -->
+        <section class="mosaic-row-3">
             
-            <div class="stack-column">
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title">• Editorial — Book & Print Design +</p>
-                        <div class="title-description">
-                            <p>Limited edition art publication and editorial layout design exploring grid balance, typography hierarchy, and tactile material finishes.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#project-5" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Editorial Principal">
-                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Editorial Alternativa">
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title">• Motion — 3D Visual Effects +</p>
-                        <div class="title-description">
-                            <p>3D animation, kinetic typography, and motion design systems for broadcast and digital installations.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#project-6" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Motion Principal">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Motion Alternativa">
-                        </a>
-                    </div>
-                </article>
-            </div>
-
             <article class="project-card">
                 <div class="title-container">
-                    <p class="project-title">• Digital Art — Conceptual Series +</p>
+                    <p class="project-title">• Venu — Brand Identity +</p>
                     <div class="title-description">
-                        <p>Experimental digital artworks, visual explorations, and graphic design concepts produced for exhibitions and digital releases.</p>
+                        <p>Visual experience, packaging and brand strategy for Venu interactive venues.</p>
                     </div>
                 </div>
 
                 <div class="media-container ratio-16-9">
-                    <a href="#project-1" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Digital Art Principal">
-                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Digital Art Alternativa">
+                    <a href="#project-4" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Venu Principal">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Venu Alternativa">
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="title-container">
+                    <p class="project-title">• Pio — Brand Identity +</p>
+                    <div class="title-description">
+                        <p>Minimalist art direction and tactile identity system exploring stone textures and print finishes.</p>
+                    </div>
+                </div>
+
+                <div class="media-container ratio-16-9">
+                    <a href="#project-5" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Pio Principal">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Pio Alternativa">
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="title-container">
+                    <p class="project-title">• Eurosport — Design System +</p>
+                    <div class="title-description">
+                        <p>Broadcast package, motion design guidelines and sports graphic architecture for Eurosport network.</p>
+                    </div>
+                </div>
+
+                <div class="media-container ratio-16-9">
+                    <a href="#project-6" class="project-link">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Eurosport Principal">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Eurosport Alternativa">
                     </a>
                 </div>
             </article>
@@ -160,13 +164,14 @@
 
     </main>
 
+    <!-- MODALES DE VISTA DETALLADA -->
     <div id="project-1" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Branding & Identidad Visual</h1>
+            <h1>BSF — Brand Identity</h1>
             <p class="modal-category">Brand Identity / Design System</p>
             <div class="modal-images">
-                <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1600&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1542744094-3a3172720177?q=80&w=1600&auto=format&fit=crop">
             </div>
             <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
@@ -175,10 +180,10 @@
     <div id="project-2" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Harry Potter — Logo and Design System</h1>
-            <p class="modal-category">Brand Identity</p>
+            <h1>Enterprise Mobility</h1>
+            <p class="modal-category">Brand Strategy</p>
             <div class="modal-images">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop">
             </div>
             <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
@@ -187,10 +192,10 @@
     <div id="project-3" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Android — Global Rebrand</h1>
-            <p class="modal-category">Global Identity</p>
+            <h1>FOX ONE — Brand Identity</h1>
+            <p class="modal-category">Rebrand & Broadcast</p>
             <div class="modal-images">
-                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop">
             </div>
             <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
@@ -199,10 +204,10 @@
     <div id="project-4" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Adidas — Alpha Edge Design System</h1>
-            <p class="modal-category">Design System</p>
+            <h1>Venu — Brand Identity</h1>
+            <p class="modal-category">Identity / Packaging</p>
             <div class="modal-images">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop">
             </div>
             <a href="https://www.behance.net/castanonluciano" target="_blank" class="behance-btn">View full project on Behance ↗</a>
         </div>
@@ -211,8 +216,8 @@
     <div id="project-5" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Editorial — Book & Print Design</h1>
-            <p class="modal-category">Editorial</p>
+            <h1>Pio — Brand Identity</h1>
+            <p class="modal-category">Art Direction</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop">
             </div>
@@ -223,8 +228,8 @@
     <div id="project-6" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
-            <h1>Motion — 3D Visual Effects</h1>
-            <p class="modal-category">Motion Graphics</p>
+            <h1>Eurosport — Design System</h1>
+            <p class="modal-category">Motion System</p>
             <div class="modal-images">
                 <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop">
             </div>
