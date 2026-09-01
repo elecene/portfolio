@@ -142,7 +142,7 @@ body {
     height: 100%;
 }
 
-/* Título y Hover descriptivo sobre el texto */
+/* Títulos y Hover descriptivo sobre el texto */
 .title-container {
     margin-bottom: 6px;
     position: relative;
@@ -244,7 +244,7 @@ body {
     opacity: 1;
 }
 
-/* ESTILOS VISTA DE PROYECTO (CALCADO A REFERENCIA 'REFF') */
+/* VISTA DETALLADA DE PROYECTO (Exacto a referencia 'reff') */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -262,7 +262,6 @@ body {
     display: block;
 }
 
-/* Botón flotante Close sutil */
 .close-project-btn {
     position: fixed;
     bottom: 30px;
@@ -286,7 +285,6 @@ body {
 
 .project-detail-container {
     width: 100%;
-    max-width: 100%;
 }
 
 /* Ficha descriptiva en 4 columnas alineadas exactamente con la cabecera */
@@ -320,15 +318,15 @@ body {
     font-weight: 400;
 }
 
-/* Párrafo de la descripción del proyecto */
+/* Párrafo descriptivo */
 .project-description-hero {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     max-width: 1100px;
 }
 
 .project-description-hero p {
     font-size: 32px;
-    line-height: 1.25;
+    line-height: 1.22;
     letter-spacing: -0.02em;
     color: #ffffff;
     font-weight: 400;
