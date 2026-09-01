@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER PERMANENTE FIJO */
+/* HEADER PERMANENTE FIJO CON FONDO NEGRO PROTECTOR (Evita superposición de texto) */
 .header-fixed {
     position: fixed;
     top: 0;
@@ -25,8 +25,9 @@ body {
     font-size: 13px;
     line-height: 1.4;
     z-index: 1000;
-    background: transparent;
-    pointer-events: none;
+    background: rgba(0, 0, 0, 0.92); /* Fondo protector semi-transparente */
+    backdrop-filter: blur(12px); /* Difuminado sutil para tapar el contenido inferior */
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .header-fixed .col {
@@ -67,7 +68,7 @@ body {
     margin-left: auto;
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 1;
     text-align: right;
@@ -96,7 +97,7 @@ body:has(#about:target) .btn-minus {
 }
 
 .portfolio-layout {
-    margin-top: 105px;
+    margin-top: 110px;
 }
 
 /* Hero Block */
@@ -278,7 +279,7 @@ body:has(#about:target) .btn-minus {
     z-index: 900;
     display: none;
     overflow-y: auto;
-    padding: 130px 30px 60px 30px;
+    padding: 140px 30px 60px 30px; /* Relleno amplio para librar la cabecera fija */
 }
 
 .project-view-page:target {
@@ -306,10 +307,9 @@ body:has(#about:target) .btn-minus {
     color: #000000;
 }
 
-/* MAQUETACIÓN CORREGIDA DE LA SECCIÓN ABOUT (Captura 14.58.32) */
+/* MAQUETACIÓN DE LA SECCIÓN ABOUT */
 .about-layout-grid {
     display: grid;
-    /* 630px para la Bio, 280px para Experience (alineado con la col 3 de la cabecera) y 1fr para las marcas bien visibles */
     grid-template-columns: 630px 280px 1fr;
     gap: 40px;
     align-items: start;
@@ -359,7 +359,7 @@ body:has(#about:target) .btn-minus {
 
 .about-col-right {
     width: 100%;
-    padding-left: 10px; /* Pegado y alineado con la columna de experiencia */
+    padding-left: 10px;
 }
 
 .clients-list {
@@ -374,7 +374,7 @@ body:has(#about:target) .btn-minus {
     color: #ffffff;
     font-weight: 400;
     letter-spacing: -0.01em;
-    white-space: nowrap; /* Impide saltos de línea extraños en nombres de marcas */
+    white-space: nowrap;
 }
 
 /* Detalle de proyecto normal */
@@ -437,7 +437,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* Responsive */
+/* ADAPTACIÓN RESPONSIVE (INCLUYENDO SOPORTE MÓVIL) */
 @media (max-width: 1100px) {
     .about-layout-grid {
         grid-template-columns: 1fr 1fr;
@@ -452,23 +452,31 @@ body:has(#about:target) .btn-minus {
 
 @media (max-width: 900px) {
     body {
-        padding: 20px;
+        padding: 16px 20px;
     }
 
     .header-fixed {
-        position: relative;
-        padding: 0;
-        grid-template-columns: 1fr;
+        position: fixed;
+        padding: 16px 20px;
+        grid-template-columns: 1fr 40px; /* Columna principal + Botón + */
         gap: 12px;
-        margin-bottom: 30px;
     }
 
-    .col-4 {
-        display: none;
+    .header-fixed .col-2,
+    .header-fixed .col-3 {
+        display: none; /* Oculta los datos secundarios del header para no saturar el móvil */
+    }
+
+    .header-fixed .col-4 {
+        display: block; /* Mantiene visible el botón + en móviles */
+    }
+
+    .toggle-about-btn {
+        font-size: 24px;
     }
 
     .portfolio-layout {
-        margin-top: 0;
+        margin-top: 80px;
     }
 
     .hero-block {
@@ -491,7 +499,7 @@ body:has(#about:target) .btn-minus {
     }
 
     .project-view-page {
-        padding-top: 40px;
+        padding-top: 90px;
     }
 
     .about-layout-grid {
