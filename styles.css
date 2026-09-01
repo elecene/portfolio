@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER PERMANENTE FIJO CON FONDO NEGRO PROTECTOR (Evita superposición de texto) */
+/* HEADER PERMANENTE FIJO TRANSPARENTE */
 .header-fixed {
     position: fixed;
     top: 0;
@@ -25,9 +25,8 @@ body {
     font-size: 13px;
     line-height: 1.4;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.92); /* Fondo protector semi-transparente */
-    backdrop-filter: blur(12px); /* Difuminado sutil para tapar el contenido inferior */
-    -webkit-backdrop-filter: blur(12px);
+    background: transparent;
+    pointer-events: none;
 }
 
 .header-fixed .col {
@@ -279,7 +278,7 @@ body:has(#about:target) .btn-minus {
     z-index: 900;
     display: none;
     overflow-y: auto;
-    padding: 140px 30px 60px 30px; /* Relleno amplio para librar la cabecera fija */
+    padding: 140px 30px 60px 30px; /* Relleno superior limpio para librar el header transparente */
 }
 
 .project-view-page:target {
@@ -437,7 +436,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* ADAPTACIÓN RESPONSIVE (INCLUYENDO SOPORTE MÓVIL) */
+/* ADAPTACIÓN RESPONSIVE (SINCRONIZACIÓN PERFECTA EN MÓVIL) */
 @media (max-width: 1100px) {
     .about-layout-grid {
         grid-template-columns: 1fr 1fr;
@@ -452,31 +451,31 @@ body:has(#about:target) .btn-minus {
 
 @media (max-width: 900px) {
     body {
-        padding: 16px 20px;
+        padding: 20px; /* Margen constante en móvil */
     }
 
     .header-fixed {
         position: fixed;
-        padding: 16px 20px;
-        grid-template-columns: 1fr 40px; /* Columna principal + Botón + */
+        padding: 20px;
+        grid-template-columns: 1fr 40px;
         gap: 12px;
     }
 
     .header-fixed .col-2,
     .header-fixed .col-3 {
-        display: none; /* Oculta los datos secundarios del header para no saturar el móvil */
+        display: none;
     }
 
     .header-fixed .col-4 {
-        display: block; /* Mantiene visible el botón + en móviles */
+        display: block;
     }
 
     .toggle-about-btn {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .portfolio-layout {
-        margin-top: 80px;
+        margin-top: 100px;
     }
 
     .hero-block {
@@ -499,7 +498,7 @@ body:has(#about:target) .btn-minus {
     }
 
     .project-view-page {
-        padding-top: 90px;
+        padding: 130px 20px 60px 20px; /* Sincronizado exactamente con el padding del body móvil */
     }
 
     .about-layout-grid {
@@ -509,6 +508,7 @@ body:has(#about:target) .btn-minus {
 
     .about-col-left {
         grid-column: span 1;
+        padding-right: 0;
     }
 
     .about-hero-text {
