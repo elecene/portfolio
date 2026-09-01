@@ -61,25 +61,39 @@ body {
     opacity: 0.6 !important;
 }
 
-/* Punto interactivo de la cabecera */
-.white-dot-btn {
+/* LÓGICA DE BOTÓN + / - DINÁMICO SEGÚN LA VISTA */
+.toggle-about-btn {
     display: block;
     margin-left: auto;
     text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: right;
+    transition: opacity 0.2s ease;
 }
 
-.white-dot {
+.toggle-about-btn:hover {
+    opacity: 0.6;
+}
+
+/* Por defecto se muestra el símbolo + */
+.btn-plus {
     display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.white-dot-btn:hover .white-dot {
-    transform: scale(1.3);
-    opacity: 0.8;
+.btn-minus {
+    display: none;
+}
+
+/* Cuando la URL activa es #about, oculta el + y muestra el - */
+body:has(#about:target) .btn-plus {
+    display: none;
+}
+
+body:has(#about:target) .btn-minus {
+    display: block;
 }
 
 .portfolio-layout {
@@ -293,13 +307,18 @@ body {
     color: #000000;
 }
 
-/* MAQUETACIÓN DE LA SECCIÓN ABOUT (ejemplo_2.jpg) */
+/* MAQUETACIÓN ALINEADA DE LA SECCIÓN ABOUT (ejemplo_2.jpg) */
 .about-layout-grid {
     display: grid;
-    grid-template-columns: 600px 300px 1fr;
-    gap: 40px;
+    /* Alineación de columnas sincronizada con la cabecera */
+    grid-template-columns: 600px 240px 1fr;
+    gap: 30px;
     align-items: start;
     width: 100%;
+}
+
+.about-col-left {
+    padding-right: 20px;
 }
 
 .about-hero-text {
@@ -338,7 +357,7 @@ body {
 .clients-list {
     list-style: none;
     padding: 0;
-    margin-top: 50px;
+    margin-top: 0; /* Alineado superior con la lista de experiencia */
 }
 
 .clients-list li {
