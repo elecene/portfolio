@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
-    <!-- Actualizado a la versión 4.0 para refrescar la caché -->
-    <link rel="stylesheet" href="styles.css?v=4.0">
+    <link rel="stylesheet" href="styles.css?v=5.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Encabezado fijo y transparente -->
     <header class="header-fixed">
         <div class="col col-1">
             <p class="txt-bold">Luciano Castañón Estrada</p>
@@ -36,7 +34,6 @@
 
     <main class="portfolio-layout">
         
-        <!-- Bloque Hero: Bio al doble de tamaño -->
         <section class="hero-block">
             <div class="empty-col"></div>
             
@@ -45,65 +42,84 @@
             </div>
 
             <div class="hero-image project-card">
-                <p class="project-title">• Branding — Logo and Design System +</p>
-                <div class="media-hover-wrapper">
-                    <div class="hover-description">
+                <div class="title-container">
+                    <p class="project-title">• Branding — Logo and Design System +</p>
+                    <div class="title-description">
                         <p>Visual identity and brand strategy focusing on modular design systems, custom typography, and multi-channel applications.</p>
                     </div>
+                </div>
+
+                <div class="media-container">
                     <a href="#project-1" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" alt="Branding">
+                        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Branding Principal">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a3172720177?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Branding Alternativa">
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Mosaico Asimétrico de Proyectos -->
-        <section class="projects-grid">
+        <section class="projects-grid-3col">
 
-            <article class="project-card card-wide">
-                <p class="project-title">• Harry Potter — Logo and Design System +</p>
-                <div class="media-hover-wrapper">
-                    <div class="hover-description">
+            <article class="project-card card-span-2">
+                <div class="title-container">
+                    <p class="project-title">• Harry Potter — Logo and Design System +</p>
+                    <div class="title-description">
                         <p>New logo and visual identity for Harry Potter. HBO is bringing the iconic story to a new generation, and we collaborated with them to reimagine one of the most recognizable logos in pop culture and create a fresh brand world for its magical universe.</p>
                     </div>
+                </div>
+
+                <div class="media-container">
                     <a href="#project-2" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop" alt="Harry Potter">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Harry Potter Principal">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Harry Potter Alternativa">
                     </a>
                 </div>
             </article>
 
-            <article class="project-card card-narrow">
-                <p class="project-title">• Android — Global Rebrand +</p>
-                <div class="media-hover-wrapper">
-                    <div class="hover-description">
+            <article class="project-card card-span-1">
+                <div class="title-container">
+                    <p class="project-title">• Android — Global Rebrand +</p>
+                    <div class="title-description">
                         <p>Global brand system redesign for Android, introducing updated 3D character assets and a dynamic color palette tailored for multi-device environments.</p>
                     </div>
+                </div>
+
+                <div class="media-container">
                     <a href="#project-3" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" alt="Android">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Android Principal">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Android Alternativa">
                     </a>
                 </div>
             </article>
 
-            <article class="project-card card-narrow">
-                <p class="project-title">• Adidas — Alpha Edge Design System +</p>
-                <div class="media-hover-wrapper">
-                    <div class="hover-description">
+            <article class="project-card card-span-1">
+                <div class="title-container">
+                    <p class="project-title">• Adidas — Alpha Edge Design System +</p>
+                    <div class="title-description">
                         <p>Digital experience and identity system for Adidas Alpha Edge, blending futuristic sportswear aesthetics with high-performance typography.</p>
                     </div>
+                </div>
+
+                <div class="media-container">
                     <a href="#project-4" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="Adidas">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Adidas Principal">
+                        <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Adidas Alternativa">
                     </a>
                 </div>
             </article>
 
-            <article class="project-card card-wide">
-                <p class="project-title">• Editorial — Book & Print Design +</p>
-                <div class="media-hover-wrapper">
-                    <div class="hover-description">
+            <article class="project-card card-span-2">
+                <div class="title-container">
+                    <p class="project-title">• Editorial — Book & Print Design +</p>
+                    <div class="title-description">
                         <p>Limited edition art publication and editorial layout design exploring grid balance, typography hierarchy, and tactile material finishes.</p>
                     </div>
+                </div>
+
+                <div class="media-container">
                     <a href="#project-5" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" alt="Editorial">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Editorial Principal">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Editorial Alternativa">
                     </a>
                 </div>
             </article>
@@ -112,7 +128,6 @@
 
     </main>
 
-    <!-- MODALES / VISTAS INDIVIDUALES -->
     <div id="project-1" class="project-modal">
         <a href="#" class="close-modal">✕ Close</a>
         <div class="modal-inner">
