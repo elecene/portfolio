@@ -69,7 +69,7 @@ body {
     margin-top: 100px;
 }
 
-/* Bloque Hero: Texto al doble de tamaño (32px) */
+/* Hero Block */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr;
@@ -79,7 +79,7 @@ body {
 }
 
 .bio-container p {
-    font-size: 32px; /* Tamaño duplicado */
+    font-size: 32px;
     line-height: 1.2;
     color: #ffffff !important;
     font-weight: 400;
@@ -91,8 +91,8 @@ body {
     font-weight: 500;
 }
 
-/* Mosaico Asimétrico de Proyectos (111.jpg) */
-.projects-grid {
+/* Grilla de 3 Columnas de Mosaico (estilo ex1.jpg) */
+.projects-grid-3col {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px 40px;
@@ -101,48 +101,44 @@ body {
 .project-card {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-.card-wide {
-    grid-column: span 2; /* Ocupa el doble de ancho */
+.card-span-2 {
+    grid-column: span 2;
 }
 
-.card-narrow {
+.card-span-1 {
     grid-column: span 1;
+}
+
+/* Título e interacción con texto descriptivo (estilo 222.jpg) */
+.title-container {
+    margin-bottom: 14px;
+    position: relative;
 }
 
 .project-title {
     font-size: 14px;
     color: #ffffff !important;
-    margin-bottom: 14px;
     font-weight: 400;
     cursor: pointer;
+    transition: opacity 0.2s ease;
 }
 
-/* Efecto de Texto Explicativo al pasar el cursor (222.jpg) */
-.media-hover-wrapper {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #000000;
-}
-
-.hover-description {
+.title-description {
     position: absolute;
-    top: 0;
+    top: 35px;
     left: 0;
     width: 100%;
-    height: 100%;
-    padding: 10px 20px 10px 0;
-    background-color: #000000;
+    z-index: 10;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 2;
+    pointer-events: none;
 }
 
-.hover-description p {
+.title-description p {
     font-size: 26px;
     line-height: 1.25;
     color: #ffffff;
@@ -150,22 +146,55 @@ body {
     letter-spacing: -0.01em;
 }
 
+/* REGLA 1: Hover sobre el TÍTULO revela el texto descriptivo (222.jpg) y oculta la imagen */
+.title-container:hover .title-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-card:has(.title-container:hover) .media-container {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Contenedor de la Imagen e intercambio por foto alternativa */
+.media-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .project-link img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     display: block;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
-/* Al poner el cursor sobre la tarjeta o título, muestra el texto explicativo estilo 222.jpg */
-.project-card:hover .hover-description {
-    opacity: 1;
-    visibility: visible;
-}
-
-.project-card:hover .project-link img {
+.img-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
+}
+
+/* REGLA 2: Hover sobre la IMAGEN cambia la foto por la secundaria alternativa */
+.media-container:hover .img-primary {
+    opacity: 0;
+}
+
+.media-container:hover .img-secondary {
+    opacity: 1;
 }
 
 /* Modales */
@@ -238,7 +267,7 @@ body {
     color: #000000;
 }
 
-/* Versión Móvil Responsive */
+/* Versión Móvil */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -274,16 +303,16 @@ body {
         display: none;
     }
 
-    .projects-grid {
+    .projects-grid-3col {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .card-wide, .card-narrow {
+    .card-span-2, .card-span-1 {
         grid-column: span 1;
     }
 
-    .hover-description p {
+    .title-description p {
         font-size: 18px;
     }
 }
