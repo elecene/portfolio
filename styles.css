@@ -61,25 +61,37 @@ body {
     opacity: 0.6 !important;
 }
 
+/* Punto interactivo de la cabecera */
+.white-dot-btn {
+    display: block;
+    margin-left: auto;
+    text-decoration: none;
+}
+
 .white-dot {
     display: block;
     width: 10px;
     height: 10px;
     background-color: #ffffff;
     border-radius: 50%;
-    margin-left: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.white-dot-btn:hover .white-dot {
+    transform: scale(1.3);
+    opacity: 0.8;
 }
 
 .portfolio-layout {
-    margin-top: 105px; /* Bajado un poco más para descender el bloque Bio y Reel */
+    margin-top: 105px;
 }
 
-/* Hero Block: Bio + Reel perfectamente alineados */
+/* Hero Block */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr;
     gap: 30px;
-    margin-bottom: 50px; /* Mayor espacio de separación con el mosaico de abajo */
+    margin-bottom: 50px;
     align-items: start;
 }
 
@@ -140,9 +152,9 @@ body {
     height: 100%;
 }
 
-/* Título e interacción hover sobre el texto (espacio aumentado a 12px) */
+/* Títulos e interacción hover sobre el texto */
 .title-container {
-    margin-bottom: 12px; /* Mayor espacio entre el título y la imagen */
+    margin-bottom: 12px;
     position: relative;
     z-index: 5;
 }
@@ -242,7 +254,7 @@ body {
     opacity: 1;
 }
 
-/* VISTA DETALLADA DE PROYECTO */
+/* VISTA DETALLADA DE PROYECTOS Y SECCIÓN ABOUT */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -281,6 +293,63 @@ body {
     color: #000000;
 }
 
+/* MAQUETACIÓN DE LA SECCIÓN ABOUT (ejemplo_2.jpg) */
+.about-layout-grid {
+    display: grid;
+    grid-template-columns: 600px 300px 1fr;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.about-hero-text {
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.about-section-label {
+    font-size: 13px;
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.exp-block {
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.exp-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.exp-sub {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.clients-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.clients-list li {
+    font-size: 22px;
+    line-height: 1.25;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+/* Detalle de proyecto normal */
 .project-detail-container {
     width: 100%;
 }
@@ -383,6 +452,19 @@ body {
 
     .project-view-page {
         padding-top: 40px;
+    }
+
+    .about-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-hero-text {
+        font-size: 22px;
+    }
+
+    .clients-list li {
+        font-size: 18px;
     }
 
     .project-meta-row {
