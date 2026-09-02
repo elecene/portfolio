@@ -326,7 +326,6 @@ body:has(#about:target) .btn-minus {
     font-weight: 400;
 }
 
-/* Oculto por defecto en Escritorio */
 .about-mobile-contact {
     display: none;
     margin-top: 25px;
@@ -456,7 +455,7 @@ body:has(#about:target) .btn-minus {
     }
 }
 
-/* ADAPTACIÓN MÓVIL EXACTA */
+/* ADAPTACIÓN MÓVIL EXACTA (Alineación vertical perfecta entre Portada y Vista Detail) */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -517,8 +516,9 @@ body:has(#about:target) .btn-minus {
         gap: 20px;
     }
 
+    /* AJUSTE DE RELLENO SUPERIOR EN MÓVIL (100px para coincidir exactamente con principal.jpg) */
     .project-view-page {
-        padding: 80px 20px 60px 20px;
+        padding: 100px 20px 60px 20px;
     }
 
     .about-layout-grid {
@@ -532,7 +532,6 @@ body:has(#about:target) .btn-minus {
         padding-right: 0;
     }
 
-    /* VISIBLE SOLO EN MÓVIL DENTRO DE #ABOUT */
     .about-mobile-contact {
         display: block !important;
     }
