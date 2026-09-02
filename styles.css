@@ -115,7 +115,8 @@ body:has(#about:target) .btn-minus {
     letter-spacing: -0.02em;
 }
 
-.bio-container strong {
+.bio-container strong,
+.about-hero-text strong {
     color: #ffffff !important;
     font-weight: 500;
 }
@@ -455,7 +456,7 @@ body:has(#about:target) .btn-minus {
     }
 }
 
-/* ADAPTACIÓN MÓVIL SINCRO DE POSICIÓN Y TIPOGRAFÍA EXACTA */
+/* ADAPTACIÓN MÓVIL EXACTA (POSICIONAMIENTO MILIMÉTRICO) */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -493,6 +494,7 @@ body:has(#about:target) .btn-minus {
         text-align: right;
     }
 
+    /* Portada Principal: 20px body padding + 80px margin-top = 100px exactos desde la parte superior */
     .portfolio-layout {
         margin-top: 80px;
     }
@@ -503,7 +505,6 @@ body:has(#about:target) .btn-minus {
         margin-bottom: 30px;
     }
 
-    /* Frase principal en portada */
     .bio-container p {
         font-size: 22px;
         line-height: 1.18;
@@ -520,7 +521,7 @@ body:has(#about:target) .btn-minus {
         gap: 20px;
     }
 
-    /* COINCIDENCIA EXACTA EN POSICIÓN Y TAMAÑO PARA VISTA DESPLEGABLE */
+    /* Vista desplegable #about: 100px de padding superior exacto (empieza exactamente a 100px) */
     .project-view-page {
         padding: 100px 20px 60px 20px;
     }
@@ -529,7 +530,7 @@ body:has(#about:target) .btn-minus {
         grid-template-columns: 1fr;
         gap: 30px;
         padding-left: 0;
-        margin-top: 0;
+        margin: 0;
     }
 
     .about-col-left {
@@ -537,7 +538,7 @@ body:has(#about:target) .btn-minus {
         padding-right: 0;
     }
 
-    /* Frase principal en vista About (idéntica a portada) */
+    /* Frase principal en vista About (idéntica en dimensiones, interlineado y negrita) */
     .about-hero-text {
         font-size: 22px;
         line-height: 1.18;
