@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <!-- Versión v=31.0 -->
     <link rel="stylesheet" href="styles.css?v=31.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +12,6 @@
 </head>
 <body>
 
-    <!-- CABECERA FIJA TRANSPARENTE -->
     <header class="header-fixed">
         <div class="col col-1">
             <p class="txt-bold"><a href="#" class="home-link">Luciano Castañón Estrada</a></p>
@@ -32,13 +29,11 @@
         </div>
 
         <div class="col col-4">
-            <!-- Botón dinámico + / - -->
             <a href="#about" class="toggle-about-btn btn-plus" title="About & Experience">+</a>
             <a href="#" class="toggle-about-btn btn-minus" title="Close About">-</a>
         </div>
     </header>
 
-    <!-- VISTA ABOUT / EXPERIENCE & CLIENTS -->
     <section id="about" class="project-view-page about-page-view">
         <a href="#" class="close-project-btn">✕ Close</a>
         
@@ -46,7 +41,6 @@
             <div class="about-col-left">
                 <p class="about-hero-text"><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
                 
-                <!-- Contacto visible ÚNICAMENTE en versión Móvil -->
                 <div class="about-mobile-contact">
                     <p><a href="mailto:elecene@gmail.com" class="link-white">→ elecene@gmail.com</a></p>
                     <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link-white">→ linkedin</a></p>
@@ -110,10 +104,8 @@
         </div>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL / PORTFOLIO GRID -->
     <main class="portfolio-layout">
         
-        <!-- Hero Block -->
         <section class="hero-block">
             <div class="empty-col"></div>
             
@@ -123,7 +115,6 @@
 
             <div class="reel-wrapper">
                 <div class="media-container ratio-16-9">
-                    <!-- VÍDEO HTML5 DE REPRODUCCIÓN AUTOMÁTICA E INSTANTÁNEA -->
                     <video autoplay loop muted playsinline preload="auto" class="reel-media">
                         <source src="reel.mp4" type="video/mp4">
                     </video>
@@ -131,228 +122,9 @@
             </div>
         </section>
 
-        <!-- Mosaico Bloque 1 -->
         <section class="mosaic-tight-grid">
             
             <div class="stack-column">
                 <article class="project-card">
                     <div class="title-container">
-                        <p class="project-title">• La Física — Podcast for Podimo +</p>
-                        <div class="title-description">
-                            <p>La Física is a podcast about physics on Podimo. Alba Moreno breaks down the universe's greatest mysteries through everyday questions and expert guests.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-lafisica" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1542744094-3a3172720177?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="La Física Principal">
-                            <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="La Física Alternativa">
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title">• Enterprise Mobility — Brand Identity +</p>
-                        <div class="title-description">
-                            <p>Comprehensive design architecture and brand evolution for global mobility solutions, blending functional typography with cohesive visual assets.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-enterprise" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Enterprise Principal">
-                            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Enterprise Alternativa">
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <article class="project-card card-large">
-                <div class="title-container">
-                    <p class="project-title">• FOX ONE — Brand Identity +</p>
-                    <div class="title-description">
-                        <p>Complete rebrand and global motion identity for FOX ONE streaming platform, crafting bespoke typographic systems and dynamic broadcast graphics.</p>
-                    </div>
-                </div>
-
-                <div class="media-container fill-height">
-                    <a href="#work-foxone" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="FOX ONE Principal">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="FOX ONE Alternativa">
-                    </a>
-                </div>
-            </article>
-
-        </section>
-
-        <!-- Mosaico Bloque 2 -->
-        <section class="mosaic-tight-grid mosaic-reversed">
-            
-            <article class="project-card card-large">
-                <div class="title-container">
-                    <p class="project-title">• Venu — Brand Identity +</p>
-                    <div class="title-description">
-                        <p>Visual experience, packaging design, and brand strategy for Venu interactive venues, focused on immersive spatial installations.</p>
-                    </div>
-                </div>
-
-                <div class="media-container fill-height">
-                    <a href="#work-venu" class="project-link">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200&auto=format&fit=crop" class="img-primary" alt="Venu Principal">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop" class="img-secondary" alt="Venu Alternativa">
-                    </a>
-                </div>
-            </article>
-
-            <div class="stack-column">
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title">• Pio — Brand Identity +</p>
-                        <div class="title-description">
-                            <p>Minimalist art direction and tactile identity system exploring stone textures, editorial grids, and specialized print finishes.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-pio" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Pio Principal">
-                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Pio Alternativa">
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title">• Eurosport — Design System +</p>
-                        <div class="title-description">
-                            <p>Broadcast package, motion design guidelines, and sports graphic architecture created for Eurosport international network.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-eurosport" class="project-link">
-                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1000&auto=format&fit=crop" class="img-primary" alt="Eurosport Principal">
-                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop" class="img-secondary" alt="Eurosport Alternativa">
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- SECCIONES DE PROYECTO INDIVIDUALES -->
-    
-    <section id="work-lafisica" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1"><p class="meta-title">La Física</p><p class="meta-sub">Podcast for Podimo</p></div>
-                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Podimo Europe</p></div>
-                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Art Direction, Brand System</p></div>
-                <div class="meta-col col-4"></div>
-            </div>
-            <div class="project-description-hero">
-                <p><strong>La Física</strong> is a podcast about physics on Podimo. Alba Moreno breaks down the universe's greatest mysteries through everyday questions and expert guests.</p>
-            </div>
-            <div class="project-gallery">
-                <img src="https://images.unsplash.com/photo-1542744094-3a3172720177?q=80&w=1600&auto=format&fit=crop" alt="La Física Image 1">
-                <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1600&auto=format&fit=crop" alt="La Física Image 2">
-            </div>
-        </div>
-    </section>
-
-    <section id="work-enterprise" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1"><p class="meta-title">Enterprise Mobility</p><p class="meta-sub">Global Brand Evolution</p></div>
-                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Enterprise Global</p></div>
-                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Brand Architecture & Strategy</p></div>
-                <div class="meta-col col-4"></div>
-            </div>
-            <div class="project-description-hero">
-                <p><strong>Enterprise Mobility</strong> reimagines urban transportation identity through a structured design architecture, dynamic typography, and scalable asset systems.</p>
-            </div>
-            <div class="project-gallery">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop" alt="Enterprise Image 1">
-            </div>
-        </div>
-    </section>
-
-    <section id="work-foxone" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1"><p class="meta-title">FOX ONE</p><p class="meta-sub">Streaming Platform Identity</p></div>
-                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">FOX Networks</p></div>
-                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Creative Direction, Motion Design</p></div>
-                <div class="meta-col col-4"></div>
-            </div>
-            <div class="project-description-hero">
-                <p><strong>FOX ONE</strong> is a unified streaming platform identity built to connect digital audiences with high-impact motion guidelines, custom logotypes, and broadcast packages.</p>
-            </div>
-            <div class="project-gallery">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop" alt="FOX ONE Image 1">
-            </div>
-        </div>
-    </section>
-
-    <section id="work-venu" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1"><p class="meta-title">Venu</p><p class="meta-sub">Interactive Spatial Experience</p></div>
-                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Venu Studios</p></div>
-                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Packaging, Visual Identity</p></div>
-                <div class="meta-col col-4"></div>
-            </div>
-            <div class="project-description-hero">
-                <p><strong>Venu</strong> blends digital environments and physical space through a vibrant color palette, custom packaging, and flexible spatial graphics.</p>
-            </div>
-            <div class="project-gallery">
-                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop" alt="Venu Image 1">
-            </div>
-        </div>
-    </section>
-
-    <section id="work-pio" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1"><p class="meta-title">Pio</p><p class="meta-sub">Architectural Print & Art Direction</p></div>
-                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Pio Architecture</p></div>
-                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Editorial Design, Tactile Print</p></div>
-                <div class="meta-col col-4"></div>
-            </div>
-            <div class="project-description-hero">
-                <p><strong>Pio</strong> explores organic stone textures and architectural minimalism through a specialized publication, blind embossing, and monochromatic typography.</p>
-            </div>
-            <div class="project-gallery">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop" alt="Pio Image 1">
-            </div>
-        </div>
-    </section>
-
-    <section id="work-eurosport" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1"><p class="meta-title">Eurosport</p><p class="meta-sub">Broadcast Motion Architecture</p></div>
-                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Eurosport International</p></div>
-                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Motion System, TV Graphics</p></div>
-                <div class="meta-col col-4"></div>
-            </div>
-            <div class="project-description-hero">
-                <p><strong>Eurosport</strong> redesigns European sports broadcasting with high-speed kinetic typography, dynamic lower-thirds, and modular graphic toolkits.</p>
-            </div>
-            <div class="project-gallery">
-                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop" alt="Eurosport Image 1">
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
+                        <p class="
