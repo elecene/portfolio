@@ -61,17 +61,17 @@ body {
     opacity: 0.6 !important;
 }
 
-/* BOTÓN DINÁMICO + / - (TAMAÑO DUPLICADO A 40PX EN DESKTOP) */
+/* BOTÓN DINÁMICO + / - */
 .toggle-about-btn {
     display: block;
     margin-left: auto;
     text-decoration: none;
     color: #ffffff;
-    font-size: 40px; /* Aumentado al doble */
+    font-size: 40px;
     font-weight: 500;
-    line-height: 0.8; /* Alineación perfecta con el texto de la cabecera */
+    line-height: 0.8;
     text-align: right;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .toggle-about-btn:hover {
@@ -326,6 +326,14 @@ body:has(#about:target) .btn-minus {
     font-weight: 400;
 }
 
+/* Oculto por defecto en Escritorio */
+.about-mobile-contact {
+    display: none;
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
 .about-col-mid {
     width: 100%;
 }
@@ -448,7 +456,7 @@ body:has(#about:target) .btn-minus {
     }
 }
 
-/* ADAPTACIÓN MÓVIL (TAMAÑO DEL BOTÓN DUPLICADO A 44PX) */
+/* ADAPTACIÓN MÓVIL EXACTA */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -481,7 +489,7 @@ body:has(#about:target) .btn-minus {
     }
 
     .toggle-about-btn {
-        font-size: 44px; /* Duplicado también en móvil */
+        font-size: 44px;
         line-height: 0.75;
         text-align: right;
     }
@@ -522,6 +530,11 @@ body:has(#about:target) .btn-minus {
     .about-col-left {
         grid-column: span 1;
         padding-right: 0;
+    }
+
+    /* VISIBLE SOLO EN MÓVIL DENTRO DE #ABOUT */
+    .about-mobile-contact {
+        display: block !important;
     }
 
     .about-col-mid,
