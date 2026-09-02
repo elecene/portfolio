@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER PERMANENTE FIJO TRANSPARENTE */
+/* CABECERA FIJA TRANSPARENTE */
 .header-fixed {
     position: fixed;
     top: 0;
@@ -98,7 +98,7 @@ body:has(#about:target) .btn-minus {
     margin-top: 105px;
 }
 
-/* Hero Block */
+/* HERO BLOCK / REEL */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr;
@@ -165,7 +165,7 @@ body:has(#about:target) .btn-minus {
     height: 100%;
 }
 
-/* Títulos e interacción hover sobre el texto */
+/* TÍTULOS E INTERACCIÓN HOVER */
 .title-container {
     margin-bottom: 12px;
     position: relative;
@@ -211,7 +211,7 @@ body:has(#about:target) .btn-minus {
     visibility: hidden;
 }
 
-/* Contenedor de Imagen */
+/* CONTENEDOR DE IMAGEN */
 .media-container {
     position: relative;
     width: 100%;
@@ -267,7 +267,7 @@ body:has(#about:target) .btn-minus {
     opacity: 1;
 }
 
-/* VISTA DETALLADA DE PROYECTOS Y SECCIÓN ABOUT */
+/* VISTAS DESPLEGABLES (PROJECTS & ABOUT) */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -306,7 +306,7 @@ body:has(#about:target) .btn-minus {
     color: #000000;
 }
 
-/* MAQUETACIÓN DE LA SECCIÓN ABOUT */
+/* SECCIÓN ABOUT */
 .about-layout-grid {
     display: grid;
     grid-template-columns: 630px 280px 1fr;
@@ -383,7 +383,7 @@ body:has(#about:target) .btn-minus {
     white-space: nowrap;
 }
 
-/* Detalle de proyecto normal */
+/* DETALLE DE PROYECTOS Y GALERÍAS */
 .project-detail-container {
     width: 100%;
 }
@@ -435,6 +435,23 @@ body:has(#about:target) .btn-minus {
     font-weight: 500;
 }
 
+/* TRÍPTICO DE 3 IMÁGENES PARALELAS */
+.gallery-triptych {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.gallery-triptych img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
 .project-gallery img {
     width: 100%;
     height: auto;
@@ -443,7 +460,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* ADAPTACIÓN TABLET Y ESCRITORIO INTERMEDIO */
+/* RESPONSIVE TABLET / ESCRITORIO INTERMEDIO */
 @media (max-width: 1100px) {
     .about-layout-grid {
         grid-template-columns: 1fr 1fr;
@@ -456,7 +473,7 @@ body:has(#about:target) .btn-minus {
     }
 }
 
-/* ADAPTACIÓN MÓVIL EXACTA (POSICIONAMIENTO MILIMÉTRICO) */
+/* RESPONSIVE MÓVIL */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -494,7 +511,6 @@ body:has(#about:target) .btn-minus {
         text-align: right;
     }
 
-    /* Portada Principal: 20px body padding + 80px margin-top = 100px exactos desde la parte superior */
     .portfolio-layout {
         margin-top: 80px;
     }
@@ -521,7 +537,6 @@ body:has(#about:target) .btn-minus {
         gap: 20px;
     }
 
-    /* Vista desplegable #about: 100px de padding superior exacto (empieza exactamente a 100px) */
     .project-view-page {
         padding: 100px 20px 60px 20px;
     }
@@ -538,7 +553,6 @@ body:has(#about:target) .btn-minus {
         padding-right: 0;
     }
 
-    /* Frase principal en vista About (idéntica en dimensiones, interlineado y negrita) */
     .about-hero-text {
         font-size: 22px;
         line-height: 1.18;
@@ -573,26 +587,7 @@ body:has(#about:target) .btn-minus {
     .project-description-hero p {
         font-size: 20px;
     }
-}
-/* Tríptico de 3 imágenes en paralelo para proyectos */
-.gallery-triptych {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 30px;
-    width: 100%;
-}
 
-.gallery-triptych img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-}
-
-/* Adaptación a pantallas móviles */
-@media (max-width: 900px) {
     .gallery-triptych {
         grid-template-columns: 1fr;
         gap: 12px;
