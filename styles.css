@@ -1,3 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 24px 30px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* CABECERA FIJA TRANSPARENTE */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 280px 320px 1fr 40px;
+    gap: 30px;
+    padding: 24px 30px;
+    font-size: 13px;
+    line-height: 1.4;
+    z-index: 1000;
+    background: transparent;
+    pointer-events: none;
+}
+
+.header-fixed .col {
+    pointer-events: auto;
+}
+
+.home-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.txt-bold {
+    color: #ffffff !important;
+    font-weight: 500;
+    opacity: 1 !important;
+}
+
+.txt-white {
+    color: #ffffff !important;
+    font-weight: 400;
+    opacity: 1 !important;
+}
+
+.link-white {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 400;
+    opacity: 1 !important;
+}
+
+.link-white:hover {
+    opacity: 0.6 !important;
+}
+
+/* BOTÓN DINÁMICO + / - */
+.toggle-about-btn {
+    display: block;
+    margin-left: auto;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 0.8;
+    text-align: right;
+    transition: opacity 0.2s ease;
+}
+
+.toggle-about-btn:hover {
+    opacity: 0.6;
+}
+
+.btn-plus {
+    display: block;
+}
+
+.btn-minus {
+    display: none;
+}
+
+body:has(#about:target) .btn-plus {
+    display: none;
+}
+
+body:has(#about:target) .btn-minus {
+    display: block;
+}
+
+.portfolio-layout {
+    margin-top: 105px;
+}
+
+/* HERO BLOCK / REEL */
+.hero-block {
+    display: grid;
+    grid-template-columns: 280px 320px 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: start;
+}
+
+.bio-container p {
+    font-size: 32px;
+    line-height: 1.18;
+    color: #ffffff !important;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.bio-container strong,
+.about-hero-text strong {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.reel-wrapper {
+    width: 100%;
+}
+
+.reel-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* MOSAICOS Y RETÍCULA ASIMÉTRICA */
+.mosaic-tight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.85fr;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: stretch;
+}
+
+.mosaic-reversed {
+    grid-template-columns: 1.85fr 1fr;
+    margin-bottom: 60px;
+}
+
+.stack-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.card-large {
+    height: 100%;
+}
+
+/* TÍTULOS E INTERACCIÓN HOVER */
+.title-container {
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 5;
+}
+
+.project-title {
+    font-size: 13px;
+    color: #ffffff !important;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: -0.01em;
+}
+
+.title-description {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+.title-description p {
+    font-size: 22px;
+    line-height: 1.2;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.title-container:hover .title-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-card:has(.title-container:hover) .media-container {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* CONTENEDOR DE IMAGEN */
+.media-container {
+    position: relative;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #111111;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.fill-height {
+    height: calc(100% - 28px);
+    min-height: 380px;
+}
+
+.ratio-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.project-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    transition: opacity 0.4s ease;
+}
+
+.img-primary {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+.img-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+.media-container:hover .img-primary {
+    opacity: 0;
+}
+
+.media-container:hover .img-secondary {
+    opacity: 1;
+}
+
+/* VISTAS DESPLEGABLES (PROJECTS & ABOUT) */
+.project-view-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 900;
+    display: none;
+    overflow-y: auto;
+    padding: 130px 30px 60px 30px;
+}
+
+.project-view-page:target {
+    display: block;
+}
+
+.close-project-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #333333;
+    z-index: 1100;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.close-project-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* SECCIÓN ABOUT */
+.about-layout-grid {
+    display: grid;
+    grid-template-columns: 630px 280px 1fr;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.about-col-left {
+    padding-right: 20px;
+}
+
+.about-hero-text {
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.about-mobile-contact {
+    display: none;
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.about-col-mid {
+    width: 100%;
+}
+
+.about-section-label {
+    font-size: 13px;
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.exp-block {
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.exp-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.exp-sub {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.about-col-right {
+    width: 100%;
+    padding-left: 0px;
+}
+
+.clients-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.clients-list li {
+    font-size: 22px;
+    line-height: 1.25;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+/* DETALLE DE PROYECTOS Y GALERÍAS */
+.project-detail-container {
+    width: 100%;
+}
+
+.project-meta-row {
+    display: grid;
+    grid-template-columns: 280px 320px 1fr 40px;
+    gap: 30px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+}
+
+.meta-title {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.meta-sub {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.meta-label {
+    color: #666666;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.project-description-hero {
+    margin-bottom: 50px;
+    max-width: 1100px;
+}
+
+.project-description-hero p {
+    font-size: 32px;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.project-description-hero strong {
+    font-weight: 500;
+}
+
 /* TRÍPTICO DE 3 IMÁGENES PARALELAS (80% DE ANCHO Y CENTRADO) */
 .gallery-triptych {
     display: grid;
@@ -29,8 +466,134 @@
     display: block;
 }
 
-/* RESPONSIVE MÓVIL: En móviles vuelve al 100% para aprovechar la pantalla */
+/* RESPONSIVE TABLET / ESCRITORIO INTERMEDIO */
+@media (max-width: 1100px) {
+    .about-layout-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .about-col-left {
+        grid-column: span 2;
+        padding-right: 0;
+    }
+}
+
+/* RESPONSIVE MÓVIL */
 @media (max-width: 900px) {
+    body {
+        padding: 20px;
+    }
+
+    .header-fixed {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        display: grid !important;
+        grid-template-columns: 1fr 40px !important;
+        gap: 12px;
+        z-index: 1000;
+    }
+
+    .header-fixed .col-1 {
+        display: block !important;
+    }
+
+    .header-fixed .col-2,
+    .header-fixed .col-3 {
+        display: none !important;
+    }
+
+    .header-fixed .col-4 {
+        display: block !important;
+        pointer-events: auto;
+    }
+
+    .toggle-about-btn {
+        font-size: 44px;
+        line-height: 0.75;
+        text-align: right;
+    }
+
+    .portfolio-layout {
+        margin-top: 80px;
+    }
+
+    .hero-block {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .bio-container p {
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+
+    .empty-col {
+        display: none;
+    }
+
+    .mosaic-tight-grid, .mosaic-reversed {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-view-page {
+        padding: 100px 20px 60px 20px;
+    }
+
+    .about-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .about-col-left {
+        grid-column: span 1;
+        padding-right: 0;
+    }
+
+    .about-hero-text {
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+
+    .about-mobile-contact {
+        display: block !important;
+    }
+
+    .about-col-mid,
+    .about-col-right {
+        padding-left: 0;
+    }
+
+    .clients-list {
+        padding-left: 0;
+    }
+
+    .clients-list li {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .project-meta-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .project-description-hero p {
+        font-size: 20px;
+    }
+
     .gallery-triptych,
     .project-gallery {
         width: 100%;
