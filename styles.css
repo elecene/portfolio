@@ -455,7 +455,7 @@ body:has(#about:target) .btn-minus {
     }
 }
 
-/* ADAPTACIÓN MÓVIL EXACTA */
+/* ADAPTACIÓN MÓVIL SINCRO DE POSICIÓN Y TIPOGRAFÍA EXACTA */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -503,8 +503,12 @@ body:has(#about:target) .btn-minus {
         margin-bottom: 30px;
     }
 
+    /* Frase principal en portada */
     .bio-container p {
         font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
     }
 
     .empty-col {
@@ -516,6 +520,7 @@ body:has(#about:target) .btn-minus {
         gap: 20px;
     }
 
+    /* COINCIDENCIA EXACTA EN POSICIÓN Y TAMAÑO PARA VISTA DESPLEGABLE */
     .project-view-page {
         padding: 100px 20px 60px 20px;
     }
@@ -524,11 +529,20 @@ body:has(#about:target) .btn-minus {
         grid-template-columns: 1fr;
         gap: 30px;
         padding-left: 0;
+        margin-top: 0;
     }
 
     .about-col-left {
         grid-column: span 1;
         padding-right: 0;
+    }
+
+    /* Frase principal en vista About (idéntica a portada) */
+    .about-hero-text {
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
     }
 
     .about-mobile-contact {
@@ -538,10 +552,6 @@ body:has(#about:target) .btn-minus {
     .about-col-mid,
     .about-col-right {
         padding-left: 0;
-    }
-
-    .about-hero-text {
-        font-size: 22px;
     }
 
     .clients-list {
