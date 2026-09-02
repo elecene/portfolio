@@ -44,7 +44,6 @@
         
         <div class="about-layout-grid">
             <div class="about-col-left">
-                <!-- Mismo marcado HTML con <strong> que en la portada principal -->
                 <p class="about-hero-text"><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
                 
                 <!-- Contacto visible ÚNICAMENTE en versión Móvil -->
@@ -124,7 +123,10 @@
 
             <div class="reel-wrapper">
                 <div class="media-container ratio-16-9">
-                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop" class="reel-media" alt="Showreel de trabajos">
+                    <!-- VÍDEO HTML5 DE REPRODUCCIÓN AUTOMÁTICA E INSTANTÁNEA -->
+                    <video autoplay loop muted playsinline preload="auto" class="reel-media">
+                        <source src="reel.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </section>
