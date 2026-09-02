@@ -12,15 +12,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER PERMANENTE FIJO TRANSPARENTE (COLUMNAS DESPLAZADAS A LA IZQUIERDA) */
+/* HEADER PERMANENTE FIJO TRANSPARENTE */
 .header-fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: grid;
-    /* Reducidos los anchos iniciales de 280px 320px a 190px 220px para mover todo a la izquierda */
-    grid-template-columns: 190px 220px 1fr 40px;
+    grid-template-columns: 280px 320px 1fr 40px;
     gap: 30px;
     padding: 24px 30px;
     font-size: 13px;
