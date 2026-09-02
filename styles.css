@@ -139,7 +139,7 @@ body:has(#about:target) .btn-minus {
     grid-template-columns: 1fr 1.85fr;
     gap: 16px;
     margin-bottom: 16px;
-    align-items: stretch;
+    align-items: start;
 }
 
 .mosaic-reversed {
@@ -151,7 +151,6 @@ body:has(#about:target) .btn-minus {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    justify-content: space-between;
 }
 
 .project-card {
@@ -159,10 +158,6 @@ body:has(#about:target) .btn-minus {
     flex-direction: column;
     position: relative;
     width: 100%;
-}
-
-.card-large {
-    height: 100%;
 }
 
 /* TÍTULOS E INTERACCIÓN HOVER */
@@ -211,23 +206,15 @@ body:has(#about:target) .btn-minus {
     visibility: hidden;
 }
 
-/* CONTENEDOR DE IMAGEN */
+/* CONTENEDOR DE IMAGEN (16:9 OBLIGATORIO) */
 .media-container {
     position: relative;
     width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 6px;
     overflow: hidden;
     background-color: #111111;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.fill-height {
-    height: calc(100% - 28px);
-    min-height: 380px;
-}
-
-.ratio-16-9 {
-    aspect-ratio: 16 / 9;
 }
 
 .project-link {
