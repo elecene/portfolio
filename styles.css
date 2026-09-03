@@ -255,7 +255,7 @@ body:has(#about:target) .btn-minus {
     opacity: 1;
 }
 
-/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT - TODOS EN BLANCO */
+/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT - FONDO BLANCO EN TODOS */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -274,7 +274,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* CAMBIO DE TEXTO DE CABECERA CUANDO SE ABRE CUALQUIER PROYECTO */
+/* CAMBIO DE TEXTO DE CABECERA A NEGRO AL ABRIR UN PROYECTO */
 body:has(.project-view-page:target) .header-fixed {
     color: #000000 !important;
 }
@@ -381,7 +381,7 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* DETALLE DE PROYECTOS Y GALERÍAS INTERNAS */
+/* DETALLE DE PROYECTOS */
 .project-detail-container {
     width: 100%;
 }
@@ -434,39 +434,24 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* --- TRÍPTICO CORREGIDO: MANTIENE EL ANCHO MÁXIMO DEL 80% Y MUESTRA LA IMAGEN CENTRAL COMPLETA --- */
+/* --- ESTRUCTURA DE GALERÍAS LIMPIA Y ESTÁNDAR --- */
+
+/* TRÍPTICO DE 3 IMÁGENES (P. EJ. CARTELERÍA / POSTERS) */
 .gallery-triptych {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
-    max-width: 80%;
-    height: 65vh; /* Altura controlada para que encaje perfectamente */
-    overflow: hidden;
+    max-width: 100%;
 }
 
 .gallery-triptych img {
-    height: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 6px;
     display: block;
-}
-
-/* Imagen central: Se ajusta completa sin ser recortada */
-.gallery-triptych img:nth-child(2) {
-    width: auto;
-    max-width: 50%;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-/* Imágenes laterales: Se adaptan al espacio sobrante */
-.gallery-triptych img:nth-child(1),
-.gallery-triptych img:nth-child(3) {
-    flex: 1 1 0;
-    width: 0;
-    object-fit: cover;
 }
 
 /* DÍPTICO DE 2 IMÁGENES */
@@ -476,12 +461,11 @@ body:has(.project-view-page:target) .header-fixed {
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
-    align-items: stretch;
 }
 
 .gallery-diptych img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 6px;
     display: block;
@@ -494,19 +478,14 @@ body:has(.project-view-page:target) .header-fixed {
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
-    align-items: stretch;
 }
 
 .gallery-grid-5 img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 6px;
     display: block;
-    grid-column: span 2;
-}
-
-.gallery-grid-5 img.grid-span-bottom {
     grid-column: span 2;
 }
 
@@ -517,18 +496,17 @@ body:has(.project-view-page:target) .header-fixed {
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
-    align-items: stretch;
 }
 
 .gallery-grid-4 img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 6px;
     display: block;
 }
 
-/* GALERÍA GENERAL DE PROYECTOS */
+/* GALERÍA GENERAL DE IMÁGENES O VÍDEOS SUELTOS */
 .project-gallery {
     width: 80%;
     margin: 0 auto;
@@ -543,7 +521,7 @@ body:has(.project-view-page:target) .header-fixed {
     display: block;
 }
 
-/* RESPONSIVE TABLET / ESCRITORIO INTERMEDIO */
+/* RESPONSIVE TABLET */
 @media (max-width: 1100px) {
     .about-layout-grid {
         grid-template-columns: 1fr 1fr;
@@ -677,22 +655,11 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-grid-4,
     .project-gallery {
         width: 100%;
-        max-width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
 
-    .gallery-triptych {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .gallery-triptych img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
+    .gallery-triptych,
     .gallery-diptych,
     .gallery-grid-5,
     .gallery-grid-4 {
@@ -700,8 +667,7 @@ body:has(.project-view-page:target) .header-fixed {
         gap: 12px;
     }
 
-    .gallery-grid-5 img,
-    .gallery-grid-5 img.grid-span-bottom {
+    .gallery-grid-5 img {
         grid-column: span 1;
     }
 }
