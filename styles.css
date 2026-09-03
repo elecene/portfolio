@@ -10,8 +10,6 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     padding: 24px 30px;
     -webkit-font-smoothing: antialiased;
-    max-width: 100vw;
-    overflow-x: hidden;
 }
 
 /* CABECERA FIJA TRANSPARENTE */
@@ -213,7 +211,7 @@ body:has(#about:target) .btn-minus {
     visibility: hidden;
 }
 
-/* CONTENEDOR DE IMAGEN/VÍDEO PRINCIPAL (16:9 OBLIGATORIO Y CONTROL 4K) */
+/* CONTENEDOR DE IMAGEN PRINCIPAL (16:9 OBLIGATORIO) */
 .media-container {
     position: relative;
     width: 100%;
@@ -228,13 +226,484 @@ body:has(#about:target) .btn-minus {
     display: block;
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
-/* Forzar que tanto imágenes como vídeos 4K escalen al 100% de la caja */
 .project-link img,
 .project-link video {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 100% !important;
-    max-height: 100%
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    transition: opacity 0.4s ease;
+}
+
+.img-primary {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+.img-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+.media-container:hover .img-primary {
+    opacity: 0;
+}
+
+.media-container:hover .img-secondary {
+    opacity: 1;
+}
+
+/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT - FONDO BLANCO */
+.project-view-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    z-index: 900;
+    display: none;
+    overflow-y: auto;
+    padding: 130px 30px 60px 30px;
+}
+
+.project-view-page:target {
+    display: block;
+}
+
+/* CAMBIO DE TEXTO DE CABECERA A NEGRO AL ABRIR UN PROYECTO */
+body:has(.project-view-page:target) .header-fixed {
+    color: #000000 !important;
+}
+
+.close-project-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 13px;
+    background: #000000 !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #000000 !important;
+    z-index: 1100;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.close-project-btn:hover {
+    background: #333333 !important;
+    color: #ffffff !important;
+}
+
+/* SECCIÓN ABOUT */
+#about {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.about-layout-grid {
+    display: grid;
+    grid-template-columns: 630px 280px 1fr;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.about-col-left {
+    padding-right: 20px;
+}
+
+.about-hero-text {
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: #000000;
+    font-weight: 400;
+}
+
+.about-mobile-contact {
+    display: none;
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.about-col-mid {
+    width: 100%;
+}
+
+.about-section-label {
+    font-size: 13px;
+    color: #000000;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.exp-block {
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.exp-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.exp-sub {
+    color: #000000;
+    font-weight: 400;
+}
+
+.about-col-right {
+    width: 100%;
+    padding-left: 0px;
+}
+
+.clients-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.clients-list li {
+    font-size: 22px;
+    line-height: 1.25;
+    color: #000000;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+/* DETALLE DE PROYECTOS */
+.project-detail-container {
+    width: 100%;
+}
+
+.project-meta-row {
+    display: grid;
+    grid-template-columns: 280px 320px 1fr 40px;
+    gap: 30px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+.meta-title {
+    color: inherit;
+    font-weight: 500;
+}
+
+.meta-sub {
+    color: inherit;
+    font-weight: 400;
+}
+
+.meta-label {
+    color: #666666 !important;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    color: inherit;
+    font-weight: 400;
+}
+
+.project-description-hero {
+    margin-bottom: 50px;
+    max-width: 1100px;
+}
+
+.project-description-hero p {
+    font-size: 32px;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    color: inherit;
+    font-weight: 400;
+}
+
+.project-description-hero strong {
+    font-weight: 500;
+}
+
+/* --- ESTRUCTURAS DE GALERÍAS --- */
+
+/* TRÍPTICO CON CENTRO ANCHO (4X) Y MISMO ALTO */
+.gallery-triptych-wide-center {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+    align-items: stretch;
+}
+
+.gallery-triptych-wide-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* TRÍPTICO DE 3 IMÁGENES EQUITATIVO */
+.gallery-triptych {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+    max-width: 100%;
+}
+
+.gallery-triptych img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+}
+
+/* DÍPTICO DE 2 IMÁGENES */
+.gallery-diptych {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+}
+
+.gallery-diptych img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* MOSAICO DE 5 IMÁGENES */
+.gallery-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+}
+
+.gallery-grid-5 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    grid-column: span 2;
+}
+
+.gallery-grid-5 img.grid-span-bottom {
+    grid-column: span 3;
+}
+
+/* MOSAICO DE 4 IMÁGENES */
+.gallery-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+    align-items: stretch;
+}
+
+.gallery-grid-4 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.gallery-grid-4 img.img-full-height {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* GALERÍA GENERAL DE IMÁGENES O VÍDEOS SUELTOS */
+.project-gallery {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.project-gallery img,
+.project-gallery video {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1100px) {
+    .about-layout-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .about-col-left {
+        grid-column: span 2;
+        padding-right: 0;
+    }
+}
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 900px) {
+    body {
+        padding: 20px;
+    }
+
+    .header-fixed {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        display: grid !important;
+        grid-template-columns: 1fr 40px !important;
+        gap: 12px;
+        z-index: 1000;
+    }
+
+    .header-fixed .col-1 {
+        display: block !important;
+    }
+
+    .header-fixed .col-2,
+    .header-fixed .col-3 {
+        display: none !important;
+    }
+
+    .header-fixed .col-4 {
+        display: block !important;
+        pointer-events: auto;
+    }
+
+    .toggle-about-btn {
+        font-size: 44px;
+        line-height: 0.75;
+        text-align: right;
+    }
+
+    .portfolio-layout {
+        margin-top: 80px;
+    }
+
+    .hero-block {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .bio-container p {
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+
+    .empty-col {
+        display: none;
+    }
+
+    .mosaic-tight-grid, .mosaic-reversed {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-view-page {
+        padding: 100px 20px 60px 20px;
+    }
+
+    .about-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .about-col-left {
+        grid-column: span 1;
+        padding-right: 0;
+    }
+
+    .about-hero-text {
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+
+    .about-mobile-contact {
+        display: block !important;
+    }
+
+    .about-col-mid,
+    .about-col-right {
+        padding-left: 0;
+    }
+
+    .clients-list {
+        padding-left: 0;
+    }
+
+    .clients-list li {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .project-meta-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .project-description-hero p {
+        font-size: 20px;
+    }
+
+    .gallery-triptych-wide-center,
+    .gallery-triptych,
+    .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4,
+    .project-gallery {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .gallery-triptych-wide-center,
+    .gallery-triptych,
+    .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .gallery-grid-5 img,
+    .gallery-grid-5 img.grid-span-bottom {
+        grid-column: span 1;
+    }
+}
