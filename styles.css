@@ -422,7 +422,7 @@ body:has(#about:target) .btn-minus {
     font-weight: 500;
 }
 
-/* TRÍPTICO DE 3 IMÁGENES PARALELAS (80% DE ANCHO Y CENTRADO) */
+/* TRÍPTICO DE 3 IMÁGENES PARALELAS (80% DE ANCHO) */
 .gallery-triptych {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -432,6 +432,62 @@ body:has(#about:target) .btn-minus {
 }
 
 .gallery-triptych img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* DÍPTICO DE 2 IMÁGENES (80% DE ANCHO) */
+.gallery-diptych {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+}
+
+.gallery-diptych img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* MOSAICO DE 5 IMÁGENES (3 ARRIBA, 2 ABAJO CENTRADAS AL 80%) */
+.gallery-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+}
+
+.gallery-grid-5 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    grid-column: span 2;
+}
+
+.gallery-grid-5 img.grid-span-bottom {
+    grid-column: span 3;
+}
+
+/* MOSAICO DE 4 IMÁGENES (80% DE ANCHO) */
+.gallery-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+}
+
+.gallery-grid-4 img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -583,14 +639,25 @@ body:has(#about:target) .btn-minus {
     }
 
     .gallery-triptych,
+    .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4,
     .project-gallery {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
 
-    .gallery-triptych {
+    .gallery-triptych,
+    .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4 {
         grid-template-columns: 1fr;
         gap: 12px;
+    }
+
+    .gallery-grid-5 img,
+    .gallery-grid-5 img.grid-span-bottom {
+        grid-column: span 1;
     }
 }
