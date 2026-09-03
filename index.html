@@ -362,4 +362,96 @@
             </div>
 
             <div class="project-gallery">
-                <img src="
+                <img src="img/la-fisica/lafisica_21.jpg" alt="La Física 21">
+            </div>
+
+            <div class="gallery-grid-4">
+                <img src="img/la-fisica/lafisica_22.png" alt="La Física 22">
+                <img src="img/la-fisica/lafisica_23.png" alt="La Física 23">
+                <img src="img/la-fisica/lafisica_24.png" alt="La Física 24">
+                <img src="img/la-fisica/lafisica_25.png" alt="La Física 25">
+            </div>
+
+        </div>
+    </section>
+
+    <section id="work-venu" class="project-view-page">
+        <a href="#" class="close-project-btn">✕ Close</a>
+        <div class="project-detail-container">
+            <div class="project-meta-row">
+                <div class="meta-col col-1"><p class="meta-title">Venu</p><p class="meta-sub">Interactive Spatial Experience</p></div>
+                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Venu Studios</p></div>
+                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Packaging, Visual Identity</p></div>
+                <div class="meta-col col-4"></div>
+            </div>
+            <div class="project-description-hero">
+                <p><strong>Venu</strong> blends digital environments and physical space through a vibrant color palette, custom packaging, and flexible spatial graphics.</p>
+            </div>
+            <div class="project-gallery">
+                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop" alt="Venu Image 1">
+            </div>
+        </div>
+    </section>
+
+    <section id="work-pio" class="project-view-page">
+        <a href="#" class="close-project-btn">✕ Close</a>
+        <div class="project-detail-container">
+            <div class="project-meta-row">
+                <div class="meta-col col-1"><p class="meta-title">Pio</p><p class="meta-sub">Architectural Print & Art Direction</p></div>
+                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Pio Architecture</p></div>
+                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Editorial Design, Tactile Print</p></div>
+                <div class="meta-col col-4"></div>
+            </div>
+            <div class="project-description-hero">
+                <p><strong>Pio</strong> explores organic stone textures and architectural minimalism through a specialized publication, blind embossing, and monochromatic typography.</p>
+            </div>
+            <div class="project-gallery">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop" alt="Pio Image 1">
+            </div>
+        </div>
+    </section>
+
+    <section id="work-eurosport" class="project-view-page">
+        <a href="#" class="close-project-btn">✕ Close</a>
+        <div class="project-detail-container">
+            <div class="project-meta-row">
+                <div class="meta-col col-1"><p class="meta-title">Eurosport</p><p class="meta-sub">Broadcast Motion Architecture</p></div>
+                <div class="meta-col col-2"><span class="meta-label">Client</span><p class="meta-value">Eurosport International</p></div>
+                <div class="meta-col col-3"><span class="meta-label">Role</span><p class="meta-value">Motion System, TV Graphics</p></div>
+                <div class="meta-col col-4"></div>
+            </div>
+            <div class="project-description-hero">
+                <p><strong>Eurosport</strong> redesigns European sports broadcasting with high-speed kinetic typography, dynamic lower-thirds, and modular graphic toolkits.</p>
+            </div>
+            <div class="project-gallery">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop" alt="Eurosport Image 1">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function updateHeaderTheme() {
+            const currentHash = window.location.hash;
+            if (currentHash === '#work-nilojeda') {
+                document.body.classList.add('header-black');
+            } else {
+                document.body.classList.remove('header-black');
+            }
+        }
+
+        window.addEventListener('hashchange', () => {
+            updateHeaderTheme();
+            const currentHash = window.location.hash;
+            if (currentHash && currentHash !== '#') {
+                const activeProject = document.querySelector(currentHash);
+                if (activeProject) {
+                    activeProject.scrollTop = 0;
+                }
+            }
+        });
+
+        // Comprobación inicial por si se carga la URL directamente con la ancla
+        updateHeaderTheme();
+    </script>
+</body>
+</html>
