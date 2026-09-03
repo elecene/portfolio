@@ -439,13 +439,14 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* GALERÍA GENERAL DE PROYECTOS (80% DE ANCHO Y CENTRADO) */
+/* GALERÍA GENERAL DE PROYECTOS (IMÁGENES Y VÍDEOS AL 80% CENTRADOS) */
 .project-gallery {
     width: 80%;
     margin: 0 auto;
 }
 
-.project-gallery img {
+.project-gallery img,
+.project-gallery video {
     width: 100%;
     height: auto;
     border-radius: 6px;
