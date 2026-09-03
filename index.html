@@ -443,5 +443,27 @@
             }
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                const video = card.querySelector('video.img-secondary');
+                
+                if (video) {
+                    card.addEventListener('mouseenter', () => {
+                        video.currentTime = 0; // Rebobina el vídeo al segundo 0
+                        video.play().catch(e => console.log(e)); // Inicia la reproducción
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        video.pause(); // Opcional: pausa cuando el cursor sale
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
