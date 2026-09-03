@@ -134,7 +134,7 @@ body:has(#about:target) .btn-minus {
     border-radius: 6px;
 }
 
-/* MOSAICOS Y RETÍCULA ASIMÉTRICA */
+/* MOSAICOS Y RETÍCULA ASIMÉTRICA EN PÁGINA PRINCIPAL */
 .mosaic-tight-grid {
     display: grid;
     grid-template-columns: 1fr 1.85fr;
@@ -161,7 +161,7 @@ body:has(#about:target) .btn-minus {
     width: 100%;
 }
 
-/* TÍTULOS E INTERACCIÓN HOVER DE LA PÁGINA PRINCIPAL */
+/* TÍTULOS E INTERACCIÓN HOVER EN PÁGINA PRINCIPAL */
 .title-container {
     margin-bottom: 12px;
     position: relative;
@@ -207,7 +207,7 @@ body:has(#about:target) .btn-minus {
     visibility: hidden;
 }
 
-/* CONTENEDOR DE IMAGEN (16:9 OBLIGATORIO) */
+/* CONTENEDOR DE IMAGEN PRINCIPAL (16:9 OBLIGATORIO) */
 .media-container {
     position: relative;
     width: 100%;
@@ -255,15 +255,15 @@ body:has(#about:target) .btn-minus {
     opacity: 1;
 }
 
-/* VISTAS DESPLEGABLES (PROJECTS & ABOUT) - FONDO BLANCO GENERAL */
+/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT - TODOS EN BLANCO */
 .project-view-page {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #ffffff !important;
+    color: #000000 !important;
     z-index: 900;
     display: none;
     overflow-y: auto;
@@ -274,7 +274,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* Cuando un proyecto está abierto, cambiamos el texto de la cabecera fija a negro */
+/* CAMBIO DE TEXTO DE CABECERA CUANDO SE ABRE CUALQUIER PROYECTO */
 body:has(.project-view-page:target) .header-fixed {
     color: #000000 !important;
 }
@@ -283,23 +283,23 @@ body:has(.project-view-page:target) .header-fixed {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: none;
     font-size: 13px;
-    background: #000000;
+    background: #000000 !important;
     padding: 8px 18px;
     border-radius: 20px;
-    border: 1px solid #000000;
+    border: 1px solid #000000 !important;
     z-index: 1100;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
 .close-project-btn:hover {
-    background: #333333;
-    color: #ffffff;
+    background: #333333 !important;
+    color: #ffffff !important;
 }
 
-/* SECCIÓN ABOUT (FONDO BLANCO CUANDO SE ABRE) */
+/* SECCIÓN ABOUT */
 #about {
     background-color: #ffffff;
     color: #000000;
@@ -381,7 +381,7 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* DETALLE DE PROYECTOS Y GALERÍAS */
+/* DETALLE DE PROYECTOS Y GALERÍAS INTERNAS */
 .project-detail-container {
     width: 100%;
 }
@@ -407,7 +407,7 @@ body:has(.project-view-page:target) .header-fixed {
 }
 
 .meta-label {
-    color: #666666;
+    color: #666666 !important;
     display: block;
     margin-bottom: 4px;
 }
@@ -434,9 +434,7 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* --- AJUSTE DE MOSAICOS FLEXIBLES SIN RECORTAR LA IMAGEN CENTRAL --- */
-
-/* TRÍPTICO DE 3 IMÁGENES PARALELAS */
+/* --- TRÍPTICO CORREGIDO: MANTIENE EL ANCHO MÁXIMO DEL 80% Y MUESTRA LA IMAGEN CENTRAL COMPLETA --- */
 .gallery-triptych {
     display: flex;
     justify-content: center;
@@ -444,29 +442,31 @@ body:has(.project-view-page:target) .header-fixed {
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
-    height: auto;
+    max-width: 80%;
+    height: 65vh; /* Altura controlada para que encaje perfectamente */
+    overflow: hidden;
 }
 
 .gallery-triptych img {
-    height: auto;
-    max-height: 80vh; /* Para que no sea más alto que la pantalla */
+    height: 100%;
     border-radius: 6px;
     display: block;
 }
 
-/* La imagen del medio manda sobre el alto y no se recorta */
+/* Imagen central: Se ajusta completa sin ser recortada */
 .gallery-triptych img:nth-child(2) {
     width: auto;
+    max-width: 50%;
     object-fit: contain;
     flex-shrink: 0;
 }
 
-/* Las laterales se ajustan manteniendo el alto del grupo */
+/* Imágenes laterales: Se adaptan al espacio sobrante */
 .gallery-triptych img:nth-child(1),
 .gallery-triptych img:nth-child(3) {
-    width: auto;
+    flex: 1 1 0;
+    width: 0;
     object-fit: cover;
-    flex-grow: 1;
 }
 
 /* DÍPTICO DE 2 IMÁGENES */
@@ -541,27 +541,6 @@ body:has(.project-view-page:target) .header-fixed {
     border-radius: 6px;
     margin-bottom: 30px;
     display: block;
-}
-
-/* TEMA AMARILLO OPCIONAL (SI QUISIERAS MANTENER ALGUNO ESPECÍFICO) */
-.project-yellow-theme {
-    background-color: #f7e540 !important;
-    color: #000000 !important;
-}
-
-.project-yellow-theme .meta-label {
-    color: #444444 !important;
-}
-
-.project-yellow-theme .close-project-btn {
-    background: rgba(0, 0, 0, 0.85) !important;
-    color: #ffffff !important;
-    border: 1px solid #000000 !important;
-}
-
-.project-yellow-theme .close-project-btn:hover {
-    background: #000000 !important;
-    color: #f7e540 !important;
 }
 
 /* RESPONSIVE TABLET / ESCRITORIO INTERMEDIO */
@@ -698,16 +677,19 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-grid-4,
     .project-gallery {
         width: 100%;
+        max-width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
 
     .gallery-triptych {
         flex-direction: column;
+        height: auto;
     }
 
     .gallery-triptych img {
         width: 100% !important;
+        max-width: 100% !important;
         height: auto !important;
     }
 
