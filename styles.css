@@ -441,21 +441,19 @@ body:has(.project-view-page:target) .header-fixed {
 
 /* --- ESTRUCTURAS DE GALERÍAS --- */
 
-/* PRIMER MOSAICO NIL OJEDA: TRÍPTICO CENTRO ANCHO CONTROLADO */
-.gallery-triptych-wide-center {
+/* CUADRÍPTICO DE 4 IMÁGENES EQUITATIVAS */
+.gallery-quad {
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
     max-width: 100%;
-    align-items: center;
 }
 
-.gallery-triptych-wide-center img {
+.gallery-quad img {
     width: 100%;
-    height: 100%;
-    max-height: 520px; /* Evita que las imágenes verticales escalen desmedidamente */
+    height: auto;
     object-fit: cover;
     border-radius: 6px;
     display: block;
@@ -684,7 +682,7 @@ body:has(.project-view-page:target) .header-fixed {
         font-size: 20px;
     }
 
-    .gallery-triptych-wide-center,
+    .gallery-quad,
     .gallery-triptych,
     .gallery-diptych,
     .gallery-grid-5,
@@ -695,7 +693,7 @@ body:has(.project-view-page:target) .header-fixed {
         margin-right: 0;
     }
 
-    .gallery-triptych-wide-center,
+    .gallery-quad,
     .gallery-triptych,
     .gallery-diptych,
     .gallery-grid-5,
