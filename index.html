@@ -169,7 +169,7 @@
                 <div class="media-container fill-height">
                     <a href="#work-lafisica" class="project-link">
                         <img src="img/la-fisica/lafisica_cover.webp" class="img-primary" alt="La Física Principal">
-                        <video autoplay loop muted playsinline preload="auto" class="img-secondary">
+                        <video autoplay loop muted playsinline preload="auto" class="img-secondary" id="hover-video-lafisica">
                             <source src="img/la-fisica/lafisica_17.webm" type="video/webm">
                             <source src="img/la-fisica/lafisica_17.mp4" type="video/mp4">
                         </video>
@@ -433,6 +433,19 @@
     </section>
 
     <script>
+        // Reiniciar el vídeo de La Física al inicio al hacer hover
+        const hoverVideo = document.getElementById('hover-video-lafisica');
+        if (hoverVideo) {
+            const cardContainer = hoverVideo.closest('.project-link');
+            if (cardContainer) {
+                cardContainer.addEventListener('mouseenter', () => {
+                    hoverVideo.currentTime = 0;
+                    hoverVideo.play();
+                });
+            }
+        }
+
+        // Reiniciar el scroll del modal al abrir un proyecto
         window.addEventListener('hashchange', () => {
             const currentHash = window.location.hash;
             if (currentHash && currentHash !== '#') {
