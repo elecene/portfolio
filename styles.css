@@ -228,7 +228,8 @@ body:has(#about:target) .btn-minus {
     height: 100%;
 }
 
-.project-link img {
+.project-link img,
+.project-link video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -440,7 +441,7 @@ body:has(.project-view-page:target) .header-fixed {
 
 /* --- ESTRUCTURAS DE GALERÍAS --- */
 
-/* NUEVA ESTRUCTURA: TRÍPTICO CON CENTRO ANCHO (4X) Y MISMO ALTO */
+/* TRÍPTICO CON CENTRO ANCHO (4X) Y MISMO ALTO */
 .gallery-triptych-wide-center {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -465,6 +466,7 @@ body:has(.project-view-page:target) .header-fixed {
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
+    max-width: 100%;
 }
 
 .gallery-triptych img {
@@ -490,6 +492,51 @@ body:has(.project-view-page:target) .header-fixed {
     object-fit: cover;
     border-radius: 6px;
     display: block;
+}
+
+/* MOSAICO DE 5 IMÁGENES */
+.gallery-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+}
+
+.gallery-grid-5 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    grid-column: span 2;
+}
+
+.gallery-grid-5 img.grid-span-bottom {
+    grid-column: span 3;
+}
+
+/* MOSAICO DE 4 IMÁGENES */
+.gallery-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+    align-items: stretch;
+}
+
+.gallery-grid-4 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.gallery-grid-4 img.img-full-height {
+    height: 100%;
+    object-fit: cover;
 }
 
 /* GALERÍA GENERAL DE IMÁGENES O VÍDEOS SUELTOS */
@@ -638,6 +685,8 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-triptych-wide-center,
     .gallery-triptych,
     .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4,
     .project-gallery {
         width: 100%;
         margin-left: 0;
@@ -646,8 +695,15 @@ body:has(.project-view-page:target) .header-fixed {
 
     .gallery-triptych-wide-center,
     .gallery-triptych,
-    .gallery-diptych {
+    .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4 {
         grid-template-columns: 1fr;
         gap: 12px;
+    }
+
+    .gallery-grid-5 img,
+    .gallery-grid-5 img.grid-span-bottom {
+        grid-column: span 1;
     }
 }
