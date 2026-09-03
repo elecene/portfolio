@@ -27,6 +27,7 @@ body {
     z-index: 1000;
     background: transparent;
     pointer-events: none;
+    transition: color 0.3s ease;
 }
 
 .header-fixed .col {
@@ -34,24 +35,24 @@ body {
 }
 
 .home-link {
-    color: #ffffff;
+    color: inherit;
     text-decoration: none;
 }
 
 .txt-bold {
-    color: #ffffff !important;
+    color: inherit !important;
     font-weight: 500;
     opacity: 1 !important;
 }
 
 .txt-white {
-    color: #ffffff !important;
+    color: inherit !important;
     font-weight: 400;
     opacity: 1 !important;
 }
 
 .link-white {
-    color: #ffffff !important;
+    color: inherit !important;
     text-decoration: none;
     font-weight: 400;
     opacity: 1 !important;
@@ -66,7 +67,7 @@ body {
     display: block;
     margin-left: auto;
     text-decoration: none;
-    color: #ffffff;
+    color: inherit;
     font-size: 40px;
     font-weight: 500;
     line-height: 0.8;
@@ -262,6 +263,7 @@ body:has(#about:target) .btn-minus {
     width: 100vw;
     height: 100vh;
     background-color: #000000;
+    color: #ffffff;
     z-index: 900;
     display: none;
     overflow-y: auto;
@@ -385,12 +387,12 @@ body:has(#about:target) .btn-minus {
 }
 
 .meta-title {
-    color: #ffffff;
+    color: inherit;
     font-weight: 500;
 }
 
 .meta-sub {
-    color: #ffffff;
+    color: inherit;
     font-weight: 400;
 }
 
@@ -401,7 +403,7 @@ body:has(#about:target) .btn-minus {
 }
 
 .meta-value {
-    color: #ffffff;
+    color: inherit;
     font-weight: 400;
 }
 
@@ -414,7 +416,7 @@ body:has(#about:target) .btn-minus {
     font-size: 32px;
     line-height: 1.22;
     letter-spacing: -0.02em;
-    color: #ffffff;
+    color: inherit;
     font-weight: 400;
 }
 
@@ -422,7 +424,7 @@ body:has(#about:target) .btn-minus {
     font-weight: 500;
 }
 
-/* TRÍPTICO DE 3 IMÁGENES PARALELAS (80% DE ANCHO) */
+/* TRÍPTICO DE 3 IMÁGENES PARALELAS */
 .gallery-triptych {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -439,7 +441,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* DÍPTICO DE 2 IMÁGENES (80% DE ANCHO) */
+/* DÍPTICO DE 2 IMÁGENES */
 .gallery-diptych {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -456,7 +458,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* MOSAICO DE 5 IMÁGENES (3 ARRIBA, 2 ABAJO CENTRADAS AL 80%) */
+/* MOSAICO DE 5 IMÁGENES */
 .gallery-grid-5 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -478,7 +480,7 @@ body:has(#about:target) .btn-minus {
     grid-column: span 3;
 }
 
-/* MOSAICO DE 4 IMÁGENES (80% DE ANCHO) */
+/* MOSAICO DE 4 IMÁGENES */
 .gallery-grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -495,7 +497,7 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
-/* GALERÍA GENERAL DE PROYECTOS (IMÁGENES Y VÍDEOS AL 80% CENTRADOS) */
+/* GALERÍA GENERAL DE PROYECTOS */
 .project-gallery {
     width: 80%;
     margin: 0 auto;
@@ -516,16 +518,8 @@ body:has(#about:target) .btn-minus {
     color: #000000 !important;
 }
 
-.project-yellow-theme .meta-title,
-.project-yellow-theme .meta-sub,
-.project-yellow-theme .meta-value,
-.project-yellow-theme .project-description-hero p,
-.project-yellow-theme .project-description-hero strong {
-    color: #000000 !important;
-}
-
 .project-yellow-theme .meta-label {
-    color: #555555 !important;
+    color: #444444 !important;
 }
 
 .project-yellow-theme .close-project-btn {
@@ -539,12 +533,8 @@ body:has(#about:target) .btn-minus {
     color: #f7e540 !important;
 }
 
-/* CAMBIO DE TEXTO EN HEADER CUANDO EL AMARILLO ESTÁ ACTIVO */
-body:has(#work-nilojeda:target) .header-fixed .txt-bold,
-body:has(#work-nilojeda:target) .header-fixed .home-link,
-body:has(#work-nilojeda:target) .header-fixed .txt-white,
-body:has(#work-nilojeda:target) .header-fixed .link-white,
-body:has(#work-nilojeda:target) .header-fixed .toggle-about-btn {
+/* ESTILO DE LA CABECERA CUANDO SE ABRE NIL OJEDA */
+body.header-black .header-fixed {
     color: #000000 !important;
 }
 
