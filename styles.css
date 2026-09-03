@@ -122,6 +122,10 @@ body:has(#about:target) .btn-minus {
     font-weight: 500;
 }
 
+#about .about-hero-text strong {
+    color: #000000 !important;
+}
+
 .reel-wrapper {
     width: 100%;
 }
@@ -255,7 +259,7 @@ body:has(#about:target) .btn-minus {
     opacity: 1;
 }
 
-/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT - FONDO BLANCO EN TODOS */
+/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT - FONDO BLANCO */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -434,16 +438,33 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* --- ESTRUCTURA DE GALERÍAS --- */
+/* --- ESTRUCTURAS DE GALERÍAS --- */
 
-/* TRÍPTICO DE 3 IMÁGENES */
+/* NUEVA ESTRUCTURA: TRÍPTICO CON CENTRO ANCHO (4X) Y MISMO ALTO */
+.gallery-triptych-wide-center {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    gap: 16px;
+    margin: 0 auto 30px auto;
+    width: 80%;
+    align-items: stretch;
+}
+
+.gallery-triptych-wide-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* TRÍPTICO DE 3 IMÁGENES EQUITATIVO */
 .gallery-triptych {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin: 0 auto 30px auto;
     width: 80%;
-    max-width: 100%;
 }
 
 .gallery-triptych img {
@@ -469,52 +490,6 @@ body:has(.project-view-page:target) .header-fixed {
     object-fit: cover;
     border-radius: 6px;
     display: block;
-}
-
-/* MOSAICO DE 5 IMÁGENES (3 ARRIBA, 2 ABAJO QUE OCUPAN TODO EL ANCHO) */
-.gallery-grid-5 {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
-    margin: 0 auto 30px auto;
-    width: 80%;
-}
-
-.gallery-grid-5 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-    grid-column: span 2;
-}
-
-.gallery-grid-5 img.grid-span-bottom {
-    grid-column: span 3;
-}
-
-/* MOSAICO DE 4 IMÁGENES */
-.gallery-grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin: 0 auto 30px auto;
-    width: 80%;
-    align-items: stretch;
-}
-
-.gallery-grid-4 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-}
-
-/* AJUSTE PARA IMAGEN DE ALTURA COMPLETA EN MOSAICO DE 4 */
-.gallery-grid-4 img.img-full-height {
-    height: 100%;
-    object-fit: cover;
 }
 
 /* GALERÍA GENERAL DE IMÁGENES O VÍDEOS SUELTOS */
@@ -660,26 +635,19 @@ body:has(.project-view-page:target) .header-fixed {
         font-size: 20px;
     }
 
+    .gallery-triptych-wide-center,
     .gallery-triptych,
     .gallery-diptych,
-    .gallery-grid-5,
-    .gallery-grid-4,
     .project-gallery {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
 
+    .gallery-triptych-wide-center,
     .gallery-triptych,
-    .gallery-diptych,
-    .gallery-grid-5,
-    .gallery-grid-4 {
+    .gallery-diptych {
         grid-template-columns: 1fr;
         gap: 12px;
-    }
-
-    .gallery-grid-5 img,
-    .gallery-grid-5 img.grid-span-bottom {
-        grid-column: span 1;
     }
 }
