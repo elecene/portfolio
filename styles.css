@@ -510,6 +510,44 @@ body:has(#about:target) .btn-minus {
     display: block;
 }
 
+/* TEMA AMARILLO ESPECIAL PARA NIL OJEDA */
+.project-yellow-theme {
+    background-color: #f7e540 !important;
+    color: #000000 !important;
+}
+
+.project-yellow-theme .meta-title,
+.project-yellow-theme .meta-sub,
+.project-yellow-theme .meta-value,
+.project-yellow-theme .project-description-hero p,
+.project-yellow-theme .project-description-hero strong {
+    color: #000000 !important;
+}
+
+.project-yellow-theme .meta-label {
+    color: #555555 !important;
+}
+
+.project-yellow-theme .close-project-btn {
+    background: rgba(0, 0, 0, 0.85) !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+}
+
+.project-yellow-theme .close-project-btn:hover {
+    background: #000000 !important;
+    color: #f7e540 !important;
+}
+
+/* CAMBIO DE TEXTO EN HEADER CUANDO EL AMARILLO ESTÁ ACTIVO */
+body:has(#work-nilojeda:target) .header-fixed .txt-bold,
+body:has(#work-nilojeda:target) .header-fixed .home-link,
+body:has(#work-nilojeda:target) .header-fixed .txt-white,
+body:has(#work-nilojeda:target) .header-fixed .link-white,
+body:has(#work-nilojeda:target) .header-fixed .toggle-about-btn {
+    color: #000000 !important;
+}
+
 /* RESPONSIVE TABLET / ESCRITORIO INTERMEDIO */
 @media (max-width: 1100px) {
     .about-layout-grid {
