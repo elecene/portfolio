@@ -434,9 +434,9 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* --- ESTRUCTURA DE GALERÍAS LIMPIA Y ESTÁNDAR --- */
+/* --- ESTRUCTURA DE GALERÍAS --- */
 
-/* TRÍPTICO DE 3 IMÁGENES (P. EJ. CARTELERÍA / POSTERS) */
+/* TRÍPTICO DE 3 IMÁGENES */
 .gallery-triptych {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -471,7 +471,7 @@ body:has(.project-view-page:target) .header-fixed {
     display: block;
 }
 
-/* MOSAICO DE 5 IMÁGENES */
+/* MOSAICO DE 5 IMÁGENES (3 ARRIBA, 2 ABAJO QUE OCUPAN TODO EL ANCHO) */
 .gallery-grid-5 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -486,7 +486,11 @@ body:has(.project-view-page:target) .header-fixed {
     object-fit: cover;
     border-radius: 6px;
     display: block;
-    grid-column: span 2;
+    grid-column: span 2; /* 3 imágenes de 2 columnas = 6 columnas arriba */
+}
+
+.gallery-grid-5 img.grid-span-bottom {
+    grid-column: span 3; /* 2 imágenes de 3 columnas = ocupan el 100% abajo sin huecos */
 }
 
 /* MOSAICO DE 4 IMÁGENES */
@@ -667,7 +671,8 @@ body:has(.project-view-page:target) .header-fixed {
         gap: 12px;
     }
 
-    .gallery-grid-5 img {
+    .gallery-grid-5 img,
+    .gallery-grid-5 img.grid-span-bottom {
         grid-column: span 1;
     }
 }
