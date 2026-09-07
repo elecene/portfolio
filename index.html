@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=64.0">
+    <link rel="stylesheet" href="styles.css?v=65.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -192,7 +192,10 @@
                 <div class="media-container fill-height">
                     <a href="#work-venu" class="project-link">
                         <img src="img/ibai_granmenu/ibai_granmenu_cover.jpg" class="img-primary" alt="El Gran Menú de Ibai Principal">
-                        <img src="img/ibai_granmenu/ibai_granmenu_secondary.jpg" class="img-secondary" alt="El Gran Menú de Ibai Alternativa">
+                        <video autoplay loop muted playsinline preload="auto" class="img-secondary" id="hover-video-ibai">
+                            <source src="img/ibai_granmenu/ibai_granmenu_secondary.webm" type="video/webm">
+                            <source src="img/ibai_granmenu/ibai_granmenu_secondary.mp4" type="video/mp4">
+                        </video>
                     </a>
                 </div>
             </article>
@@ -434,16 +437,23 @@
     </section>
 
     <script>
-        const hoverVideo = document.getElementById('hover-video-lafisica');
-        if (hoverVideo) {
-            const cardContainer = hoverVideo.closest('.project-link');
-            if (cardContainer) {
-                cardContainer.addEventListener('mouseenter', () => {
-                    hoverVideo.currentTime = 0;
-                    hoverVideo.play();
-                });
+        // Reinicio al segundo 0 para los vídeos en hover (La Física e Ibai)
+        const hoverVideos = [
+            document.getElementById('hover-video-lafisica'),
+            document.getElementById('hover-video-ibai')
+        ];
+
+        hoverVideos.forEach(hoverVideo => {
+            if (hoverVideo) {
+                const cardContainer = hoverVideo.closest('.project-link');
+                if (cardContainer) {
+                    cardContainer.addEventListener('mouseenter', () => {
+                        hoverVideo.currentTime = 0;
+                        hoverVideo.play();
+                    });
+                }
             }
-        }
+        });
 
         window.addEventListener('hashchange', () => {
             const currentHash = window.location.hash;
