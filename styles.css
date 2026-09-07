@@ -439,9 +439,8 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* --- ESTRUCTURAS DE GALERÍAS --- */
+/* --- ESTRUCTURAS DE GALERÍAS EN DESKTOP --- */
 
-/* CUADRÍPTICO DE 4 IMÁGENES EQUITATIVAS */
 .gallery-quad {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -459,7 +458,6 @@ body:has(.project-view-page:target) .header-fixed {
     display: block;
 }
 
-/* TRÍPTICO DE 3 IMÁGENES EQUITATIVO */
 .gallery-triptych {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -477,7 +475,6 @@ body:has(.project-view-page:target) .header-fixed {
     display: block;
 }
 
-/* DÍPTICO DE 2 IMÁGENES */
 .gallery-diptych {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -494,7 +491,6 @@ body:has(.project-view-page:target) .header-fixed {
     display: block;
 }
 
-/* MOSAICO DE 5 IMÁGENES */
 .gallery-grid-5 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -516,7 +512,6 @@ body:has(.project-view-page:target) .header-fixed {
     grid-column: span 3;
 }
 
-/* MOSAICO DE 4 IMÁGENES */
 .gallery-grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -539,7 +534,6 @@ body:has(.project-view-page:target) .header-fixed {
     object-fit: cover;
 }
 
-/* GALERÍA GENERAL DE IMÁGENES O VÍDEOS SUELTOS */
 .project-gallery {
     width: 80%;
     margin: 0 auto;
@@ -693,16 +687,30 @@ body:has(.project-view-page:target) .header-fixed {
         margin-right: 0;
     }
 
-    /* OPCIÓN A: Muestra el mosaico cuadríptico en una retícula 2x2 en móvil */
-    .gallery-quad {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+    /* --- REGLAS MÓVIL UNIVERSALES --- */
+
+    /* 1. REGLA 4 IMÁGENES: Mosaicos de 4 imágenes en 2x2 */
+    .gallery-quad,
+    .gallery-grid-4 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
     }
 
-    .gallery-triptych,
+    /* 2. REGLA 3 IMÁGENES: Imagen 1 arriba full-width, Imágenes 2 y 3 abajo en paralelo */
+    .gallery-triptych {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .gallery-triptych img:first-child {
+        grid-column: span 2 !important;
+    }
+
+    /* Resto de cuadrículas a 1 columna */
     .gallery-diptych,
-    .gallery-grid-5,
-    .gallery-grid-4 {
+    .gallery-grid-5 {
         grid-template-columns: 1fr;
         gap: 12px;
     }
