@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=65.0">
+    <link rel="stylesheet" href="styles.css?v=66.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -211,7 +211,10 @@
 
                     <div class="media-container ratio-16-9">
                         <a href="#work-pio" class="project-link">
-                            <img src="img/yointernetot4/yointernetot4_cover.jpg" class="img-primary" alt="YoInterneto Principal">
+                            <video autoplay loop muted playsinline preload="auto" class="img-primary" id="cover-video-yointerneto">
+                                <source src="img/yointernetot4/yointernetot4_cover.webm" type="video/webm">
+                                <source src="img/yointernetot4/yointernetot4_cover.mp4" type="video/mp4">
+                            </video>
                             <img src="img/yointernetot4/yointernetot4_secondary.jpg" class="img-secondary" alt="YoInterneto Alternativa">
                         </a>
                     </div>
@@ -413,7 +416,10 @@
                 <p><strong>YoInterneto</strong> explores organic textures and digital minimalism through specialized publications and expressive branding.</p>
             </div>
             <div class="project-gallery">
-                <img src="img/yointernetot4/yointernetot4_cover.jpg" alt="YoInterneto Cover">
+                <video autoplay loop muted playsinline preload="auto">
+                    <source src="img/yointernetot4/yointernetot4_cover.webm" type="video/webm">
+                    <source src="img/yointernetot4/yointernetot4_cover.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
@@ -437,7 +443,6 @@
     </section>
 
     <script>
-        // Reinicio al segundo 0 para los vídeos en hover (La Física e Ibai)
         const hoverVideos = [
             document.getElementById('hover-video-lafisica'),
             document.getElementById('hover-video-ibai')
