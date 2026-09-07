@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=67.0">
+    <link rel="stylesheet" href="styles.css?v=69.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -234,7 +234,10 @@
                     <div class="media-container ratio-16-9">
                         <a href="#work-eurosport" class="project-link">
                             <img src="img/rubiusx/rubiusx_cover.jpg" class="img-primary" alt="Rubius X Principal">
-                            <img src="img/rubiusx/rubiusx_secondary.webm" class="img-secondary" alt="Rubius X Alternativa">
+                            <video autoplay loop muted playsinline preload="auto" class="img-secondary" id="hover-video-rubiusx">
+                                <source src="img/rubiusx/rubiusx_secondary.webm" type="video/webm">
+                                <source src="img/rubiusx/rubiusx_secondary.mp4" type="video/mp4">
+                            </video>
                         </a>
                     </div>
                 </article>
@@ -446,11 +449,11 @@
     </section>
 
     <script>
-        // Reinicio al segundo 0 para los vídeos en hover (Nil Ojeda, La Física e Ibai)
         const hoverVideos = [
             document.getElementById('hover-video-nilojeda'),
             document.getElementById('hover-video-lafisica'),
-            document.getElementById('hover-video-ibai')
+            document.getElementById('hover-video-ibai'),
+            document.getElementById('hover-video-rubiusx')
         ];
 
         hoverVideos.forEach(hoverVideo => {
