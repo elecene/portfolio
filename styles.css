@@ -693,10 +693,10 @@ body:has(.project-view-page:target) .header-fixed {
         margin-right: 0;
     }
 
-    /* OPCIÓN B: Mantiene el mosaico de 4 en una fila horizontal de 4 columnas en móvil */
+    /* OPCIÓN A: Muestra el mosaico cuadríptico en una retícula 2x2 en móvil */
     .gallery-quad {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 6px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .gallery-triptych,
