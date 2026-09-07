@@ -693,7 +693,12 @@ body:has(.project-view-page:target) .header-fixed {
         margin-right: 0;
     }
 
-    .gallery-quad,
+    /* OPCIÓN B: Mantiene el mosaico de 4 en una fila horizontal de 4 columnas en móvil */
+    .gallery-quad {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+
     .gallery-triptych,
     .gallery-diptych,
     .gallery-grid-5,
