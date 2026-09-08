@@ -181,6 +181,17 @@ body:has(#about:target) .btn-minus {
     letter-spacing: -0.01em;
 }
 
+/* ENLACE LIMPIO EN TITULARES DE PORTADA */
+.project-title a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 400;
+}
+
+.project-title a:hover {
+    opacity: 0.7;
+}
+
 .title-description {
     position: absolute;
     top: 28px;
@@ -206,9 +217,10 @@ body:has(#about:target) .btn-minus {
     visibility: visible;
 }
 
+/* OSCURECIDO DE PORTADA AL 90% (MANTIENE 10% DE VISIBILIDAD) EN HOVER DE TÍTULO */
 .project-card:has(.title-container:hover) .media-container {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0.1 !important;
+    visibility: visible !important;
 }
 
 /* CONTENEDOR DE IMAGEN PRINCIPAL (16:9 OBLIGATORIO) */
