@@ -217,9 +217,9 @@ body:has(#about:target) .btn-minus {
     visibility: visible;
 }
 
-/* OSCURECIDO DE PORTADA AL 90% (MANTIENE 10% DE VISIBILIDAD) EN HOVER DE TÍTULO */
+/* OSCURECIDO DE PORTADA AL 95% (MANTIENE 5% DE VISIBILIDAD) EN HOVER DE TÍTULO */
 .project-card:has(.title-container:hover) .media-container {
-    opacity: 0.1 !important;
+    opacity: 0.05 !important;
     visibility: visible !important;
 }
 
