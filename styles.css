@@ -99,7 +99,7 @@ body:has(#about:target) .btn-minus {
     margin-top: 105px;
 }
 
-/* HERO BLOCK / REEL (Alineado perfectamente con la retícula de la cabecera) */
+/* HERO BLOCK / REEL */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr 40px;
@@ -302,6 +302,7 @@ body:has(.project-view-page:target) .header-fixed {
     color: #000000 !important;
 }
 
+/* BOTÓN CLOSE CON EFECTO FROSTED GLASS / DESENFOQUE TRASLÚCIDO */
 .close-project-btn {
     position: fixed;
     bottom: 30px;
@@ -309,17 +310,21 @@ body:has(.project-view-page:target) .header-fixed {
     color: #ffffff !important;
     text-decoration: none;
     font-size: 13px;
-    background: #000000 !important;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     padding: 8px 18px;
     border-radius: 20px;
-    border: 1px solid #000000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     z-index: 1100;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .close-project-btn:hover {
-    background: #333333 !important;
-    color: #ffffff !important;
+    background: rgba(0, 0, 0, 0.75) !important;
+    transform: scale(1.03);
 }
 
 /* SECCIÓN ABOUT */
@@ -730,15 +735,16 @@ body:has(.project-view-page:target) .header-fixed {
         grid-column: span 2 !important;
     }
 
-    /* Resto de cuadrículas a 1 columna */
+    /* Resto de cuadrículas a 1 columna (incluyendo el grid-5 para que ninguna quede pequeña) */
     .gallery-diptych,
     .gallery-grid-5 {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
     }
 
     .gallery-grid-5 img,
     .gallery-grid-5 img.grid-span-bottom {
-        grid-column: span 1;
+        grid-column: span 1 !important;
     }
 }
