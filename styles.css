@@ -735,16 +735,25 @@ body:has(.project-view-page:target) .header-fixed {
         grid-column: span 2 !important;
     }
 
-    /* Resto de cuadrículas a 1 columna (incluyendo el grid-5 para que ninguna quede pequeña) */
-    .gallery-diptych,
+    /* 3. REGLA 5/3 IMÁGENES (NIL OJEDA FINAL): Imagen 1 full width arriba, imágenes 2 y 3 abajo en paralelo */
     .gallery-grid-5 {
         display: grid !important;
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
     }
 
-    .gallery-grid-5 img,
+    .gallery-grid-5 img:first-child {
+        grid-column: span 2 !important;
+    }
+
     .gallery-grid-5 img.grid-span-bottom {
         grid-column: span 1 !important;
+    }
+
+    /* Dípticos en 1 columna */
+    .gallery-diptych {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
     }
 }
