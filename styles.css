@@ -99,13 +99,17 @@ body:has(#about:target) .btn-minus {
     margin-top: 105px;
 }
 
-/* HERO BLOCK / REEL */
+/* HERO BLOCK / REEL (PRUEBA ALINEADA A LA IZQUIERDA DESDE EL INICIO) */
 .hero-block {
     display: grid;
-    grid-template-columns: 280px 320px 1fr;
+    grid-template-columns: 630px 1fr;
     gap: 30px;
     margin-bottom: 50px;
     align-items: start;
+}
+
+.bio-container {
+    padding-right: 20px;
 }
 
 .bio-container p {
@@ -626,10 +630,6 @@ body:has(.project-view-page:target) .header-fixed {
         line-height: 1.18;
         letter-spacing: -0.02em;
         margin: 0;
-    }
-
-    .empty-col {
-        display: none;
     }
 
     .mosaic-tight-grid, .mosaic-reversed {
