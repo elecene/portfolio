@@ -99,7 +99,7 @@ body:has(#about:target) .btn-minus {
     margin-top: 105px;
 }
 
-/* HERO BLOCK / REEL */
+/* HERO BLOCK / REEL (Extendido completamente a la derecha) */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr 40px;
@@ -132,7 +132,7 @@ body:has(#about:target) .btn-minus {
 }
 
 .reel-wrapper {
-    grid-column: 3;
+    grid-column: 3 / -1;
     width: 100%;
 }
 
