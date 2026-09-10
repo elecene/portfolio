@@ -38,7 +38,6 @@ body {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* OCULTAR SELECTED WORK AL ABRIR ABOUT */
 body:has(#about:target) .header-fixed .col-2 {
     opacity: 0 !important;
     visibility: hidden !important;
@@ -81,7 +80,7 @@ body:has(#about:target) .header-fixed .col-2 {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - PERFECTAMENTE INTEGRADO Y BORDES RECTOS */
+/* BOTÓN DINÁMICO + / - */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -425,7 +424,7 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER RESTRUCTURADO Y ESTILIZADO */
+/* FOOTER */
 .site-footer {
     text-align: center;
     padding: 60px 0 20px 0;
@@ -439,12 +438,13 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* Grosor aumentado de © 2026 */
-.copyright-bold {
+/* REGULA EL INTERLETRADO REDUCIDO Y PESO REFORZADO EN © 2026 Luciano Castañón Estrada. */
+.copyright-text {
+    letter-spacing: -0.04em !important;
     font-weight: 700 !important;
+    color: inherit;
 }
 
-/* Footer dentro de la vista #about */
 .about-footer {
     margin-top: auto;
     color: #a0a0a0;
@@ -452,7 +452,6 @@ body:has(.project-view-page:target) .header-fixed {
     padding-bottom: 20px;
 }
 
-/* Footer dentro de las páginas de proyecto */
 .project-footer {
     margin-top: 60px;
     color: #888888;
@@ -633,7 +632,7 @@ body:has(.project-view-page:target) .header-fixed {
     }
 }
 
-/* RESPONSIVE MÓVIL (ALINEACIÓN SUPERIOR EXACTA DEL BOTÓN Y NOMBRE) */
+/* RESPONSIVE MÓVIL */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -649,7 +648,7 @@ body:has(.project-view-page:target) .header-fixed {
         grid-template-columns: 1fr 33px !important;
         gap: 12px;
         z-index: 1000;
-        align-items: flex-start !important; /* Alineación superior exacta */
+        align-items: flex-start !important;
     }
 
     .header-fixed .col-1 {
@@ -674,7 +673,7 @@ body:has(.project-view-page:target) .header-fixed {
     }
 
     .toggle-icon-svg {
-        margin-top: -2px; /* Alineación perfecta del borde superior de la cruz con el texto */
+        margin-top: -2px;
     }
 
     .portfolio-layout {
