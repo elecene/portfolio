@@ -71,7 +71,7 @@ body {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - PERFECTAMENTE INTEGRADO Y CON MÁS GROSOR */
+/* BOTÓN DINÁMICO + / - (+50% TAMAÑO, BORDES RECTOS) */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -79,8 +79,8 @@ body {
     margin-left: auto;
     text-decoration: none;
     color: inherit;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -89,8 +89,8 @@ body {
 }
 
 .toggle-icon-svg {
-    width: 22px;
-    height: 22px;
+    width: 33px; /* Aumentado un 50% */
+    height: 33px;
     fill: currentColor;
 }
 
@@ -420,19 +420,19 @@ body:has(.project-view-page:target) .header-fixed {
     text-align: center;
     padding: 60px 0 20px 0;
     font-size: 12px;
-    line-height: 1.35; /* Interlineado más compacto */
+    line-height: 1.35;
     color: #444444;
     letter-spacing: -0.01em;
 }
 
 .site-footer strong {
-    font-weight: 500; /* Un punto más de peso en la primera línea */
+    font-weight: 500;
 }
 
 /* Footer dentro de la vista #about */
 .about-footer {
     margin-top: auto;
-    color: #a0a0a0; /* Ligeramente más claro sobre fondo blanco */
+    color: #a0a0a0;
     padding-top: 80px;
     padding-bottom: 20px;
 }
