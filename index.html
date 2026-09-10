@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=107.0">
+    <link rel="stylesheet" href="styles.css?v=108.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -177,10 +177,7 @@
                 <div class="media-container fill-height">
                     <a href="#work-lafisica" class="project-link">
                         <img src="img/la-fisica/lafisica_cover.webp" class="img-primary" alt="La Física Principal">
-                        <video autoplay loop muted playsinline preload="none" class="img-secondary" id="hover-video-lafisica">
-                            <source src="img/la-fisica/lafisica_17.mp4" type="video/mp4">
-                            <source src="img/la-fisica/lafisica_17.webm" type="video/webm">
-                        </video>
+                        <div class="lazy-video-container img-secondary" data-mp4="img/la-fisica/lafisica_17.mp4" data-webm="img/la-fisica/lafisica_17.webm" id="hover-video-lafisica"></div>
                     </a>
                 </div>
             </article>
@@ -200,10 +197,7 @@
                 <div class="media-container fill-height">
                     <a href="#work-venu" class="project-link">
                         <img src="img/ibai_granmenu/ibai_granmenu_cover.jpg" class="img-primary" alt="El Gran Menú de Ibai Principal">
-                        <video autoplay loop muted playsinline preload="none" class="img-secondary" id="hover-video-ibai">
-                            <source src="img/ibai_granmenu/ibai_granmenu_secondary.mp4" type="video/mp4">
-                            <source src="img/ibai_granmenu/ibai_granmenu_secondary.webm" type="video/webm">
-                        </video>
+                        <div class="lazy-video-container img-secondary" data-mp4="img/ibai_granmenu/ibai_granmenu_secondary.mp4" data-webm="img/ibai_granmenu/ibai_granmenu_secondary.webm" id="hover-video-ibai"></div>
                     </a>
                 </div>
             </article>
@@ -219,10 +213,7 @@
 
                     <div class="media-container ratio-16-9">
                         <a href="#work-pio" class="project-link">
-                            <video autoplay loop muted playsinline preload="none" class="img-primary" id="cover-video-yointerneto" poster="img/yointernetot4/yointernetot4_secondary.jpg">
-                                <source src="img/yointernetot4/yointernetot4_outro.mp4" type="video/mp4">
-                                <source src="img/yointernetot4/yointernetot4_outro.webm" type="video/webm">
-                            </video>
+                            <div class="lazy-video-container img-primary" data-mp4="img/yointernetot4/yointernetot4_outro.mp4" data-webm="img/yointernetot4/yointernetot4_outro.webm" id="cover-video-yointerneto"></div>
                             <img src="img/yointernetot4/yointernetot4_secondary.jpg" class="img-secondary" alt="YoInterneto Alternativa">
                         </a>
                     </div>
@@ -238,14 +229,8 @@
 
                     <div class="media-container ratio-16-9">
                         <a href="#work-eurosport" class="project-link">
-                            <video autoplay loop muted playsinline preload="none" class="img-primary" id="cover-video-rubiusx">
-                                <source src="img/rubiusx/rubiusx_cover_2.mp4" type="video/mp4">
-                                <source src="img/rubiusx/rubiusx_cover_2.webm" type="video/webm">
-                            </video>
-                            <video autoplay loop muted playsinline preload="none" class="img-secondary" id="hover-video-rubiusx">
-                                <source src="img/rubiusx/rubiusx_secondary.mp4" type="video/mp4">
-                                <source src="img/rubiusx/rubiusx_secondary.webm" type="video/webm">
-                            </video>
+                            <div class="lazy-video-container img-primary" data-mp4="img/rubiusx/rubiusx_cover_2.mp4" data-webm="img/rubiusx/rubiusx_cover_2.webm" id="cover-video-rubiusx"></div>
+                            <div class="lazy-video-container img-secondary" data-mp4="img/rubiusx/rubiusx_secondary.mp4" data-webm="img/rubiusx/rubiusx_secondary.webm" id="hover-video-rubiusx"></div>
                         </a>
                     </div>
                 </article>
@@ -419,9 +404,7 @@
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/la-fisica/lafisica_recurso_loop.mp4" type="video/mp4">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/la-fisica/lafisica_recurso_loop.mp4"></div>
             </div>
 
             <div class="gallery-triptych">
@@ -439,10 +422,7 @@
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/la-fisica/lafisica_17.mp4" type="video/mp4">
-                    <source src="img/la-fisica/lafisica_17.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/la-fisica/lafisica_17.mp4" data-webm="img/la-fisica/lafisica_17.webm"></div>
             </div>
 
             <div class="project-gallery">
@@ -544,24 +524,15 @@
             </div>
             
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none" controls style="width: 100%; border-radius: 6px; display: block;">
-                    <source src="img/yointernetot4/yointernetot4_intro_hd.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yointernetot4_intro_hd.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_intro_hd.mp4" data-webm="img/yointernetot4/yointernetot4_intro_hd.webm" data-controls="true"></div>
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/yointernetot4/yointernetot4_standing.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yointernetot4_standing.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_standing.mp4" data-webm="img/yointernetot4/yointernetot4_standing.webm"></div>
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/yointernetot4/yointerneto4_cds.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yointerneto4_cds.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointerneto4_cds.mp4" data-webm="img/yointernetot4/yointerneto4_cds.webm"></div>
             </div>
 
             <div class="project-gallery">
@@ -569,17 +540,11 @@
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/yointernetot4/yointernetot4_comenzamos.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yointernetot4_comenzamos.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_comenzamos.mp4" data-webm="img/yointernetot4/yointernetot4_comenzamos.webm"></div>
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/yointernetot4/yointernetot4_08_benji.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yointernetot4_08_benji.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_08_benji.mp4" data-webm="img/yointernetot4/yointernetot4_08_benji.webm"></div>
             </div>
 
             <div class="project-gallery">
@@ -587,10 +552,7 @@
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/yointernetot4/yointernetot4_cover.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yointernetot4_cover.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_cover.mp4" data-webm="img/yointernetot4/yointernetot4_cover.webm"></div>
             </div>
 
             <div class="project-gallery">
@@ -602,10 +564,7 @@
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/yointernetot4/yi_t5_videowall_loop.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yi_t5_videowall_loop.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yi_t5_videowall_loop.mp4" data-webm="img/yointernetot4/yi_t5_videowall_loop.webm"></div>
             </div>
 
             <div class="project-gallery">
@@ -617,10 +576,7 @@
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/yointernetot4/yointernetot4_outro.mp4" type="video/mp4">
-                    <source src="img/yointernetot4/yointernetot4_outro.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_outro.mp4" data-webm="img/yointernetot4/yointernetot4_outro.webm"></div>
             </div>
 
             <div class="project-gallery">
@@ -660,10 +616,7 @@
             </div>
             
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/rubiusx/rubiusx_cover_2.mp4" type="video/mp4">
-                    <source src="img/rubiusx/rubiusx_cover_2.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/rubiusx/rubiusx_cover_2.mp4" data-webm="img/rubiusx/rubiusx_cover_2.webm"></div>
             </div>
 
             <div class="gallery-diptych">
@@ -672,15 +625,8 @@
             </div>
 
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/rubiusx/rubiusx_intro.mp4" type="video/mp4">
-                    <source src="img/rubiusx/rubiusx_intro.webm" type="video/webm">
-                </video>
-
-                <video autoplay loop muted playsinline preload="none">
-                    <source src="img/rubiusx/rubiusx_outro.mp4" type="video/mp4">
-                    <source src="img/rubiusx/rubiusx_outro.webm" type="video/webm">
-                </video>
+                <div class="lazy-video-container" data-mp4="img/rubiusx/rubiusx_intro.mp4" data-webm="img/rubiusx/rubiusx_intro.webm"></div>
+                <div class="lazy-video-container" data-mp4="img/rubiusx/rubiusx_outro.mp4" data-webm="img/rubiusx/rubiusx_outro.webm"></div>
             </div>
 
             <footer class="site-footer project-footer">
@@ -691,8 +637,8 @@
     </section>
 
     <script>
+        // Manejo dinámico del botón About
         const toggleBtn = document.getElementById('toggle-btn');
-
         function updateToggleHref() {
             if (window.location.hash === '#about') {
                 toggleBtn.setAttribute('href', '#');
@@ -700,28 +646,78 @@
                 toggleBtn.setAttribute('href', '#about');
             }
         }
-
         window.addEventListener('hashchange', updateToggleHref);
         window.addEventListener('load', updateToggleHref);
 
-        const hoverVideos = [
-            document.getElementById('hover-video-lafisica'),
-            document.getElementById('hover-video-ibai'),
-            document.getElementById('hover-video-rubiusx')
-        ];
+        // Carga inteligente de vídeos (Evita el rebloqueo de memoria RAM en Safari iPadOS)
+        function createVideoElement(container) {
+            if (container.querySelector('video')) return container.querySelector('video');
 
-        hoverVideos.forEach(hoverVideo => {
-            if (hoverVideo) {
-                const cardContainer = hoverVideo.closest('.project-link');
+            const video = document.createElement('video');
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+            video.setAttribute('playsinline', '');
+            video.style.width = '100%';
+            video.style.height = '100%';
+            video.style.objectFit = 'cover';
+            video.style.display = 'block';
+            video.style.borderRadius = '6px';
+
+            if (container.getAttribute('data-controls') === 'true') {
+                video.controls = true;
+            }
+
+            const mp4Src = container.getAttribute('data-mp4');
+            if (mp4Src) {
+                const sourceMp4 = document.createElement('source');
+                sourceMp4.src = mp4Src;
+                sourceMp4.type = 'video/mp4';
+                video.appendChild(sourceMp4);
+            }
+
+            const webmSrc = container.getAttribute('data-webm');
+            if (webmSrc) {
+                const sourceWebm = document.createElement('source');
+                sourceWebm.src = webmSrc;
+                sourceWebm.type = 'video/webm';
+                video.appendChild(sourceWebm);
+            }
+
+            container.appendChild(video);
+            video.play().catch(() => {});
+            return video;
+        }
+
+        // Observador de visibilidad en pantalla
+        const lazyContainers = document.querySelectorAll('.lazy-video-container');
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    createVideoElement(entry.target);
+                }
+            });
+        }, { rootMargin: '200px' });
+
+        lazyContainers.forEach(container => videoObserver.observe(container));
+
+        // Carga al hacer Hover en portadas Desktop
+        ['hover-video-lafisica', 'hover-video-ibai', 'hover-video-rubiusx'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                const cardContainer = el.closest('.project-link');
                 if (cardContainer) {
                     cardContainer.addEventListener('mouseenter', () => {
-                        hoverVideo.currentTime = 0;
-                        hoverVideo.play();
+                        const v = createVideoElement(el);
+                        v.currentTime = 0;
+                        v.play().catch(() => {});
                     });
                 }
             }
         });
 
+        // Reset de scroll al cambiar de vista
         window.addEventListener('hashchange', () => {
             const currentHash = window.location.hash;
             if (currentHash && currentHash !== '#') {
