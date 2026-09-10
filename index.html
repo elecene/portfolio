@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=104.0">
+    <link rel="stylesheet" href="styles.css?v=105.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -29,12 +29,13 @@
         </div>
 
         <div class="col col-4">
-            <a href="#about" class="toggle-about-btn" title="About & Experience">
+            <!-- Alterna el estado redirigiendo a #about o a # -->
+            <a href="#about" class="toggle-about-btn" id="toggle-btn" title="About & Experience">
                 <svg class="toggle-icon-svg" viewBox="0 0 24 24">
-                    <!-- Barra Horizontal permanente con grosor reforzado (2.5px) -->
-                    <rect x="4" y="10.75" width="16" height="2.5" rx="1.25" />
-                    <!-- Barra Vertical dinámica (se oculta al abrir About) -->
-                    <rect class="vert-bar" x="10.75" y="4" width="2.5" height="16" rx="1.25" />
+                    <!-- Barra Horizontal permanente (Bordes totalmente rectos y grosor 3.5px) -->
+                    <rect x="2" y="10.25" width="20" height="3.5" />
+                    <!-- Barra Vertical dinámica (Bordes totalmente rectos y grosor 3.5px) -->
+                    <rect class="vert-bar" x="10.25" y="2" width="3.5" height="20" />
                 </svg>
             </a>
         </div>
@@ -693,6 +694,20 @@
     </section>
 
     <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+
+        // Actualizar el enlace dinámicamente según la URL actual
+        function updateToggleHref() {
+            if (window.location.hash === '#about') {
+                toggleBtn.setAttribute('href', '#');
+            } else {
+                toggleBtn.setAttribute('href', '#about');
+            }
+        }
+
+        window.addEventListener('hashchange', updateToggleHref);
+        window.addEventListener('load', updateToggleHref);
+
         const hoverVideos = [
             document.getElementById('hover-video-lafisica'),
             document.getElementById('hover-video-ibai'),
