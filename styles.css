@@ -71,7 +71,7 @@ body {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - PERFECTAMENTE CENTRADO Y SIMÉTRICO */
+/* BOTÓN DINÁMICO + / - PERFECTAMENTE INTEGRADO Y CON MÁS GROSOR */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -79,9 +79,6 @@ body {
     margin-left: auto;
     text-decoration: none;
     color: inherit;
-    font-size: 38px;
-    font-weight: 400;
-    line-height: 1;
     width: 32px;
     height: 32px;
     transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -91,31 +88,20 @@ body {
     opacity: 0.55;
 }
 
-.btn-plus {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.btn-minus {
-    display: none;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-/* Icono SVG para el menos con idénticas proporciones de trazo */
-.btn-minus-svg {
-    width: 20px;
-    height: 20px;
+.toggle-icon-svg {
+    width: 22px;
+    height: 22px;
     fill: currentColor;
 }
 
-body:has(#about:target) .btn-plus {
-    display: none;
+/* Transición suave para ocultar la barra vertical y formar el signo - */
+.toggle-icon-svg .vert-bar {
+    transition: opacity 0.25s ease;
+    opacity: 1;
 }
 
-body:has(#about:target) .btn-minus {
-    display: flex;
+body:has(#about:target) .toggle-icon-svg .vert-bar {
+    opacity: 0;
 }
 
 .portfolio-layout {
@@ -429,22 +415,33 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER CENTRADO EN 2 LÍNEAS */
+/* FOOTER RESTRONSTRUCTURADO Y ESTILIZADO */
 .site-footer {
     text-align: center;
     padding: 60px 0 20px 0;
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.35; /* Interlineado más compacto */
     color: #444444;
     letter-spacing: -0.01em;
 }
 
-/* Forzar que en la ventana #about el footer baje hasta el fondo exacto */
+.site-footer strong {
+    font-weight: 500; /* Un punto más de peso en la primera línea */
+}
+
+/* Footer dentro de la vista #about */
 .about-footer {
     margin-top: auto;
-    color: #888888;
+    color: #a0a0a0; /* Ligeramente más claro sobre fondo blanco */
     padding-top: 80px;
     padding-bottom: 20px;
+}
+
+/* Footer dentro de las páginas de proyecto */
+.project-footer {
+    margin-top: 60px;
+    color: #888888;
+    padding-bottom: 40px;
 }
 
 /* DETALLE DE PROYECTOS */
@@ -651,11 +648,6 @@ body:has(.project-view-page:target) .header-fixed {
     .header-fixed .col-4 {
         display: block !important;
         pointer-events: auto;
-    }
-
-    .toggle-about-btn {
-        font-size: 38px;
-        text-align: right;
     }
 
     .portfolio-layout {
