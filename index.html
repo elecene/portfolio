@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=105.0">
+    <link rel="stylesheet" href="styles.css?v=106.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -29,12 +29,9 @@
         </div>
 
         <div class="col col-4">
-            <!-- Alterna el estado redirigiendo a #about o a # -->
             <a href="#about" class="toggle-about-btn" id="toggle-btn" title="About & Experience">
                 <svg class="toggle-icon-svg" viewBox="0 0 24 24">
-                    <!-- Barra Horizontal permanente (Bordes totalmente rectos y grosor 3.5px) -->
                     <rect x="2" y="10.25" width="20" height="3.5" />
-                    <!-- Barra Vertical dinámica (Bordes totalmente rectos y grosor 3.5px) -->
                     <rect class="vert-bar" x="10.25" y="2" width="3.5" height="20" />
                 </svg>
             </a>
@@ -111,7 +108,7 @@
         </div>
 
         <footer class="site-footer about-footer">
-            <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+            <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
         </footer>
     </section>
 
@@ -257,7 +254,7 @@
         </section>
 
         <footer class="site-footer">
-            <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+            <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
         </footer>
 
     </main>
@@ -317,7 +314,7 @@
             </div>
 
             <footer class="site-footer project-footer">
-                <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+                <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
             </footer>
 
         </div>
@@ -375,7 +372,7 @@
             </div>
 
             <footer class="site-footer project-footer">
-                <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+                <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
             </footer>
 
         </div>
@@ -469,7 +466,7 @@
             </div>
 
             <footer class="site-footer project-footer">
-                <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+                <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
             </footer>
 
         </div>
@@ -515,7 +512,7 @@
             </div>
 
             <footer class="site-footer project-footer">
-                <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+                <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
             </footer>
 
         </div>
@@ -631,7 +628,7 @@
             </div>
 
             <footer class="site-footer project-footer">
-                <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+                <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
             </footer>
 
         </div>
@@ -687,7 +684,7 @@
             </div>
 
             <footer class="site-footer project-footer">
-                <p><strong>© 2026 Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
+                <p><strong class="copyright-bold">© 2026</strong> <strong>Luciano Castañón Estrada.</strong><br>All work featured belongs to their respective clients & agencies.</p>
             </footer>
 
         </div>
@@ -696,7 +693,6 @@
     <script>
         const toggleBtn = document.getElementById('toggle-btn');
 
-        // Actualizar el enlace dinámicamente según la URL actual
         function updateToggleHref() {
             if (window.location.hash === '#about') {
                 toggleBtn.setAttribute('href', '#');
