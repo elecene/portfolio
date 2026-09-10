@@ -34,6 +34,16 @@ body {
     pointer-events: auto;
 }
 
+.header-fixed .col-2 {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* OCULTAR SELECTED WORK AL ABRIR ABOUT */
+body:has(#about:target) .header-fixed .col-2 {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
 /* TRANSICIÓN SUAVE EN NOMBRE Y ENLACES */
 .home-link {
     color: inherit;
@@ -71,7 +81,7 @@ body {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - (+50% TAMAÑO, BORDES RECTOS) */
+/* BOTÓN DINÁMICO + / - PERFECTAMENTE INTEGRADO Y BORDES RECTOS */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -89,12 +99,12 @@ body {
 }
 
 .toggle-icon-svg {
-    width: 33px; /* Aumentado un 50% */
+    width: 33px;
     height: 33px;
     fill: currentColor;
+    display: block;
 }
 
-/* Transición suave para ocultar la barra vertical y formar el signo - */
 .toggle-icon-svg .vert-bar {
     transition: opacity 0.25s ease;
     opacity: 1;
@@ -415,7 +425,7 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER RESTRONSTRUCTURADO Y ESTILIZADO */
+/* FOOTER RESTRUCTURADO Y ESTILIZADO */
 .site-footer {
     text-align: center;
     padding: 60px 0 20px 0;
@@ -427,6 +437,11 @@ body:has(.project-view-page:target) .header-fixed {
 
 .site-footer strong {
     font-weight: 500;
+}
+
+/* Grosor aumentado de © 2026 */
+.copyright-bold {
+    font-weight: 700 !important;
 }
 
 /* Footer dentro de la vista #about */
@@ -618,7 +633,7 @@ body:has(.project-view-page:target) .header-fixed {
     }
 }
 
-/* RESPONSIVE MÓVIL */
+/* RESPONSIVE MÓVIL (ALINEACIÓN SUPERIOR EXACTA DEL BOTÓN Y NOMBRE) */
 @media (max-width: 900px) {
     body {
         padding: 20px;
@@ -631,9 +646,10 @@ body:has(.project-view-page:target) .header-fixed {
         width: 100%;
         padding: 20px;
         display: grid !important;
-        grid-template-columns: 1fr 40px !important;
+        grid-template-columns: 1fr 33px !important;
         gap: 12px;
         z-index: 1000;
+        align-items: flex-start !important; /* Alineación superior exacta */
     }
 
     .header-fixed .col-1 {
@@ -648,6 +664,17 @@ body:has(.project-view-page:target) .header-fixed {
     .header-fixed .col-4 {
         display: block !important;
         pointer-events: auto;
+    }
+
+    .toggle-about-btn {
+        width: 33px;
+        height: 33px;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .toggle-icon-svg {
+        margin-top: -2px; /* Alineación perfecta del borde superior de la cruz con el texto */
     }
 
     .portfolio-layout {
