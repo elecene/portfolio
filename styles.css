@@ -438,9 +438,9 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* REGULA EL INTERLETRADO REDUCIDO Y PESO REFORZADO EN © 2026 Luciano Castañón Estrada. */
+/* REGULA EL INTERLETRADO UN PUNTO MÁS BAJO (-0.01em) Y PESO 700 */
 .copyright-text {
-    letter-spacing: -0.04em !important;
+    letter-spacing: -0.01em !important;
     font-weight: 700 !important;
     color: inherit;
 }
