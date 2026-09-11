@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* RESERVA DE ESPACIO ESTABLE PARA LA BARRA DE SCROLL (EVITA DESPLAZAMIENTOS AL ABRIR PROYECTOS/ABOUT) */
+/* RESERVA DE ESPACIO ESTABLE PARA LA BARRA DE SCROLL */
 html {
     scrollbar-gutter: stable;
 }
@@ -90,7 +90,7 @@ body:has(#about:target) .header-fixed .col-2 {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - RETÍCULA ESTABLE */
+/* BOTÓN DINÁMICO + / - */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -316,7 +316,7 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     display: none;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    padding: 130px 30px 60px 30px;
+    padding: 130px 30px 50px 30px; /* Igualado a 50px de colchón inferior */
 }
 
 .project-view-page:target {
@@ -435,7 +435,7 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER */
+/* FOOTER UNIFORMADO EN TODAS LAS PÁGINAS (PADDING-BOTTOM EXACTO DE 50PX) */
 .site-footer {
     text-align: center;
     padding: 60px 0 50px 0;
@@ -463,12 +463,12 @@ body:has(.project-view-page:target) .header-fixed {
 .about-footer {
     margin-top: auto;
     padding-top: 80px;
-    padding-bottom: 20px;
+    padding-bottom: 50px; /* Igualado exacto */
 }
 
 .project-footer {
     margin-top: 50px;
-    padding-bottom: 40px;
+    padding-bottom: 50px; /* Igualado exacto */
 }
 
 /* CRÉDITOS DE PROYECTO CENTRADOS AL MEDIO */
@@ -672,7 +672,7 @@ body:has(.project-view-page:target) .header-fixed {
         width: 100%;
         padding: 20px;
         display: grid !important;
-        grid-template-columns: 1fr 26px !important;
+        grid-template-columns: 1fr 32px !important;
         gap: 12px;
         z-index: 1000;
         align-items: flex-start !important;
@@ -693,8 +693,8 @@ body:has(.project-view-page:target) .header-fixed {
     }
 
     .toggle-about-btn {
-        width: 26px;
-        height: 26px;
+        width: 32px;
+        height: 32px;
         align-items: flex-start;
         justify-content: flex-end;
     }
@@ -734,7 +734,7 @@ body:has(.project-view-page:target) .header-fixed {
     }
 
     .project-view-page {
-        padding: 100px 20px 60px 20px;
+        padding: 100px 20px 50px 20px;
     }
 
     .about-layout-grid {
