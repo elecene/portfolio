@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=119.0">
+    <link rel="stylesheet" href="styles.css?v=125.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -697,16 +697,36 @@
                 toggleBtn.setAttribute('href', '#about');
             }
         }
-        window.addEventListener('hashchange', updateToggleHref);
-        window.addEventListener('load', updateToggleHref);
+
+        // DETENER TODOS LOS VÍDEOS Y SU AUDIO AL NAVEGAR O CERRAR PROYECTOS
+        function handleHashChange() {
+            updateToggleHref();
+            const currentHash = window.location.hash;
+
+            // Si el usuario vuelve a la página principal (# o vacío)
+            if (!currentHash || currentHash === '#' || currentHash === '#about') {
+                document.querySelectorAll('.project-view-page video').forEach(v => {
+                    v.pause();
+                    v.currentTime = 0;
+                });
+            } else {
+                const activeProject = document.querySelector(currentHash);
+                if (activeProject) {
+                    activeProject.scrollTop = 0;
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleHashChange);
+        window.addEventListener('load', handleHashChange);
 
         function createVideoElement(container) {
             if (container.querySelector('video')) return container.querySelector('video');
 
             const video = document.createElement('video');
-            video.autoplay = true;
+            const hasControls = container.getAttribute('data-controls') === 'true';
+
             video.loop = true;
-            video.muted = true;
             video.playsInline = true;
             video.setAttribute('playsinline', '');
             video.style.width = '100%';
@@ -715,8 +735,13 @@
             video.style.display = 'block';
             video.style.borderRadius = '6px';
 
-            if (container.getAttribute('data-controls') === 'true') {
+            if (hasControls) {
                 video.controls = true;
+                video.muted = false;
+                video.autoplay = false; // Sin reproducción automática para vídeos interactivos
+            } else {
+                video.muted = true;
+                video.autoplay = true;
             }
 
             const mp4Src = container.getAttribute('data-mp4');
@@ -736,7 +761,11 @@
             }
 
             container.appendChild(video);
-            video.play().catch(() => {});
+
+            if (!hasControls) {
+                video.play().catch(() => {});
+            }
+
             return video;
         }
 
@@ -761,16 +790,6 @@
                         v.currentTime = 0;
                         v.play().catch(() => {});
                     });
-                }
-            }
-        });
-
-        window.addEventListener('hashchange', () => {
-            const currentHash = window.location.hash;
-            if (currentHash && currentHash !== '#') {
-                const activeProject = document.querySelector(currentHash);
-                if (activeProject) {
-                    activeProject.scrollTop = 0;
                 }
             }
         });
