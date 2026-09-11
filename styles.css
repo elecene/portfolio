@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* BLOQUEO DEL SCROLL DEL BODY AL ABRIR UN PROYECTO O ABOUT */
+/* BLOQUEO DEL SCROLL DEL BODY AL ABRIR UN PROYECTO O ABOUT PARA EVITAR SALTO DEL BOTÓN */
 body:has(.project-view-page:target) {
     overflow: hidden !important;
 }
@@ -85,19 +85,16 @@ body:has(#about:target) .header-fixed .col-2 {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - POSICIONADO ABSOLUTAMENTE PARA EVITAR EMPUJE DEL SCROLLBAR */
+/* BOTÓN DINÁMICO + / - INTEGRADO EN LA RETÍCULA (POSICIÓN EXACTA DE LA PORTADA) */
 .toggle-about-btn {
-    position: fixed;
-    top: 24px;
-    right: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-left: auto;
     text-decoration: none;
     color: inherit;
     width: 26px;
     height: 26px;
-    z-index: 1005;
     transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -433,10 +430,10 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER CON MÁS ESPACIO EN PORTADA PRINCIPAL (PADDING-BOTTOM: 50PX) */
+/* FOOTER CON MÁS ESPACIO EN PORTADA PRINCIPAL */
 .site-footer {
     text-align: center;
-    padding: 60px 0 50px 0; /* Mayor espacio inferior */
+    padding: 60px 0 50px 0;
     font-size: 12px;
     line-height: 1.35;
     color: #2b2b2b;
@@ -453,7 +450,6 @@ body:has(.project-view-page:target) .header-fixed {
     color: inherit;
 }
 
-/* Footer claro en About y en páginas de proyectos */
 .about-footer,
 .project-footer {
     color: #bfbfbf !important;
@@ -470,13 +466,14 @@ body:has(.project-view-page:target) .header-fixed {
     padding-bottom: 40px;
 }
 
-/* CRÉDITOS DE PROYECTO (INTERLINEADO COMPACTO) */
+/* CRÉDITOS DE PROYECTO CENTRADOS AL MEDIO DE LA PÁGINA */
 .project-credits-block {
     width: 80%;
     margin: 50px auto 0 auto;
     font-size: 13px;
     line-height: 1.35;
     color: #888888;
+    text-align: center; /* Justificado/centrado al medio */
 }
 
 .project-credits-block p {
@@ -691,8 +688,6 @@ body:has(.project-view-page:target) .header-fixed {
     }
 
     .toggle-about-btn {
-        top: 20px;
-        right: 20px;
         width: 26px;
         height: 26px;
         align-items: flex-start;
