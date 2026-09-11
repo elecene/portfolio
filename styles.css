@@ -12,6 +12,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* BLOQUEO DEL SCROLL DEL BODY AL ABRIR UN PROYECTO O ABOUT */
+body:has(.project-view-page:target) {
+    overflow: hidden !important;
+}
+
 /* CABECERA FIJA TRANSPARENTE */
 .header-fixed {
     position: fixed;
@@ -80,7 +85,7 @@ body:has(#about:target) .header-fixed .col-2 {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - */
+/* BOTÓN DINÁMICO + / - (20% MÁS PEQUEÑO = 26PX) */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -88,8 +93,8 @@ body:has(#about:target) .header-fixed .col-2 {
     margin-left: auto;
     text-decoration: none;
     color: inherit;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -98,8 +103,8 @@ body:has(#about:target) .header-fixed .col-2 {
 }
 
 .toggle-icon-svg {
-    width: 33px;
-    height: 33px;
+    width: 26px;
+    height: 26px;
     fill: currentColor;
     display: block;
 }
@@ -293,18 +298,19 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     opacity: 1;
 }
 
-/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT */
+/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT (CON NAVEGACIÓN Y SCROLL PROPIO) */
 .project-view-page {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #ffffff !important;
     color: #000000 !important;
     z-index: 900;
     display: none;
-    overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     padding: 130px 30px 60px 30px;
 }
 
@@ -342,7 +348,7 @@ body:has(.project-view-page:target) .header-fixed {
     transform: scale(1.03);
 }
 
-/* SECCIÓN ABOUT CON EMPUJE INFERIOR DE FOOTER */
+/* SECCIÓN ABOUT */
 #about {
     background-color: #ffffff;
     color: #000000;
@@ -424,13 +430,13 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER */
+/* FOOTER - AJUSTES DE COLOR DE TEXTO */
 .site-footer {
     text-align: center;
     padding: 60px 0 20px 0;
     font-size: 12px;
     line-height: 1.35;
-    color: #444444;
+    color: #2b2b2b; /* MÁS OSCURO EN PÁGINA PRINCIPAL */
     letter-spacing: -0.01em;
 }
 
@@ -438,24 +444,38 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* REGULA EL INTERLETRADO UN PUNTO MÁS BAJO (-0.01em) Y PESO 700 */
 .copyright-text {
     letter-spacing: -0.01em !important;
     font-weight: 700 !important;
     color: inherit;
 }
 
+/* Footer dentro de la vista #about */
 .about-footer {
     margin-top: auto;
-    color: #a0a0a0;
+    color: #bfbfbf; /* MÁS CLARO EN ABOUT */
     padding-top: 80px;
     padding-bottom: 20px;
 }
 
+/* Footer dentro de las páginas de proyecto */
 .project-footer {
     margin-top: 60px;
     color: #888888;
     padding-bottom: 40px;
+}
+
+/* CRÉDITOS DE PROYECTO (GRIS MUY CLARO) */
+.project-credits-block {
+    width: 80%;
+    margin: 40px auto 0 auto;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #999999;
+}
+
+.project-credits-block p {
+    margin-bottom: 4px;
 }
 
 /* DETALLE DE PROYECTOS */
@@ -645,7 +665,7 @@ body:has(.project-view-page:target) .header-fixed {
         width: 100%;
         padding: 20px;
         display: grid !important;
-        grid-template-columns: 1fr 33px !important;
+        grid-template-columns: 1fr 26px !important;
         gap: 12px;
         z-index: 1000;
         align-items: flex-start !important;
@@ -666,14 +686,14 @@ body:has(.project-view-page:target) .header-fixed {
     }
 
     .toggle-about-btn {
-        width: 33px;
-        height: 33px;
+        width: 26px;
+        height: 26px;
         align-items: flex-start;
         justify-content: flex-end;
     }
 
     .toggle-icon-svg {
-        margin-top: -2px;
+        margin-top: -1px;
     }
 
     .portfolio-layout {
@@ -762,7 +782,8 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-diptych,
     .gallery-grid-5,
     .gallery-grid-4,
-    .project-gallery {
+    .project-gallery,
+    .project-credits-block {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
