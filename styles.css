@@ -316,7 +316,7 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     display: none;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    padding: 130px 30px 50px 30px; /* Igualado a 50px de colchón inferior */
+    padding: 130px 30px 50px 30px;
 }
 
 .project-view-page:target {
@@ -435,24 +435,31 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER UNIFORMADO EN TODAS LAS PÁGINAS (PADDING-BOTTOM EXACTO DE 50PX) */
+/* FOOTER UNIFORMADO Y AJUSTADO A LA REFERENCIA */
 .site-footer {
     text-align: center;
     padding: 60px 0 50px 0;
     font-size: 12px;
     line-height: 1.35;
     color: #2b2b2b;
+}
+
+.footer-line-1 {
+    letter-spacing: -0.035em !important; /* Interletrado ajustado de la referencia */
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.footer-semibold {
+    font-weight: 600 !important; /* Semibold */
+}
+
+.footer-medium {
+    font-weight: 500 !important; /* Medium */
+}
+
+.footer-line-2 {
     letter-spacing: -0.01em;
-}
-
-.site-footer strong {
-    font-weight: 500;
-}
-
-.copyright-text {
-    letter-spacing: -0.01em !important;
-    font-weight: 700 !important;
-    color: inherit;
 }
 
 .about-footer,
@@ -463,12 +470,12 @@ body:has(.project-view-page:target) .header-fixed {
 .about-footer {
     margin-top: auto;
     padding-top: 80px;
-    padding-bottom: 50px; /* Igualado exacto */
+    padding-bottom: 50px;
 }
 
 .project-footer {
     margin-top: 50px;
-    padding-bottom: 50px; /* Igualado exacto */
+    padding-bottom: 50px;
 }
 
 /* CRÉDITOS DE PROYECTO CENTRADOS AL MEDIO */
