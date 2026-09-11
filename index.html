@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=108.0">
+    <link rel="stylesheet" href="styles.css?v=109.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -296,6 +296,13 @@
                 <img src="img/nilojeda_laliga/nilojeda_laliga_11.jpg" alt="Nil Ojeda 11" style="grid-column: span 6;">
                 <img src="img/nilojeda_laliga/nilojeda_laliga_12.jpg" alt="Nil Ojeda 12" class="grid-span-bottom" style="grid-column: span 3;">
                 <img src="img/nilojeda_laliga/nilojeda_laliga_14.jpg" alt="Nil Ojeda 14" class="grid-span-bottom" style="grid-column: span 3;">
+            </div>
+
+            <!-- CRÉDITOS AÑADIDOS AL FINAL DE NIL OJEDA -->
+            <div class="project-credits-block">
+                <p>Graphic design: Mikel San Juán</p>
+                <p>Creative director: Jaime Sordo</p>
+                <p>Production team: David Boch, Antonio Montero, Natalia Moldón</p>
             </div>
 
             <footer class="site-footer project-footer">
@@ -637,7 +644,6 @@
     </section>
 
     <script>
-        // Manejo dinámico del botón About
         const toggleBtn = document.getElementById('toggle-btn');
         function updateToggleHref() {
             if (window.location.hash === '#about') {
@@ -649,7 +655,6 @@
         window.addEventListener('hashchange', updateToggleHref);
         window.addEventListener('load', updateToggleHref);
 
-        // Carga inteligente de vídeos (Evita el rebloqueo de memoria RAM en Safari iPadOS)
         function createVideoElement(container) {
             if (container.querySelector('video')) return container.querySelector('video');
 
@@ -690,7 +695,6 @@
             return video;
         }
 
-        // Observador de visibilidad en pantalla
         const lazyContainers = document.querySelectorAll('.lazy-video-container');
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -702,7 +706,6 @@
 
         lazyContainers.forEach(container => videoObserver.observe(container));
 
-        // Carga al hacer Hover en portadas Desktop
         ['hover-video-lafisica', 'hover-video-ibai', 'hover-video-rubiusx'].forEach(id => {
             const el = document.getElementById(id);
             if (el) {
@@ -717,7 +720,6 @@
             }
         });
 
-        // Reset de scroll al cambiar de vista
         window.addEventListener('hashchange', () => {
             const currentHash = window.location.hash;
             if (currentHash && currentHash !== '#') {
