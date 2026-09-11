@@ -85,7 +85,7 @@ body:has(#about:target) .header-fixed .col-2 {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - (20% MÁS PEQUEÑO = 26PX) */
+/* BOTÓN DINÁMICO + / - ALINEADO FIJO SIN DESPLAZAMIENTO */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -93,8 +93,8 @@ body:has(#about:target) .header-fixed .col-2 {
     margin-left: auto;
     text-decoration: none;
     color: inherit;
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -298,7 +298,7 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     opacity: 1;
 }
 
-/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT (CON NAVEGACIÓN Y SCROLL PROPIO) */
+/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -430,7 +430,7 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER - AJUSTES DE COLOR DE TEXTO */
+/* FOOTER */
 .site-footer {
     text-align: center;
     padding: 60px 0 20px 0;
@@ -450,32 +450,34 @@ body:has(.project-view-page:target) .header-fixed {
     color: inherit;
 }
 
-/* Footer dentro de la vista #about */
+/* Footer claro en About y en páginas de proyectos */
+.about-footer,
+.project-footer {
+    color: #bfbfbf !important; /* IGUAL DE CLARO EN AMBOS */
+}
+
 .about-footer {
     margin-top: auto;
-    color: #bfbfbf; /* MÁS CLARO EN ABOUT */
     padding-top: 80px;
     padding-bottom: 20px;
 }
 
-/* Footer dentro de las páginas de proyecto */
 .project-footer {
-    margin-top: 60px;
-    color: #888888;
+    margin-top: 50px;
     padding-bottom: 40px;
 }
 
-/* CRÉDITOS DE PROYECTO (GRIS MUY CLARO) */
+/* CRÉDITOS DE PROYECTO (INTERLINEADO REDUCIDO Y COMPACTO) */
 .project-credits-block {
     width: 80%;
-    margin: 40px auto 0 auto;
+    margin: 50px auto 0 auto;
     font-size: 13px;
-    line-height: 1.5;
-    color: #999999;
+    line-height: 1.35; /* Interlineado reducido */
+    color: #888888;
 }
 
 .project-credits-block p {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 /* DETALLE DE PROYECTOS */
