@@ -303,7 +303,7 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     opacity: 1;
 }
 
-/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT */
+/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT (PADDING-BOTTOM EXACTO DE 24PX) */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -316,7 +316,7 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     display: none;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    padding: 130px 30px 50px 30px;
+    padding: 130px 30px 24px 30px; /* Igualado al padding-bottom del body */
 }
 
 .project-view-page:target {
@@ -435,27 +435,31 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER UNIFORMADO Y AJUSTADO A LA REFERENCIA */
+/* FOOTER - IGUALADO MILIMÉTRICAMENTE EN TODAS LAS VISTAS */
 .site-footer {
     text-align: center;
-    padding: 60px 0 50px 0;
+    padding: 60px 0 0 0; /* Padding-bottom 0 porque lo da la ventana contenedora */
     font-size: 12px;
     line-height: 1.35;
     color: #2b2b2b;
 }
 
+.site-footer p {
+    margin: 0;
+}
+
 .footer-line-1 {
-    letter-spacing: -0.035em !important; /* Interletrado ajustado de la referencia */
+    letter-spacing: -0.035em !important;
     display: inline-block;
     margin-bottom: 2px;
 }
 
 .footer-semibold {
-    font-weight: 600 !important; /* Semibold */
+    font-weight: 600 !important;
 }
 
 .footer-medium {
-    font-weight: 500 !important; /* Medium */
+    font-weight: 500 !important;
 }
 
 .footer-line-2 {
@@ -470,12 +474,12 @@ body:has(.project-view-page:target) .header-fixed {
 .about-footer {
     margin-top: auto;
     padding-top: 80px;
-    padding-bottom: 50px;
+    padding-bottom: 0;
 }
 
 .project-footer {
     margin-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 0;
 }
 
 /* CRÉDITOS DE PROYECTO CENTRADOS AL MEDIO */
@@ -741,7 +745,7 @@ body:has(.project-view-page:target) .header-fixed {
     }
 
     .project-view-page {
-        padding: 100px 20px 50px 20px;
+        padding: 100px 20px 20px 20px; /* Ajuste móvil */
     }
 
     .about-layout-grid {
