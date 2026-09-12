@@ -500,12 +500,9 @@
                 <p><strong>El Gran Menú de Ibai</strong> is a collection of three delicious packaging designs for the very much anticipated Ibai´s delivery menu on The Gaming Family.</p>
             </div>
             
-            <!-- 1ª PIEZA: VÍDEO ANIMADO IBAI GRANMENU COVER ANIMATED -->
+            <!-- 1ª PIEZA: VÍDEO ANIMADO (CARGA DINÁMICA AUTOMÁTICA) -->
             <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: auto; border-radius: 6px; margin-bottom: 30px; display: block;">
-                    <source src="img/ibai_granmenu/ibai_granmenu_cover_animated.webm" type="video/webm">
-                    <source src="img/ibai_granmenu/ibai_granmenu_cover_animated.mp4" type="video/mp4">
-                </video>
+                <div class="lazy-video-container" data-webm="img/ibai_granmenu/ibai_granmenu_cover_animated.webm?v=2.0" data-mp4="img/ibai_granmenu/ibai_granmenu_cover_animated.mp4?v=2.0"></div>
             </div>
 
             <!-- 2ª PIEZA: IBAI MENU 08 -->
@@ -723,6 +720,12 @@
                 const activeProject = document.querySelector(currentHash);
                 if (activeProject) {
                     activeProject.scrollTop = 0;
+                    // Forzar inicio de reproducción de todos los vídeos dentro del proyecto activo
+                    activeProject.querySelectorAll('video').forEach(v => {
+                        if (!v.controls) {
+                            v.play().catch(() => {});
+                        }
+                    });
                 }
             }
         }
@@ -754,20 +757,20 @@
                 video.autoplay = true;
             }
 
-            const mp4Src = container.getAttribute('data-mp4');
-            if (mp4Src) {
-                const sourceMp4 = document.createElement('source');
-                sourceMp4.src = mp4Src;
-                sourceMp4.type = 'video/mp4';
-                video.appendChild(sourceMp4);
-            }
-
             const webmSrc = container.getAttribute('data-webm');
             if (webmSrc) {
                 const sourceWebm = document.createElement('source');
                 sourceWebm.src = webmSrc;
                 sourceWebm.type = 'video/webm';
                 video.appendChild(sourceWebm);
+            }
+
+            const mp4Src = container.getAttribute('data-mp4');
+            if (mp4Src) {
+                const sourceMp4 = document.createElement('source');
+                sourceMp4.src = mp4Src;
+                sourceMp4.type = 'video/mp4';
+                video.appendChild(sourceMp4);
             }
 
             container.appendChild(video);
