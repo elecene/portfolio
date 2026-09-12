@@ -500,6 +500,20 @@
                 <p><strong>El Gran Menú de Ibai</strong> is a collection of three delicious packaging designs for the very much anticipated Ibai´s delivery menu on The Gaming Family.</p>
             </div>
             
+            <!-- 1ª PIEZA: VÍDEO ANIMADO IBAI MENU 00 -->
+            <div class="project-gallery">
+                <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: auto; border-radius: 6px; margin-bottom: 30px; display: block;">
+                    <source src="img/ibai_granmenu/ibai_menu_00.webm" type="video/webm">
+                    <source src="img/ibai_granmenu/ibai_menu_00.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- 2ª PIEZA: IBAI MENU 08 -->
+            <div class="project-gallery">
+                <img src="img/ibai_granmenu/ibai_menu_08.jpg" alt="El Gran Menú de Ibai 08">
+            </div>
+
+            <!-- RESTO DE IMÁGENES SECUENCIALES -->
             <div class="project-gallery">
                 <img src="img/ibai_granmenu/ibai_menu_01.jpg" alt="El Gran Menú de Ibai 01">
                 <img src="img/ibai_granmenu/ibai_menu_02.jpg" alt="El Gran Menú de Ibai 02">
@@ -508,11 +522,9 @@
                 <img src="img/ibai_granmenu/ibai_menu_05.jpg" alt="El Gran Menú de Ibai 05">
                 <img src="img/ibai_granmenu/ibai_menu_06.jpg" alt="El Gran Menú de Ibai 06">
                 <img src="img/ibai_granmenu/ibai_menu_07.jpg" alt="El Gran Menú de Ibai 07">
-                <img src="img/ibai_granmenu/ibai_menu_08.jpg" alt="El Gran Menú de Ibai 08">
                 <img src="img/ibai_granmenu/ibai_menu_09.jpg" alt="El Gran Menú de Ibai 09">
                 <img src="img/ibai_granmenu/ibai_menu_10.jpg" alt="El Gran Menú de Ibai 10">
                 <img src="img/ibai_granmenu/ibai_menu_11.jpg" alt="El Gran Menú de Ibai 11">
-                <img src="img/ibai_granmenu/ibai_menu_12.jpg" alt="El Gran Menú de Ibai 12">
             </div>
 
             <div class="project-credits-block">
@@ -698,12 +710,10 @@
             }
         }
 
-        // DETENER TODOS LOS VÍDEOS Y SU AUDIO AL NAVEGAR O CERRAR PROYECTOS
         function handleHashChange() {
             updateToggleHref();
             const currentHash = window.location.hash;
 
-            // Si el usuario vuelve a la página principal (# o vacío)
             if (!currentHash || currentHash === '#' || currentHash === '#about') {
                 document.querySelectorAll('.project-view-page video').forEach(v => {
                     v.pause();
@@ -738,7 +748,7 @@
             if (hasControls) {
                 video.controls = true;
                 video.muted = false;
-                video.autoplay = false; // Sin reproducción automática para vídeos interactivos
+                video.autoplay = false;
             } else {
                 video.muted = true;
                 video.autoplay = true;
