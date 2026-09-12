@@ -556,61 +556,100 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* GALERÍAS DESKTOP */
+/* GALERÍAS DESKTOP SIN ESPACIOS INTERNOS (FUSIÓN PERFECTA DE BORDES) */
 .gallery-quad {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 0;
     margin: 0 auto 30px auto;
     width: 80%;
     max-width: 100%;
 }
 
-.gallery-quad img {
+.gallery-quad img,
+.gallery-quad video {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 6px;
     display: block;
+    border-radius: 0;
+}
+
+.gallery-quad img:first-child,
+.gallery-quad video:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.gallery-quad img:last-child,
+.gallery-quad video:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .gallery-triptych {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 0;
     margin: 0 auto 30px auto;
     width: 80%;
     max-width: 100%;
 }
 
-.gallery-triptych img {
+.gallery-triptych img,
+.gallery-triptych video {
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 6px;
     display: block;
+    border-radius: 0;
+}
+
+.gallery-triptych img:first-child,
+.gallery-triptych video:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.gallery-triptych img:last-child,
+.gallery-triptych video:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .gallery-diptych {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 0;
     margin: 0 auto 30px auto;
     width: 80%;
 }
 
-.gallery-diptych img {
+.gallery-diptych img,
+.gallery-diptych video {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 6px;
     display: block;
+    border-radius: 0;
+}
+
+.gallery-diptych img:first-child,
+.gallery-diptych video:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.gallery-diptych img:last-child,
+.gallery-diptych video:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .gallery-grid-5 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
+    gap: 0;
     margin: 0 auto 30px auto;
     width: 80%;
 }
@@ -619,19 +658,35 @@ body:has(.project-view-page:target) .header-fixed {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 6px;
     display: block;
     grid-column: span 2;
+    border-radius: 0;
+}
+
+.gallery-grid-5 img:first-child {
+    border-top-left-radius: 6px;
+}
+
+.gallery-grid-5 img:nth-child(3) {
+    border-top-right-radius: 6px;
 }
 
 .gallery-grid-5 img.grid-span-bottom {
     grid-column: span 3;
 }
 
+.gallery-grid-5 img.grid-span-bottom:nth-child(4) {
+    border-bottom-left-radius: 6px;
+}
+
+.gallery-grid-5 img.grid-span-bottom:last-child {
+    border-bottom-right-radius: 6px;
+}
+
 .gallery-grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 0;
     margin: 0 auto 30px auto;
     width: 80%;
     align-items: stretch;
@@ -641,8 +696,18 @@ body:has(.project-view-page:target) .header-fixed {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 6px;
     display: block;
+    border-radius: 0;
+}
+
+.gallery-grid-4 img:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.gallery-grid-4 img:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .gallery-grid-4 img.img-full-height {
@@ -818,13 +883,13 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-grid-4 {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+        gap: 0 !important;
     }
 
     .gallery-triptych {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+        gap: 0 !important;
     }
 
     .gallery-triptych img:first-child {
@@ -834,7 +899,7 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-grid-5 {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+        gap: 0 !important;
     }
 
     .gallery-grid-5 img:first-child {
@@ -848,6 +913,6 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-diptych {
         display: grid !important;
         grid-template-columns: 1fr !important;
-        gap: 12px !important;
+        gap: 0 !important;
     }
 }
