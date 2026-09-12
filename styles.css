@@ -20,6 +20,19 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+/* PREVENIR ARRASTRE Y MENÚ CONTEXTUAL EN IMÁGENES Y VÍDEOS */
+img, video {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 /* BLOQUEO DEL SCROLL DEL BODY AL ABRIR UN PROYECTO O ABOUT */
 body:has(.project-view-page:target) {
     overflow: hidden !important;
@@ -556,18 +569,32 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* GALERÍAS DESKTOP SIN ESPACIOS INTERNOS (FUSIÓN PERFECTA DE BORDES) */
-.gallery-quad {
+/* GALERÍAS Y MOSAICOS SIN ESPACIOS INTERNOS (FUSIÓN PERFECTA DE BORDES) */
+.gallery-quad,
+.gallery-triptych,
+.gallery-diptych,
+.gallery-grid-5,
+.gallery-grid-4,
+.gallery-mosaic-custom {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 0;
     margin: 0 auto 30px auto;
     width: 80%;
     max-width: 100%;
 }
 
-.gallery-quad img,
-.gallery-quad video {
+.gallery-quad { grid-template-columns: repeat(4, 1fr); }
+.gallery-triptych { grid-template-columns: repeat(3, 1fr); }
+.gallery-diptych { grid-template-columns: repeat(2, 1fr); }
+.gallery-grid-4 { grid-template-columns: repeat(4, 1fr); align-items: stretch; }
+.gallery-grid-5 { grid-template-columns: repeat(6, 1fr); }
+
+.gallery-quad img, .gallery-quad video, .gallery-quad .lazy-video-container,
+.gallery-triptych img, .gallery-triptych video, .gallery-triptych .lazy-video-container,
+.gallery-diptych img, .gallery-diptych video, .gallery-diptych .lazy-video-container,
+.gallery-grid-4 img, .gallery-grid-4 video, .gallery-grid-4 .lazy-video-container,
+.gallery-grid-5 img, .gallery-grid-5 video, .gallery-grid-5 .lazy-video-container,
+.gallery-mosaic-custom img, .gallery-mosaic-custom video, .gallery-mosaic-custom .lazy-video-container {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -575,140 +602,29 @@ body:has(.project-view-page:target) .header-fixed {
     border-radius: 0;
 }
 
-.gallery-quad img:first-child,
-.gallery-quad video:first-child {
+/* REDONDEO ÚNICAMENTE DE LAS 4 ESQUINAS EXTERIORES DE CADA MOSAICO */
+.gallery-quad > *:first-child,
+.gallery-triptych > *:first-child,
+.gallery-diptych > *:first-child,
+.gallery-grid-4 > *:first-child {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
 }
 
-.gallery-quad img:last-child,
-.gallery-quad video:last-child {
+.gallery-quad > *:last-child,
+.gallery-triptych > *:last-child,
+.gallery-diptych > *:last-child,
+.gallery-grid-4 > *:last-child {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
-.gallery-triptych {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin: 0 auto 30px auto;
-    width: 80%;
-    max-width: 100%;
-}
-
-.gallery-triptych img,
-.gallery-triptych video {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    border-radius: 0;
-}
-
-.gallery-triptych img:first-child,
-.gallery-triptych video:first-child {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.gallery-triptych img:last-child,
-.gallery-triptych video:last-child {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
-.gallery-diptych {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    margin: 0 auto 30px auto;
-    width: 80%;
-}
-
-.gallery-diptych img,
-.gallery-diptych video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    border-radius: 0;
-}
-
-.gallery-diptych img:first-child,
-.gallery-diptych video:first-child {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.gallery-diptych img:last-child,
-.gallery-diptych video:last-child {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
-.gallery-grid-5 {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0;
-    margin: 0 auto 30px auto;
-    width: 80%;
-}
-
-.gallery-grid-5 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    grid-column: span 2;
-    border-radius: 0;
-}
-
-.gallery-grid-5 img:first-child {
-    border-top-left-radius: 6px;
-}
-
-.gallery-grid-5 img:nth-child(3) {
-    border-top-right-radius: 6px;
-}
-
-.gallery-grid-5 img.grid-span-bottom {
-    grid-column: span 3;
-}
-
-.gallery-grid-5 img.grid-span-bottom:nth-child(4) {
-    border-bottom-left-radius: 6px;
-}
-
-.gallery-grid-5 img.grid-span-bottom:last-child {
-    border-bottom-right-radius: 6px;
-}
-
-.gallery-grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin: 0 auto 30px auto;
-    width: 80%;
-    align-items: stretch;
-}
-
-.gallery-grid-4 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    border-radius: 0;
-}
-
-.gallery-grid-4 img:first-child {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.gallery-grid-4 img:last-child {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
+.gallery-grid-5 img { grid-column: span 2; }
+.gallery-grid-5 img:first-child { border-top-left-radius: 6px; }
+.gallery-grid-5 img:nth-child(3) { border-top-right-radius: 6px; }
+.gallery-grid-5 img.grid-span-bottom { grid-column: span 3; }
+.gallery-grid-5 img.grid-span-bottom:nth-child(4) { border-bottom-left-radius: 6px; }
+.gallery-grid-5 img.grid-span-bottom:last-child { border-bottom-right-radius: 6px; }
 
 .gallery-grid-4 img.img-full-height {
     height: 100%;
@@ -872,6 +788,7 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-diptych,
     .gallery-grid-5,
     .gallery-grid-4,
+    .gallery-mosaic-custom,
     .project-gallery,
     .project-credits-block {
         width: 100%;
