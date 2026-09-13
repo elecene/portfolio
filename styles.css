@@ -569,7 +569,7 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* MOSAICOS VERTICALES (UNA PIEZA DEBAJO DE OTRA SIN ESPACIOS INTERNOS) */
+/* MOSAICOS VERTICALES DESKTOP */
 .gallery-vertical-mosaic {
     display: flex;
     flex-direction: column;
@@ -577,6 +577,9 @@ body:has(.project-view-page:target) .header-fixed {
     margin: 0 auto 30px auto;
     width: 80%;
     max-width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .gallery-vertical-mosaic img,
@@ -586,25 +589,10 @@ body:has(.project-view-page:target) .header-fixed {
     height: auto;
     object-fit: cover;
     display: block;
-    border-radius: 0;
+    border-radius: 0 !important;
 }
 
-/* REDONDEO ÚNICAMENTE EN LAS ESQUINAS SUPERIORES E INFERIORES DEL BLOQUE COMPLETO */
-.gallery-vertical-mosaic > *:first-child,
-.gallery-vertical-mosaic > *:first-child img,
-.gallery-vertical-mosaic > *:first-child video {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
-
-.gallery-vertical-mosaic > *:last-child,
-.gallery-vertical-mosaic > *:last-child img,
-.gallery-vertical-mosaic > *:last-child video {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
-/* GALERÍAS Y DÍPTICOS TRADICIONALES */
+/* GALERÍAS Y DÍPTICOS TRADICIONALES DESKTOP */
 .gallery-quad,
 .gallery-triptych,
 .gallery-diptych,
@@ -615,6 +603,9 @@ body:has(.project-view-page:target) .header-fixed {
     margin: 0 auto 30px auto;
     width: 80%;
     max-width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .gallery-quad { grid-template-columns: repeat(4, 1fr); }
@@ -632,31 +623,11 @@ body:has(.project-view-page:target) .header-fixed {
     height: auto;
     object-fit: cover;
     display: block;
-    border-radius: 0;
-}
-
-.gallery-quad > *:first-child,
-.gallery-triptych > *:first-child,
-.gallery-diptych > *:first-child,
-.gallery-grid-4 > *:first-child {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.gallery-quad > *:last-child,
-.gallery-triptych > *:last-child,
-.gallery-diptych > *:last-child,
-.gallery-grid-4 > *:last-child {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-radius: 0 !important;
 }
 
 .gallery-grid-5 img { grid-column: span 2; }
-.gallery-grid-5 img:first-child { border-top-left-radius: 6px; }
-.gallery-grid-5 img:nth-child(3) { border-top-right-radius: 6px; }
 .gallery-grid-5 img.grid-span-bottom { grid-column: span 3; }
-.gallery-grid-5 img.grid-span-bottom:nth-child(4) { border-bottom-left-radius: 6px; }
-.gallery-grid-5 img.grid-span-bottom:last-child { border-bottom-right-radius: 6px; }
 
 .gallery-grid-4 img.img-full-height {
     height: 100%;
@@ -690,7 +661,7 @@ body:has(.project-view-page:target) .header-fixed {
     }
 }
 
-/* RESPONSIVE MÓVIL */
+/* RESPONSIVE MÓVIL CORREGIDO (MANTENIMIENTO ESTRICTO DE BORDES DE MOSAICO) */
 @media (max-width: 900px) {
     body {
         padding: 20px 20px 0 20px;
@@ -828,40 +799,65 @@ body:has(.project-view-page:target) .header-fixed {
         margin-right: 0;
     }
 
+    /* AISLAMIENTO DE CONTENEDOR MÓVIL PARA BORDES EXTERIORES IMPECABLES */
+    .gallery-quad,
+    .gallery-triptych,
+    .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4,
+    .gallery-vertical-mosaic {
+        border-radius: 6px !important;
+        overflow: hidden !important;
+        isolation: isolate;
+        gap: 0 !important;
+    }
+
     .gallery-quad,
     .gallery-grid-4 {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0 !important;
     }
 
     .gallery-triptych {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0 !important;
     }
 
-    .gallery-triptych img:first-child {
+    .gallery-triptych img:first-child,
+    .gallery-triptych video:first-child,
+    .gallery-triptych .lazy-video-container:first-child {
         grid-column: span 2 !important;
     }
 
     .gallery-grid-5 {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0 !important;
     }
 
-    .gallery-grid-5 img:first-child {
+    .gallery-grid-5 img:first-child,
+    .gallery-grid-5 video:first-child,
+    .gallery-grid-5 .lazy-video-container:first-child {
         grid-column: span 2 !important;
     }
 
-    .gallery-grid-5 img.grid-span-bottom {
+    .gallery-grid-5 img.grid-span-bottom,
+    .gallery-grid-5 video.grid-span-bottom,
+    .gallery-grid-5 .lazy-video-container.grid-span-bottom {
         grid-column: span 1 !important;
     }
 
     .gallery-diptych {
         display: grid !important;
         grid-template-columns: 1fr !important;
-        gap: 0 !important;
+    }
+
+    /* RESET ESTRICTO PARA CUALQUIER IMAGEN O VÍDEO DENTRO DE UN MOSAICO MÓVIL */
+    .gallery-quad img, .gallery-quad video, .gallery-quad .lazy-video-container,
+    .gallery-triptych img, .gallery-triptych video, .gallery-triptych .lazy-video-container,
+    .gallery-diptych img, .gallery-diptych video, .gallery-diptych .lazy-video-container,
+    .gallery-grid-4 img, .gallery-grid-4 video, .gallery-grid-4 .lazy-video-container,
+    .gallery-grid-5 img, .gallery-grid-5 video, .gallery-grid-5 .lazy-video-container,
+    .gallery-vertical-mosaic img, .gallery-vertical-mosaic video, .gallery-vertical-mosaic .lazy-video-container {
+        border-radius: 0 !important;
     }
 }
