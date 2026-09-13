@@ -569,51 +569,52 @@ body:has(.project-view-page:target) .header-fixed {
     font-weight: 500;
 }
 
-/* MOSAICOS VERTICALES DESKTOP */
-.gallery-vertical-mosaic {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 0 auto 30px auto;
+/* PIEZAS SUELTAS EN GALERÍA DE PROYECTO (MANTIENEN SUS 4 ESQUINAS REDONDEADAS) */
+.project-gallery {
     width: 80%;
-    max-width: 100%;
-    border-radius: 6px;
-    overflow: hidden;
-    isolation: isolate;
+    margin: 0 auto;
 }
 
-.gallery-vertical-mosaic img,
-.gallery-vertical-mosaic video,
-.gallery-vertical-mosaic .lazy-video-container {
+.project-gallery img,
+.project-gallery video,
+.project-gallery .lazy-video-container {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    border-radius: 6px !important;
+    margin-bottom: 30px;
     display: block;
-    border-radius: 0 !important;
+    overflow: hidden;
 }
 
-/* GALERÍAS Y DÍPTICOS TRADICIONALES DESKTOP */
+.project-gallery .lazy-video-container video {
+    border-radius: 6px !important;
+    margin-bottom: 0;
+}
+
+/* CONTENEDORES DE MOSAICO (REDONDEO EXCLUSIVAMENTE EXTERIOR) */
+.gallery-vertical-mosaic,
 .gallery-quad,
 .gallery-triptych,
 .gallery-diptych,
 .gallery-grid-5,
 .gallery-grid-4 {
-    display: grid;
-    gap: 0;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    isolation: isolate;
+    gap: 0 !important;
     margin: 0 auto 30px auto;
     width: 80%;
     max-width: 100%;
-    border-radius: 6px;
-    overflow: hidden;
-    isolation: isolate;
 }
 
-.gallery-quad { grid-template-columns: repeat(4, 1fr); }
-.gallery-triptych { grid-template-columns: repeat(3, 1fr); }
-.gallery-diptych { grid-template-columns: repeat(2, 1fr); }
-.gallery-grid-4 { grid-template-columns: repeat(4, 1fr); align-items: stretch; }
-.gallery-grid-5 { grid-template-columns: repeat(6, 1fr); }
+.gallery-vertical-mosaic { display: flex; flex-direction: column; }
+.gallery-quad { display: grid; grid-template-columns: repeat(4, 1fr); }
+.gallery-triptych { display: grid; grid-template-columns: repeat(3, 1fr); }
+.gallery-diptych { display: grid; grid-template-columns: repeat(2, 1fr); }
+.gallery-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); align-items: stretch; }
+.gallery-grid-5 { display: grid; grid-template-columns: repeat(6, 1fr); }
 
+.gallery-vertical-mosaic img, .gallery-vertical-mosaic video, .gallery-vertical-mosaic .lazy-video-container,
 .gallery-quad img, .gallery-quad video, .gallery-quad .lazy-video-container,
 .gallery-triptych img, .gallery-triptych video, .gallery-triptych .lazy-video-container,
 .gallery-diptych img, .gallery-diptych video, .gallery-diptych .lazy-video-container,
@@ -634,20 +635,6 @@ body:has(.project-view-page:target) .header-fixed {
     object-fit: cover;
 }
 
-.project-gallery {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.project-gallery img,
-.project-gallery video {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 30px;
-    display: block;
-}
-
 /* RESPONSIVE TABLET */
 @media (max-width: 1100px) {
     .about-layout-grid {
@@ -661,7 +648,7 @@ body:has(.project-view-page:target) .header-fixed {
     }
 }
 
-/* RESPONSIVE MÓVIL CORREGIDO (MANTENIMIENTO ESTRICTO DE BORDES DE MOSAICO) */
+/* RESPONSIVE MÓVIL */
 @media (max-width: 900px) {
     body {
         padding: 20px 20px 0 20px;
@@ -799,19 +786,6 @@ body:has(.project-view-page:target) .header-fixed {
         margin-right: 0;
     }
 
-    /* AISLAMIENTO DE CONTENEDOR MÓVIL PARA BORDES EXTERIORES IMPECABLES */
-    .gallery-quad,
-    .gallery-triptych,
-    .gallery-diptych,
-    .gallery-grid-5,
-    .gallery-grid-4,
-    .gallery-vertical-mosaic {
-        border-radius: 6px !important;
-        overflow: hidden !important;
-        isolation: isolate;
-        gap: 0 !important;
-    }
-
     .gallery-quad,
     .gallery-grid-4 {
         display: grid !important;
@@ -849,15 +823,5 @@ body:has(.project-view-page:target) .header-fixed {
     .gallery-diptych {
         display: grid !important;
         grid-template-columns: 1fr !important;
-    }
-
-    /* RESET ESTRICTO PARA CUALQUIER IMAGEN O VÍDEO DENTRO DE UN MOSAICO MÓVIL */
-    .gallery-quad img, .gallery-quad video, .gallery-quad .lazy-video-container,
-    .gallery-triptych img, .gallery-triptych video, .gallery-triptych .lazy-video-container,
-    .gallery-diptych img, .gallery-diptych video, .gallery-diptych .lazy-video-container,
-    .gallery-grid-4 img, .gallery-grid-4 video, .gallery-grid-4 .lazy-video-container,
-    .gallery-grid-5 img, .gallery-grid-5 video, .gallery-grid-5 .lazy-video-container,
-    .gallery-vertical-mosaic img, .gallery-vertical-mosaic video, .gallery-vertical-mosaic .lazy-video-container {
-        border-radius: 0 !important;
     }
 }
