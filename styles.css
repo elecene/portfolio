@@ -1,44 +1,85 @@
-* {
+/* ==========================================================================
+   1. RESET & SYSTEM VARIABLES
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* PREVENIR ESCALADO AUTOMÁTICO DE TEXTO AL GIRAR EN MÓVIL */
+:root {
+    --bg-color: #000000;
+    --card-bg: #0a0a0a;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --text-muted: #555555;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.2);
+    --header-height: 80px;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.2s ease;
+}
+
 html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    line-height: 1.5;
     scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
 
 body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
     padding: 24px 30px 0 30px;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
 }
 
-/* PREVENIR ARRASTRE Y MENÚ CONTEXTUAL EN IMÁGENES Y VÍDEOS */
+/* PROTECTION & SELECTION RULES */
+::selection {
+    background: #ffffff;
+    color: #000000;
+}
+
+::-moz-selection {
+    background: #ffffff;
+    color: #000000;
+}
+
 img, video {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    pointer-events: auto;
 }
 
-/* BLOQUEO DEL SCROLL DEL BODY AL ABRIR UN PROYECTO O ABOUT */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 body:has(.project-view-page:target) {
     overflow: hidden !important;
 }
 
-/* CABECERA FIJA TRANSPARENTE */
+/* ==========================================================================
+   2. FIXED HEADER & NAVIGATION
+   ========================================================================== */
 .header-fixed {
     position: fixed;
     top: 0;
@@ -59,6 +100,8 @@ body:has(.project-view-page:target) {
 
 .header-fixed .col {
     pointer-events: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-fixed .col-2 {
@@ -70,7 +113,6 @@ body:has(#about:target) .header-fixed .col-2 {
     visibility: hidden !important;
 }
 
-/* TRANSICIÓN SUAVE EN NOMBRE Y ENLACES */
 .home-link {
     color: inherit;
     text-decoration: none;
@@ -107,7 +149,6 @@ body:has(#about:target) .header-fixed .col-2 {
     transform: translateX(3px);
 }
 
-/* BOTÓN DINÁMICO + / - */
 .toggle-about-btn {
     display: flex;
     align-items: center;
@@ -140,11 +181,13 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     opacity: 0;
 }
 
+/* ==========================================================================
+   3. PORTFOLIO MAIN LAYOUT (HERO & MOSAIC GRID)
+   ========================================================================== */
 .portfolio-layout {
     margin-top: 105px;
 }
 
-/* HERO BLOCK / REEL */
 .hero-block {
     display: grid;
     grid-template-columns: 280px 320px 1fr 40px;
@@ -189,7 +232,7 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     border-radius: 6px;
 }
 
-/* MOSAICOS Y RETÍCULA ASIMÉTRICA EN PÁGINA PRINCIPAL */
+/* MOSAIC GRID SYSTEM */
 .mosaic-tight-grid {
     display: grid;
     grid-template-columns: 1fr 1.85fr;
@@ -216,7 +259,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     width: 100%;
 }
 
-/* TÍTULOS E INTERACCIÓN HOVER EN PÁGINA PRINCIPAL */
 .title-container {
     margin-bottom: 12px;
     position: relative;
@@ -320,7 +362,24 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     opacity: 1;
 }
 
-/* VISTAS DESPLEGABLES DE PROYECTOS Y ABOUT */
+.lazy-video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #0d0d0d;
+}
+
+.lazy-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   4. FULLSCREEN OVERLAYS (PROJECT DETAILS & ABOUT PAGE)
+   ========================================================================== */
 .project-view-page {
     position: fixed;
     top: 0;
@@ -345,7 +404,6 @@ body:has(.project-view-page:target) .header-fixed {
     color: #000000 !important;
 }
 
-/* BOTÓN CLOSE CON EFECTO FROSTED GLASS */
 .close-project-btn {
     position: fixed;
     bottom: 30px;
@@ -370,7 +428,141 @@ body:has(.project-view-page:target) .header-fixed {
     transform: scale(1.03);
 }
 
-/* SECCIÓN ABOUT */
+.project-detail-container {
+    width: 100%;
+}
+
+.project-meta-row {
+    display: grid;
+    grid-template-columns: 280px 320px 1fr 40px;
+    gap: 30px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+.meta-title {
+    color: inherit;
+    font-weight: 500;
+}
+
+.meta-sub {
+    color: inherit;
+    font-weight: 400;
+}
+
+.meta-label {
+    color: #666666 !important;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    color: inherit;
+    font-weight: 400;
+}
+
+.project-description-hero {
+    margin-bottom: 50px;
+    max-width: 1100px;
+}
+
+.project-description-hero p {
+    font-size: 32px;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    color: inherit;
+    font-weight: 400;
+}
+
+.project-description-hero strong {
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   5. GALLERIES & LAYOUT MOSAICS WITHIN PROJECTS
+   ========================================================================== */
+.project-gallery {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.project-gallery img,
+.project-gallery video,
+.project-gallery .lazy-video-container {
+    width: 100%;
+    height: auto;
+    border-radius: 6px !important;
+    margin-bottom: 30px;
+    display: block;
+    overflow: hidden;
+}
+
+.project-gallery .lazy-video-container video {
+    border-radius: 6px !important;
+    margin-bottom: 0;
+}
+
+.gallery-vertical-mosaic,
+.gallery-quad,
+.gallery-triptych,
+.gallery-diptych,
+.gallery-grid-5,
+.gallery-grid-4 {
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    isolation: isolate;
+    gap: 0 !important;
+    margin: 0 auto 30px auto;
+    width: 80%;
+    max-width: 100%;
+}
+
+.gallery-vertical-mosaic { display: flex; flex-direction: column; }
+.gallery-quad { display: grid; grid-template-columns: repeat(4, 1fr); }
+.gallery-triptych { display: grid; grid-template-columns: repeat(3, 1fr); }
+.gallery-diptych { display: grid; grid-template-columns: repeat(2, 1fr); }
+.gallery-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); align-items: stretch; }
+.gallery-grid-5 { display: grid; grid-template-columns: repeat(6, 1fr); }
+
+.gallery-vertical-mosaic img, .gallery-vertical-mosaic video, .gallery-vertical-mosaic .lazy-video-container,
+.gallery-quad img, .gallery-quad video, .gallery-quad .lazy-video-container,
+.gallery-triptych img, .gallery-triptych video, .gallery-triptych .lazy-video-container,
+.gallery-diptych img, .gallery-diptych video, .gallery-diptych .lazy-video-container,
+.gallery-grid-4 img, .gallery-grid-4 video, .gallery-grid-4 .lazy-video-container,
+.gallery-grid-5 img, .gallery-grid-5 video, .gallery-grid-5 .lazy-video-container {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 !important;
+}
+
+.gallery-grid-5 img { grid-column: span 2; }
+.gallery-grid-5 img.grid-span-bottom { grid-column: span 3; }
+
+.gallery-grid-4 img.img-full-height {
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-credits-block {
+    width: 80%;
+    margin: 50px auto 0 auto;
+    font-size: 13px;
+    line-height: 1.35;
+    color: #888888;
+    text-align: center;
+}
+
+.project-credits-block p {
+    margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   6. ABOUT PAGE OVERLAY LAYOUT
+   ========================================================================== */
 #about {
     background-color: #ffffff;
     color: #000000;
@@ -452,7 +644,9 @@ body:has(.project-view-page:target) .header-fixed {
     white-space: nowrap;
 }
 
-/* FOOTER UNIFICADO */
+/* ==========================================================================
+   7. FOOTER SYSTEM
+   ========================================================================== */
 .site-footer {
     text-align: center;
     padding-top: 60px;
@@ -502,140 +696,9 @@ body:has(.project-view-page:target) .header-fixed {
     padding-bottom: 60px;
 }
 
-/* CRÉDITOS DE PROYECTO CENTRADOS AL MEDIO */
-.project-credits-block {
-    width: 80%;
-    margin: 50px auto 0 auto;
-    font-size: 13px;
-    line-height: 1.35;
-    color: #888888;
-    text-align: center;
-}
-
-.project-credits-block p {
-    margin-bottom: 2px;
-}
-
-/* DETALLE DE PROYECTOS */
-.project-detail-container {
-    width: 100%;
-}
-
-.project-meta-row {
-    display: grid;
-    grid-template-columns: 280px 320px 1fr 40px;
-    gap: 30px;
-    font-size: 13px;
-    line-height: 1.4;
-    margin-bottom: 50px;
-    color: #000000;
-}
-
-.meta-title {
-    color: inherit;
-    font-weight: 500;
-}
-
-.meta-sub {
-    color: inherit;
-    font-weight: 400;
-}
-
-.meta-label {
-    color: #666666 !important;
-    display: block;
-    margin-bottom: 4px;
-}
-
-.meta-value {
-    color: inherit;
-    font-weight: 400;
-}
-
-.project-description-hero {
-    margin-bottom: 50px;
-    max-width: 1100px;
-}
-
-.project-description-hero p {
-    font-size: 32px;
-    line-height: 1.22;
-    letter-spacing: -0.02em;
-    color: inherit;
-    font-weight: 400;
-}
-
-.project-description-hero strong {
-    font-weight: 500;
-}
-
-/* PIEZAS SUELTAS EN GALERÍA DE PROYECTO (MANTIENEN SUS 4 ESQUINAS REDONDEADAS) */
-.project-gallery {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.project-gallery img,
-.project-gallery video,
-.project-gallery .lazy-video-container {
-    width: 100%;
-    height: auto;
-    border-radius: 6px !important;
-    margin-bottom: 30px;
-    display: block;
-    overflow: hidden;
-}
-
-.project-gallery .lazy-video-container video {
-    border-radius: 6px !important;
-    margin-bottom: 0;
-}
-
-/* CONTENEDORES DE MOSAICO (REDONDEO EXCLUSIVAMENTE EXTERIOR) */
-.gallery-vertical-mosaic,
-.gallery-quad,
-.gallery-triptych,
-.gallery-diptych,
-.gallery-grid-5,
-.gallery-grid-4 {
-    border-radius: 6px !important;
-    overflow: hidden !important;
-    isolation: isolate;
-    gap: 0 !important;
-    margin: 0 auto 30px auto;
-    width: 80%;
-    max-width: 100%;
-}
-
-.gallery-vertical-mosaic { display: flex; flex-direction: column; }
-.gallery-quad { display: grid; grid-template-columns: repeat(4, 1fr); }
-.gallery-triptych { display: grid; grid-template-columns: repeat(3, 1fr); }
-.gallery-diptych { display: grid; grid-template-columns: repeat(2, 1fr); }
-.gallery-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); align-items: stretch; }
-.gallery-grid-5 { display: grid; grid-template-columns: repeat(6, 1fr); }
-
-.gallery-vertical-mosaic img, .gallery-vertical-mosaic video, .gallery-vertical-mosaic .lazy-video-container,
-.gallery-quad img, .gallery-quad video, .gallery-quad .lazy-video-container,
-.gallery-triptych img, .gallery-triptych video, .gallery-triptych .lazy-video-container,
-.gallery-diptych img, .gallery-diptych video, .gallery-diptych .lazy-video-container,
-.gallery-grid-4 img, .gallery-grid-4 video, .gallery-grid-4 .lazy-video-container,
-.gallery-grid-5 img, .gallery-grid-5 video, .gallery-grid-5 .lazy-video-container {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    border-radius: 0 !important;
-}
-
-.gallery-grid-5 img { grid-column: span 2; }
-.gallery-grid-5 img.grid-span-bottom { grid-column: span 3; }
-
-.gallery-grid-4 img.img-full-height {
-    height: 100%;
-    object-fit: cover;
-}
-
-/* RESPONSIVE TABLET */
+/* ==========================================================================
+   8. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
 @media (max-width: 1100px) {
     .about-layout-grid {
         grid-template-columns: 1fr 1fr;
@@ -648,7 +711,6 @@ body:has(.project-view-page:target) .header-fixed {
     }
 }
 
-/* RESPONSIVE MÓVIL */
 @media (max-width: 900px) {
     body {
         padding: 20px 20px 0 20px;
@@ -824,4 +886,49 @@ body:has(.project-view-page:target) .header-fixed {
         display: grid !important;
         grid-template-columns: 1fr !important;
     }
+}
+
+/* ==========================================================================
+   9. REGLAS ADICIONALES (MOSAICO UNIFICADO 2X2 PARA EPY6 & CAMERA BLOCKER)
+   ========================================================================== */
+.gallery-mosaic-2x2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 80% !important;
+    max-width: 100% !important;
+    margin: 0 auto 30px auto !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    isolation: isolate;
+    gap: 0 !important;
+}
+
+.gallery-mosaic-2x2 img,
+.gallery-mosaic-2x2 video,
+.gallery-mosaic-2x2 .lazy-video-container {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+}
+
+@media (max-width: 900px) {
+    .gallery-mosaic-2x2 {
+        width: 100% !important;
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+/* BROWSER EXTENSION OVERLAY BLOCKER */
+[class*="search-by-image"],
+[class*="image-search"],
+[id*="image-search"],
+div[style*="camera"],
+button[style*="camera"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
