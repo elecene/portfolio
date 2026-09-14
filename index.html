@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=137.0">
+    <link rel="stylesheet" href="styles.css?v=138.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -362,7 +362,7 @@
                 <div class="lazy-video-container" data-webm="img/epy6/epy6_04.webm" data-mp4="img/epy6/epy6_04.mp4"></div>
             </div>
 
-            <!-- NUEVO MOSAICO TRIPTYCH CON LAS TRES IMÁGENES VERTICALES -->
+            <!-- TRIPTYCH CON TRES IMÁGENES VERTICALES -->
             <div class="gallery-triptych">
                 <img src="img/epy6/rrss_vertical_01.webp" alt="ElPartidazo6 RRSS Vertical 01" draggable="false">
                 <img src="img/epy6/rrss_vertical_02.webp" alt="ElPartidazo6 RRSS Vertical 02" draggable="false">
@@ -783,17 +783,19 @@
 
         lazyContainers.forEach(container => videoObserver.observe(container));
 
-        ['hover-video-lafisica', 'hover-video-ibai', 'hover-video-rubiusx', 'cover-video-epy6'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                const cardContainer = el.closest('.project-link');
-                if (cardContainer) {
-                    cardContainer.addEventListener('mouseenter', () => {
-                        const v = createVideoElement(el);
-                        v.currentTime = 0;
-                        v.play().catch(() => {});
-                    });
-                }
+        // CONTROL DE REPRODUCCIÓN AL HACER HOVER EN LAS TARJETAS PRINCIPALES
+        document.querySelectorAll('.project-card').forEach(card => {
+            const secondaryVideo = card.querySelector('.img-secondary');
+            
+            if (secondaryVideo && secondaryVideo.tagName === 'VIDEO') {
+                card.addEventListener('mouseenter', () => {
+                    secondaryVideo.currentTime = 0;
+                    secondaryVideo.play().catch(() => {});
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    secondaryVideo.pause();
+                });
             }
         });
     </script>
