@@ -22,7 +22,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* SCROLL INSTANTÁNEO AL NAVEGAR O CERRAR PROYECTOS */
+    scroll-behavior: auto !important;
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-sans);
