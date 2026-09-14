@@ -147,17 +147,18 @@
                     </div>
                 </article>
 
+                <!-- NUEVO PROYECTO: EL PARTIDAZO 6 -->
                 <article class="project-card">
                     <div class="title-container">
-                        <p class="project-title"><a href="#work-rtvecomenta">RTVE. Comenta que Sales — Brand Identity +</a></p>
+                        <p class="project-title"><a href="#work-epy6">ElPartidazo6 — Brand Identity +</a></p>
                         <div class="title-description">
-                            <p><strong>Comenta Que Sales</strong> is back!. Our hosts experience the passion of live European football in RTVE's official digital broadcast of UEFA Euro 2024 in Germany.</p>
+                            <p><strong>ElPartidazo6</strong>. Brand identity and visual system design.</p>
                         </div>
                     </div>
 
                     <div class="media-container ratio-16-9">
-                        <a href="#work-rtvecomenta" class="project-link">
-                            <img src="img/rtvecomenta/rtvecomenta_cover.jpg?v=2.0" class="img-primary" alt="RTVE Comenta que Sales Principal" draggable="false">
+                        <a href="#work-epy6" class="project-link">
+                            <div class="lazy-video-container img-primary" data-webm="img/epy6/epy6_cover.webm" data-mp4="img/epy6/epy6_cover.mp4" id="cover-video-epy6"></div>
                         </a>
                     </div>
                 </article>
@@ -308,18 +309,18 @@
         </div>
     </section>
 
-    <!-- PROYECTO RTVE COMENTA QUE SALES -->
-    <section id="work-rtvecomenta" class="project-view-page">
+    <!-- PROYECTO EL PARTIDAZO 6 -->
+    <section id="work-epy6" class="project-view-page">
         <a href="#" class="close-project-btn">✕ Close</a>
         <div class="project-detail-container">
             <div class="project-meta-row">
                 <div class="meta-col col-1">
                     <span class="meta-label">Client</span>
-                    <p class="meta-value">RTVE</p>
+                    <p class="meta-value">ElPartidazo6</p>
                 </div>
                 <div class="meta-col col-2">
                     <span class="meta-label">Role</span>
-                    <p class="meta-value">Art Direction & Graphic System</p>
+                    <p class="meta-value">Art Direction & Brand Identity</p>
                 </div>
                 <div class="meta-col col-3">
                     <span class="meta-label">Company</span>
@@ -329,41 +330,16 @@
             </div>
             
             <div class="project-description-hero">
-                <p><strong>Comenta Que Sales</strong> is back!. Our hosts experience the passion of live European football in RTVE's official digital broadcast of UEFA Euro 2024 in Germany.<br>
-                The hosts humor and improvisation make the broadcast the most enjoyable and relaxed way to watch the match. During the pre-match, they will discuss their expectations and interact with the audience about their predictions.</p>
+                <p><strong>ElPartidazo6</strong><br>
+                Brand identity and visual system design.</p>
             </div>
             
             <div class="project-gallery">
-                <img src="img/rtvecomenta/rtvecomenta_cover.jpg" alt="RTVE Comenta que Sales Cover" draggable="false">
-                <img src="img/rtvecomenta/rtvecomenta_secondary.jpg" alt="RTVE Comenta que Sales Secondary" draggable="false">
-            </div>
-
-            <div class="gallery-triptych">
-                <img src="img/rtvecomenta/cqsweb_01.png" alt="RTVE Comenta que Sales 01" draggable="false">
-                <img src="img/rtvecomenta/cqsweb_2.jpg" alt="RTVE Comenta que Sales 02" draggable="false">
-                <img src="img/rtvecomenta/cqsweb_03.png" alt="RTVE Comenta que Sales 03" draggable="false">
-            </div>
-
-            <div class="project-gallery">
-                <img src="img/rtvecomenta/cqsweb_04.jpg" alt="RTVE Comenta que Sales 04" draggable="false">
-                <img src="img/rtvecomenta/cqsweb_05.png" alt="RTVE Comenta que Sales 05" draggable="false">
-                <img src="img/rtvecomenta/cqsweb_06.png" alt="RTVE Comenta que Sales 06" draggable="false">
-            </div>
-
-            <div class="project-description-hero">
-                <p>In the post-match segment, each program features a different special guest who shares their impressions of the match and predicts the outcome of the next game.<br>
-                Throughout the show, we'll connect with reporters on the ground in Germany who are experiencing the competition firsthand.</p>
-            </div>
-
-            <div class="project-gallery">
-                <img src="img/rtvecomenta/cqsweb_07.webp" alt="RTVE Comenta que Sales 07" draggable="false">
+                <div class="lazy-video-container" data-webm="img/epy6/epy6_cover.webm" data-mp4="img/epy6/epy6_cover.mp4"></div>
             </div>
 
             <div class="project-credits-block">
-                <p>Creative Director — Jaime Sordo</p>
-                <p>Creative Supervision — Alberto Pérez de Eulate</p>
-                <p>Graphic Design — Mikel San Juán</p>
-                <p>Photography Assets — Antonio Montero</p>
+                <p>Art Direction — Luciano Castañón Estrada</p>
             </div>
 
             <footer class="site-footer project-footer">
@@ -766,7 +742,7 @@
 
         lazyContainers.forEach(container => videoObserver.observe(container));
 
-        ['hover-video-lafisica', 'hover-video-ibai', 'hover-video-rubiusx'].forEach(id => {
+        ['hover-video-lafisica', 'hover-video-ibai', 'hover-video-rubiusx', 'cover-video-epy6'].forEach(id => {
             const el = document.getElementById(id);
             if (el) {
                 const cardContainer = el.closest('.project-link');
