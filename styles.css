@@ -1,791 +1,934 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Luciano Castañón Estrada</title>
-    <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=135.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <header class="header-fixed">
-        <div class="col col-1">
-            <p class="txt-bold"><a href="#" class="home-link">Luciano Castañón Estrada</a></p>
-            <p class="txt-white">Brand Design & Art Direction</p>
-        </div>
-
-        <div class="col col-2">
-            <p class="txt-white">Selected work</p>
-            <p class="txt-white">2020 — 2026</p>
-        </div>
-
-        <div class="col col-3">
-            <p><a href="mailto:elecene@gmail.com" class="link-white">→ elecene@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link-white">→ linkedin</a></p>
-        </div>
-
-        <div class="col col-4">
-            <a href="#about" class="toggle-about-btn" id="toggle-btn" title="About & Experience">
-                <svg class="toggle-icon-svg" viewBox="0 0 24 24">
-                    <rect x="2" y="10.25" width="20" height="3.5" />
-                    <rect class="vert-bar" x="10.25" y="2" width="3.5" height="20" />
-                </svg>
-            </a>
-        </div>
-    </header>
-
-    <section id="about" class="project-view-page about-page-view">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        
-        <div class="about-layout-grid">
-            <div class="about-col-left">
-                <p class="about-hero-text"><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
-                
-                <div class="about-mobile-contact">
-                    <p><a href="mailto:elecene@gmail.com" class="link-white">→ elecene@gmail.com</a></p>
-                    <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link-white">→ linkedin</a></p>
-                </div>
-            </div>
-
-            <div class="about-col-mid">
-                <p class="about-section-label">Experience</p>
-
-                <div class="exp-block">
-                    <p class="exp-title">VIZZ Agency</p>
-                    <p class="exp-sub">Art director</p>
-                    <p class="exp-sub">Madrid</p>
-                    <p class="exp-sub">2023 - Present</p>
-                </div>
-
-                <div class="exp-block">
-                    <p class="exp-title">Noob</p>
-                    <p class="exp-sub">Art director</p>
-                    <p class="exp-sub">Madrid</p>
-                    <p class="exp-sub">2020 - 2023</p>
-                </div>
-
-                <div class="exp-block">
-                    <p class="exp-title">VIZZ Agency</p>
-                    <p class="exp-sub">Art director</p>
-                    <p class="exp-sub">Madrid</p>
-                    <p class="exp-sub">2018 - 2020</p>
-                </div>
-
-                <div class="exp-block">
-                    <p class="exp-title">Zesto</p>
-                    <p class="exp-sub">Digital Designer & Motion Designer</p>
-                    <p class="exp-sub">Gijón</p>
-                    <p class="exp-sub">2016 - 2018</p>
-                </div>
-            </div>
-
-            <div class="about-col-right">
-                <ul class="clients-list">
-                    <li>Amazon</li>
-                    <li>Adidas</li>
-                    <li>Amnesty International</li>
-                    <li>BBVA</li>
-                    <li>Beefeater</li>
-                    <li>Burger King</li>
-                    <li>Cheetos</li>
-                    <li>Coca-Cola</li>
-                    <li>Domino's</li>
-                    <li>HBO</li>
-                    <li>Heineken</li>
-                    <li>La Liga</li>
-                    <li>Logitech</li>
-                    <li>McDonalds</li>
-                    <li>Movistar</li>
-                    <li>RTVE</li>
-                    <li>Twitch</li>
-                    <li>Visa</li>
-                </ul>
-            </div>
-        </div>
-
-        <footer class="site-footer about-footer">
-            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-        </footer>
-    </section>
-
-    <main class="portfolio-layout">
-        
-        <section class="hero-block">
-            <div class="bio-container">
-                <p><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
-            </div>
-
-            <div class="reel-wrapper">
-                <div class="media-container ratio-16-9">
-                    <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="reel-media" draggable="false">
-                        <source src="img/01_web26_reel.mp4?v=1.0" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </section>
-
-        <section class="mosaic-tight-grid">
-            
-            <div class="stack-column">
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-nilojeda">Nil Ojeda x LaLiga x Puma — Brand Identity and Experience +</a></p>
-                        <div class="title-description">
-                            <p><strong>Nil Ojeda x Puma x La Liga</strong>. Nil Ojeda takes the wheel of a truck packed with Puma Orbita balls and hits the streets of Madrid in a race against the clock — selling as many as possible before time runs out.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-nilojeda" class="project-link">
-                            <img src="img/nilojeda_laliga/nilojeda_laliga_cover.jpg" class="img-primary" alt="Nil Ojeda Principal" draggable="false">
-                            <img src="img/nilojeda_laliga/nilojeda_laliga_secondary_3.jpg" class="img-secondary" alt="Nil Ojeda Alternativa" draggable="false">
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-epy6">ElPartidazo6 — Brand Identity +</a></p>
-                        <div class="title-description">
-                            <p><strong>ElPartidazo6</strong>. Brand identity and visual system design.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-epy6" class="project-link">
-                            <video autoplay loop muted playsinline class="img-primary" draggable="false">
-                                <source src="img/epy6/epy6_cover.webm" type="video/webm">
-                                <source src="img/epy6/epy6_cover.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <article class="project-card card-large">
-                <div class="title-container">
-                    <p class="project-title"><a href="#work-lafisica">La Física. Podimo — Brand Identity +</a></p>
-                    <div class="title-description">
-                        <p><strong>La Física</strong> is a podcast about physics on Podimo. Alba Moreno breaks down the universe's greatest mysteries through everyday questions and expert guests.</p>
-                    </div>
-                </div>
-
-                <div class="media-container fill-height">
-                    <a href="#work-lafisica" class="project-link">
-                        <img src="img/la-fisica/lafisica_cover.webp" class="img-primary" alt="La Física Principal" draggable="false">
-                        <video loop muted playsinline class="img-secondary" draggable="false">
-                            <source src="img/la-fisica/lafisica_17.webm" type="video/webm">
-                            <source src="img/la-fisica/lafisica_17.mp4" type="video/mp4">
-                        </video>
-                    </a>
-                </div>
-            </article>
-
-        </section>
-
-        <section class="mosaic-tight-grid mosaic-reversed">
-            
-            <article class="project-card card-large">
-                <div class="title-container">
-                    <p class="project-title"><a href="#work-ibai">El Gran Menú de Ibai — Brand Identity +</a></p>
-                    <div class="title-description">
-                        <p><strong>El Gran Menú de Ibai</strong> is a collection of three delicious packaging designs for the very much anticipated Ibai´s delivery menu on The Gaming Family.</p>
-                    </div>
-                </div>
-
-                <div class="media-container fill-height">
-                    <a href="#work-ibai" class="project-link">
-                        <video autoplay loop muted playsinline class="img-primary" draggable="false">
-                            <source src="img/ibai_granmenu/ibai_granmenu_cover_animated.webm?v=2.0" type="video/webm">
-                            <source src="img/ibai_granmenu/ibai_granmenu_cover_animated.mp4?v=2.0" type="video/mp4">
-                        </video>
-                        <video loop muted playsinline class="img-secondary" draggable="false">
-                            <source src="img/ibai_granmenu/ibai_granmenu_secondary.webm" type="video/webm">
-                            <source src="img/ibai_granmenu/ibai_granmenu_secondary.mp4" type="video/mp4">
-                        </video>
-                    </a>
-                </div>
-            </article>
-
-            <div class="stack-column">
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-yointerneto">YoInterneto — Brand Identity +</a></p>
-                        <div class="title-description">
-                            <p><strong>Yo, Interneto</strong> is a weekly podcast streamed on Twitch. The show discusses internet culture of the past, the present and the future.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-yointerneto" class="project-link">
-                            <video autoplay loop muted playsinline class="img-primary" draggable="false">
-                                <source src="img/yointernetot4/yointernetot4_cover.webm" type="video/webm">
-                                <source src="img/yointernetot4/yointernetot4_cover.mp4" type="video/mp4">
-                            </video>
-                            <img src="img/yointernetot4/yointernetot4_secondary.jpg" class="img-secondary" alt="YoInterneto Alternativa" draggable="false">
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-rubiusx">Rubius X — Design System +</a></p>
-                        <div class="title-description">
-                            <p><strong>Rubius X</strong> is the Amazon Exclusive documentary that celebrates 10 years of Rubius as the most recognized Spanish content creator.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-rubiusx" class="project-link">
-                            <video autoplay loop muted playsinline class="img-primary" draggable="false">
-                                <source src="img/rubiusx/rubiusx_cover_2.webm" type="video/webm">
-                                <source src="img/rubiusx/rubiusx_cover_2.mp4" type="video/mp4">
-                            </video>
-                            <video loop muted playsinline class="img-secondary" draggable="false">
-                                <source src="img/rubiusx/rubiusx_secondary.webm" type="video/webm">
-                                <source src="img/rubiusx/rubiusx_secondary.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-        </section>
-
-        <footer class="site-footer">
-            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-        </footer>
-
-    </main>
-
-    <!-- PROYECTO NIL OJEDA -->
-    <section id="work-nilojeda" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1">
-                    <span class="meta-label">Client</span>
-                    <p class="meta-value">LaLiga & Puma</p>
-                </div>
-                <div class="meta-col col-2">
-                    <span class="meta-label">Role</span>
-                    <p class="meta-value">Art Direction & Campaign System</p>
-                </div>
-                <div class="meta-col col-3">
-                    <span class="meta-label">Company</span>
-                    <p class="meta-value">Vizz</p>
-                </div>
-                <div class="meta-col col-4"></div>
-            </div>
-            
-            <div class="project-description-hero">
-                <p><strong>Nil Ojeda x Puma x La Liga</strong><br>
-                Nil Ojeda takes the wheel of a truck packed with Puma Orbita balls and hits the streets of Madrid in a race against the clock — selling as many as possible before time runs out.</p>
-            </div>
-
-            <div class="gallery-quad">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_01.jpg" alt="Nil Ojeda 01" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_02.jpg" alt="Nil Ojeda 02" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_03.jpg" alt="Nil Ojeda 03" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_04.jpg" alt="Nil Ojeda 04" draggable="false">
-            </div>
-
-            <div class="gallery-triptych">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_05.jpg" alt="Nil Ojeda 05" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_06.jpg" alt="Nil Ojeda 06" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_07.jpg" alt="Nil Ojeda 07" draggable="false">
-            </div>
-
-            <div class="project-gallery">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_cover.jpg" alt="Nil Ojeda Cover" draggable="false">
-            </div>
-
-            <div class="gallery-triptych">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_08.jpg" alt="Nil Ojeda 08" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_09.jpg" alt="Nil Ojeda 09" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_10.jpg" alt="Nil Ojeda 10" draggable="false">
-            </div>
-
-            <div class="gallery-grid-5">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_11.jpg" alt="Nil Ojeda 11" style="grid-column: span 6;" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_12.jpg" alt="Nil Ojeda 12" class="grid-span-bottom" style="grid-column: span 3;" draggable="false">
-                <img src="img/nilojeda_laliga/nilojeda_laliga_14.jpg" alt="Nil Ojeda 14" class="grid-span-bottom" style="grid-column: span 3;" draggable="false">
-            </div>
-
-            <div class="project-credits-block">
-                <p>Creative Direction — Jaime Sordo</p>
-                <p>Graphic Design — Mikel San Juán</p>
-                <p>Production Team — David Boch, Antonio Montero & Natalia Moldón</p>
-            </div>
-
-            <footer class="site-footer project-footer">
-                <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-            </footer>
-
-        </div>
-    </section>
-
-    <!-- PROYECTO EL PARTIDAZO 6 -->
-    <section id="work-epy6" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1">
-                    <span class="meta-label">Client</span>
-                    <p class="meta-value">ElPartidazo6</p>
-                </div>
-                <div class="meta-col col-2">
-                    <span class="meta-label">Role</span>
-                    <p class="meta-value">Art Direction & Brand Identity</p>
-                </div>
-                <div class="meta-col col-3">
-                    <span class="meta-label">Company</span>
-                    <p class="meta-value">Vizz</p>
-                </div>
-                <div class="meta-col col-4"></div>
-            </div>
-            
-            <div class="project-description-hero">
-                <p><strong>ElPartidazo6</strong><br>
-                Brand identity and visual system design.</p>
-            </div>
-            
-            <div class="project-gallery">
-                <div class="lazy-video-container" data-webm="img/epy6/epy6_cover.webm" data-mp4="img/epy6/epy6_cover.mp4"></div>
-            </div>
-
-            <div class="gallery-mosaic-2x2">
-                <div class="lazy-video-container" data-webm="img/epy6/epy6_01.webm" data-mp4="img/epy6/epy6_01.mp4"></div>
-                <div class="lazy-video-container" data-webm="img/epy6/epy6_02.webm" data-mp4="img/epy6/epy6_02.mp4"></div>
-                <div class="lazy-video-container" data-webm="img/epy6/epy6_03.webm" data-mp4="img/epy6/epy6_03.mp4"></div>
-                <div class="lazy-video-container" data-webm="img/epy6/epy6_04.webm" data-mp4="img/epy6/epy6_04.mp4"></div>
-            </div>
-
-            <div class="project-credits-block">
-                <p>Creative Direction — Jaime Sordo</p>
-                <p>Creative Supervision — Alberto Pérez de Eulate</p>
-                <p>Production Team — David Boch, Natalia Moldón & Antonio Montero</p>
-                <p>Chief Technician — Adrián Villaroya</p>
-                <p>Technical Production Team — Juan Antonio Moreno, Pablo Sánchez & Pablo Saldaña</p>
-            </div>
-
-            <footer class="site-footer project-footer">
-                <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-            </footer>
-
-        </div>
-    </section>
-    
-    <!-- PROYECTO LA FÍSICA -->
-    <section id="work-lafisica" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1">
-                    <span class="meta-label">Client</span>
-                    <p class="meta-value">Podimo Europe</p>
-                </div>
-                <div class="meta-col col-2">
-                    <span class="meta-label">Role</span>
-                    <p class="meta-value">Art Direction & Brand System</p>
-                </div>
-                <div class="meta-col col-3">
-                    <span class="meta-label">Company</span>
-                    <p class="meta-value">Vizz</p>
-                </div>
-                <div class="meta-col col-4"></div>
-            </div>
-            
-            <div class="project-description-hero">
-                <p><strong>La Física</strong> is a podcast about physics on Podimo. Alba Moreno breaks down the universe's greatest mysteries through everyday questions and expert guests.</p>
-            </div>
-            
-            <div class="gallery-triptych">
-                <img src="img/la-fisica/lafisica_01.jpg" alt="La Física 01" draggable="false">
-                <img src="img/la-fisica/lafisica_02.jpg" alt="La Física 02" draggable="false">
-                <img src="img/la-fisica/lafisica_03.jpg" alt="La Física 03" draggable="false">
-            </div>
-
-            <div class="project-gallery">
-                <img src="img/la-fisica/lafisica_04.jpg" alt="La Física 04" draggable="false">
-            </div>
-
-            <div class="gallery-triptych">
-                <img src="img/la-fisica/lafisica_05.jpg" alt="La Física 05" draggable="false">
-                <img src="img/la-fisica/lafisica_06.jpg" alt="La Física 06" draggable="false">
-                <img src="img/la-fisica/lafisica_07.jpg" alt="La Física 07" draggable="false">
-            </div>
-
-            <div class="project-gallery">
-                <div class="lazy-video-container" data-mp4="img/la-fisica/lafisica_recurso_loop.mp4"></div>
-            </div>
-
-            <div class="gallery-triptych">
-                <img src="img/la-fisica/lafisica_09.jpg" alt="La Física 09" draggable="false">
-                <img src="img/la-fisica/lafisica_10.jpg" alt="La Física 10" draggable="false">
-                <img src="img/la-fisica/lafisica_11.jpg" alt="La Física 11" draggable="false">
-            </div>
-
-            <div class="gallery-grid-5">
-                <img src="img/la-fisica/lafisica_12.jpg" alt="La Física 12" draggable="false">
-                <img src="img/la-fisica/lafisica_13.jpg" alt="La Física 13" draggable="false">
-                <img src="img/la-fisica/lafisica_14.jpg" alt="La Física 14" draggable="false">
-                <img src="img/la-fisica/lafisica_15.jpg" alt="La Física 15" class="grid-span-bottom" draggable="false">
-                <img src="img/la-fisica/lafisica_16.jpg" alt="La Física 16" class="grid-span-bottom" draggable="false">
-            </div>
-
-            <div class="project-gallery">
-                <div class="lazy-video-container" data-mp4="img/la-fisica/lafisica_17.mp4" data-webm="img/la-fisica/lafisica_17.webm"></div>
-            </div>
-
-            <div class="project-gallery">
-                <img src="img/la-fisica/lafisica_18.jpg" alt="La Física 18" draggable="false">
-            </div>
-
-            <div class="gallery-diptych">
-                <img src="img/la-fisica/lafisica_19.jpg" alt="La Física 19" draggable="false">
-                <img src="img/la-fisica/lafisica_20.jpg" alt="La Física 20" draggable="false">
-            </div>
-
-            <div class="project-gallery">
-                <img src="img/la-fisica/lafisica_21.jpg" alt="La Física 21" draggable="false">
-            </div>
-
-            <div class="gallery-grid-4">
-                <img src="img/la-fisica/lafisica_22.png" alt="La Física 22" draggable="false">
-                <img src="img/la-fisica/lafisica_23.png" alt="La Física 23" draggable="false">
-                <img src="img/la-fisica/lafisica_24.png" alt="La Física 24" draggable="false">
-                <img src="img/la-fisica/lafisica_25.png" alt="La Física 25" class="img-full-height" draggable="false">
-            </div>
-
-            <div class="project-credits-block">
-                <p>Creative Direction — Jaime Sordo</p>
-                <p>Creative Supervision — Alberto Pérez de Eulate</p>
-                <p>Graphic Design — Mikel San Juán</p>
-                <p>Production Team — Natalia Moldón & Antonio Montero</p>
-                <p>Production Coordination — Ainhoa Labarta</p>
-                <p>Executive Production — Gonzalo Pastor & Fabrizio Giampieri</p>
-                <p>Chief Technician — Adrián Villaroya</p>
-                <p>Sound — Pablo Sánchez</p>
-                <p>Technical Production Team — Juan Antonio Moreno & Pablo Saldaña</p>
-            </div>
-
-            <footer class="site-footer project-footer">
-                <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-            </footer>
-
-        </div>
-    </section>
-
-    <!-- PROYECTO EL GRAN MENÚ DE IBAI -->
-    <section id="work-ibai" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1">
-                    <span class="meta-label">Client</span>
-                    <p class="meta-value">La Gran Familia Mediterranea / Ibai Llanos</p>
-                </div>
-                <div class="meta-col col-2">
-                    <span class="meta-label">Role</span>
-                    <p class="meta-value">Branding & Packaging Design</p>
-                </div>
-                <div class="meta-col col-3">
-                    <span class="meta-label">Company</span>
-                    <p class="meta-value">Noob</p>
-                </div>
-                <div class="meta-col col-4"></div>
-            </div>
-            
-            <div class="project-description-hero">
-                <p><strong>El Gran Menú de Ibai</strong> is a collection of three delicious packaging designs for the very much anticipated Ibai´s delivery menu on The Gaming Family.</p>
-            </div>
-            
-            <div class="gallery-vertical-mosaic">
-                <div class="lazy-video-container" data-webm="img/ibai_granmenu/ibai_granmenu_cover_animated.webm?v=2.0" data-mp4="img/ibai_granmenu/ibai_granmenu_cover_animated.mp4?v=2.0"></div>
-                <img src="img/ibai_granmenu/ibai_menu_08.jpg" alt="El Gran Menú de Ibai 08" draggable="false">
-            </div>
-
-            <div class="gallery-vertical-mosaic">
-                <img src="img/ibai_granmenu/ibai_menu_01.jpg" alt="El Gran Menú de Ibai 01" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_02.jpg" alt="El Gran Menú de Ibai 02" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_03.jpg" alt="El Gran Menú de Ibai 03" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_04.jpg" alt="El Gran Menú de Ibai 04" draggable="false">
-            </div>
-
-            <div class="gallery-vertical-mosaic">
-                <img src="img/ibai_granmenu/ibai_menu_05.jpg" alt="El Gran Menú de Ibai 05" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_06.jpg" alt="El Gran Menú de Ibai 06" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_07.jpg" alt="El Gran Menú de Ibai 07" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_09.jpg" alt="El Gran Menú de Ibai 09" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_10.jpg" alt="El Gran Menú de Ibai 10" draggable="false">
-                <img src="img/ibai_granmenu/ibai_menu_11.jpg" alt="El Gran Menú de Ibai 11" draggable="false">
-            </div>
-
-            <div class="project-credits-block">
-                <p>Creative Direction — Jaime Sordo</p>
-                <p>Creative Copywriting — Alberto Pérez de Eulate & Kiko Martínez</p>
-                <p>Illustrations — Mikel San Juán, Alberto Delgado & Luciano Castañón</p>
-            </div>
-
-            <footer class="site-footer project-footer">
-                <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-            </footer>
-
-        </div>
-    </section>
-
-    <!-- PROYECTO YOINTERNETO -->
-    <section id="work-yointerneto" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1">
-                    <span class="meta-label">Client</span>
-                    <p class="meta-value">Yo, Interneto</p>
-                </div>
-                <div class="meta-col col-2">
-                    <span class="meta-label">Role</span>
-                    <p class="meta-value">Art Direction & Graphic System</p>
-                </div>
-                <div class="meta-col col-3">
-                    <span class="meta-label">Company</span>
-                    <p class="meta-value">Vizz</p>
-                </div>
-                <div class="meta-col col-4"></div>
-            </div>
-            
-            <div class="project-description-hero">
-                <p><strong>Yo, Interneto</strong> is a weekly podcast streamed on Twitch.<br>
-                The show discusses internet culture of the past, the present and the future.</p>
-            </div>
-            
-            <div class="project-gallery">
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_intro_hd.mp4" data-webm="img/yointernetot4/yointernetot4_intro_hd.webm" data-controls="true"></div>
-            </div>
-
-            <!-- MOSAICO 1: standing + cds + 06 -->
-            <div class="gallery-vertical-mosaic">
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_standing.mp4" data-webm="img/yointernetot4/yointernetot4_standing.webm"></div>
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointerneto4_cds.mp4" data-webm="img/yointernetot4/yointerneto4_cds.webm"></div>
-                <img src="img/yointernetot4/yointernetot4_06.webp" alt="YoInterneto 06" draggable="false">
-            </div>
-
-            <!-- MOSAICO 2: comenzamos + 08_benji + outro -->
-            <div class="gallery-vertical-mosaic">
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_comenzamos.mp4" data-webm="img/yointernetot4/yointernetot4_comenzamos.webm"></div>
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_08_benji.mp4" data-webm="img/yointernetot4/yointernetot4_08_benji.webm"></div>
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_outro.mp4" data-webm="img/yointernetot4/yointernetot4_outro.webm"></div>
-            </div>
-
-            <!-- MOSAICO 3: 10 + 11 + videowall_loop -->
-            <div class="gallery-vertical-mosaic">
-                <img src="img/yointernetot4/yointernetot4_10.jpg" alt="YoInterneto 10" draggable="false">
-                <img src="img/yointernetot4/yointernetot4_11.jpg" alt="YoInterneto 11" draggable="false">
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yi_t5_videowall_loop.mp4" data-webm="img/yointernetot4/yi_t5_videowall_loop.webm"></div>
-            </div>
-
-            <!-- MOSAICO 4 UNIFICADO: 12 + 13 + 09 -->
-            <div class="gallery-vertical-mosaic">
-                <img src="img/yointernetot4/yointernetot4_12.webp" alt="YoInterneto 12" draggable="false">
-                <img src="img/yointernetot4/yointernetot4_13.jpg" alt="YoInterneto 13" draggable="false">
-                <img src="img/yointernetot4/yointernetot4_09.webp" alt="YoInterneto 09" draggable="false">
-            </div>
-
-            <!-- DEBAJO FUERA DEL MOSAICO: 09_2.webm -->
-            <div class="project-gallery">
-                <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_09_2.mp4" data-webm="img/yointernetot4/yointernetot4_09_2.webm"></div>
-            </div>
-
-            <!-- ÚLTIMA IMAGEN EXENTA DEL PROYECTO -->
-            <div class="project-gallery">
-                <img src="img/yointernetot4/yointernetot4_14.jpg" alt="YoInterneto 14" draggable="false">
-            </div>
-
-            <div class="project-credits-block">
-                <p>Creative Direction — Jaime Sordo</p>
-                <p>Creative Copywriting — Alberto Pérez de Eulate & Kiko Martínez</p>
-                <p>Photography Assets — Gonzalo Mira</p>
-            </div>
-
-            <footer class="site-footer project-footer">
-                <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-            </footer>
-
-        </div>
-    </section>
-
-    <!-- PROYECTO RUBIUS X -->
-    <section id="work-rubiusx" class="project-view-page">
-        <a href="#" class="close-project-btn">✕ Close</a>
-        <div class="project-detail-container">
-            <div class="project-meta-row">
-                <div class="meta-col col-1">
-                    <span class="meta-label">Client</span>
-                    <p class="meta-value">Amazon Prime</p>
-                </div>
-                <div class="meta-col col-2">
-                    <span class="meta-label">Role</span>
-                    <p class="meta-value">Graphic System, TV Graphics</p>
-                </div>
-                <div class="meta-col col-3">
-                    <span class="meta-label">Company</span>
-                    <p class="meta-value">Noob</p>
-                </div>
-                <div class="meta-col col-4"></div>
-            </div>
-            
-            <div class="project-description-hero">
-                <p><strong>Rubius X</strong> is the Amazon Exclusive documentary that celebrates 10 years of Rubius as the most recognized Spanish content creator.<br>
-                Rubius X is produced by VIZZ and NOOB Studios, the creative digital production company of the Webedia group.</p>
-            </div>
-
-            <div class="project-gallery">
-                <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: auto; border-radius: 6px; margin-bottom: 30px; display: block;" draggable="false">
-                    <source src="img/rubiusx/rubiusx_cover_2.webm" type="video/webm">
-                    <source src="img/rubiusx/rubiusx_cover_2.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="gallery-diptych">
-                <img src="img/rubiusx/rubiusx_01.jpg" alt="Rubius X 01" draggable="false">
-                <img src="img/rubiusx/rubiusx_02.jpg" alt="Rubius X 02" draggable="false">
-            </div>
-
-            <div class="project-gallery">
-                <div class="lazy-video-container" data-mp4="img/rubiusx/rubiusx_intro.mp4" data-webm="img/rubiusx/rubiusx_intro.webm"></div>
-            </div>
-
-            <div class="project-gallery">
-                <div class="lazy-video-container" data-mp4="img/rubiusx/rubiusx_outro.mp4" data-webm="img/rubiusx/rubiusx_outro.webm"></div>
-            </div>
-
-            <div class="project-credits-block">
-                <p>Art Direction — Mikel San Juan</p>
-                <p>Creative Direction — Pedro Ample</p>
-                <p>Graphic Design — Luciano Castañón</p>
-            </div>
-
-            <footer class="site-footer project-footer">
-                <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-            </footer>
-
-        </div>
-    </section>
-
-    <script>
-        const toggleBtn = document.getElementById('toggle-btn');
-        function updateToggleHref() {
-            if (window.location.hash === '#about') {
-                toggleBtn.setAttribute('href', '#');
-            } else {
-                toggleBtn.setAttribute('href', '#about');
-            }
-        }
-
-        function handleHashChange() {
-            updateToggleHref();
-            const currentHash = window.location.hash;
-
-            if (!currentHash || currentHash === '#' || currentHash === '#about') {
-                document.querySelectorAll('.project-view-page video').forEach(v => {
-                    v.pause();
-                    v.currentTime = 0;
-                });
-            } else {
-                const activeProject = document.querySelector(currentHash);
-                if (activeProject) {
-                    activeProject.scrollTop = 0;
-                    activeProject.querySelectorAll('video').forEach(v => {
-                        if (!v.controls) {
-                            v.play().catch(() => {});
-                        }
-                    });
-                }
-            }
-        }
-
-        window.addEventListener('hashchange', handleHashChange);
-        window.addEventListener('load', handleHashChange);
-
-        function createVideoElement(container) {
-            if (container.querySelector('video')) return container.querySelector('video');
-
-            const video = document.createElement('video');
-            const hasControls = container.getAttribute('data-controls') === 'true';
-
-            video.loop = true;
-            video.playsInline = true;
-            video.setAttribute('playsinline', '');
-            video.setAttribute('draggable', 'false');
-            video.style.width = '100%';
-            video.style.height = '100%';
-            video.style.objectFit = 'cover';
-            video.style.display = 'block';
-            video.style.borderRadius = '0px';
-
-            if (hasControls) {
-                video.controls = true;
-                video.muted = false;
-                video.autoplay = false;
-            } else {
-                video.muted = true;
-                video.autoplay = true;
-            }
-
-            const webmSrc = container.getAttribute('data-webm');
-            if (webmSrc) {
-                const sourceWebm = document.createElement('source');
-                sourceWebm.src = webmSrc;
-                sourceWebm.type = 'video/webm';
-                video.appendChild(sourceWebm);
-            }
-
-            const mp4Src = container.getAttribute('data-mp4');
-            if (mp4Src) {
-                const sourceMp4 = document.createElement('source');
-                sourceMp4.src = mp4Src;
-                sourceMp4.type = 'video/mp4';
-                video.appendChild(sourceMp4);
-            }
-
-            container.appendChild(video);
-
-            if (!hasControls) {
-                video.play().catch(() => {});
-            }
-
-            return video;
-        }
-
-        const lazyContainers = document.querySelectorAll('.lazy-video-container');
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    createVideoElement(entry.target);
-                }
-            });
-        }, { rootMargin: '200px' });
-
-        lazyContainers.forEach(container => videoObserver.observe(container));
-
-        ['hover-video-lafisica', 'hover-video-ibai', 'hover-video-rubiusx', 'cover-video-epy6'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                const cardContainer = el.closest('.project-link');
-                if (cardContainer) {
-                    cardContainer.addEventListener('mouseenter', () => {
-                        const v = createVideoElement(el);
-                        v.currentTime = 0;
-                        v.play().catch(() => {});
-                    });
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+/* ==========================================================================
+   1. RESET & SYSTEM VARIABLES
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #000000;
+    --card-bg: #0a0a0a;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --text-muted: #555555;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.2);
+    --header-height: 80px;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.2s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    line-height: 1.5;
+    scrollbar-gutter: stable;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    padding: 24px 30px 0 30px;
+}
+
+/* PROTECTION & SELECTION RULES */
+::selection {
+    background: #ffffff;
+    color: #000000;
+}
+
+::-moz-selection {
+    background: #ffffff;
+    color: #000000;
+}
+
+img, video {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    pointer-events: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body:has(.project-view-page:target) {
+    overflow: hidden !important;
+}
+
+/* ==========================================================================
+   2. FIXED HEADER & NAVIGATION
+   ========================================================================== */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 280px 320px 1fr 40px;
+    gap: 30px;
+    padding: 24px 30px;
+    font-size: 13px;
+    line-height: 1.4;
+    z-index: 1000;
+    background: transparent;
+    pointer-events: none;
+    transition: color 0.3s ease;
+    -webkit-text-size-adjust: 100%;
+}
+
+.header-fixed .col {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-fixed .col-2 {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+body:has(#about:target) .header-fixed .col-2 {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.home-link {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.home-link:hover {
+    opacity: 0.55 !important;
+}
+
+.txt-bold {
+    color: inherit !important;
+    font-weight: 500;
+    opacity: 1 !important;
+}
+
+.txt-white {
+    color: inherit !important;
+    font-weight: 400;
+    opacity: 1 !important;
+}
+
+.link-white {
+    color: inherit !important;
+    text-decoration: none;
+    font-weight: 400;
+    opacity: 1 !important;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.link-white:hover {
+    opacity: 0.55 !important;
+    transform: translateX(3px);
+}
+
+.toggle-about-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    text-decoration: none;
+    color: inherit;
+    width: 26px;
+    height: 26px;
+    transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.toggle-about-btn:hover {
+    opacity: 0.55;
+}
+
+.toggle-icon-svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+    display: block;
+}
+
+.toggle-icon-svg .vert-bar {
+    transition: opacity 0.25s ease;
+    opacity: 1;
+}
+
+body:has(#about:target) .toggle-icon-svg .vert-bar {
+    opacity: 0;
+}
+
+/* ==========================================================================
+   3. PORTFOLIO MAIN LAYOUT (HERO & MOSAIC GRID)
+   ========================================================================== */
+.portfolio-layout {
+    margin-top: 105px;
+}
+
+.hero-block {
+    display: grid;
+    grid-template-columns: 280px 320px 1fr 40px;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: start;
+}
+
+.bio-container {
+    grid-column: 1 / span 2;
+    padding-right: 20px;
+}
+
+.bio-container p {
+    font-size: 32px;
+    line-height: 1.18;
+    color: #ffffff !important;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.bio-container strong,
+.about-hero-text strong {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+#about .about-hero-text strong {
+    color: #000000 !important;
+}
+
+.reel-wrapper {
+    grid-column: 3 / -1;
+    width: 100%;
+}
+
+.reel-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* MOSAIC GRID SYSTEM */
+.mosaic-tight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.85fr;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: start;
+}
+
+.mosaic-reversed {
+    grid-template-columns: 1.85fr 1fr;
+    margin-bottom: 60px;
+}
+
+.stack-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.title-container {
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 5;
+}
+
+.project-title {
+    font-size: 13px;
+    color: #ffffff !important;
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: -0.01em;
+}
+
+.project-title a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 400;
+}
+
+.project-title a:hover {
+    opacity: 0.7;
+}
+
+.title-description {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+.title-description p {
+    font-size: 22px;
+    line-height: 1.2;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.title-container:hover .title-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-card:has(.title-container:hover) .media-container {
+    opacity: 0.05 !important;
+    visibility: visible !important;
+}
+
+.media-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #111111;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-link img,
+.project-link video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    transition: opacity 0.4s ease;
+}
+
+.img-primary {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+.img-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+.media-container:hover .img-primary {
+    opacity: 0;
+}
+
+.media-container:hover .img-secondary {
+    opacity: 1;
+}
+
+.lazy-video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #0d0d0d;
+}
+
+.lazy-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   4. FULLSCREEN OVERLAYS (PROJECT DETAILS & ABOUT PAGE)
+   ========================================================================== */
+.project-view-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    z-index: 900;
+    display: none;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 130px 30px 0 30px;
+}
+
+.project-view-page:target {
+    display: flex;
+    flex-direction: column;
+}
+
+body:has(.project-view-page:target) .header-fixed {
+    color: #000000 !important;
+}
+
+.close-project-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.close-project-btn:hover {
+    background: rgba(0, 0, 0, 0.75) !important;
+    transform: scale(1.03);
+}
+
+.project-detail-container {
+    width: 100%;
+}
+
+.project-meta-row {
+    display: grid;
+    grid-template-columns: 280px 320px 1fr 40px;
+    gap: 30px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+.meta-title {
+    color: inherit;
+    font-weight: 500;
+}
+
+.meta-sub {
+    color: inherit;
+    font-weight: 400;
+}
+
+.meta-label {
+    color: #666666 !important;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    color: inherit;
+    font-weight: 400;
+}
+
+.project-description-hero {
+    margin-bottom: 50px;
+    max-width: 1100px;
+}
+
+.project-description-hero p {
+    font-size: 32px;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    color: inherit;
+    font-weight: 400;
+}
+
+.project-description-hero strong {
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   5. GALLERIES & LAYOUT MOSAICS WITHIN PROJECTS
+   ========================================================================== */
+.project-gallery {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.project-gallery img,
+.project-gallery video,
+.project-gallery .lazy-video-container {
+    width: 100%;
+    height: auto;
+    border-radius: 6px !important;
+    margin-bottom: 30px;
+    display: block;
+    overflow: hidden;
+}
+
+.project-gallery .lazy-video-container video {
+    border-radius: 6px !important;
+    margin-bottom: 0;
+}
+
+.gallery-vertical-mosaic,
+.gallery-quad,
+.gallery-triptych,
+.gallery-diptych,
+.gallery-grid-5,
+.gallery-grid-4 {
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    isolation: isolate;
+    gap: 0 !important;
+    margin: 0 auto 30px auto;
+    width: 80%;
+    max-width: 100%;
+}
+
+.gallery-vertical-mosaic { display: flex; flex-direction: column; }
+.gallery-quad { display: grid; grid-template-columns: repeat(4, 1fr); }
+.gallery-triptych { display: grid; grid-template-columns: repeat(3, 1fr); }
+.gallery-diptych { display: grid; grid-template-columns: repeat(2, 1fr); }
+.gallery-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); align-items: stretch; }
+.gallery-grid-5 { display: grid; grid-template-columns: repeat(6, 1fr); }
+
+.gallery-vertical-mosaic img, .gallery-vertical-mosaic video, .gallery-vertical-mosaic .lazy-video-container,
+.gallery-quad img, .gallery-quad video, .gallery-quad .lazy-video-container,
+.gallery-triptych img, .gallery-triptych video, .gallery-triptych .lazy-video-container,
+.gallery-diptych img, .gallery-diptych video, .gallery-diptych .lazy-video-container,
+.gallery-grid-4 img, .gallery-grid-4 video, .gallery-grid-4 .lazy-video-container,
+.gallery-grid-5 img, .gallery-grid-5 video, .gallery-grid-5 .lazy-video-container {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 !important;
+}
+
+.gallery-grid-5 img { grid-column: span 2; }
+.gallery-grid-5 img.grid-span-bottom { grid-column: span 3; }
+
+.gallery-grid-4 img.img-full-height {
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-credits-block {
+    width: 80%;
+    margin: 50px auto 0 auto;
+    font-size: 13px;
+    line-height: 1.35;
+    color: #888888;
+    text-align: center;
+}
+
+.project-credits-block p {
+    margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   6. ABOUT PAGE OVERLAY LAYOUT
+   ========================================================================== */
+#about {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.about-layout-grid {
+    display: grid;
+    grid-template-columns: 630px 280px 1fr;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.about-col-left {
+    padding-right: 20px;
+}
+
+.about-hero-text {
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: #000000;
+    font-weight: 400;
+}
+
+.about-mobile-contact {
+    display: none;
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.about-col-mid {
+    width: 100%;
+}
+
+.about-section-label {
+    font-size: 13px;
+    color: #000000;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.exp-block {
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.exp-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.exp-sub {
+    color: #000000;
+    font-weight: 400;
+}
+
+.about-col-right {
+    width: 100%;
+    padding-left: 0px;
+}
+
+.clients-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.clients-list li {
+    font-size: 22px;
+    line-height: 1.25;
+    color: #000000;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   7. FOOTER SYSTEM
+   ========================================================================== */
+.site-footer {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 12px;
+    line-height: 1.35;
+    color: #2b2b2b;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.footer-line-1 {
+    letter-spacing: -0.035em !important;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.footer-semibold {
+    font-weight: 600 !important;
+}
+
+.footer-medium {
+    font-weight: 500 !important;
+}
+
+.footer-line-2 {
+    letter-spacing: -0.01em;
+    display: inline-block;
+    margin-bottom: 0 !important;
+}
+
+.about-footer,
+.project-footer {
+    color: #bfbfbf !important;
+}
+
+.about-footer {
+    margin-top: auto;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.project-footer {
+    margin-top: 50px;
+    padding-bottom: 60px;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .about-layout-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .about-col-left {
+        grid-column: span 2;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 20px 20px 0 20px;
+    }
+
+    .header-fixed {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        display: grid !important;
+        grid-template-columns: 1fr 32px !important;
+        gap: 12px;
+        z-index: 1000;
+        align-items: flex-start !important;
+    }
+
+    .header-fixed .col-1 {
+        display: block !important;
+    }
+
+    .header-fixed .col-2,
+    .header-fixed .col-3 {
+        display: none !important;
+    }
+
+    .header-fixed .col-4 {
+        display: block !important;
+        pointer-events: auto;
+    }
+
+    .toggle-about-btn {
+        width: 32px;
+        height: 32px;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .toggle-icon-svg {
+        margin-top: -1px;
+    }
+
+    .portfolio-layout {
+        margin-top: 80px;
+    }
+
+    .hero-block {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .bio-container {
+        grid-column: 1;
+    }
+
+    .reel-wrapper {
+        grid-column: 1;
+    }
+
+    .bio-container p {
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+
+    .mosaic-tight-grid, .mosaic-reversed {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-view-page {
+        padding: 100px 20px 0 20px;
+    }
+
+    .about-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .about-col-left {
+        grid-column: span 1;
+        padding-right: 0;
+    }
+
+    .about-hero-text {
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+
+    .about-mobile-contact {
+        display: block !important;
+    }
+
+    .about-col-mid,
+    .about-col-right {
+        padding-left: 0;
+    }
+
+    .clients-list {
+        padding-left: 0;
+    }
+
+    .clients-list li {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .project-meta-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .project-description-hero p {
+        font-size: 20px;
+    }
+
+    .gallery-quad,
+    .gallery-triptych,
+    .gallery-diptych,
+    .gallery-grid-5,
+    .gallery-grid-4,
+    .gallery-vertical-mosaic,
+    .project-gallery,
+    .project-credits-block {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .gallery-quad,
+    .gallery-grid-4 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .gallery-triptych {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .gallery-triptych img:first-child,
+    .gallery-triptych video:first-child,
+    .gallery-triptych .lazy-video-container:first-child {
+        grid-column: span 2 !important;
+    }
+
+    .gallery-grid-5 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .gallery-grid-5 img:first-child,
+    .gallery-grid-5 video:first-child,
+    .gallery-grid-5 .lazy-video-container:first-child {
+        grid-column: span 2 !important;
+    }
+
+    .gallery-grid-5 img.grid-span-bottom,
+    .gallery-grid-5 video.grid-span-bottom,
+    .gallery-grid-5 .lazy-video-container.grid-span-bottom {
+        grid-column: span 1 !important;
+    }
+
+    .gallery-diptych {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ==========================================================================
+   9. REGLAS ADICIONALES (MOSAICO UNIFICADO 2X2 PARA EPY6 & CAMERA BLOCKER)
+   ========================================================================== */
+.gallery-mosaic-2x2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 80% !important;
+    max-width: 100% !important;
+    margin: 0 auto 30px auto !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    isolation: isolate;
+    gap: 0 !important;
+}
+
+.gallery-mosaic-2x2 img,
+.gallery-mosaic-2x2 video,
+.gallery-mosaic-2x2 .lazy-video-container {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+}
+
+@media (max-width: 900px) {
+    .gallery-mosaic-2x2 {
+        width: 100% !important;
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+/* BROWSER EXTENSION OVERLAY BLOCKER */
+[class*="search-by-image"],
+[class*="image-search"],
+[id*="image-search"],
+div[style*="camera"],
+button[style*="camera"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
