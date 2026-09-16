@@ -45,17 +45,7 @@ body {
     padding: 24px 30px 0 30px;
 }
 
-/* PROTECTION & SELECTION RULES */
-::selection {
-    background: #ffffff;
-    color: #000000;
-}
-
-::-moz-selection {
-    background: #ffffff;
-    color: #000000;
-}
-
+/* PROTECTION RULES */
 img, video {
     user-select: none;
     -webkit-user-select: none;
