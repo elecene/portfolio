@@ -880,7 +880,7 @@ body:has(.project-view-page:target) .header-fixed {
 }
 
 /* ==========================================================================
-   9. REGLAS ADICIONALES (MOSAICO UNIFICADO 2X2 PARA EPY6 & CAMERA BLOCKER)
+   9. REGLAS ADICIONALES (MOSAICO 2X2 & DIPTYCH INTERNO Y BROWSER BLOCKER)
    ========================================================================== */
 .gallery-mosaic-2x2 {
     display: grid !important;
@@ -905,10 +905,32 @@ body:has(.project-view-page:target) .header-fixed {
     object-fit: cover !important;
 }
 
+/* DIPTYCH INTERNO PARA MOSAICOS VERTICALES SIN BORDES INTERMEDIOS */
+.gallery-vertical-mosaic .diptych-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    border-radius: 0 !important;
+}
+
+.gallery-vertical-mosaic .diptych-inner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+}
+
 @media (max-width: 900px) {
     .gallery-mosaic-2x2 {
         width: 100% !important;
         grid-template-columns: 1fr 1fr !important;
+    }
+
+    .gallery-vertical-mosaic .diptych-inner {
+        grid-template-columns: 1fr !important;
     }
 }
 
