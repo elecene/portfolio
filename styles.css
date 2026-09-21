@@ -905,6 +905,10 @@ body:has(.project-view-page:target) .header-fixed {
     object-fit: cover !important;
 }
 
+.gallery-mosaic-2x2 .grid-full-width {
+    grid-column: span 2 !important;
+}
+
 /* DIPTYCH INTERNO PARA MOSAICOS VERTICALES SIN BORDES INTERMEDIOS */
 .gallery-vertical-mosaic .diptych-inner {
     display: grid !important;
