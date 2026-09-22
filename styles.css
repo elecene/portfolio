@@ -45,6 +45,11 @@ body {
     padding: 24px 30px 0 30px;
 }
 
+/* ELIMINACIÓN DE TODOS LOS BORDES REDONDEADOS */
+*, *::before, *::after, img, video, iframe, button, div, section, a {
+    border-radius: 0 !important;
+}
+
 /* PROTECTION RULES */
 img, video {
     user-select: none;
@@ -104,14 +109,41 @@ body:has(#about:target) .header-fixed .col-2 {
     visibility: hidden !important;
 }
 
-.home-link {
-    color: inherit;
-    text-decoration: none;
-    transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+/* HOVER EFFECT (ESTILO BGUILLAUME.INFO) PARA LUCIANO CASTAÑÓN ESTRADA, EMAIL Y LINKEDIN */
+.home-link,
+.link-white {
+    position: relative;
+    display: inline-block;
+    color: inherit !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: opacity 0.3s ease;
 }
 
-.home-link:hover {
-    opacity: 0.55 !important;
+.home-link::after,
+.link-white::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.home-link:hover::after,
+.link-white:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.home-link:hover,
+.link-white:hover {
+    opacity: 1 !important;
 }
 
 .txt-bold {
@@ -124,20 +156,6 @@ body:has(#about:target) .header-fixed .col-2 {
     color: inherit !important;
     font-weight: 400;
     opacity: 1 !important;
-}
-
-.link-white {
-    color: inherit !important;
-    text-decoration: none;
-    font-weight: 400;
-    opacity: 1 !important;
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.link-white:hover {
-    opacity: 0.55 !important;
-    transform: translateX(3px);
 }
 
 .toggle-about-btn {
@@ -220,7 +238,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 6px;
 }
 
 /* MOSAIC GRID SYSTEM */
@@ -309,7 +326,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 6px;
     overflow: hidden;
     background-color: #111111;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -327,7 +343,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 6px;
     transition: opacity 0.4s ease;
 }
 
@@ -407,7 +422,6 @@ body:has(.project-view-page:target) .header-fixed {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     padding: 8px 18px;
-    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     z-index: 1100;
@@ -484,14 +498,12 @@ body:has(.project-view-page:target) .header-fixed {
 .project-gallery .lazy-video-container {
     width: 100%;
     height: auto;
-    border-radius: 6px !important;
     margin-bottom: 30px;
     display: block;
     overflow: hidden;
 }
 
 .project-gallery .lazy-video-container video {
-    border-radius: 6px !important;
     margin-bottom: 0;
 }
 
@@ -501,7 +513,6 @@ body:has(.project-view-page:target) .header-fixed {
 .gallery-diptych,
 .gallery-grid-5,
 .gallery-grid-4 {
-    border-radius: 6px !important;
     overflow: hidden !important;
     isolation: isolate;
     gap: 0 !important;
@@ -527,7 +538,6 @@ body:has(.project-view-page:target) .header-fixed {
     height: auto;
     object-fit: cover;
     display: block;
-    border-radius: 0 !important;
 }
 
 .gallery-grid-5 img { grid-column: span 2; }
@@ -888,7 +898,6 @@ body:has(.project-view-page:target) .header-fixed {
     width: 80% !important;
     max-width: 100% !important;
     margin: 0 auto 30px auto !important;
-    border-radius: 6px !important;
     overflow: hidden !important;
     isolation: isolate;
     gap: 0 !important;
@@ -900,7 +909,6 @@ body:has(.project-view-page:target) .header-fixed {
     width: 100% !important;
     height: auto !important;
     display: block !important;
-    border-radius: 0 !important;
     margin: 0 !important;
     object-fit: cover !important;
 }
@@ -917,14 +925,12 @@ body:has(.project-view-page:target) .header-fixed {
     margin: 0 !important;
     padding: 0 !important;
     gap: 0 !important;
-    border-radius: 0 !important;
 }
 
 .gallery-vertical-mosaic .diptych-inner img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    border-radius: 0 !important;
 }
 
 @media (max-width: 900px) {
