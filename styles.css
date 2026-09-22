@@ -87,6 +87,7 @@ body:has(.project-view-page:target) {
     pointer-events: none;
     transition: color 0.3s ease;
     -webkit-text-size-adjust: 100%;
+    color: #ffffff;
 }
 
 .header-fixed .col {
@@ -104,11 +105,23 @@ body:has(#about:target) .header-fixed .col-2 {
     visibility: hidden !important;
 }
 
-/* EFECTO "ILUMINACIÓN/BRILLO" (DE GRIS A BLANCO PURO) */
+/* TEXTOS BASE DEL HEADER EN BLANCO PURO */
+.txt-bold,
+.txt-white {
+    color: #ffffff !important;
+    font-weight: 400;
+    opacity: 1 !important;
+}
+
+.txt-bold {
+    font-weight: 500;
+}
+
+/* INTERACCIÓN HOVER: DE BLANCO A GRIS PARA LUCIANO, EMAIL Y LN */
 .home-link,
 .link-white {
     display: inline-block;
-    color: #888888 !important;
+    color: #ffffff !important;
     text-decoration: none !important;
     font-weight: 400;
     transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -116,36 +129,17 @@ body:has(#about:target) .header-fixed .col-2 {
 
 .home-link:hover,
 .link-white:hover {
-    color: #ffffff !important;
-}
-
-#about .link-white {
     color: #888888 !important;
 }
 
-#about .link-white:hover {
-    color: #000000 !important;
-}
-
-.txt-bold {
-    color: #ffffff !important;
-    font-weight: 500;
-    opacity: 1 !important;
-}
-
-.txt-white {
-    color: #ffffff !important;
-    font-weight: 400;
-    opacity: 1 !important;
-}
-
+/* BOTÓN DE TOGGLE ABOUT Y CAMBIO A NEGRO EN VISTAS CLARAS */
 .toggle-about-btn {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-left: auto;
     text-decoration: none;
-    color: #ffffff !important;
+    color: #ffffff;
     width: 26px;
     height: 26px;
     transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -171,6 +165,38 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     opacity: 0;
 }
 
+/* COLOR NEGRO CUANDO SE MUESTRAN VISTAS DE PROYECTO O ABOUT (FONDOS BLANCOS) */
+body:has(.project-view-page:target) .header-fixed,
+body:has(#about:target) .header-fixed {
+    color: #000000 !important;
+}
+
+body:has(.project-view-page:target) .header-fixed .txt-bold,
+body:has(.project-view-page:target) .header-fixed .txt-white,
+body:has(#about:target) .header-fixed .txt-bold,
+body:has(#about:target) .header-fixed .txt-white {
+    color: #000000 !important;
+}
+
+body:has(.project-view-page:target) .header-fixed .home-link,
+body:has(.project-view-page:target) .header-fixed .link-white,
+body:has(#about:target) .header-fixed .home-link,
+body:has(#about:target) .header-fixed .link-white {
+    color: #000000 !important;
+}
+
+body:has(.project-view-page:target) .header-fixed .home-link:hover,
+body:has(.project-view-page:target) .header-fixed .link-white:hover,
+body:has(#about:target) .header-fixed .home-link:hover,
+body:has(#about:target) .header-fixed .link-white:hover {
+    color: #888888 !important;
+}
+
+body:has(.project-view-page:target) .header-fixed .toggle-about-btn,
+body:has(#about:target) .header-fixed .toggle-about-btn {
+    color: #000000 !important;
+}
+
 /* ==========================================================================
    3. PORTFOLIO MAIN LAYOUT (HERO & MOSAIC GRID)
    ========================================================================== */
@@ -191,7 +217,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     padding-right: 20px;
 }
 
-/* TAMAÑO EXACTO IGUAL QUE LA DESCRIPCIÓN HOVER DE PROYECTOS (22px / 1.2) */
 .bio-container p {
     font-size: 22px !important;
     line-height: 1.2 !important;
@@ -394,15 +419,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
 .project-view-page:target {
     display: flex;
     flex-direction: column;
-}
-
-body:has(.project-view-page:target) .header-fixed {
-    color: #000000 !important;
-}
-
-body:has(.project-view-page:target) .header-fixed .txt-bold,
-body:has(.project-view-page:target) .header-fixed .txt-white {
-    color: #000000 !important;
 }
 
 /* BOTÓN FLOTANTE GLASS "BACK" ESTÁTICO */
