@@ -119,7 +119,6 @@ body:has(#about:target) .header-fixed .col-2 {
     color: #ffffff !important;
 }
 
-/* En la vista clara (#about), pasa de gris medio a negro puro al iluminarse */
 #about .link-white {
     color: #888888 !important;
 }
@@ -192,11 +191,11 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     padding-right: 20px;
 }
 
-/* TEXTO BIO EN TONO GRIS IDÉNTICO AL FOOTER */
+/* TAMAÑO EXACTO IGUAL QUE LA DESCRIPCIÓN HOVER DE PROYECTOS (22px / 1.2) */
 .bio-container p {
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    color: #888888 !important;
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+    color: #ffffff !important;
     font-weight: 400 !important;
     letter-spacing: -0.01em !important;
 }
@@ -206,13 +205,17 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     font-weight: 500;
 }
 
-.about-hero-text strong {
-    color: #ffffff !important;
-    font-weight: 500;
+.about-hero-text {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.01em !important;
+    color: #000000;
+    font-weight: 400;
 }
 
-#about .about-hero-text strong {
+.about-hero-text strong {
     color: #000000 !important;
+    font-weight: 500;
 }
 
 .reel-wrapper {
@@ -402,7 +405,7 @@ body:has(.project-view-page:target) .header-fixed .txt-white {
     color: #000000 !important;
 }
 
-/* BOTÓN FLOTANTE GLASS "BACK" ESTÁTICO (SIN MOVIMIENTO EN HOVER) */
+/* BOTÓN FLOTANTE GLASS "BACK" ESTÁTICO */
 .close-project-btn {
     position: fixed;
     bottom: 30px;
@@ -579,14 +582,6 @@ body:has(.project-view-page:target) .header-fixed .txt-white {
 
 .about-col-left {
     padding-right: 20px;
-}
-
-.about-hero-text {
-    font-size: 32px;
-    line-height: 1.18;
-    letter-spacing: -0.02em;
-    color: #000000;
-    font-weight: 400;
 }
 
 .about-mobile-contact {
@@ -774,8 +769,8 @@ body:has(.project-view-page:target) .header-fixed .txt-white {
     }
 
     .bio-container p {
-        font-size: 13px !important;
-        line-height: 1.4 !important;
+        font-size: 18px !important;
+        line-height: 1.25 !important;
         margin: 0;
     }
 
@@ -801,9 +796,8 @@ body:has(.project-view-page:target) .header-fixed .txt-white {
     }
 
     .about-hero-text {
-        font-size: 22px;
-        line-height: 1.18;
-        letter-spacing: -0.02em;
+        font-size: 18px !important;
+        line-height: 1.25 !important;
         margin: 0;
     }
 
