@@ -109,7 +109,7 @@ body:has(#about:target) .header-fixed .col-2 {
     visibility: hidden !important;
 }
 
-/* EFECTO BRILLO/ILUMINACIÓN ESTILO BGUILLAUME.INFO (SIN SUBRAYADO) */
+/* EFECTO BRILLO/ILUMINACIÓN ESTILO BGUILLAUME.INFO */
 .home-link,
 .link-white {
     display: inline-block;
@@ -125,7 +125,6 @@ body:has(#about:target) .header-fixed .col-2 {
     opacity: 1 !important;
 }
 
-/* Ajuste específico para la página #about clara (texto negro) */
 #about .link-white {
     color: #888888 !important;
 }
@@ -185,28 +184,33 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     margin-top: 105px;
 }
 
+/* HERO BLOCK AJUSTADO A LA RETÍCULA EXACTA DE LA FÍSICA Y TÍTULOS DE PROYECTO */
 .hero-block {
     display: grid;
-    grid-template-columns: 280px 320px 1fr 40px;
-    gap: 30px;
+    grid-template-columns: 1fr 1.85fr;
+    gap: 16px;
     margin-bottom: 50px;
     align-items: start;
 }
 
 .bio-container {
-    grid-column: 1 / span 2;
+    grid-column: 1;
     padding-right: 20px;
 }
 
 .bio-container p {
-    font-size: 32px;
-    line-height: 1.18;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
     color: #ffffff !important;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em !important;
 }
 
-.bio-container strong,
+.bio-container strong {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
 .about-hero-text strong {
     color: #ffffff !important;
     font-weight: 500;
@@ -217,7 +221,7 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
 }
 
 .reel-wrapper {
-    grid-column: 3 / -1;
+    grid-column: 2;
     width: 100%;
 }
 
@@ -762,9 +766,8 @@ body:has(.project-view-page:target) .header-fixed {
     }
 
     .bio-container p {
-        font-size: 22px;
-        line-height: 1.18;
-        letter-spacing: -0.02em;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
         margin: 0;
     }
 
