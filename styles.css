@@ -45,11 +45,6 @@ body {
     padding: 24px 30px 0 30px;
 }
 
-/* ELIMINACIÓN DE TODOS LOS BORDES REDONDEADOS */
-*, *::before, *::after, img, video, iframe, button, div, section, a {
-    border-radius: 0 !important;
-}
-
 /* PROTECTION RULES */
 img, video {
     user-select: none;
@@ -184,7 +179,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     margin-top: 105px;
 }
 
-/* HERO BLOCK AJUSTADO A LA RETÍCULA EXACTA DE LA FÍSICA Y TÍTULOS DE PROYECTO */
 .hero-block {
     display: grid;
     grid-template-columns: 1fr 1.85fr;
@@ -198,10 +192,11 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     padding-right: 20px;
 }
 
+/* TEXTO BIO DEL MISMO COLOR QUE LA SEGUNDA LÍNEA DEL FOOTER */
 .bio-container p {
     font-size: 13px !important;
     line-height: 1.4 !important;
-    color: #ffffff !important;
+    color: #888888 !important;
     font-weight: 400 !important;
     letter-spacing: -0.01em !important;
 }
@@ -409,27 +404,35 @@ body:has(.project-view-page:target) .header-fixed .link-white {
     color: #000000 !important;
 }
 
+/* BOTÓN DE CIERRE FLOTANTE ESTILO GLASS (PÍLDORA CON BACK Y FLECHA IZQUIERDA) */
 .close-project-btn {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    color: #ffffff !important;
+    color: #000000 !important;
     text-decoration: none;
-    font-size: 13px;
-    font-weight: 400;
-    background: rgba(0, 0, 0, 0.5) !important;
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    padding: 8px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(235, 235, 235, 0.7) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 10px 22px 10px 18px;
+    border-radius: 50px !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     z-index: 1100;
-    transition: background 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .close-project-btn:hover {
-    background: rgba(0, 0, 0, 0.75) !important;
-    transform: scale(1.03);
+    background: rgba(220, 220, 220, 0.9) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
 .project-detail-container {
