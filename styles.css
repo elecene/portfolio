@@ -109,38 +109,38 @@ body:has(#about:target) .header-fixed .col-2 {
     visibility: hidden !important;
 }
 
-/* EFECTO BRILLO/ILUMINACIÓN ESTILO BGUILLAUME.INFO */
+/* TEXTOS Y LINKS EN BLANCO CON DIMMING EN HOVER HACIA GRIS */
 .home-link,
 .link-white {
     display: inline-block;
-    color: #888888 !important;
+    color: #ffffff !important;
     text-decoration: none !important;
-    font-weight: 500;
-    transition: color 0.25s ease, opacity 0.25s ease;
+    font-weight: 400;
+    opacity: 1 !important;
+    transition: opacity 0.25s ease, color 0.25s ease;
 }
 
 .home-link:hover,
 .link-white:hover {
-    color: #ffffff !important;
-    opacity: 1 !important;
+    opacity: 0.55 !important;
 }
 
 #about .link-white {
-    color: #888888 !important;
-}
-
-#about .link-white:hover {
     color: #000000 !important;
 }
 
+#about .link-white:hover {
+    opacity: 0.55 !important;
+}
+
 .txt-bold {
-    color: inherit !important;
+    color: #ffffff !important;
     font-weight: 500;
     opacity: 1 !important;
 }
 
 .txt-white {
-    color: inherit !important;
+    color: #ffffff !important;
     font-weight: 400;
     opacity: 1 !important;
 }
@@ -151,14 +151,14 @@ body:has(#about:target) .header-fixed .col-2 {
     justify-content: flex-end;
     margin-left: auto;
     text-decoration: none;
-    color: inherit;
+    color: #ffffff !important;
     width: 26px;
     height: 26px;
     transition: opacity 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .toggle-about-btn:hover {
-    opacity: 0.55;
+    opacity: 0.55 !important;
 }
 
 .toggle-icon-svg {
@@ -399,6 +399,13 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
 }
 
 body:has(.project-view-page:target) .header-fixed {
+    color: #000000 !important;
+}
+
+body:has(.project-view-page:target) .header-fixed .txt-bold,
+body:has(.project-view-page:target) .header-fixed .txt-white,
+body:has(.project-view-page:target) .header-fixed .home-link,
+body:has(.project-view-page:target) .header-fixed .link-white {
     color: #000000 !important;
 }
 
