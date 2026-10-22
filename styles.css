@@ -229,8 +229,10 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 
 .hero-block {
     display: grid;
-    grid-template-columns: 1fr 1.85fr;
-    gap: 16px;
+    /* Misma rejilla que cabecera y proyectos: el reel arranca en "Selected work" */
+    grid-template-columns: var(--case-info-width) var(--case-media-width);
+    column-gap: var(--case-col-gap);
+    row-gap: 16px;
     margin-bottom: 50px;
     align-items: start;
 }
@@ -280,14 +282,16 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 
 .mosaic-tight-grid {
     display: grid;
-    grid-template-columns: 1fr 1.85fr;
-    gap: 16px;
+    grid-template-columns: var(--case-info-width) var(--case-media-width);
+    column-gap: var(--case-col-gap);
+    row-gap: 16px;
     margin-bottom: 16px;
     align-items: start;
 }
 
 .mosaic-reversed {
-    grid-template-columns: 1.85fr 1fr;
+    /* Espejo de la fila anterior: tarjeta grande a la izquierda */
+    grid-template-columns: var(--case-media-width) var(--case-info-width);
     margin-bottom: 60px;
 }
 
