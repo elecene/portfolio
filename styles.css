@@ -28,8 +28,8 @@
     --case-info-width: minmax(320px, 1fr);  /* columna de texto */
     --case-media-width: 2fr;     /* columna de imágenes */
     --case-media-gap: 12px;      /* separación entre bloques de imágenes */
-    --case-fs: 14px;             /* tamaño de texto */
-    --case-lh: 1.45;             /* interlineado */
+    --case-fs: 13px;             /* = tamaño de la cabecera (.header-fixed) */
+    --case-lh: 1.4;              /* = interlineado de la cabecera */
     --case-ls: -0.01em;          /* tracking */
     --case-text: #000000;
     --case-label: #8a8a8a;
@@ -92,9 +92,11 @@ body:has(.project-view-page:target) {
     left: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 280px 320px 1fr 40px;
-    gap: 30px;
-    padding: 24px 30px;
+    /* Mismas columnas que .case-layout: "Selected work" arranca
+       exactamente donde empiezan las imágenes de los proyectos */
+    grid-template-columns: var(--case-info-width) var(--case-media-width);
+    column-gap: var(--case-col-gap);
+    padding: 24px var(--case-side);
     font-size: 13px;
     line-height: 1.4;
     z-index: 1000;
@@ -112,7 +114,24 @@ body:has(.project-view-page:target) {
 }
 
 .header-fixed .col-2 {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Email / LN: misma distancia respecto a "Selected work" que antes (350px) */
+.header-fixed .col-3 {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    margin-left: 350px;
+}
+
+.header-fixed .col-4 {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
 }
 
 body:has(#about:target) .header-fixed .col-2 {
@@ -831,7 +850,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     :root {
         --case-top: 100px;
         --case-side: 20px;
-        --case-fs: 14px;
+        --case-fs: 13px;
     }
 
     body {
