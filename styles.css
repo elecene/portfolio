@@ -166,6 +166,13 @@ body:has(#about:target) .header-fixed .col-2 {
     color: #888888 !important;
 }
 
+/* EMAIL / LN — EFECTO MAGNÉTICO (el JS mueve el enlace hacia el cursor) */
+.header-fixed .col-3 .link-white {
+    transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
 .toggle-about-btn {
     display: flex;
     align-items: center;
