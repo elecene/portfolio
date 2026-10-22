@@ -177,36 +177,28 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
     opacity: 0;
 }
 
-/* HEADER EN NEGRO SOBRE VISTAS BLANCAS (PROYECTO / ABOUT) */
-body:has(.project-view-page:target) .header-fixed,
-body:has(#about:target) .header-fixed {
-    color: #000000 !important;
+/* HEADER EN VISTAS BLANCAS (PROYECTO / ABOUT) — TEST DE LEGIBILIDAD
+   El header pasa a texto blanco con mix-blend-mode: difference.
+   Resultado: negro sobre fondo blanco, y sobre imágenes se invierte
+   automáticamente contra lo que tenga detrás (claro→oscuro, oscuro→claro).
+   Para desactivar el test, borra la línea mix-blend-mode y cambia
+   los #ffffff de este bloque por #000000. */
+body:has(.project-view-page:target) .header-fixed {
+    mix-blend-mode: difference;
+    color: #ffffff !important;
 }
 
 body:has(.project-view-page:target) .header-fixed .txt-bold,
 body:has(.project-view-page:target) .header-fixed .txt-white,
-body:has(#about:target) .header-fixed .txt-bold,
-body:has(#about:target) .header-fixed .txt-white {
-    color: #000000 !important;
-}
-
 body:has(.project-view-page:target) .header-fixed .home-link,
 body:has(.project-view-page:target) .header-fixed .link-white,
-body:has(#about:target) .header-fixed .home-link,
-body:has(#about:target) .header-fixed .link-white {
-    color: #000000 !important;
+body:has(.project-view-page:target) .header-fixed .toggle-about-btn {
+    color: #ffffff !important;
 }
 
 body:has(.project-view-page:target) .header-fixed .home-link:hover,
-body:has(.project-view-page:target) .header-fixed .link-white:hover,
-body:has(#about:target) .header-fixed .home-link:hover,
-body:has(#about:target) .header-fixed .link-white:hover {
+body:has(.project-view-page:target) .header-fixed .link-white:hover {
     color: #888888 !important;
-}
-
-body:has(.project-view-page:target) .header-fixed .toggle-about-btn,
-body:has(#about:target) .header-fixed .toggle-about-btn {
-    color: #000000 !important;
 }
 
 /* ==========================================================================
