@@ -21,7 +21,8 @@
     --transition-fast: all 0.2s ease;
 
     /* ---- VISTA DE PROYECTO (CASE) — ajusta aquí ---- */
-    --case-top: 130px;           /* distancia desde arriba donde se fija la columna de texto */
+    --case-top: 96px;            /* donde empiezan las imágenes y se alinea el BACK */
+    --case-info-offset: 66px;    /* hueco bajo el BACK antes del texto del proyecto */
     --case-side: 30px;           /* margen lateral de la página */
     --case-col-gap: 40px;        /* separación texto ↔ imágenes */
     --case-info-width: minmax(320px, 1fr);  /* columna de texto */
@@ -180,12 +181,6 @@ body:has(#about:target) .toggle-icon-svg .vert-bar {
 body:has(.project-view-page:target) .header-fixed,
 body:has(#about:target) .header-fixed {
     color: #000000 !important;
-}
-
-/* En proyectos, el header lleva fondo blanco para que las imágenes
-   pasen por debajo limpias al hacer scroll */
-body:has(.project-view-page:target) .header-fixed {
-    background: #ffffff;
 }
 
 body:has(.project-view-page:target) .header-fixed .txt-bold,
@@ -437,11 +432,13 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     flex-direction: column;
 }
 
-/* BOTÓN FLOTANTE GLASS "BACK" */
+/* BOTÓN FLOTANTE GLASS "BACK"
+   En proyectos: bajo "Brand Design & Art Direction", alineado con el
+   borde superior de las imágenes. En About y móvil: abajo a la derecha. */
 .close-project-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    top: var(--case-top);
+    left: var(--case-side);
     color: #000000 !important;
     text-decoration: none;
     font-size: 11px;
@@ -468,6 +465,18 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     transform: none !important;
 }
 
+#about .close-project-btn {
+    top: auto;
+    left: auto;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* About conserva su espaciado original */
+#about.project-view-page {
+    padding-top: 130px;
+}
+
 /* ==========================================================================
    5. CASE LAYOUT — TEXTO FIJO IZQUIERDA / IMÁGENES DERECHA
    ========================================================================== */
@@ -487,6 +496,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     max-height: calc(100vh - var(--case-top) - 30px);
     overflow-y: auto;
     scrollbar-width: none;
+    padding-top: var(--case-info-offset);
     padding-bottom: 30px;
     font-size: var(--case-fs);
     line-height: var(--case-lh);
@@ -913,7 +923,19 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
         position: static;
         max-height: none;
         overflow: visible;
+        padding-top: 0;
         padding-bottom: 0;
+    }
+
+    .close-project-btn {
+        top: auto;
+        left: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #about.project-view-page {
+        padding-top: 100px;
     }
 
     .case-info > * {
