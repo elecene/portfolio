@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=159.0">
+    <link rel="stylesheet" href="styles.css?v=157.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -40,11 +40,11 @@
 
     <section id="about" class="project-view-page about-page-view">
         <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
-        
+
         <div class="about-layout-grid">
             <div class="about-col-left">
                 <p class="about-hero-text"><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
-                
+
                 <div class="about-mobile-contact">
                     <p><a href="mailto:elecene@gmail.com" class="link-white">— elecene@gmail.com</a></p>
                     <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link-white">— LN</a></p>
@@ -113,7 +113,7 @@
     </section>
 
     <main class="portfolio-layout">
-        
+
         <section class="hero-block">
             <div class="bio-container">
                 <p><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
@@ -129,7 +129,7 @@
         </section>
 
         <section class="mosaic-tight-grid">
-            
+
             <div class="stack-column">
                 <article class="project-card">
                     <div class="title-container">
@@ -189,7 +189,7 @@
         </section>
 
         <section class="mosaic-tight-grid mosaic-reversed">
-            
+
             <article class="project-card card-large">
                 <div class="title-container">
                     <p class="project-title"><a href="#work-ibai">El Gran Menú de Ibai — Brand Identity +</a></p>
@@ -263,26 +263,40 @@
 
     </main>
 
+    <!-- ===================================================================
+         PROYECTOS — estructura:
+         .case-layout
+           ├─ aside.case-info   → columna de texto fija (izquierda)
+           └─ div.case-media    → imágenes y vídeos (derecha, hace scroll)
+         =================================================================== -->
+
     <!-- PROYECTO NIL OJEDA -->
     <section id="work-nilojeda" class="project-view-page">
-        <div class="case-study-grid">
-            <aside class="case-sidebar">
-                <div class="case-sidebar-top">
-                    <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
-                    <div class="project-description-hero">
-                        <p><strong>Nil Ojeda x Puma x La Liga</strong><br><br>
-                        Nil Ojeda takes the wheel of a truck packed with Puma Orbita balls and hits the streets of Madrid in a race against the clock — selling as many as possible before time runs out.</p>
-                    </div>
+        <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
+
+        <div class="case-layout">
+            <aside class="case-info">
+                <h1 class="case-title">Nil Ojeda x Puma x LaLiga</h1>
+
+                <div class="case-block">
+                    <p class="case-label">Context</p>
+                    <p class="case-text">Nil Ojeda takes the wheel of a truck packed with Puma Orbita balls and hits the streets of Madrid in a race against the clock — selling as many as possible before time runs out.</p>
                 </div>
 
-                <div class="project-meta-list">
-                    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">LaLiga & Puma</span></div>
-                    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Art Direction & Campaign System</span></div>
-                    <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Vizz</span></div>
-                </div>
+                <dl class="case-meta">
+                    <div><dt>Client</dt><dd>LaLiga & Puma</dd></div>
+                    <div><dt>Role</dt><dd>Art Direction & Campaign System</dd></div>
+                    <div><dt>Company</dt><dd>Vizz</dd></div>
+                </dl>
+
+                <dl class="case-meta case-credits">
+                    <div><dt>Creative Direction</dt><dd>Jaime Sordo</dd></div>
+                    <div><dt>Graphic Design</dt><dd>Mikel San Juán</dd></div>
+                    <div><dt>Production Team</dt><dd>David Boch, Antonio Montero & Natalia Moldón</dd></div>
+                </dl>
             </aside>
 
-            <main class="case-content-gallery">
+            <div class="case-media">
                 <div class="gallery-quad">
                     <img src="img/nilojeda_laliga/nilojeda_laliga_01.jpg" alt="Nil Ojeda 01" draggable="false">
                     <img src="img/nilojeda_laliga/nilojeda_laliga_02.jpg" alt="Nil Ojeda 02" draggable="false">
@@ -311,40 +325,43 @@
                     <img src="img/nilojeda_laliga/nilojeda_laliga_12.jpg" alt="Nil Ojeda 12" class="grid-span-bottom" style="grid-column: span 3;" draggable="false">
                     <img src="img/nilojeda_laliga/nilojeda_laliga_14.jpg" alt="Nil Ojeda 14" class="grid-span-bottom" style="grid-column: span 3;" draggable="false">
                 </div>
-
-                <div class="project-credits-block">
-                    <p>Creative Direction — Jaime Sordo</p>
-                    <p>Graphic Design — Mikel San Juán</p>
-                    <p>Production Team — David Boch, Antonio Montero & Natalia Moldón</p>
-                </div>
-
-                <footer class="site-footer project-footer">
-                    <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-                </footer>
-            </main>
+            </div>
         </div>
+
+        <footer class="site-footer project-footer">
+            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
+        </footer>
     </section>
 
     <!-- PROYECTO EL PARTIDAZO 6 -->
     <section id="work-epy6" class="project-view-page">
-        <div class="case-study-grid">
-            <aside class="case-sidebar">
-                <div class="case-sidebar-top">
-                    <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
-                    <div class="project-description-hero">
-                        <p><strong>ElPartidazo6</strong><br><br>
-                        ElPartidazo6 is the sixth edition of an international streamer football match between Spain and Latin America. Top creators from both sides of the Atlantic team up on the pitch, turning online rivalry into a live celebration of football and community.</p>
-                    </div>
+        <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
+
+        <div class="case-layout">
+            <aside class="case-info">
+                <h1 class="case-title">ElPartidazo6</h1>
+
+                <div class="case-block">
+                    <p class="case-label">Context</p>
+                    <p class="case-text">ElPartidazo6 is the sixth edition of an international streamer football match between Spain and Latin America. Top creators from both sides of the Atlantic team up on the pitch, turning online rivalry into a live celebration of football and community.</p>
                 </div>
 
-                <div class="project-meta-list">
-                    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">ElPartidazo6</span></div>
-                    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Art Direction & Brand Identity</span></div>
-                    <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Vizz</span></div>
-                </div>
+                <dl class="case-meta">
+                    <div><dt>Client</dt><dd>ElPartidazo6</dd></div>
+                    <div><dt>Role</dt><dd>Art Direction & Brand Identity</dd></div>
+                    <div><dt>Company</dt><dd>Vizz</dd></div>
+                </dl>
+
+                <dl class="case-meta case-credits">
+                    <div><dt>Creative Direction</dt><dd>Jaime Sordo</dd></div>
+                    <div><dt>Creative Supervision</dt><dd>Alberto Pérez de Eulate</dd></div>
+                    <div><dt>Production Team</dt><dd>David Boch, Natalia Moldón & Antonio Montero</dd></div>
+                    <div><dt>Chief Technician</dt><dd>Adrián Villaroya</dd></div>
+                    <div><dt>Technical Production</dt><dd>Juan Antonio Moreno, Pablo Sánchez & Pablo Saldaña</dd></div>
+                </dl>
             </aside>
 
-            <main class="case-content-gallery">
+            <div class="case-media">
                 <div class="gallery-vertical-mosaic">
                     <img src="img/epy6/epy6_cover_02.webp" alt="ElPartidazo6 Cover 02" draggable="false">
                     <img src="img/epy6/epy6_cover_03.webp" alt="ElPartidazo6 Cover 03" draggable="false">
@@ -375,42 +392,47 @@
                     <div class="lazy-video-container" data-webm="img/epy6/epy6_02.webm" data-mp4="img/epy6/epy6_02.mp4"></div>
                     <div class="lazy-video-container grid-full-width" data-webm="img/epy6/epy6_04.webm" data-mp4="img/epy6/epy6_04.mp4"></div>
                 </div>
-
-                <div class="project-credits-block">
-                    <p>Creative Direction — Jaime Sordo</p>
-                    <p>Creative Supervision — Alberto Pérez de Eulate</p>
-                    <p>Production Team — David Boch, Natalia Moldón & Antonio Montero</p>
-                    <p>Chief Technician — Adrián Villaroya</p>
-                    <p>Technical Production Team — Juan Antonio Moreno, Pablo Sánchez & Pablo Saldaña</p>
-                </div>
-
-                <footer class="site-footer project-footer">
-                    <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-                </footer>
-            </main>
+            </div>
         </div>
+
+        <footer class="site-footer project-footer">
+            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
+        </footer>
     </section>
-    
+
     <!-- PROYECTO LA FÍSICA -->
     <section id="work-lafisica" class="project-view-page">
-        <div class="case-study-grid">
-            <aside class="case-sidebar">
-                <div class="case-sidebar-top">
-                    <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
-                    <div class="project-description-hero">
-                        <p><strong>La Física</strong><br><br>
-                        La Física is a podcast about physics on Podimo. Alba Moreno breaks down the universe's greatest mysteries through everyday questions and expert guests.</p>
-                    </div>
+        <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
+
+        <div class="case-layout">
+            <aside class="case-info">
+                <h1 class="case-title">La Física. Podimo</h1>
+
+                <div class="case-block">
+                    <p class="case-label">Context</p>
+                    <p class="case-text">La Física is a podcast about physics on Podimo. Alba Moreno breaks down the universe's greatest mysteries through everyday questions and expert guests.</p>
                 </div>
 
-                <div class="project-meta-list">
-                    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">Podimo Europe</span></div>
-                    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Art Direction & Brand System</span></div>
-                    <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Vizz</span></div>
-                </div>
+                <dl class="case-meta">
+                    <div><dt>Client</dt><dd>Podimo Europe</dd></div>
+                    <div><dt>Role</dt><dd>Art Direction & Brand System</dd></div>
+                    <div><dt>Company</dt><dd>Vizz</dd></div>
+                </dl>
+
+                <dl class="case-meta case-credits">
+                    <div><dt>Creative Direction</dt><dd>Jaime Sordo</dd></div>
+                    <div><dt>Creative Supervision</dt><dd>Alberto Pérez de Eulate</dd></div>
+                    <div><dt>Graphic Design</dt><dd>Mikel San Juán</dd></div>
+                    <div><dt>Production Team</dt><dd>Natalia Moldón & Antonio Montero</dd></div>
+                    <div><dt>Production Coordination</dt><dd>Ainhoa Labarta</dd></div>
+                    <div><dt>Executive Production</dt><dd>Gonzalo Pastor & Fabrizio Giampieri</dd></div>
+                    <div><dt>Chief Technician</dt><dd>Adrián Villaroya</dd></div>
+                    <div><dt>Sound</dt><dd>Pablo Sánchez</dd></div>
+                    <div><dt>Technical Production</dt><dd>Juan Antonio Moreno & Pablo Saldaña</dd></div>
+                </dl>
             </aside>
 
-            <main class="case-content-gallery">
+            <div class="case-media">
                 <div class="gallery-triptych">
                     <img src="img/la-fisica/lafisica_01.jpg" alt="La Física 01" draggable="false">
                     <img src="img/la-fisica/lafisica_02.jpg" alt="La Física 02" draggable="false">
@@ -468,46 +490,41 @@
                     <img src="img/la-fisica/lafisica_24.png" alt="La Física 24" draggable="false">
                     <img src="img/la-fisica/lafisica_25.png" alt="La Física 25" class="img-full-height" draggable="false">
                 </div>
-
-                <div class="project-credits-block">
-                    <p>Creative Direction — Jaime Sordo</p>
-                    <p>Creative Supervision — Alberto Pérez de Eulate</p>
-                    <p>Graphic Design — Mikel San Juán</p>
-                    <p>Production Team — Natalia Moldón & Antonio Montero</p>
-                    <p>Production Coordination — Ainhoa Labarta</p>
-                    <p>Executive Production — Gonzalo Pastor & Fabrizio Giampieri</p>
-                    <p>Chief Technician — Adrián Villaroya</p>
-                    <p>Sound — Pablo Sánchez</p>
-                    <p>Technical Production Team — Juan Antonio Moreno & Pablo Saldaña</p>
-                </div>
-
-                <footer class="site-footer project-footer">
-                    <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-                </footer>
-            </main>
+            </div>
         </div>
+
+        <footer class="site-footer project-footer">
+            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
+        </footer>
     </section>
 
     <!-- PROYECTO EL GRAN MENÚ DE IBAI -->
     <section id="work-ibai" class="project-view-page">
-        <div class="case-study-grid">
-            <aside class="case-sidebar">
-                <div class="case-sidebar-top">
-                    <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
-                    <div class="project-description-hero">
-                        <p><strong>El Gran Menú de Ibai</strong><br><br>
-                        El Gran Menú de Ibai is a collection of three delicious packaging designs for the very much anticipated Ibai´s delivery menu on The Gaming Family.</p>
-                    </div>
+        <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
+
+        <div class="case-layout">
+            <aside class="case-info">
+                <h1 class="case-title">El Gran Menú de Ibai</h1>
+
+                <div class="case-block">
+                    <p class="case-label">Context</p>
+                    <p class="case-text">El Gran Menú de Ibai is a collection of three delicious packaging designs for the very much anticipated Ibai´s delivery menu on The Gaming Family.</p>
                 </div>
 
-                <div class="project-meta-list">
-                    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">La Gran Familia Mediterranea / Ibai Llanos</span></div>
-                    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Branding & Packaging Design</span></div>
-                    <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Noob</span></div>
-                </div>
+                <dl class="case-meta">
+                    <div><dt>Client</dt><dd>La Gran Familia Mediterranea / Ibai Llanos</dd></div>
+                    <div><dt>Role</dt><dd>Branding & Packaging Design</dd></div>
+                    <div><dt>Company</dt><dd>Noob</dd></div>
+                </dl>
+
+                <dl class="case-meta case-credits">
+                    <div><dt>Creative Direction</dt><dd>Jaime Sordo</dd></div>
+                    <div><dt>Creative Copywriting</dt><dd>Alberto Pérez de Eulate & Kiko Martínez</dd></div>
+                    <div><dt>Illustrations</dt><dd>Mikel San Juán, Alberto Delgado & Luciano Castañón</dd></div>
+                </dl>
             </aside>
 
-            <main class="case-content-gallery">
+            <div class="case-media">
                 <div class="gallery-vertical-mosaic">
                     <div class="lazy-video-container" data-webm="img/ibai_granmenu/ibai_granmenu_cover_animated.webm?v=2.0" data-mp4="img/ibai_granmenu/ibai_granmenu_cover_animated.mp4?v=2.0"></div>
                     <img src="img/ibai_granmenu/ibai_menu_08.jpg" alt="El Gran Menú de Ibai 08" draggable="false">
@@ -528,40 +545,41 @@
                     <img src="img/ibai_granmenu/ibai_menu_10.jpg" alt="El Gran Menú de Ibai 10" draggable="false">
                     <img src="img/ibai_granmenu/ibai_menu_11.jpg" alt="El Gran Menú de Ibai 11" draggable="false">
                 </div>
-
-                <div class="project-credits-block">
-                    <p>Creative Direction — Jaime Sordo</p>
-                    <p>Creative Copywriting — Alberto Pérez de Eulate & Kiko Martínez</p>
-                    <p>Illustrations — Mikel San Juán, Alberto Delgado & Luciano Castañón</p>
-                </div>
-
-                <footer class="site-footer project-footer">
-                    <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-                </footer>
-            </main>
+            </div>
         </div>
+
+        <footer class="site-footer project-footer">
+            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
+        </footer>
     </section>
 
     <!-- PROYECTO YOINTERNETO -->
     <section id="work-yointerneto" class="project-view-page">
-        <div class="case-study-grid">
-            <aside class="case-sidebar">
-                <div class="case-sidebar-top">
-                    <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
-                    <div class="project-description-hero">
-                        <p><strong>Yo, Interneto</strong><br><br>
-                        Yo, Interneto is a weekly podcast streamed on Twitch. The show discusses internet culture of the past, the present and the future.</p>
-                    </div>
+        <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
+
+        <div class="case-layout">
+            <aside class="case-info">
+                <h1 class="case-title">Yo, Interneto</h1>
+
+                <div class="case-block">
+                    <p class="case-label">Context</p>
+                    <p class="case-text">Yo, Interneto is a weekly podcast streamed on Twitch. The show discusses internet culture of the past, the present and the future.</p>
                 </div>
 
-                <div class="project-meta-list">
-                    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">Yo, Interneto</span></div>
-                    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Art Direction & Graphic System</span></div>
-                    <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Vizz</span></div>
-                </div>
+                <dl class="case-meta">
+                    <div><dt>Client</dt><dd>Yo, Interneto</dd></div>
+                    <div><dt>Role</dt><dd>Art Direction & Graphic System</dd></div>
+                    <div><dt>Company</dt><dd>Vizz</dd></div>
+                </dl>
+
+                <dl class="case-meta case-credits">
+                    <div><dt>Creative Direction</dt><dd>Jaime Sordo</dd></div>
+                    <div><dt>Creative Copywriting</dt><dd>Alberto Pérez de Eulate & Kiko Martínez</dd></div>
+                    <div><dt>Photography Assets</dt><dd>Gonzalo Mira</dd></div>
+                </dl>
             </aside>
 
-            <main class="case-content-gallery">
+            <div class="case-media">
                 <div class="project-gallery">
                     <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_intro_hd.mp4" data-webm="img/yointernetot4/yointernetot4_intro_hd.webm" data-controls="true"></div>
                 </div>
@@ -596,42 +614,44 @@
                 <div class="project-gallery">
                     <img src="img/yointernetot4/yointernetot4_14.jpg" alt="YoInterneto 14" draggable="false">
                 </div>
-
-                <div class="project-credits-block">
-                    <p>Creative Direction — Jaime Sordo</p>
-                    <p>Creative Copywriting — Alberto Pérez de Eulate & Kiko Martínez</p>
-                    <p>Photography Assets — Gonzalo Mira</p>
-                </div>
-
-                <footer class="site-footer project-footer">
-                    <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-                </footer>
-            </main>
+            </div>
         </div>
+
+        <footer class="site-footer project-footer">
+            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
+        </footer>
     </section>
 
     <!-- PROYECTO RUBIUS X -->
     <section id="work-rubiusx" class="project-view-page">
-        <div class="case-study-grid">
-            <aside class="case-sidebar">
-                <div class="case-sidebar-top">
-                    <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
-                    <div class="project-description-hero">
-                        <p><strong>Rubius X</strong><br><br>
-                        Rubius X is the Amazon Exclusive documentary that celebrates 10 years of Rubius as the most recognized Spanish content creator. Produced by VIZZ and NOOB Studios.</p>
-                    </div>
+        <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
+
+        <div class="case-layout">
+            <aside class="case-info">
+                <h1 class="case-title">Rubius X</h1>
+
+                <div class="case-block">
+                    <p class="case-label">Context</p>
+                    <p class="case-text">Rubius X is the Amazon Exclusive documentary that celebrates 10 years of Rubius as the most recognized Spanish content creator.</p>
+                    <p class="case-text">Rubius X is produced by VIZZ and NOOB Studios, the creative digital production company of the Webedia group.</p>
                 </div>
 
-                <div class="project-meta-list">
-                    <div class="meta-item"><span class="meta-label">Client</span><span class="meta-value">Amazon Prime</span></div>
-                    <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Graphic System, TV Graphics</span></div>
-                    <div class="meta-item"><span class="meta-label">Company</span><span class="meta-value">Noob</span></div>
-                </div>
+                <dl class="case-meta">
+                    <div><dt>Client</dt><dd>Amazon Prime</dd></div>
+                    <div><dt>Role</dt><dd>Graphic System, TV Graphics</dd></div>
+                    <div><dt>Company</dt><dd>Noob</dd></div>
+                </dl>
+
+                <dl class="case-meta case-credits">
+                    <div><dt>Art Direction</dt><dd>Mikel San Juan</dd></div>
+                    <div><dt>Creative Direction</dt><dd>Pedro Ample</dd></div>
+                    <div><dt>Graphic Design</dt><dd>Luciano Castañón</dd></div>
+                </dl>
             </aside>
 
-            <main class="case-content-gallery">
+            <div class="case-media">
                 <div class="project-gallery">
-                    <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: auto; margin-bottom: 20px; display: block;" draggable="false">
+                    <video autoplay loop muted playsinline preload="auto" draggable="false">
                         <source src="img/rubiusx/rubiusx_cover_2.webm" type="video/webm">
                         <source src="img/rubiusx/rubiusx_cover_2.mp4" type="video/mp4">
                     </video>
@@ -649,18 +669,12 @@
                 <div class="project-gallery">
                     <div class="lazy-video-container" data-mp4="img/rubiusx/rubiusx_outro.mp4" data-webm="img/rubiusx/rubiusx_outro.webm"></div>
                 </div>
-
-                <div class="project-credits-block">
-                    <p>Art Direction — Mikel San Juan</p>
-                    <p>Creative Direction — Pedro Ample</p>
-                    <p>Graphic Design — Luciano Castañón</p>
-                </div>
-
-                <footer class="site-footer project-footer">
-                    <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-                </footer>
-            </main>
+            </div>
         </div>
+
+        <footer class="site-footer project-footer">
+            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
+        </footer>
     </section>
 
     <script>
@@ -767,7 +781,7 @@
         // CONTROL DE REPRODUCCIÓN AL HACER HOVER EN LAS TARJETAS PRINCIPALES
         document.querySelectorAll('.project-card').forEach(card => {
             const secondaryVideo = card.querySelector('.img-secondary');
-            
+
             if (secondaryVideo && secondaryVideo.tagName === 'VIDEO') {
                 card.addEventListener('mouseenter', () => {
                     secondaryVideo.currentTime = 0;
