@@ -25,8 +25,10 @@
     --case-info-offset: 66px;    /* hueco bajo el BACK antes del texto del proyecto */
     --case-side: 30px;           /* margen lateral de la página */
     --case-col-gap: 40px;        /* separación texto ↔ imágenes */
-    --case-info-width: minmax(320px, 1fr);  /* columna de texto */
-    --case-media-width: 2fr;     /* columna de imágenes */
+    /* Columna de texto calculada para que las imágenes empiecen
+       exactamente en el tercio de la ventana (mínimo 280px) */
+    --case-info-width: max(280px, calc((100% + 2 * var(--case-side)) / 3 - var(--case-side) - var(--case-col-gap)));
+    --case-media-width: 1fr;     /* columna de imágenes: el resto */
     --case-media-gap: 12px;      /* separación entre bloques de imágenes */
     --case-fs: 13px;             /* = tamaño de la cabecera (.header-fixed) */
     --case-lh: 1.4;              /* = interlineado de la cabecera */
@@ -846,8 +848,6 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     }
 
     :root {
-        --case-info-width: minmax(280px, 1fr);
-        --case-media-width: 1.6fr;
         --case-col-gap: 30px;
     }
 }
