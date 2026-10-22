@@ -226,7 +226,9 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
    3. PORTFOLIO MAIN LAYOUT (HERO & MOSAIC GRID)
    ========================================================================== */
 .portfolio-layout {
-    margin-top: 105px;
+    /* El reel arranca a la misma altura que las imágenes de los proyectos
+       (--case-top menos el padding superior del body) */
+    margin-top: calc(var(--case-top) - 24px);
 }
 
 .hero-block {
@@ -715,8 +717,9 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 
 .about-layout-grid {
     display: grid;
-    grid-template-columns: 630px 280px 1fr;
-    gap: 40px;
+    /* Experience arranca donde "Selected work" y las imágenes */
+    grid-template-columns: var(--case-info-width) 280px 1fr;
+    gap: var(--case-col-gap);
     align-items: start;
     width: 100%;
 }
