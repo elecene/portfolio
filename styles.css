@@ -535,7 +535,8 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 }
 
 .case-block {
-    margin-bottom: 2.2em;
+    /* espacio base + 3 líneas extra antes de Client/Role/Company */
+    margin-bottom: calc(2.2em + 3em * var(--case-lh));
 }
 
 .case-label {
@@ -573,6 +574,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 .case-meta dd {
     color: var(--case-text);
     margin: 0;
+    text-align: right;   /* valores alineados a la derecha */
 }
 
 .case-meta a:hover {
