@@ -963,6 +963,23 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
         grid-template-columns: 130px 1fr;
     }
 
+    /* MÓVIL — orden: título + Context → imágenes → Client/Role/Company → créditos.
+       display: contents "disuelve" la columna de texto para poder
+       recolocar sus bloques alrededor de las imágenes. */
+    .case-layout {
+        gap: 0;
+    }
+
+    .case-info {
+        display: contents;
+    }
+
+    .case-title       { order: 1; }
+    .case-block       { order: 2; margin-bottom: 40px; }
+    .case-media       { order: 3; margin-bottom: 50px; }
+    .case-meta        { order: 4; }
+    .case-meta.case-credits { order: 5; margin-bottom: 0; }
+
     .about-layout-grid {
         grid-template-columns: 1fr;
         gap: 30px;
