@@ -498,9 +498,9 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     right: 30px;
 }
 
-/* About conserva su espaciado original */
+/* About: el contenido arranca a la misma altura que la bio y el reel de la home */
 #about.project-view-page {
-    padding-top: 130px;
+    padding-top: var(--case-top);
 }
 
 /* ==========================================================================
@@ -962,7 +962,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     }
 
     #about.project-view-page {
-        padding-top: 100px;
+        padding-top: var(--case-top);
     }
 
     .case-info > * {
