@@ -378,7 +378,7 @@
                 </div>
 
                 <div class="project-gallery">
-                    <div class="lazy-video-container" data-webm="img/epy6/epy6_rotulos_01.webm"></div>
+                    <div class="lazy-video-container" data-webm="img/epy6/epy6_rotulos_01.webm" data-mp4="img/epy6/epy6_rotulos_01.mp4"></div>
                 </div>
 
                 <div class="gallery-vertical-mosaic">
@@ -760,6 +760,12 @@
             container.appendChild(video);
 
             if (!hasControls) {
+                // Refuerzo del loop: algunos navegadores (Safari con WebM)
+                // ignoran el atributo loop y se quedan en el último fotograma
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    video.play().catch(() => {});
+                });
                 video.play().catch(() => {});
             }
 
