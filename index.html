@@ -550,6 +550,16 @@
     </section>
 
     <script>
+        // Al recargar, el navegador recuerda la posición de scroll anterior y
+        // en móvil la aplica mientras cargan los vídeos: se ve la web "un poco
+        // más abajo". Lo desactivamos y fijamos el inicio arriba.
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        if (!window.location.hash || window.location.hash === '#') {
+            window.scrollTo(0, 0);
+        }
+
         function handleHashChange() {
             const currentHash = window.location.hash;
 
@@ -583,7 +593,7 @@
         });
 
         window.addEventListener('hashchange', handleHashChange);
-        window.addEventListener('load', handleHashChange);
+        document.addEventListener('DOMContentLoaded', handleHashChange);
 
         function createVideoElement(container) {
             if (container.querySelector('video')) return container.querySelector('video');
