@@ -1240,15 +1240,38 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     .home-footer { grid-row: 3; }
     .home-caption { font-size: 10px; margin-top: 6px; line-height: 1.35; }
 
-    /* sin cabecera en la home: el reel arranca arriba */
-    body:not(:has(.project-view-page:target)) .header-fixed { display: none !important; }
+    /* el reel arranca arriba */
     .home-layout { margin-top: 0; }
 
-    /* reel a todo el ancho; ElPartidazo6 pasa a su propia línea en horizontal */
-    .home-row:first-child { flex-wrap: wrap; row-gap: var(--home-row-gap); }
-    .home-row:first-child > .home-card { flex: 0 0 100%; }
-    .home-row:first-child > .hc-2 .home-media { aspect-ratio: 16 / 9; }
+    /* Reel a todo el ancho y el resto, siempre de dos en dos.
+       Las filas se recomponen solo en móvil; cada pareja comparte altura
+       (el ancho de cada pieza es proporcional a su formato). */
+    .home-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: var(--home-gap);
+        row-gap: var(--home-row-gap);
+    }
+    .home-row { display: contents; }
+    .home-grid .home-card { flex: 0 0 auto; }
+    .home-grid .hc-reel { width: 100%; }
+    /* ElPartidazo6 (4:5) + Nil Ojeda (3:2) */
+    .home-grid .hc-2 { width: calc((100% - var(--home-gap)) * 0.8 / 2.3); }
+    .home-grid .hc-1 { width: calc((100% - var(--home-gap)) * 1.5 / 2.3); }
+    /* La Física (4:5) + Yo, Interneto (1:1) */
+    .home-grid .hc-3 { width: calc((100% - var(--home-gap)) * 0.8 / 1.8); }
+    .home-grid .hc-5 { width: calc((100% - var(--home-gap)) * 1 / 1.8); }
+    /* Ibai (1:1) + Rubius X (16:9) */
+    .home-grid .hc-4 { width: calc((100% - var(--home-gap)) * 1 / 2.7778); }
+    .home-grid .hc-6 { width: calc((100% - var(--home-gap)) * 1.7778 / 2.7778); }
+
+    /* sin cabecera en móvil, tampoco en los proyectos: todo arranca arriba */
+    .header-fixed { display: none !important; }
+    .project-view-page { padding-top: var(--case-side) !important; }
 }
+
+.br-mobile { display: none; }
+@media (max-width: 900px) { .br-mobile { display: inline; } }
 
 /* ==========================================================================
    11. BROWSER EXTENSION OVERLAY BLOCKER
