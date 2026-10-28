@@ -1239,6 +1239,15 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     .home-info .case-meta > div { grid-template-columns: 110px 1fr; }
     .home-footer { grid-row: 3; }
     .home-caption { font-size: 10px; margin-top: 6px; line-height: 1.35; }
+
+    /* sin cabecera en la home: el reel arranca arriba */
+    body:not(:has(.project-view-page:target)) .header-fixed { display: none !important; }
+    .home-layout { margin-top: 0; }
+
+    /* reel a todo el ancho; ElPartidazo6 pasa a su propia línea en horizontal */
+    .home-row:first-child { flex-wrap: wrap; row-gap: var(--home-row-gap); }
+    .home-row:first-child > .home-card { flex: 0 0 100%; }
+    .home-row:first-child > .hc-2 .home-media { aspect-ratio: 16 / 9; }
 }
 
 /* ==========================================================================
