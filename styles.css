@@ -552,7 +552,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 }
 
 .case-info > * {
-    max-width: var(--case-text-max);
+    max-width: none;   /* el texto ocupa todo el ancho de la columna, como en la home */
 }
 
 .case-title {
