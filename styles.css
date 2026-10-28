@@ -1108,9 +1108,9 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     max-height: calc(100vh - var(--case-top) - 30px);
     overflow-y: auto;
     scrollbar-width: none;
-    /* tamaño proporcional al ancho de ventana: el texto ocupa siempre
-       la columna igual (13px a 1440px, crece en pantallas grandes) */
-    font-size: clamp(12px, calc(1.02vw - 1.6px), 30px);
+    /* tamaño fijo; el texto ocupa todo el ancho de la columna
+       y se recoloca al cambiar la ventana */
+    font-size: var(--case-fs);
     line-height: var(--case-lh);
     letter-spacing: var(--case-ls);
     color: var(--case-text);
@@ -1118,7 +1118,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 }
 .home-info::-webkit-scrollbar { display: none; }
 .home-info > * { max-width: none; }
-.home-info .case-meta > div { grid-template-columns: 11.5em 1fr; }
+.home-info .case-meta > div { grid-template-columns: 150px 1fr; }
 .home-info .case-block { margin-bottom: 2.2em; }
 .home-info .case-label { margin-bottom: 0.15em; }
 .home-info .home-clients { margin-bottom: 0; }
