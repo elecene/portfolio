@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=170.0">
+    <link rel="stylesheet" href="styles.css?v=173.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,188 +18,92 @@
             <p class="txt-white">Brand Design & Art Direction</p>
         </div>
 
-        <div class="col col-2">
-            <p class="txt-white">Selected work</p>
-            <p class="txt-white">2020 — 2026</p>
-        </div>
-
-        <div class="col col-3">
-            <p><a href="mailto:elecene@gmail.com" class="link-white">— elecene@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link-white">— LN</a></p>
-        </div>
-
-        <div class="col col-4">
-            <a href="#about" class="toggle-about-btn" id="toggle-btn" title="About & Experience">
-                <svg class="toggle-icon-svg" viewBox="0 0 24 24">
-                    <rect x="2" y="10.25" width="20" height="3.5" />
-                    <rect class="vert-bar" x="10.25" y="2" width="3.5" height="20" />
-                </svg>
-            </a>
-        </div>
     </header>
 
-    <section id="about" class="project-view-page about-page-view">
-        <a href="#" class="close-project-btn"><span>‹</span> BACK</a>
+    <main class="portfolio-layout home-layout">
 
-        <div class="about-layout-grid">
-            <div class="about-col-left">
-                <p class="about-hero-text"><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
-
-                <div class="about-mobile-contact">
-                    <p><a href="mailto:elecene@gmail.com" class="link-white">— elecene@gmail.com</a></p>
-                    <p><a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank" class="link-white">— LN</a></p>
-                </div>
+        <!-- COLUMNA IZQUIERDA FIJA (misma estructura que los proyectos) -->
+        <aside class="home-info">
+            <div class="case-block">
+                <p class="case-label">About</p>
+                <p class="case-text">Luciano Castañón Estrada is an Art Director currently working in Madrid.</p>
+                <p class="home-contact">
+                    <a href="mailto:elecene@gmail.com">— elecene@gmail.com</a><br>
+                    <a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank">— LN</a>
+                </p>
             </div>
 
-            <div class="about-col-mid">
-                <p class="about-section-label">Experience</p>
+            <p class="case-label">Experience</p>
+            <dl class="case-meta">
+                <div><dt>VIZZ Agency</dt><dd>Art Director, 2023 — Present</dd></div>
+                <div><dt>Noob</dt><dd>Art Director, 2020 — 2023</dd></div>
+                <div><dt>VIZZ Agency</dt><dd>Art Director, 2018 — 2020</dd></div>
+                <div><dt>Zesto</dt><dd>Digital &amp; Motion Designer, 2016 — 2018</dd></div>
+            </dl>
 
-                <div class="exp-block">
-                    <p class="exp-title">VIZZ Agency</p>
-                    <p class="exp-sub">Art director</p>
-                    <p class="exp-sub">Madrid</p>
-                    <p class="exp-sub">2023 - Present</p>
-                </div>
-
-                <div class="exp-block">
-                    <p class="exp-title">Noob</p>
-                    <p class="exp-sub">Art director</p>
-                    <p class="exp-sub">Madrid</p>
-                    <p class="exp-sub">2020 - 2023</p>
-                </div>
-
-                <div class="exp-block">
-                    <p class="exp-title">VIZZ Agency</p>
-                    <p class="exp-sub">Art director</p>
-                    <p class="exp-sub">Madrid</p>
-                    <p class="exp-sub">2018 - 2020</p>
-                </div>
-
-                <div class="exp-block">
-                    <p class="exp-title">Zesto</p>
-                    <p class="exp-sub">Digital Designer & Motion Designer</p>
-                    <p class="exp-sub">Gijón</p>
-                    <p class="exp-sub">2016 - 2018</p>
-                </div>
+            <div class="case-block home-clients">
+                <p class="case-label">Selected clients</p>
+                <p class="case-text">Amazon, Adidas, Amnesty International, BBVA, Beefeater, Burger King, Cheetos, Coca-Cola, Domino's, HBO, Heineken, La Liga, Logitech, McDonalds, Movistar, RTVE, Twitch, Visa</p>
             </div>
+        </aside>
 
-            <div class="about-col-right">
-                <ul class="clients-list">
-                    <li>Amazon</li>
-                    <li>Adidas</li>
-                    <li>Amnesty International</li>
-                    <li>BBVA</li>
-                    <li>Beefeater</li>
-                    <li>Burger King</li>
-                    <li>Cheetos</li>
-                    <li>Coca-Cola</li>
-                    <li>Domino's</li>
-                    <li>HBO</li>
-                    <li>Heineken</li>
-                    <li>La Liga</li>
-                    <li>Logitech</li>
-                    <li>McDonalds</li>
-                    <li>Movistar</li>
-                    <li>RTVE</li>
-                    <li>Twitch</li>
-                    <li>Visa</li>
-                </ul>
-            </div>
-        </div>
+        <!-- REJILLA DE PROYECTOS (tamaños variables) -->
+        <section class="home-grid">
 
-        <footer class="site-footer about-footer">
-            <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
-        </footer>
-    </section>
-
-    <main class="portfolio-layout">
-
-        <section class="hero-block">
-            <div class="bio-container">
-                <p><strong>Luciano Castañón Estrada</strong> is an Art Director currently working in Madrid.</p>
-            </div>
-
-            <div class="reel-wrapper">
-                <div class="media-container ratio-16-9">
-                    <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="reel-media" draggable="false">
-                        <source src="img/01_web26_reel.mp4?v=1.0" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </section>
-
-        <section class="mosaic-tight-grid">
-
-            <div class="stack-column">
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-nilojeda">Nil Ojeda x LaLiga x Puma — Brand Identity and Experience +</a></p>
-                        <div class="title-description">
-                            <p><strong>Nil Ojeda x Puma x La Liga</strong>. Nil Ojeda takes the wheel of a truck packed with Puma Orbita balls and hits the streets of Madrid in a race against the clock — selling as many as possible before time runs out.</p>
-                        </div>
+            <div class="home-row">
+                <div class="project-card home-card hc-reel" style="--r:16/9">
+                    <div class="media-container home-media">
+                        <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="reel-media" draggable="false">
+                            <source src="img/01_web26_reel.mp4?v=1.0" type="video/mp4">
+                        </video>
                     </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-nilojeda" class="project-link">
-                            <img src="img/nilojeda_laliga/nilojeda_laliga_cover.jpg" class="img-primary" alt="Nil Ojeda Principal" draggable="false">
-                            <img src="img/nilojeda_laliga/nilojeda_laliga_secondary_3.jpg" class="img-secondary" alt="Nil Ojeda Alternativa" draggable="false">
-                        </a>
+                    <p class="home-caption"><span class="hc-title">Reel</span><span class="hc-cat">2020 — 2026</span></p>
+                </div>
+                <a href="#work-epy6" class="project-card home-card hc-2" style="--r:4/5">
+                    <div class="media-container home-media">
+                        <video autoplay loop muted playsinline class="img-primary" draggable="false">
+                            <source src="img/epy6/epy6_cover.webm" type="video/webm">
+                            <source src="img/epy6/epy6_cover.mp4" type="video/mp4">
+                        </video>
+                        <img src="img/epy6/epy6_secundaria.webp" class="img-secondary" alt="" draggable="false">
                     </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-epy6">ElPartidazo6 — Brand Identity +</a></p>
-                        <div class="title-description">
-                            <p><strong>ElPartidazo6</strong> is the sixth edition of an international streamer football match between Spain and Latin America. Top creators from both sides of the Atlantic team up on the pitch, turning online rivalry into a live celebration of football and community.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-epy6" class="project-link">
-                            <video autoplay loop muted playsinline class="img-primary" draggable="false">
-                                <source src="img/epy6/epy6_cover.webm" type="video/webm">
-                                <source src="img/epy6/epy6_cover.mp4" type="video/mp4">
-                            </video>
-                            <img src="img/epy6/epy6_secundaria.webp" class="img-secondary" alt="ElPartidazo6 Alternativa" draggable="false">
-                        </a>
-                    </div>
-                </article>
+                    <p class="home-caption"><span class="hc-title">ElPartidazo6</span><span class="hc-cat">Brand Identity</span></p>
+                </a>
             </div>
 
-            <article class="project-card card-large">
-                <div class="title-container">
-                    <p class="project-title"><a href="#work-lafisica">La Física. Podimo — Brand Identity +</a></p>
-                    <div class="title-description">
-                        <p><strong>La Física</strong> is a podcast about physics on Podimo. Alba Moreno breaks down the universe's greatest mysteries through everyday questions and expert guests.</p>
+            <div class="home-row">
+                <a href="#work-nilojeda" class="project-card home-card hc-1" style="--r:3/2">
+                    <div class="media-container home-media">
+                        <img src="img/nilojeda_laliga/nilojeda_laliga_cover.jpg" class="img-primary" alt="Nil Ojeda x LaLiga x Puma" draggable="false">
+                        <img src="img/nilojeda_laliga/nilojeda_laliga_secondary_3.jpg" class="img-secondary" alt="" draggable="false">
                     </div>
-                </div>
-
-                <div class="media-container fill-height">
-                    <a href="#work-lafisica" class="project-link">
-                        <img src="img/la-fisica/lafisica_cover.webp" class="img-primary" alt="La Física Principal" draggable="false">
+                    <p class="home-caption"><span class="hc-title">Nil Ojeda x LaLiga x Puma</span><span class="hc-cat">Brand Identity &amp; Experience</span></p>
+                </a>
+                <a href="#work-lafisica" class="project-card home-card hc-3" style="--r:4/5">
+                    <div class="media-container home-media">
+                        <img src="img/la-fisica/lafisica_cover.webp" class="img-primary" alt="La Física. Podimo" draggable="false">
                         <video loop muted playsinline class="img-secondary" draggable="false">
                             <source src="img/la-fisica/lafisica_17.webm" type="video/webm">
                             <source src="img/la-fisica/lafisica_17.mp4" type="video/mp4">
                         </video>
-                    </a>
-                </div>
-            </article>
-
-        </section>
-
-        <section class="mosaic-tight-grid mosaic-reversed">
-
-            <article class="project-card card-large">
-                <div class="title-container">
-                    <p class="project-title"><a href="#work-ibai">El Gran Menú de Ibai — Brand Identity +</a></p>
-                    <div class="title-description">
-                        <p><strong>El Gran Menú de Ibai</strong> is a collection of three delicious packaging designs for the very much anticipated Ibai´s delivery menu on The Gaming Family.</p>
                     </div>
-                </div>
+                    <p class="home-caption"><span class="hc-title">La Física. Podimo</span><span class="hc-cat">Brand Identity</span></p>
+                </a>
+                <a href="#work-yointerneto" class="project-card home-card hc-5" style="--r:1/1">
+                    <div class="media-container home-media">
+                        <video autoplay loop muted playsinline class="img-primary" draggable="false">
+                            <source src="img/yointernetot4/yointernetot4_cover.webm" type="video/webm">
+                            <source src="img/yointernetot4/yointernetot4_cover.mp4" type="video/mp4">
+                        </video>
+                        <img src="img/yointernetot4/yointernetot4_secondary.jpg" class="img-secondary" alt="" draggable="false">
+                    </div>
+                    <p class="home-caption"><span class="hc-title">Yo, Interneto</span><span class="hc-cat">Brand Identity</span></p>
+                </a>
+            </div>
 
-                <div class="media-container fill-height">
-                    <a href="#work-ibai" class="project-link">
+            <div class="home-row">
+                <a href="#work-ibai" class="project-card home-card hc-4" style="--r:1/1">
+                    <div class="media-container home-media">
                         <video autoplay loop muted playsinline class="img-primary" draggable="false">
                             <source src="img/ibai_granmenu/ibai_granmenu_cover_animated.webm?v=2.0" type="video/webm">
                             <source src="img/ibai_granmenu/ibai_granmenu_cover_animated.mp4?v=2.0" type="video/mp4">
@@ -208,56 +112,27 @@
                             <source src="img/ibai_granmenu/ibai_granmenu_secondary.webm" type="video/webm">
                             <source src="img/ibai_granmenu/ibai_granmenu_secondary.mp4" type="video/mp4">
                         </video>
-                    </a>
-                </div>
-            </article>
-
-            <div class="stack-column">
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-yointerneto">YoInterneto — Brand Identity +</a></p>
-                        <div class="title-description">
-                            <p><strong>Yo, Interneto</strong> is a weekly podcast streamed on Twitch. The show discusses internet culture of the past, the present and the future.</p>
-                        </div>
                     </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-yointerneto" class="project-link">
-                            <video autoplay loop muted playsinline class="img-primary" draggable="false">
-                                <source src="img/yointernetot4/yointernetot4_cover.webm" type="video/webm">
-                                <source src="img/yointernetot4/yointernetot4_cover.mp4" type="video/mp4">
-                            </video>
-                            <img src="img/yointernetot4/yointernetot4_secondary.jpg" class="img-secondary" alt="YoInterneto Alternativa" draggable="false">
-                        </a>
+                    <p class="home-caption"><span class="hc-title">El Gran Menú de Ibai</span><span class="hc-cat">Packaging</span></p>
+                </a>
+                <a href="#work-rubiusx" class="project-card home-card hc-6" style="--r:16/9">
+                    <div class="media-container home-media">
+                        <video autoplay loop muted playsinline class="img-primary" draggable="false">
+                            <source src="img/rubiusx/rubiusx_cover_2.webm" type="video/webm">
+                            <source src="img/rubiusx/rubiusx_cover_2.mp4" type="video/mp4">
+                        </video>
+                        <video loop muted playsinline class="img-secondary" draggable="false">
+                            <source src="img/rubiusx/rubiusx_secondary.webm" type="video/webm">
+                            <source src="img/rubiusx/rubiusx_secondary.mp4" type="video/mp4">
+                        </video>
                     </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="title-container">
-                        <p class="project-title"><a href="#work-rubiusx">Rubius X — Design System +</a></p>
-                        <div class="title-description">
-                            <p><strong>Rubius X</strong> is the Amazon Exclusive documentary that celebrates 10 years of Rubius as the most recognized Spanish content creator.</p>
-                        </div>
-                    </div>
-
-                    <div class="media-container ratio-16-9">
-                        <a href="#work-rubiusx" class="project-link">
-                            <video autoplay loop muted playsinline class="img-primary" draggable="false">
-                                <source src="img/rubiusx/rubiusx_cover_2.webm" type="video/webm">
-                                <source src="img/rubiusx/rubiusx_cover_2.mp4" type="video/mp4">
-                            </video>
-                            <video loop muted playsinline class="img-secondary" draggable="false">
-                                <source src="img/rubiusx/rubiusx_secondary.webm" type="video/webm">
-                                <source src="img/rubiusx/rubiusx_secondary.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </div>
-                </article>
+                    <p class="home-caption"><span class="hc-title">Rubius X</span><span class="hc-cat">Design System</span></p>
+                </a>
             </div>
 
         </section>
 
-        <footer class="site-footer">
+        <footer class="site-footer home-footer">
             <p><span class="footer-line-1"><span class="footer-semibold">Luciano Castañón Estrada 2026 ©</span> <span class="footer-medium">Selected work</span></span><br><span class="footer-line-2">All work featured belongs to their respective clients & agencies.</span></p>
         </footer>
 
@@ -684,20 +559,10 @@
     </section>
 
     <script>
-        const toggleBtn = document.getElementById('toggle-btn');
-        function updateToggleHref() {
-            if (window.location.hash === '#about') {
-                toggleBtn.setAttribute('href', '#');
-            } else {
-                toggleBtn.setAttribute('href', '#about');
-            }
-        }
-
         function handleHashChange() {
-            updateToggleHref();
             const currentHash = window.location.hash;
 
-            if (!currentHash || currentHash === '#' || currentHash === '#about') {
+            if (!currentHash || currentHash === '#') {
                 window.scrollTo({
                     top: 0,
                     left: 0,
@@ -790,9 +655,9 @@
 
         lazyContainers.forEach(container => videoObserver.observe(container));
 
-        // EFECTO MAGNÉTICO EN EMAIL / LN (solo dispositivos con ratón)
+        // EFECTO MAGNÉTICO EN EMAIL / LN DE LA COLUMNA IZQUIERDA (solo dispositivos con ratón)
         if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-            document.querySelectorAll('.header-fixed .col-3 .link-white').forEach(link => {
+            document.querySelectorAll('.home-contact a').forEach(link => {
                 link.addEventListener('mousemove', e => {
                     const r = link.getBoundingClientRect();
                     const x = (e.clientX - r.left - r.width / 2) * 0.25;
