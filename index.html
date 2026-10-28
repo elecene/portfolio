@@ -550,6 +550,29 @@
     </section>
 
     <script>
+        // MODO DIAGNÓSTICO: abrir la web con ?debug en la URL muestra arriba
+        // la posición de scroll y quién la mueve. Sin ?debug no hace nada.
+        if (/[?&]debug/.test(window.location.search)) {
+            const box = document.createElement('div');
+            box.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:rgba(0,0,0,.85);color:#0f0;font:11px/1.35 monospace;padding:6px 8px;pointer-events:none;white-space:pre';
+            document.body.appendChild(box);
+            const log = [];
+            const t0 = performance.now();
+            const add = (msg) => { log.unshift(((performance.now()-t0)/1000).toFixed(2) + 's ' + msg); log.length = 6; };
+            const origScrollTo = window.scrollTo.bind(window);
+            window.scrollTo = function () { add('scrollTo(' + [...arguments].map(a => JSON.stringify(a)).join(',') + ') desde script'); return origScrollTo.apply(window, arguments); };
+            ['touchstart','touchend','resize','orientationchange','load','pageshow','hashchange'].forEach(ev =>
+                window.addEventListener(ev, () => add(ev + ' y=' + Math.round(window.scrollY)), { passive: true }));
+            let lastY = window.scrollY;
+            const draw = () => {
+                const vv = window.visualViewport;
+                if (Math.abs(window.scrollY - lastY) > 2) { add('scroll ' + Math.round(lastY) + ' → ' + Math.round(window.scrollY)); lastY = window.scrollY; }
+                box.textContent = 'scrollY ' + Math.round(window.scrollY) + '  innerH ' + innerHeight + '  vv ' + (vv ? Math.round(vv.height) + ' top ' + Math.round(vv.offsetTop) : '-') + '\n' + log.join('\n');
+                requestAnimationFrame(draw);
+            };
+            draw();
+        }
+
         // Al recargar, el navegador recuerda la posición de scroll anterior y
         // en móvil la aplica mientras cargan los vídeos: se ve la web "un poco
         // más abajo". Lo desactivamos y fijamos el inicio arriba.
