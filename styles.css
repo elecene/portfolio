@@ -1243,9 +1243,9 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     .home-caption { font-size: 9px; margin-top: 5px; line-height: 1.25; }
 
     /* Proporciones de la referencia en móvil (ancho / alto), por posición:
-       fila 1: 0.80 + 1.50 · fila 2: 0.665 + 1.256 + 0.808 · fila 3: 0.80 + 1.20 */
-    .home-grid .hc-reel { --r: 0.8   !important; }
-    .home-grid .hc-2    { --r: 1.5   !important; }
+       fila 1: 1.50 + 0.80 · fila 2: 0.665 + 1.256 + 0.808 · fila 3: 0.80 + 1.20 */
+    .home-grid .hc-reel { --r: 1.5   !important; }   /* el reel, la pieza grande */
+    .home-grid .hc-2    { --r: 0.8   !important; }
     .home-grid .hc-1    { --r: 0.665 !important; }
     .home-grid .hc-3    { --r: 1.256 !important; }
     .home-grid .hc-5    { --r: 0.808 !important; }
