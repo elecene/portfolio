@@ -840,6 +840,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 
 .footer-line-2 {
     letter-spacing: -0.01em;
+    line-height: 1.15;
     display: inline-block;
     margin-bottom: 0 !important;
 }
@@ -1119,6 +1120,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 .home-info::-webkit-scrollbar { display: none; }
 .home-info > * { max-width: none; }
 .home-info .case-meta > div { grid-template-columns: 150px 1fr; }
+.home-info .case-meta dd { text-align: left; }
 .home-info .case-block { margin-bottom: 2.2em; }
 .home-info .case-label { margin-bottom: 0.15em; }
 .home-info .home-clients { margin-bottom: 0; }
@@ -1243,27 +1245,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     /* el reel arranca arriba */
     .home-layout { margin-top: 0; }
 
-    /* Reel a todo el ancho y el resto, siempre de dos en dos.
-       Las filas se recomponen solo en móvil; cada pareja comparte altura
-       (el ancho de cada pieza es proporcional a su formato). */
-    .home-grid {
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: var(--home-gap);
-        row-gap: var(--home-row-gap);
-    }
-    .home-row { display: contents; }
-    .home-grid .home-card { flex: 0 0 auto; }
-    .home-grid .hc-reel { width: 100%; }
-    /* ElPartidazo6 (4:5) + Nil Ojeda (3:2) */
-    .home-grid .hc-2 { width: calc((100% - var(--home-gap)) * 0.8 / 2.3); }
-    .home-grid .hc-1 { width: calc((100% - var(--home-gap)) * 1.5 / 2.3); }
-    /* La Física (4:5) + Yo, Interneto (1:1) */
-    .home-grid .hc-3 { width: calc((100% - var(--home-gap)) * 0.8 / 1.8); }
-    .home-grid .hc-5 { width: calc((100% - var(--home-gap)) * 1 / 1.8); }
-    /* Ibai (1:1) + Rubius X (16:9) */
-    .home-grid .hc-4 { width: calc((100% - var(--home-gap)) * 1 / 2.7778); }
-    .home-grid .hc-6 { width: calc((100% - var(--home-gap)) * 1.7778 / 2.7778); }
+    /* mismas filas que en escritorio: reel + ElPartidazo6, trío, pareja */
 
     /* sin cabecera en móvil, tampoco en los proyectos: todo arranca arriba */
     .header-fixed { display: none !important; }
