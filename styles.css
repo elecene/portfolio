@@ -455,7 +455,8 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     display: none;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    padding: var(--case-top) var(--case-side) 0 var(--case-side);
+    /* las imágenes arrancan arriba, a la misma altura que el reel de la home */
+    padding: var(--case-side) var(--case-side) 0 var(--case-side);
 }
 
 .project-view-page:target {
@@ -534,10 +535,11 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
        proyecto, así que el bloque queda fijo a la altura de las imágenes */
     top: 0;
     align-self: start;
-    max-height: calc(100vh - var(--case-top) - 30px);
+    max-height: calc(100vh - var(--case-side) - 30px);
     overflow-y: auto;
     scrollbar-width: none;
-    padding-top: var(--case-info-offset);
+    /* el texto sigue empezando bajo la cabecera y el BACK */
+    padding-top: calc(var(--case-top) - var(--case-side) + var(--case-info-offset));
     padding-bottom: 30px;
     font-size: var(--case-fs);
     line-height: var(--case-lh);
@@ -970,6 +972,10 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
         padding-top: var(--case-top);
     }
 
+    .project-view-page {
+        padding-top: var(--case-top);
+    }
+
     .case-info > * {
         max-width: none;
     }
@@ -1102,14 +1108,17 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     max-height: calc(100vh - var(--case-top) - 30px);
     overflow-y: auto;
     scrollbar-width: none;
-    font-size: var(--case-fs);
+    /* tamaño proporcional al ancho de ventana: el texto ocupa siempre
+       la columna igual (13px a 1440px, crece en pantallas grandes) */
+    font-size: clamp(12px, calc(1.02vw - 1.6px), 30px);
     line-height: var(--case-lh);
     letter-spacing: var(--case-ls);
     color: var(--case-text);
     padding-bottom: 30px;
 }
 .home-info::-webkit-scrollbar { display: none; }
-.home-info > * { max-width: var(--case-text-max); }
+.home-info > * { max-width: none; }
+.home-info .case-meta > div { grid-template-columns: 11.5em 1fr; }
 .home-info .case-block { margin-bottom: 2.2em; }
 .home-info .case-label { margin-bottom: 0.15em; }
 .home-info .home-clients { margin-bottom: 0; }
@@ -1210,6 +1219,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 @media (max-width: 900px) {
     .home-layout { grid-template-columns: 1fr; }
     .home-info {
+        font-size: var(--case-fs);
         grid-row: auto; position: static; max-height: none; overflow: visible;
         margin-top: calc(var(--case-top) - var(--case-side));
         margin-bottom: 48px; padding-bottom: 0;
