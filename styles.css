@@ -46,6 +46,8 @@
 html {
     /* SCROLL INSTANTÁNEO AL NAVEGAR O CERRAR PROYECTOS */
     scroll-behavior: auto !important;
+    /* iPhone: impedir desplazamiento lateral (p. ej. al girar la pantalla) */
+    overflow-x: hidden;
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-sans);
@@ -61,7 +63,8 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    overflow-x: hidden;
+    /* overflow-x se controla en html (si se pone en ambos, body se convierte
+       en contenedor de scroll y la columna fija deja de funcionar) */
     width: 100%;
     position: relative;
     padding: var(--case-side) var(--case-side) 0 var(--case-side);
