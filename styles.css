@@ -1217,18 +1217,28 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 }
 
 @media (max-width: 900px) {
-    .home-layout { grid-template-columns: 1fr; }
+    /* MÓVIL como la referencia: primero los proyectos (en filas, igual
+       que en escritorio pero más compactas) y al final la información */
+    :root {
+        --case-side: 10px;
+        --home-gap: 6px;
+        --home-row-gap: 22px;
+    }
+    .home-layout {
+        grid-template-columns: 1fr;
+        margin-top: calc(var(--case-top) - 10px - var(--case-side));   /* bajo el nombre de la cabecera */
+    }
+    .home-grid { grid-column: 1; grid-row: 1; }
     .home-info {
+        grid-column: 1; grid-row: 2;
         font-size: var(--case-fs);
-        grid-row: auto; position: static; max-height: none; overflow: visible;
-        margin-top: calc(var(--case-top) - var(--case-side));
-        margin-bottom: 48px; padding-bottom: 0;
+        position: static; max-height: none; overflow: visible;
+        margin-top: 56px; padding-bottom: 0;
     }
     .home-info > * { max-width: none; }
-    .home-grid { grid-column: 1; grid-row: auto; }
-    .home-row { flex-direction: column; row-gap: var(--home-row-gap); }
-    .home-row > .home-card { flex: none; width: 100%; }
-    .home-footer { grid-row: auto; }
+    .home-info .case-meta > div { grid-template-columns: 110px 1fr; }
+    .home-footer { grid-row: 3; }
+    .home-caption { font-size: 10px; margin-top: 6px; line-height: 1.35; }
 }
 
 /* ==========================================================================
