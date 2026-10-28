@@ -602,7 +602,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 .case-meta dd {
     color: var(--case-text);
     margin: 0;
-    text-align: right;   /* valores alineados a la derecha */
+    text-align: left;    /* valores alineados a la izquierda, como en la home */
 }
 
 .case-meta a:hover {
