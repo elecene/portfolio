@@ -8,9 +8,9 @@
 }
 
 :root {
-    --bg-color: #000000;
+    --bg-color: #ffffff;
     --card-bg: #0a0a0a;
-    --text-primary: #ffffff;
+    --text-primary: #000000;
     --text-secondary: #888888;
     --text-muted: #555555;
     --border-subtle: rgba(255, 255, 255, 0.1);
@@ -23,8 +23,10 @@
     /* ---- VISTA DE PROYECTO (CASE) — ajusta aquí ---- */
     --case-top: 96px;            /* donde empiezan las imágenes y se alinea el BACK */
     --case-info-offset: 162px;   /* hueco entre el borde superior de las imágenes y el título del proyecto */
-    --case-side: 30px;           /* margen lateral de la página */
+    --case-side: 14px;           /* margen de la página (lateral y superior) */
     --case-col-gap: 40px;        /* separación texto ↔ imágenes */
+    --home-gap: 10px;            /* separación entre proyectos en la home */
+    --home-row-gap: 36px;        /* separación entre filas (bajo los pies de foto) */
     /* Columna de texto calculada para que las imágenes empiecen
        exactamente en el tercio de la ventana (mínimo 280px) */
     /* Calculado sobre el ancho de ventana (vw), no sobre el contenedor:
@@ -62,7 +64,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
-    padding: 24px 30px 0 30px;
+    padding: var(--case-side) var(--case-side) 0 var(--case-side);
 }
 
 /* PROTECTION RULES */
@@ -101,7 +103,7 @@ body:has(.project-view-page:target) {
        exactamente donde empiezan las imágenes de los proyectos */
     grid-template-columns: var(--case-info-width) var(--case-media-width);
     column-gap: var(--case-col-gap);
-    padding: 24px var(--case-side);
+    padding: var(--case-side);
     font-size: 13px;
     line-height: 1.4;
     z-index: 1000;
@@ -868,12 +870,12 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 @media (max-width: 900px) {
     :root {
         --case-top: 100px;
-        --case-side: 20px;
+        --case-side: 14px;
         --case-fs: 13px;
     }
 
     body {
-        padding: 20px 20px 0 20px;
+        padding: var(--case-side) var(--case-side) 0 var(--case-side);
     }
 
     .header-fixed {
@@ -881,7 +883,7 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
         top: 0;
         left: 0;
         width: 100%;
-        padding: 20px;
+        padding: var(--case-side);
         display: grid !important;
         grid-template-columns: 1fr 32px !important;
         gap: 12px;
@@ -1081,7 +1083,146 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 }
 
 /* ==========================================================================
-   10. BROWSER EXTENSION OVERLAY BLOCKER
+   10. HOME CLARA — COLUMNA FIJA IZQUIERDA + REJILLA DE PROYECTOS
+   ========================================================================== */
+.home-layout {
+    margin-top: 0;   /* la columna derecha arranca arriba, a la altura del nombre */
+    display: grid;
+    grid-template-columns: var(--case-info-width) var(--case-media-width);
+    column-gap: var(--case-col-gap);
+    align-items: start;
+}
+
+.home-info {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    position: sticky;
+    top: var(--case-top);
+    margin-top: calc(var(--case-top) - var(--case-side));   /* debajo del nombre de la cabecera */
+    max-height: calc(100vh - var(--case-top) - 30px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    font-size: var(--case-fs);
+    line-height: var(--case-lh);
+    letter-spacing: var(--case-ls);
+    color: var(--case-text);
+    padding-bottom: 30px;
+}
+.home-info::-webkit-scrollbar { display: none; }
+.home-info > * { max-width: var(--case-text-max); }
+.home-info .case-block { margin-bottom: 2.2em; }
+.home-info .case-label { margin-bottom: 0.15em; }
+.home-info .home-clients { margin-bottom: 0; }
+
+.home-contact { margin-top: 1em; }
+.home-contact a {
+    display: inline-block;
+    color: #000;
+    transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+.home-contact a:hover { color: #888; }
+
+/* contacto del About en móvil: negro sobre blanco */
+.about-mobile-contact .link-white { color: #000 !important; }
+
+.home-grid {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--home-row-gap);
+}
+
+/* Cada fila llena el ancho y todas sus piezas tienen la MISMA altura:
+   el ancho de cada una es proporcional a su formato (--r) */
+.home-row {
+    display: flex;
+    gap: var(--home-gap);
+    align-items: flex-start;
+}
+.home-row > .home-card {
+    flex: calc(var(--r)) 1 0;
+    min-width: 0;
+}
+
+.home-footer {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    color: #bfbfbf !important;
+}
+
+.home-card {
+    display: block;
+    color: #000;
+}
+
+.home-card .home-media {
+    background-color: #ececec;
+    aspect-ratio: var(--r, 16 / 9);
+}
+.home-card .home-media img,
+.home-card .home-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+.home-caption {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: #000;
+}
+.home-caption .hc-cat { color: var(--case-label); }
+
+/* Cabecera única para fondos claros: texto blanco en modo diferencia
+   (negro sobre blanco, se invierte sobre imágenes) */
+.header-fixed,
+body:has(.project-view-page:target) .header-fixed,
+body:has(#about:target) .header-fixed {
+    mix-blend-mode: difference;
+    color: #ffffff !important;
+}
+.header-fixed .txt-bold,
+.header-fixed .txt-white,
+.header-fixed .home-link,
+.header-fixed .link-white,
+.header-fixed .toggle-about-btn,
+body:has(#about:target) .header-fixed .txt-bold,
+body:has(#about:target) .header-fixed .txt-white,
+body:has(#about:target) .header-fixed .home-link,
+body:has(#about:target) .header-fixed .link-white,
+body:has(#about:target) .header-fixed .toggle-about-btn {
+    color: #ffffff !important;
+}
+.header-fixed .home-link:hover,
+.header-fixed .link-white:hover {
+    color: #888888 !important;
+}
+
+@media (max-width: 900px) {
+    .home-layout { grid-template-columns: 1fr; }
+    .home-info {
+        grid-row: auto; position: static; max-height: none; overflow: visible;
+        margin-top: calc(var(--case-top) - var(--case-side));
+        margin-bottom: 48px; padding-bottom: 0;
+    }
+    .home-info > * { max-width: none; }
+    .home-grid { grid-column: 1; grid-row: auto; }
+    .home-row { flex-direction: column; row-gap: var(--home-row-gap); }
+    .home-row > .home-card { flex: none; width: 100%; }
+    .home-footer { grid-row: auto; }
+}
+
+/* ==========================================================================
+   11. BROWSER EXTENSION OVERLAY BLOCKER
    ========================================================================== */
 [class*="search-by-image"],
 [class*="image-search"],
