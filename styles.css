@@ -26,7 +26,7 @@
     --case-side: 14px;           /* margen de la página (lateral y superior) */
     --case-col-gap: 40px;        /* separación texto ↔ imágenes */
     --home-gap: 10px;            /* separación entre proyectos en la home */
-    --home-row-gap: 36px;        /* separación entre filas (bajo los pies de foto) */
+    --home-row-gap: 24px;        /* separación entre filas (bajo los pies de foto) */
     /* Columna de texto calculada para que las imágenes empiecen
        exactamente en el tercio de la ventana (mínimo 280px) */
     /* Calculado sobre el ancho de ventana (vw), no sobre el contenedor:
@@ -1185,9 +1185,9 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
 .home-caption {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    font-size: 13px;
-    line-height: 1.4;
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.3;
     letter-spacing: -0.01em;
     color: #000;
 }
@@ -1224,7 +1224,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     :root {
         --case-side: 10px;
         --home-gap: 6px;
-        --home-row-gap: 22px;
+        --home-row-gap: 16px;
     }
     .home-layout {
         grid-template-columns: 1fr;
@@ -1240,7 +1240,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     .home-info > * { max-width: none; }
     .home-info .case-meta > div { grid-template-columns: 110px 1fr; }
     .home-footer { grid-row: 3; }
-    .home-caption { font-size: 10px; margin-top: 6px; line-height: 1.35; }
+    .home-caption { font-size: 9px; margin-top: 5px; line-height: 1.25; }
 
     /* el reel arranca arriba */
     .home-layout { margin-top: 0; }
