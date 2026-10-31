@@ -1258,6 +1258,11 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 }
 
 .br-mobile { display: none; }
+
+/* Díptico que se mantiene en paralelo también en móvil */
+.gallery-diptych.keep-2 { grid-template-columns: 1fr 1fr !important; align-items: stretch; }
+.gallery-diptych.keep-2 > img,
+.gallery-diptych.keep-2 > .lazy-video-container { aspect-ratio: 1986 / 2160; height: 100%; object-fit: cover; }
 @media (max-width: 900px) { .br-mobile { display: inline; } }
 
 /* ==========================================================================
