@@ -463,6 +463,10 @@
                     <img src="img/yointernetot4/yointernetot4_06.webp" alt="YoInterneto 06" draggable="false">
                 </div>
 
+                <div class="project-gallery">
+                    <div class="lazy-video-container" data-webm="img/yointernetot4/yo-interneto_notificacion-suscripcion_loop10s_1080p.webm" data-mp4="img/yointernetot4/yo-interneto_notificacion-suscripcion_loop10s_1080p.mp4"></div>
+                </div>
+
                 <div class="gallery-vertical-mosaic">
                     <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_comenzamos.mp4" data-webm="img/yointernetot4/yointernetot4_comenzamos.webm"></div>
                     <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_08_benji.mp4" data-webm="img/yointernetot4/yointernetot4_08_benji.webm"></div>
@@ -636,8 +640,10 @@
                 const activeProject = document.querySelector(currentHash);
                 if (activeProject) {
                     activeProject.scrollTop = 0;
+                    // los vídeos visibles los arranca el observer; aquí solo
+                    // los que no son "lazy" (escritos directamente en el HTML)
                     activeProject.querySelectorAll('video').forEach(v => {
-                        if (!v.controls) {
+                        if (!v.controls && !v.closest('.lazy-video-container')) {
                             v.play().catch(() => {});
                         }
                     });
@@ -710,10 +716,18 @@
         }
 
         const lazyContainers = document.querySelectorAll('.lazy-video-container');
+        // Cada vídeo solo se reproduce mientras está en pantalla (o cerca).
+        // Al salir se pausa: así no hay muchos vídeos decodificándose a la vez,
+        // que es lo que provoca tirones.
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                const container = entry.target;
                 if (entry.isIntersecting) {
-                    createVideoElement(entry.target);
+                    const v = createVideoElement(container);
+                    if (v && !v.controls) v.play().catch(() => {});
+                } else {
+                    const v = container.querySelector('video');
+                    if (v && !v.paused) v.pause();
                 }
             });
         }, { rootMargin: '200px' });
