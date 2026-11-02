@@ -112,7 +112,7 @@
                             <source src="img/ibai_granmenu/ibai_granmenu_secondary.webm" type="video/webm">
                         </video>
                     </div>
-                    <p class="home-caption"><span class="hc-title">El Gran Menú de Ibai</span><span class="hc-cat">Packaging</span></p>
+                    <p class="home-caption"><span class="hc-title">El Gran Menú de Ibai</span><span class="hc-cat">Brand Identity &amp; Packaging</span></p>
                 </a>
             </div>
 
@@ -596,35 +596,7 @@
             window.scrollTo(0, 0);
         }
 
-        // Fijar la home arriba durante la carga: si en los primeros segundos la
-        // página se desplaza SIN que el usuario haya tocado la pantalla
-        // (restauración del navegador, carga de vídeos o fuentes, barra del
-        // navegador…), se devuelve arriba. En cuanto el usuario toca o hace
-        // scroll, se deja de intervenir.
-        (function pinTopWhileLoading() {
-            let userMoved = false;
-            const stop = () => { userMoved = true; };
-            ['touchstart', 'wheel', 'keydown', 'mousedown'].forEach(ev =>
-                window.addEventListener(ev, stop, { passive: true, once: true }));
-
-            const onHome = () => !window.location.hash || window.location.hash === '#';
-            const pin = () => {
-                if (!userMoved && onHome() && window.scrollY !== 0) window.scrollTo(0, 0);
-            };
-
-            // Se mantiene activo hasta 2 s DESPUÉS de que termine de cargar todo
-            // (en iPhone el navegador recoloca el scroll justo al terminar la
-            // carga, que con los vídeos puede tardar bastante). Tope: 30 s.
-            window.addEventListener('scroll', pin, { passive: true });
-            const release = () => window.removeEventListener('scroll', pin);
-            window.addEventListener('load', () => {
-                pin();
-                [100, 400, 1000].forEach(t => setTimeout(pin, t));
-                setTimeout(release, 2000);
-            });
-            window.addEventListener('pageshow', pin);
-            setTimeout(release, 30000);
-        })();
+        // (prueba: sin fijado de scroll durante la carga)
 
         // Al girar el móvil, iOS puede conservar un desplazamiento lateral de la
         // orientación anterior y dejar la web "fuera de plano". Lo corregimos.
