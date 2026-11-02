@@ -22,7 +22,7 @@
 
     /* ---- VISTA DE PROYECTO (CASE) — ajusta aquí ---- */
     --case-top: var(--case-side);   /* sin cabecera: todo arranca arriba, en el margen */
-    --case-info-offset: 162px;   /* hueco entre el borde superior de las imágenes y el título del proyecto */
+    --case-info-offset: 64px;    /* el título del proyecto empieza justo debajo del botón BACK */
     --case-side: 14px;           /* margen de la página (lateral y superior) */
     --case-col-gap: 40px;        /* separación texto ↔ imágenes */
     --home-gap: 10px;            /* separación entre proyectos en la home */
@@ -89,8 +89,9 @@ a {
     text-decoration: none;
 }
 
+html:has(.project-view-page:target),
 body:has(.project-view-page:target) {
-    overflow: hidden !important;
+    overflow: hidden !important;   /* con un proyecto abierto, solo hace scroll el proyecto */
 }
 
 /* ==========================================================================
