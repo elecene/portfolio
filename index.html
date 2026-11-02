@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=191.0">
+    <link rel="stylesheet" href="styles.css?v=193.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,6 +22,11 @@
                     <a href="mailto:elecene@gmail.com">— elecene@gmail.com</a><br>
                     <a href="https://www.linkedin.com/in/luciano-castanon-estrada/" target="_blank">— LN</a>
                 </p>
+            </div>
+
+            <div class="case-block">
+                <p class="case-label">Services</p>
+                <p class="case-text">Art Direction<br>Brand Identity<br>Brand Image<br>Campaigns<br>Creative Concepting<br>Design Systems/Toolkit<br>Graphic Design<br>Image Research<br>3D/CGI/Motion Direction</p>
             </div>
 
             <p class="case-label">Experience</p>
@@ -607,10 +612,18 @@
                 if (!userMoved && onHome() && window.scrollY !== 0) window.scrollTo(0, 0);
             };
 
+            // Se mantiene activo hasta 2 s DESPUÉS de que termine de cargar todo
+            // (en iPhone el navegador recoloca el scroll justo al terminar la
+            // carga, que con los vídeos puede tardar bastante). Tope: 30 s.
             window.addEventListener('scroll', pin, { passive: true });
-            window.addEventListener('load', pin);
+            const release = () => window.removeEventListener('scroll', pin);
+            window.addEventListener('load', () => {
+                pin();
+                [100, 400, 1000].forEach(t => setTimeout(pin, t));
+                setTimeout(release, 2000);
+            });
             window.addEventListener('pageshow', pin);
-            setTimeout(() => window.removeEventListener('scroll', pin), 4000);
+            setTimeout(release, 30000);
         })();
 
         // Al girar el móvil, iOS puede conservar un desplazamiento lateral de la
