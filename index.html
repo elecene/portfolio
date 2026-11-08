@@ -128,7 +128,7 @@
                             <source src="img/rubiusx/rubiusx_secondary.webm" type="video/webm">
                         </video>
                     </div>
-                    <p class="home-caption"><span class="hc-title">Rubius X</span><span class="hc-cat">Design System</span></p>
+                    <p class="home-caption"><span class="hc-title">Rubius X</span><span class="hc-cat">Graphic Design</span></p>
                 </a>
             </div>
 
@@ -452,7 +452,7 @@
 
                 <dl class="case-meta">
                     <div><dt>Client</dt><dd>Yo, Interneto</dd></div>
-                    <div><dt>Role</dt><dd>Art Direction & Graphic System</dd></div>
+                    <div><dt>Role</dt><dd>Art Direction & Design System</dd></div>
                     <div><dt>Company</dt><dd>Vizz</dd></div>
                 </dl>
 
@@ -464,6 +464,11 @@
             </aside>
 
             <div class="case-media">
+                <div class="gallery-vertical-mosaic">
+                    <img src="img/yointernetot4/yo-interneto_construccion-logo.webp" alt="Yo, Interneto — construcción del logotipo" draggable="false">
+                    <div class="lazy-video-container" data-mp4="img/yointernetot4/yo-interneto_01-construccion-animada_1920.mp4"></div>
+                </div>
+
                 <div class="project-gallery">
                     <div class="lazy-video-container" data-mp4="img/yointernetot4/yointernetot4_intro_hd.mp4" data-webm="img/yointernetot4/yointernetot4_intro_hd.webm" data-controls="true"></div>
                 </div>
@@ -596,7 +601,35 @@
             window.scrollTo(0, 0);
         }
 
-        // (prueba: sin fijado de scroll durante la carga)
+        // Fijar la home arriba durante la carga: si en los primeros segundos la
+        // página se desplaza SIN que el usuario haya tocado la pantalla
+        // (restauración del navegador, carga de vídeos o fuentes, barra del
+        // navegador…), se devuelve arriba. En cuanto el usuario toca o hace
+        // scroll, se deja de intervenir.
+        (function pinTopWhileLoading() {
+            let userMoved = false;
+            const stop = () => { userMoved = true; };
+            ['touchstart', 'wheel', 'keydown', 'mousedown'].forEach(ev =>
+                window.addEventListener(ev, stop, { passive: true, once: true }));
+
+            const onHome = () => !window.location.hash || window.location.hash === '#';
+            const pin = () => {
+                if (!userMoved && onHome() && window.scrollY !== 0) window.scrollTo(0, 0);
+            };
+
+            // Se mantiene activo hasta 2 s DESPUÉS de que termine de cargar todo
+            // (en iPhone el navegador recoloca el scroll justo al terminar la
+            // carga, que con los vídeos puede tardar bastante). Tope: 30 s.
+            window.addEventListener('scroll', pin, { passive: true });
+            const release = () => window.removeEventListener('scroll', pin);
+            window.addEventListener('load', () => {
+                pin();
+                [100, 400, 1000].forEach(t => setTimeout(pin, t));
+                setTimeout(release, 2000);
+            });
+            window.addEventListener('pageshow', pin);
+            setTimeout(release, 30000);
+        })();
 
         // Al girar el móvil, iOS puede conservar un desplazamiento lateral de la
         // orientación anterior y dejar la web "fuera de plano". Lo corregimos.
