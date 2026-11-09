@@ -1262,7 +1262,10 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 
 /* Tríptico que se mantiene en tres columnas también en móvil (vídeos verticales 9:16) */
 .gallery-triptych.keep-3 { grid-template-columns: repeat(3, 1fr) !important; }
-.gallery-triptych.keep-3 > * { grid-column: auto !important; aspect-ratio: 9 / 16; }
+.gallery-triptych.keep-3 > *,
+.gallery-triptych.keep-3 > .lazy-video-container:first-child,
+.gallery-triptych.keep-3 > img:first-child,
+.gallery-triptych.keep-3 > video:first-child { grid-column: auto !important; aspect-ratio: 9 / 16; height: auto; }
 
 /* Díptico que se mantiene en paralelo también en móvil */
 .gallery-diptych.keep-2 { grid-template-columns: 1fr 1fr !important; align-items: stretch; }
