@@ -421,7 +421,8 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     opacity: 0;
 }
 
-.media-container:hover .img-primary {
+/* solo se oculta la portada al hacer hover si hay imagen secundaria */
+.media-container:has(.img-secondary):hover .img-primary {
     opacity: 0;
 }
 
