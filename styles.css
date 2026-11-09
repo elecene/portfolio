@@ -1260,6 +1260,10 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 
 .br-mobile { display: none; }
 
+/* Tríptico que se mantiene en tres columnas también en móvil (vídeos verticales 9:16) */
+.gallery-triptych.keep-3 { grid-template-columns: repeat(3, 1fr) !important; }
+.gallery-triptych.keep-3 > * { grid-column: auto !important; aspect-ratio: 9 / 16; }
+
 /* Díptico que se mantiene en paralelo también en móvil */
 .gallery-diptych.keep-2 { grid-template-columns: 1fr 1fr !important; align-items: stretch; }
 .gallery-diptych.keep-2 > img,
