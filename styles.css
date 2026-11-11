@@ -1306,15 +1306,14 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     .gallery-text-row > .media-text,
     .gallery-text-row > .row-full + .media-text {
         grid-column: 1 / -1;
-        /* línea gris vertical a la izquierda que va de imagen a imagen */
+        /* sin líneas; caja más estrecha que las imágenes */
         border: 0;
-        border-left: 1px solid var(--case-label);
-        padding: 16px 0 16px 16px;
+        padding: 16px 24px;
         margin: 0;
         font-size: calc(var(--case-fs) - 1px);    /* 1 px menos en móvil */
     }
     /* si el texto abre el bloque, se pega a la imagen anterior para que
-       la línea vertical toque las imágenes de arriba y de abajo */
+       el aire sobre y bajo el texto sea el mismo (16 px) */
     .case-media > .gallery-text-row:not(.two-img) {
         margin-top: calc(-1 * var(--case-media-gap)) !important;
     }
