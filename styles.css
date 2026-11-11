@@ -1315,6 +1315,11 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     letter-spacing: var(--case-ls);
     color: var(--case-label);   /* texto en gris, como las etiquetas */
 }
+/* iPad y tablets táctiles por encima de 900 px: texto de galería 1 px menor
+   (por debajo de 900 px ya lo reduce la regla de móvil) */
+@media (min-width: 901px) and (hover: none) and (pointer: coarse) {
+    .media-text { font-size: calc(var(--case-fs) - 1px); }
+}
 @media (max-width: 900px) {
     .gallery-text-row { grid-template-columns: repeat(3, 1fr); }
     .gallery-text-row > .media-text,
