@@ -72,6 +72,7 @@ body {
 
 /* PROTECTION RULES */
 img, video {
+    -webkit-touch-callout: none;   /* iPhone/iPad: sin menú de guardar al mantener pulsado */
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -1305,12 +1306,20 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     .gallery-text-row > .media-text,
     .gallery-text-row > .row-full + .media-text {
         grid-column: 1 / -1;
-        padding: 0 0 16px 0;
-        border: 0;                                /* en móvil, sin líneas */
+        /* línea gris vertical a la izquierda que va de imagen a imagen */
+        border: 0;
+        border-left: 1px solid var(--case-label);
+        padding: 16px 0 16px 16px;
+        margin: 0;
         font-size: calc(var(--case-fs) - 1px);    /* 1 px menos en móvil */
     }
+    /* si el texto abre el bloque, se pega a la imagen anterior para que
+       la línea vertical toque las imágenes de arriba y de abajo */
+    .case-media > .gallery-text-row:not(.two-img) {
+        margin-top: calc(-1 * var(--case-media-gap)) !important;
+    }
     .gallery-text-row.two-img { grid-template-columns: 1fr 1fr; }
-    .gallery-text-row.two-img > .media-text { margin-top: 16px; }
+
 }
 
 /* Tríptico que se mantiene en tres columnas también en móvil (vídeos verticales 9:16) */
