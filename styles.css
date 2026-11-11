@@ -1281,8 +1281,12 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 /* Variante con dos imágenes: texto 1/4, cada imagen 3/8 */
 .gallery-text-row.two-img { grid-template-columns: 2fr 3fr 3fr; }
 .gallery-text-row > .row-full { grid-column: 1 / -1; height: auto; }
-/* si el texto va pegado debajo de una imagen del mismo mosaico, sin línea */
-.gallery-text-row > .row-full + .media-text { border-top: 0; }
+/* si el texto va pegado debajo de una imagen del mismo mosaico:
+   la línea pasa abajo, alineada con el final de las imágenes */
+.gallery-text-row > .row-full + .media-text {
+    border-top: 0;
+    border-bottom: 1px solid var(--case-label);
+}
 
 .media-text {
     display: flex;
