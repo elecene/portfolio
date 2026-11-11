@@ -1278,7 +1278,14 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     object-fit: cover;
     display: block;
 }
+/* Variante con dos imágenes: texto 1/4, cada imagen 3/8 */
+.gallery-text-row.two-img { grid-template-columns: 2fr 3fr 3fr; }
+.gallery-text-row > .row-full { grid-column: 1 / -1; height: auto; }
+
 .media-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;   /* el texto se apoya abajo */
     padding: 0 24px 0 0;
     font-size: var(--case-fs);
     line-height: var(--case-lh);
@@ -1288,6 +1295,8 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 @media (max-width: 900px) {
     .gallery-text-row { grid-template-columns: repeat(3, 1fr); }
     .gallery-text-row > .media-text { grid-column: 1 / -1; padding: 0 0 16px 0; }
+    .gallery-text-row.two-img { grid-template-columns: 1fr 1fr; }
+    .gallery-text-row.two-img > .media-text { padding-top: 16px; }
 }
 
 /* Tríptico que se mantiene en tres columnas también en móvil (vídeos verticales 9:16) */
