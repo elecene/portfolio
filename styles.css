@@ -1279,6 +1279,9 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     object-fit: cover;
     display: block;
 }
+/* Variante con una imagen: texto 1/4, imagen 3/4 */
+.gallery-text-row.one-img { grid-template-columns: 1fr 3fr; }
+
 /* Variante con dos imágenes: texto 1/4, cada imagen 3/8 */
 .gallery-text-row.two-img { grid-template-columns: 2fr 3fr 3fr; }
 .gallery-text-row > .row-full { grid-column: 1 / -1; height: auto; }
@@ -1314,10 +1317,11 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     }
     /* si el texto abre el bloque, se pega a la imagen anterior para que
        el aire sobre y bajo el texto sea el mismo (16 px) */
-    .case-media > .gallery-text-row:not(.two-img) {
+    .case-media > .gallery-text-row:not(.two-img):not(:first-child) {
         margin-top: calc(-1 * var(--case-media-gap)) !important;
     }
     .gallery-text-row.two-img { grid-template-columns: 1fr 1fr; }
+    .gallery-text-row.one-img { grid-template-columns: 1fr; }
 
 }
 
