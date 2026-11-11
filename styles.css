@@ -1261,6 +1261,35 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 
 .br-mobile { display: none; }
 
+/* FILA CON TEXTO dentro de la columna de imágenes:
+   4 columnas iguales — el texto ocupa 1/4, las imágenes el resto */
+.gallery-text-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 100%;
+    align-items: stretch;
+}
+.gallery-text-row > img,
+.gallery-text-row > video,
+.gallery-text-row > .lazy-video-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.media-text {
+    padding: 0 24px 0 0;
+    font-size: var(--case-fs);
+    line-height: var(--case-lh);
+    letter-spacing: var(--case-ls);
+    color: var(--case-text);
+}
+@media (max-width: 900px) {
+    .gallery-text-row { grid-template-columns: repeat(3, 1fr); }
+    .gallery-text-row > .media-text { grid-column: 1 / -1; padding: 0 0 16px 0; }
+}
+
 /* Tríptico que se mantiene en tres columnas también en móvil (vídeos verticales 9:16) */
 .gallery-triptych.keep-3 { grid-template-columns: repeat(3, 1fr) !important; }
 .gallery-triptych.keep-3 > *,
