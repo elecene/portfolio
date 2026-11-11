@@ -1285,9 +1285,9 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 .media-text {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;   /* el texto se apoya abajo */
+    justify-content: flex-start; /* el texto empieza arriba */
     padding: 0 24px 0 0;
-    font-size: var(--case-fs);
+    font-size: calc(var(--case-fs) - 2px);   /* 2 px menos que el texto del proyecto */
     line-height: var(--case-lh);
     letter-spacing: var(--case-ls);
     color: var(--case-text);
