@@ -1281,23 +1281,24 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 /* Variante con dos imágenes: texto 1/4, cada imagen 3/8 */
 .gallery-text-row.two-img { grid-template-columns: 2fr 3fr 3fr; }
 .gallery-text-row > .row-full { grid-column: 1 / -1; height: auto; }
+/* si el texto va pegado debajo de una imagen del mismo mosaico, sin línea */
+.gallery-text-row > .row-full + .media-text { border-top: 0; }
 
 .media-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* el texto empieza arriba */
     /* línea fina arriba, alineada con el borde superior de las imágenes */
-    border-top: 1px solid var(--case-text);
-    margin-right: 24px;
-    padding: 10px 0 0 0;
+    border-top: 1px solid #000;        /* línea negra hasta donde empieza la imagen */
+    padding: 10px 24px 0 0;
     font-size: var(--case-fs);
     line-height: var(--case-lh);
     letter-spacing: var(--case-ls);
-    color: var(--case-text);
+    color: var(--case-label);   /* texto en gris, como las etiquetas */
 }
 @media (max-width: 900px) {
     .gallery-text-row { grid-template-columns: repeat(3, 1fr); }
-    .gallery-text-row > .media-text { grid-column: 1 / -1; margin-right: 0; padding: 10px 0 16px 0; }
+    .gallery-text-row > .media-text { grid-column: 1 / -1; padding: 10px 0 16px 0; }
     .gallery-text-row.two-img { grid-template-columns: 1fr 1fr; }
     .gallery-text-row.two-img > .media-text { margin-top: 16px; }
 }
