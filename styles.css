@@ -1302,7 +1302,13 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
 }
 @media (max-width: 900px) {
     .gallery-text-row { grid-template-columns: repeat(3, 1fr); }
-    .gallery-text-row > .media-text { grid-column: 1 / -1; padding: 10px 0 16px 0; }
+    .gallery-text-row > .media-text,
+    .gallery-text-row > .row-full + .media-text {
+        grid-column: 1 / -1;
+        padding: 0 0 16px 0;
+        border: 0;                                /* en móvil, sin líneas */
+        font-size: calc(var(--case-fs) - 1px);    /* 1 px menos en móvil */
+    }
     .gallery-text-row.two-img { grid-template-columns: 1fr 1fr; }
     .gallery-text-row.two-img > .media-text { margin-top: 16px; }
 }
