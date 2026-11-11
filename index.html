@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luciano Castañón Estrada</title>
     <link rel="icon" type="image/png" href="favicon.png?v=1.0">
-    <link rel="stylesheet" href="styles.css?v=204.0">
+    <link rel="stylesheet" href="styles.css?v=205.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 
             <div class="case-block">
                 <p class="case-label">Services</p>
-                <p class="case-text">Art Direction<br>Brand Identity<br>Brand Image<br>Campaigns<br>Creative Concepting<br>Design Systems/Toolkit<br>Graphic Design<br>Image Research<br>3D/CGI/Motion Direction</p>
+                <p class="case-text">Art Direction<br>Brand Identity<br>Brand Image<br>Campaigns<br>Creative Concepting<br>Design Systems/Toolkit<br>Graphic Design<br>Image Research<br>3D/Motion Direction</p>
             </div>
 
             <p class="case-label">Experience</p>
@@ -674,6 +674,11 @@
                 }
             }
         }
+
+        // Evitar el menú de "guardar imagen/vídeo" (clic derecho o pulsación larga)
+        document.addEventListener('contextmenu', e => {
+            if (e.target.closest('img, video, .lazy-video-container, .media-container')) e.preventDefault();
+        });
 
         // AÑO ACTUAL AUTOMÁTICO (reel y footer)
         document.querySelectorAll('.js-year').forEach(el => {
