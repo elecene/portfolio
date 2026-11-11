@@ -1297,7 +1297,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
    la línea pasa abajo, alineada con el final de las imágenes */
 .gallery-text-row > .row-full + .media-text {
     border-top: 0;
-    border-bottom: 1px solid var(--case-label);
+    border-bottom: 1px solid #d4d4d4;
 }
 
 .media-text {
@@ -1305,7 +1305,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     flex-direction: column;
     justify-content: flex-start; /* el texto empieza arriba */
     /* línea fina arriba, alineada con el borde superior de las imágenes */
-    border-top: 1px solid var(--case-label);   /* línea gris, mismo tono que el texto */
+    border-top: 1px solid #d4d4d4;   /* línea gris clara, más suave que el texto */
     padding: 10px 24px 0 0;
     /* aire mínimo de 2 líneas bajo el texto: si la ventana se achata y el
        texto crece, nunca queda a ras de la imagen de debajo */
