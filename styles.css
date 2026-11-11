@@ -1289,7 +1289,7 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     flex-direction: column;
     justify-content: flex-start; /* el texto empieza arriba */
     /* línea fina arriba, alineada con el borde superior de las imágenes */
-    border-top: 1px solid #000;        /* línea negra hasta donde empieza la imagen */
+    border-top: 1px solid var(--case-label);   /* línea gris, mismo tono que el texto */
     padding: 10px 24px 0 0;
     font-size: var(--case-fs);
     line-height: var(--case-lh);
