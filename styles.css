@@ -1279,6 +1279,9 @@ body:has(#about:target) .header-fixed .toggle-about-btn {
     object-fit: cover;
     display: block;
 }
+/* párrafos dentro de los textos entre imágenes */
+.media-text p + p { margin-top: 1em; }
+
 /* Variante con una imagen: texto 1/4, imagen 3/4 */
 .gallery-text-row.one-img { grid-template-columns: 1fr 3fr; }
 
