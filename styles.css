@@ -737,6 +737,18 @@ body:has(.project-view-page:target) .header-fixed .link-white:hover {
     object-fit: cover !important;
 }
 
+/* Parejas en paralelo con la misma altura y sin recortes: cada imagen
+   ocupa un ancho proporcional a su formato (--r lo pone el JS al cargar) */
+.gallery-pairs { display: flex; flex-direction: column; gap: 0; width: 100%; }
+.gallery-pairs .pair { display: flex; gap: 0; width: 100%; }
+.gallery-pairs .pair > img {
+    flex: var(--r, 1) 1 0;
+    min-width: 0;
+    width: 0;
+    height: auto;
+    display: block;
+}
+
 /* ==========================================================================
    7. ABOUT PAGE OVERLAY LAYOUT
    ========================================================================== */
